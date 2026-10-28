@@ -1,8 +1,8 @@
-# Shop records from WhatsApp
+# Rocoto Peru
 
-A workspace for a Peruvian shop's orders, customers, products and money, built around its existing WhatsApp trade. Review a conversation, turn it into a shop record, and create a collection page while the seller keeps their own receiving account.
+Rocoto Peru is a workspace for shop orders, customers, products and payments connected to WhatsApp. Review a conversation, turn it into a shop record, and create a collection page while the seller keeps their own receiving account.
 
-Originally **Rocoto Peru**. This release preserves the advanced browser candidate, the persistent API and collection ledger, the official WhatsApp connection service, and the bundled Android onboarding source. Original code and authored sample inputs are MIT licensed.
+[Website](https://atelierneyra.com/peru) · [Documentation](https://docs.atelierneyra.com/shop-workspace/overview/)
 
 <img src="docs/assets/shop-prep-phone.png" alt="The original shop interface, with twelve synthetic sales grouped by delivery location" width="390">
 
@@ -11,6 +11,8 @@ Originally **Rocoto Peru**. This release preserves the advanced browser candidat
 Use Node 22+ and Python 3.12+:
 
 ```sh
+git clone https://github.com/latintzar/whatsapp-shop-workspace.git
+cd whatsapp-shop-workspace
 make install
 make doctor
 make dev
@@ -57,3 +59,5 @@ make android               # bundled Android UI in app/dist-android
 For native compilation, [Android setup](docs/android.md) names the JDK/SDK and your own signing/callback requirements. [Engineering reference](docs/architecture.md#code-map) points to actual modules and tests.
 
 Source comes from one coherent product revision, `e4801f58454c3a7fa639d0570b71f3434d2dc759`, including Android `0.6.1` / code `9`. The sibling AI-native ERP release uses a different historical branch. [Provenance](docs/provenance.md) records their relationship, export changes and asset boundaries.
+
+[made by atelier neyra](https://atelierneyra.com)

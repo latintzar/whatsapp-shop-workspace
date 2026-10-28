@@ -1,0 +1,4 @@
+-r mock-api/requirements.txt
+-r app/src/prototypes/copper/requirements.txt
+python-dotenv==1.2.3
+pytest>=8,<10

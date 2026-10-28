@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face{ font-family:'Inter'; src:url('http://127.0.0.1:8188/peru/wa/fonts/inter.woff2') format('woff2'); font-weight:100 900; font-display:block; }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html,body{ width:900px; height:1010px; background:#fff; }
+  /* The paper: a plain supplier invoice as a Lima distributor prints one — a mono face, because
+     these come off a dot-matrix or a cheap laser, ruled by hairlines, amounts in one right column. */
+  body{
+    font-family:'DejaVu Sans Mono','Liberation Mono',monospace;
+    color:#1d1a18; padding:52px 58px 44px; position:relative;
+    background:
+      linear-gradient(103deg, rgba(0,0,0,.028) 0%, rgba(0,0,0,0) 38%),
+      #fdfbf6;
+  }
+  .rule{ height:1px; background:#2a2523; opacity:.72; margin:14px 0; }
+  .rule.thin{ opacity:.34; }
+  .head{ display:flex; justify-content:space-between; align-items:flex-start; gap:26px; }
+  .who h1{ font-size:27px; letter-spacing:-.6px; font-weight:700; line-height:1.12; }
+  .who p{ font-size:18px; line-height:1.5; margin-top:8px; opacity:.86; }
+  .doc{ text-align:right; border:2px solid #2a2523; padding:12px 16px; min-width:268px; }
+  .doc .k{ font-size:15px; letter-spacing:2.2px; opacity:.72; }
+  .doc .n{ font-size:25px; font-weight:700; margin-top:4px; letter-spacing:-.3px; }
+  .doc .d{ font-size:17px; margin-top:8px; opacity:.86; }
+  .to{ display:flex; gap:38px; font-size:18px; line-height:1.55; margin-top:6px; }
+  .to b{ font-weight:700; }
+  .to .lb{ opacity:.6; }
+  table{ width:100%; border-collapse:collapse; font-size:19px; }
+  th{ font-size:14px; letter-spacing:2.4px; text-align:left; opacity:.66; padding:0 0 9px; font-weight:400; }
+  th.r,td.r{ text-align:right; }
+  th.c,td.c{ text-align:center; }
+  td{ padding:10px 0; border-top:1px solid rgba(42,37,35,.2); }
+  td.q{ width:82px; }
+  td.u{ width:148px; opacity:.72; font-size:17px; }
+  td.r{ width:170px; font-variant-numeric:tabular-nums; }
+  .tot{ display:flex; justify-content:flex-end; align-items:baseline; gap:26px; margin-top:20px; }
+  .tot .lb{ font-size:17px; letter-spacing:3px; opacity:.7; }
+  .tot .v{ font-size:38px; font-weight:700; font-variant-numeric:tabular-nums; letter-spacing:-.5px; }
+  .foot{ position:absolute; left:58px; right:58px; bottom:44px; }
+  .sign{ display:flex; justify-content:space-between; align-items:flex-end; gap:40px; font-size:16px; opacity:.78; }
+  .sign .line{ flex:1 1 auto; border-top:1px solid rgba(42,37,35,.45); padding-top:8px; max-width:330px; }
+  .thanks{ font-size:15px; letter-spacing:2.6px; opacity:.55; margin-top:20px; text-align:center; }
+  /* the printer's own stamp: a rectangle of ink, off square, the way a hand presses one */
+  .stamp{
+    position:absolute; right:66px; bottom:150px; width:250px; padding:14px 10px;
+    border:3px solid #2f4d86; color:#2f4d86; text-align:center; transform:rotate(-7deg);
+    opacity:.5; border-radius:4px;
+  }
+  .stamp .t{ font-size:17px; font-weight:700; letter-spacing:1px; line-height:1.3; }
+  .stamp .s{ font-size:13px; letter-spacing:2px; margin-top:5px; }
+</style>
+</head>
+<body>
+  <div class="head">
+    <div class="who">
+      <h1>DISTRIBUIDORA RICARDO S.A.C.</h1>
+      <p>R.U.C. 20000000001<br>Av. Los Cedros 148 · San Juan de Lurigancho · Lima<br>Tel. 01 000 0000</p>
+    </div>
+    <div class="doc">
+      <div class="k">INVOICE</div>
+      <div class="n">E001-004812</div>
+      <div class="d">19/09/2026</div>
+    </div>
+  </div>
+
+  <div class="rule"></div>
+
+  <div class="to">
+    <div><span class="lb">CUSTOMER</span><br><b>Bodega Yesenia</b></div>
+    <div><span class="lb">ADDRESS</span><br>Av. Gran Chimú 1642, Zárate</div>
+  </div>
+
+  <div class="rule thin"></div>
+
+  <table>
+    <thead><tr><th class="c">QTY</th><th>DESCRIPTION</th><th></th><th class="r">AMOUNT</th></tr></thead>
+    <tbody>
+      <tr><td class="q c">12</td><td>Rice 5 kg</td><td class="u">box</td><td class="r">186.00</td></tr>
+      <tr><td class="q c">6</td><td>Cooking oil 1 L</td><td class="u">unit</td><td class="r">84.00</td></tr>
+      <tr><td class="q c">20</td><td>Evaporated milk 400 g</td><td class="u">unit</td><td class="r">62.00</td></tr>
+      <tr><td class="q c">6</td><td>Powder detergent 780 g</td><td class="u">unit</td><td class="r">54.00</td></tr>
+    </tbody>
+  </table>
+
+  <div class="tot"><span class="lb">TOTAL</span><span class="v">S/ 386.00</span></div>
+
+  <div class="stamp"><div class="t">DISTRIBUIDORA<br>RICARDO S.A.C.</div><div class="s">DELIVERED</div></div>
+
+  <div class="foot">
+    <div class="sign">
+      <div class="line">Received by</div>
+      <div class="line">Driver</div>
+    </div>
+    <div class="thanks">THANK YOU FOR YOUR PURCHASE</div>
+  </div>
+</body>
+</html>

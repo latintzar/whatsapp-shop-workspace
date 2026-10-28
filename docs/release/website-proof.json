@@ -1,0 +1,38 @@
+{
+  "scope": "historical template local static/alias HTTP only",
+  "provider_calls": 0,
+  "pages": {
+    "/": {
+      "status": 200,
+      "bytes": 56201
+    },
+    "/en": {
+      "status": 200,
+      "bytes": 56201
+    },
+    "/selling": {
+      "status": 200,
+      "bytes": 39691
+    },
+    "/en/privacy": {
+      "status": 200,
+      "bytes": 9284
+    },
+    "/es/terms": {
+      "status": 200,
+      "bytes": 8153
+    },
+    "/setup.html": {
+      "status": 200,
+      "bytes": 673
+    },
+    "/peru/waitlist.js": {
+      "status": 200,
+      "bytes": 2630
+    },
+    "/peru/owner.js": {
+      "status": 200,
+      "bytes": 108
+    }
+  }
+}

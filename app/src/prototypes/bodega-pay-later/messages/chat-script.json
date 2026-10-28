@@ -1,0 +1,191 @@
+{
+  "version": 2,
+  "steps": [
+    {
+      "id": "connected",
+      "about": "The shop connected in the browser",
+      "from": "system",
+      "text": "The shop connected its WhatsApp in the browser. Rocoto writes first:",
+      "standsFor": "free-form",
+      "next": "closing"
+    },
+    {
+      "id": "closing",
+      "about": "The closing message",
+      "from": "rocoto",
+      "text": "Listo, Yesenia. Acá me quedo: te aviso cuando entre un proveedor tuyo, cuando te paguen y cuando toque un pago. Tu negocio en Rocoto está acá: soyrocoto.com/e/a7f2k",
+      "standsFor": "free-form",
+      "next": [
+        {
+          "label": "Supplier connected",
+          "to": "supplier-window"
+        },
+        {
+          "label": "Weekly statement",
+          "to": "statement"
+        },
+        {
+          "label": "Payment links on",
+          "to": "paylink-ask"
+        },
+        {
+          "label": "Sales export",
+          "to": "export-ask"
+        }
+      ]
+    },
+    {
+      "id": "supplier-window",
+      "about": "Three days on, a closed window",
+      "from": "system",
+      "text": "Three days later the window has closed, so the notice travels as a template.",
+      "standsFor": "free-form",
+      "next": "supplier-notice"
+    },
+    {
+      "id": "supplier-notice",
+      "about": "A supplier joined",
+      "from": "rocoto",
+      "text": "Tu proveedor Mayorista San Jorge ya entró. Ya son 3 proveedores tuyos en Rocoto.",
+      "standsFor": "supplier_connected",
+      "next": "supplier-link"
+    },
+    {
+      "id": "supplier-link",
+      "about": "The link to the supplier list",
+      "from": "rocoto",
+      "text": "Ya puedes ver tu lista acá: soyrocoto.com/e/a7f2k",
+      "standsFor": "free-form",
+      "next": null
+    },
+    {
+      "id": "statement",
+      "about": "The weekly statement",
+      "from": "rocoto",
+      "text": "Tu resumen del 8 al 14 de setiembre: 42 ventas por S/ 3,180. En tus fiados confirmados te deben S/ 1,240, y en tus compras anotadas debes S/ 3,980. Revísalo y corrígeme.",
+      "standsFor": "statement_ready",
+      "next": "due"
+    },
+    {
+      "id": "due",
+      "about": "The payment due today",
+      "from": "rocoto",
+      "text": "Hoy le toca el pago a Mayorista San Jorge: S/ 640. Cuando lo hagas, mándame el voucher y lo anoto.",
+      "standsFor": "payment_due_today",
+      "next": "voucher"
+    },
+    {
+      "id": "voucher",
+      "about": "The voucher photo",
+      "from": "shop",
+      "text": "Ya está",
+      "image": "voucher",
+      "standsFor": "free-form",
+      "next": null
+    },
+    {
+      "id": "paylink-ask",
+      "about": "The offer of payment links",
+      "from": "rocoto",
+      "text": "¿Quieres que le mande el link de pago a cada cliente que te hace un pedido?",
+      "buttons": [
+        {
+          "label": "Sí, actívalo",
+          "to": "paylink-yes"
+        },
+        {
+          "label": "Después",
+          "to": "paylink-later"
+        }
+      ],
+      "standsFor": "free-form",
+      "next": "paylink-yes"
+    },
+    {
+      "id": "paylink-later",
+      "about": "The offer held for the next order",
+      "from": "rocoto",
+      "text": "Listo. Te lo ofrezco de nuevo con tu próximo pedido.",
+      "standsFor": "free-form",
+      "next": null
+    },
+    {
+      "id": "paylink-yes",
+      "about": "Payment links turned on",
+      "from": "shop",
+      "text": "Sí, actívalo",
+      "standsFor": "free-form",
+      "next": "paylink-fields"
+    },
+    {
+      "id": "paylink-fields",
+      "about": "The Yape number and the shop's name",
+      "from": "rocoto",
+      "text": "Listo. Necesito tu número de Yape y el nombre de tu negocio para la página de cobro.",
+      "standsFor": "free-form",
+      "next": "paylink-note"
+    },
+    {
+      "id": "paylink-note",
+      "about": "From the shop to its customer",
+      "from": "system",
+      "text": "From the shop's own number, to its customer:",
+      "standsFor": "free-form",
+      "next": "paylink-request"
+    },
+    {
+      "id": "paylink-request",
+      "about": "The payment request",
+      "from": "shop",
+      "text": "Hola Rosa. Tu pedido de 2 cajas de tomate sale S/ 48.00. Toca el botón y ahí tienes el monto exacto y la cuenta de Bodega Yesenia para pagar por Yape o transferencia.",
+      "buttons": [
+        {
+          "label": "Pagar"
+        }
+      ],
+      "standsFor": "payment_request",
+      "next": "paylink-paid"
+    },
+    {
+      "id": "paylink-paid",
+      "about": "The payment received",
+      "from": "rocoto",
+      "text": "Rosa Quispe pagó S/ 48.00 de la venta 1042. Ya quedó anotado.",
+      "standsFor": "payment_received",
+      "next": null
+    },
+    {
+      "id": "export-ask",
+      "about": "The shop asks for its sales",
+      "from": "shop",
+      "text": "Me pidieron mis ventas, ¿me las puedes mandar?",
+      "standsFor": "free-form",
+      "next": "export-file"
+    },
+    {
+      "id": "export-file",
+      "about": "The sales export",
+      "from": "rocoto",
+      "text": "Tu exportación está lista: tu registro de ventas por transacción y por cliente, del 20 de junio al 18 de setiembre.",
+      "document": "rocoto-bodega-yesenia-orders-2026-09-18.csv",
+      "standsFor": "free-form",
+      "next": "export-sunat-ask"
+    },
+    {
+      "id": "export-sunat-ask",
+      "about": "The question about SUNAT",
+      "from": "shop",
+      "text": "¿Y qué ve la SUNAT de mis yapeos?",
+      "standsFor": "free-form",
+      "next": "export-sunat"
+    },
+    {
+      "id": "export-sunat",
+      "about": "What SUNAT sees",
+      "from": "rocoto",
+      "text": "Tu plata de Yape está en una cuenta del banco, y el banco le informa a la SUNAT el saldo de esa cuenta cuando llega a S/ 38,500 en el mes, que son 7 UIT en 2026.",
+      "standsFor": "free-form",
+      "next": null
+    }
+  ]
+}

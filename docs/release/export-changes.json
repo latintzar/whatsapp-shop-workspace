@@ -1,0 +1,507 @@
+{
+  "policy": "Original source/history unchanged. Release-only changes against pinned objects. Account/deployment/state/native signing material excluded.",
+  "modified_original_files": [
+    {
+      "path": "app/android/app/build.gradle",
+      "original_sha256": "48c83d89237c1384596ce3ca8ea25f675ea8aebfa8053d75c5ad7600205d5022",
+      "export_sha256": "4608464570227f504de22a662641069492f4fbf9194376cbd79f0b4281b29085"
+    },
+    {
+      "path": "app/android/app/src/main/AndroidManifest.xml",
+      "original_sha256": "7046c109758ef9c26335a0b31652b7482cb14db97682eb5d3448f157dc5902a1",
+      "export_sha256": "8c5288825be04806768c806e56d8e3dd4fb1ad281178aff33b99f6ed71eb941a"
+    },
+    {
+      "path": "app/android/app/src/main/java/com/soyrocoto/app/MainActivity.java",
+      "original_sha256": "934eb9de77dadfeb8d72208efefc4645613715a0c440825c54b8e015a7939ed4",
+      "export_sha256": "0c6b0cb83c9b8b233151327551882797d72ac6f2f5d5bf1cda9fd46b8def5959"
+    },
+    {
+      "path": "app/android/app/src/main/java/com/soyrocoto/app/ReturnLink.java",
+      "original_sha256": "7c29b00fa058fb8f0778f9d6475e757eeb38795463737854c68306b8b9ee881a",
+      "export_sha256": "99927d8bc13156a2f124cc0475459f8cdbdfc3c810efcc0c927a04f48404b218"
+    },
+    {
+      "path": "app/android/app/src/test/java/com/soyrocoto/app/ReturnLinkTest.java",
+      "original_sha256": "de5b61facbc95df62fb1378247584fe5c7a754786409d29572b7f56448631fc9",
+      "export_sha256": "0ab5ba5cce0ff2aa0763dbc4a7bb1a6d17bd98765d7305f1c16f9f04789fd511"
+    },
+    {
+      "path": "app/capacitor.config.ts",
+      "original_sha256": "99a8ed96a7308d1df83b0695607149394c33673e7bf99c10020e837436861aa4",
+      "export_sha256": "03120ad0285f3809bb8253149cc20cc659a629fcc3dad4351b95ad85e7bf2151"
+    },
+    {
+      "path": "app/package-lock.json",
+      "original_sha256": "a6559680c8302e60e04f64f05c4f8b28f56cf6f83527048cde2fab403d9e2eb1",
+      "export_sha256": "542f7c00c36dbcfddb5cb72424e9dc8370d5ed952da486cbe92178554ab5b8e8"
+    },
+    {
+      "path": "app/package.json",
+      "original_sha256": "2310bdc1ebca0ed35711edebb42df437538fd7a025bb3faab08f2e977a205676",
+      "export_sha256": "0dfb1f41c77200660bb59c44e92dd601c605b1131d569bf7d4a68bd9916ded38"
+    },
+    {
+      "path": "app/public/bodega-artwork/README.md",
+      "original_sha256": "bfac864f1fd4e3b6f4c7cc88e9b58f8d5fd8304092049441f815cdc28e1dc0a1",
+      "export_sha256": "0e42d821396fb192784ed5a297440802a9166ef8b2fd752339b0c1eb8ac8916d"
+    },
+    {
+      "path": "app/public/cedar-artwork/README.md",
+      "original_sha256": "991a2e0fa61733790ab0e53a600abfc60210bbab4b1d4d9e930349fd70b83201",
+      "export_sha256": "78c5d62e0192f2929dff6dacf6746c94d573733598ad75ce388f24a3bf0ac5a8"
+    },
+    {
+      "path": "app/src/prototypes/bodega-pay-later/CONNECTION-EXPERIMENT.md",
+      "original_sha256": "0eba945f6181a681febfa269ea2401e4f6e02f753dcf3b88a04d1bda186c6356",
+      "export_sha256": "bcb7ba3afded5e581e7d9a784d2de79459278bd467eded2a82bfb71e2111d5f0"
+    },
+    {
+      "path": "app/src/prototypes/bodega-pay-later/MOBILE-SPEC.md",
+      "original_sha256": "b50dbe39d1f9c7ff7f75dab4550a0c6ec7a3f7edc5e154fd8263f87dcf65a14d",
+      "export_sha256": "71e8f792791f527d5b9803c4257ee28117348156a15a58ac5d9d1d7ac947b8ef"
+    },
+    {
+      "path": "app/src/prototypes/bodega-pay-later/README.md",
+      "original_sha256": "a7a8eafe7e7d57e1f620a1801c7a4b6ebd71ac8e9b3b34b252d1bd1f9edb90c2",
+      "export_sha256": "8ed4677bf09307626c7a4ec9f42a062d47d00a782df8448a6cd6bf5f61758c39"
+    },
+    {
+      "path": "app/src/prototypes/bodega-pay-later/connection-experiment.tsx",
+      "original_sha256": "b5a4ba1a886fce40e6ed740cdc799e7ed92f8562c3e41a2ec21b3c1a6c86a306",
+      "export_sha256": "0a2d4022dddb17871e6a0e6bfb5b93d0dd1c23ed2bec05ebd286b023d50c437e"
+    },
+    {
+      "path": "app/src/prototypes/bodega-pay-later/direct-connection-experiment.tsx",
+      "original_sha256": "58556cd8e62eafd7c46b7f2fd7b02e052db7e33f60d406656909ce41982f4347",
+      "export_sha256": "6065719bb786d1c7507ec4b539a4c34168623e8aecd31449b4ac5484681dbcc2"
+    },
+    {
+      "path": "app/src/prototypes/bodega-pay-later/history/rank.ts",
+      "original_sha256": "18bc823668660d614e60d9ab0495b5af0c33af7c6f35b0b43e4e3e1beb35bd6a",
+      "export_sha256": "df4e77fb7e2149664e70443f136e20f7fb09c740590a3e190f814d387a822d9d"
+    },
+    {
+      "path": "app/src/prototypes/bodega-pay-later/mobile/README.md",
+      "original_sha256": "8302ab201d31ca0fd78513dbd6bfb99f0e0d6f397847534c3410bd6d6ba17747",
+      "export_sha256": "476d3217b415780ec28ae94ffff3312a1d745b009279abc61bd451f559f0747b"
+    },
+    {
+      "path": "app/src/prototypes/bodega-pay-later/mobile/invitation.ts",
+      "original_sha256": "8a1000aadf5cfe7d1ac99451e4c1731d7c3c015bc0f9428786fcfd20818a85a7",
+      "export_sha256": "90ae81b395f6c9debcdaff5c0db0f7f457d125a56293663835f58d27a2c11ea3"
+    },
+    {
+      "path": "app/src/prototypes/bodega-pay-later/mobile/native.ts",
+      "original_sha256": "7f861dc3a8b83c0c42ee022f483e3f8bd75a4035b28a128158ceac2305ec2079",
+      "export_sha256": "90b6fee29bf3fc85cc7a6fff7ca3095c6c85c5809255f333e171cbf72281abba"
+    },
+    {
+      "path": "app/src/prototypes/bodega-pay-later/mobile/state.ts",
+      "original_sha256": "999cb977b7b4cf935622c61bca7f9b184a51fa908968f7b012766642a4f18749",
+      "export_sha256": "ae1eecd224fc292347ee2b7dfca6ec89435d8e8293716c8a20977c0015725d37"
+    },
+    {
+      "path": "app/src/prototypes/bodega-pay-later/money-api.ts",
+      "original_sha256": "2b8008425fba11744657099fcc4c654d106974940018ad4ec9be1687e58e9c00",
+      "export_sha256": "f4ee3655d0bb2b6e4b7799292746eb0a9b8888b00a29817639854d8e2549ba3c"
+    },
+    {
+      "path": "app/src/prototypes/bodega-pay-later/session-experiment.tsx",
+      "original_sha256": "8773aee43ccaefe96e63006d157e99a68547523ee7d4cb6c6b06478ef051ff55",
+      "export_sha256": "cf85a00ac4dccf0da7f844ebda06b21dd3d50628a1f4b401583bdf34fff82a6b"
+    },
+    {
+      "path": "app/src/prototypes/bodega-pay-later/start/mobile-connect.tsx",
+      "original_sha256": "e737c5f39ec9a8bfb590fe3fd014c0579a0f961c2e0095587e2080969965521c",
+      "export_sha256": "84e788e5a1983f0bea775e8c33492e2f49ca4781954580cee58bed648becc972"
+    },
+    {
+      "path": "app/src/prototypes/bodega-pay-later/start/session.ts",
+      "original_sha256": "057cc158c3d388f2f7a337e063a867c59f8650b8c01e539711eb53a16f724d0f",
+      "export_sha256": "7a3d95b1be7817cecbb1ec6f2cffb5420d161c29d5b415c36649e4011700a3f1"
+    },
+    {
+      "path": "app/src/prototypes/cedar/CALL-UX.md",
+      "original_sha256": "12943fb0c50ba593051b8b44d8b2eb8136bf15b44e0e1b2ce894a75635f66b1f",
+      "export_sha256": "e8f1fb179d70c0aa21fcde91b251520e853e58011578ca6b3898f7e49384208f"
+    },
+    {
+      "path": "app/src/prototypes/cedar/CHANNEL-SEMANTICS.md",
+      "original_sha256": "e81981ab0cdf3f036c64bfb29d14d5a7d08d55708cb0968554e5767c69538a55",
+      "export_sha256": "7da95ca4f472fc14d96e0fbd413476b9c9f11990e22548beada9b327b1a057cf"
+    },
+    {
+      "path": "app/src/prototypes/cedar/EMAIL-IMPLEMENTATION.md",
+      "original_sha256": "e5776c5426a414f3cbe488072c704e1ea97fd428e0802d8094ba2db68a29884d",
+      "export_sha256": "45d76daffcbf15ca6cc9e7bc836ca07c29ef157fd06aba04a49d256f9f30f722"
+    },
+    {
+      "path": "app/src/prototypes/cedar/EMAIL-INTEGRATION-SPEC.md",
+      "original_sha256": "a540967c954e6f675eb441253e6cff98ed1a019962261d8f49dbc07dbfb9aba6",
+      "export_sha256": "a388f476a4541c350039e7e51a769d66a605aa79e3ea967ca442dcf6290d07dd"
+    },
+    {
+      "path": "app/src/prototypes/cedar/MONEY-SPEC.md",
+      "original_sha256": "31c656729193c4df60dfee5905ae83a6d5d29d0ef26f0cbd1938d84efc12c2b5",
+      "export_sha256": "60fc9e6d1e972e9ca44ac7846a16c4fa5faa8a0fdd7c44abd72f70d32a5e728a"
+    },
+    {
+      "path": "app/src/prototypes/cedar/ONBOARDING-SPEC.md",
+      "original_sha256": "56eca907cf0490197472f10aa84c8e88b7febb1eda1902a08bc978482a920288",
+      "export_sha256": "5818c017c3eac6a63e6e5b41202677106b1f005b99d3b788e06c1ba7f1261ba3"
+    },
+    {
+      "path": "app/src/prototypes/cedar/OPERATIONS-HUB-SPEC.md",
+      "original_sha256": "2f52969d63da9dec564a6eb89ed8648dad7dd4ba28c94654b5b308493bcfab82",
+      "export_sha256": "a17432b68fec25c9cf048b972850eaf6ba76bd539d874bc9883232f48aedb2a6"
+    },
+    {
+      "path": "app/src/prototypes/cedar/PAYMENTS-SPEC.md",
+      "original_sha256": "ca0ed261504710365eab0c0d482ec04e41719d5a523b9f06b4b76608ddf6d9f9",
+      "export_sha256": "731b8a9dd55bdbb970ae3c913a49f46f853893efdee6b0cab1b1a72e6c5aea43"
+    },
+    {
+      "path": "app/src/prototypes/cedar/PHONE-IMPLEMENTATION.md",
+      "original_sha256": "6cd0eba6d90d7290c0e38bc9b39a51b7d1bc70c242749067aad5bbbaecfa718e",
+      "export_sha256": "08bc8c7b6d9921cf5e7dad90183289e13315014970d0e87767fd2cd79fe35496"
+    },
+    {
+      "path": "app/src/prototypes/cedar/PHONE-INTEGRATION-SPEC.md",
+      "original_sha256": "9bc2180023e22ea2af99f20505bd6e2e12126ca1ab6744006ea6fe966cfd1d56",
+      "export_sha256": "56f9bec8385e412e369c1ddf380894a1f32ebf0a3be77f1b17dc8f63c99f79ae"
+    },
+    {
+      "path": "app/src/prototypes/cedar/PRINT-WORKFLOW.md",
+      "original_sha256": "da3b72fc94bddf3a013c74d7122b5ba5a0e5fc0207f1b61da33c0c523a88b4b0",
+      "export_sha256": "9fc9972e5151217925c5269f7bf7ff13ee5d3c6b6b4387a5427fdc26ffb1d3f8"
+    },
+    {
+      "path": "app/src/prototypes/cedar/PRODUCT-SPEC.md",
+      "original_sha256": "db76db75fb4589a36eb3b504345f3620389766b8fef2b34f189f2fd08e70caae",
+      "export_sha256": "153dfdae7a9e56dd7ddf6ed045e417354f64ffeecc2f408243cfb93fee7ee488"
+    },
+    {
+      "path": "app/src/prototypes/cedar/README.md",
+      "original_sha256": "abc244a590003a202a08888b9f9489e94ebc1f9b8ac39425015d8a83377e6dc9",
+      "export_sha256": "4fab9fbb1cf1728279da6c45cf4c0b2f50c8f19e4bce7d330b9389feb5c4c99a"
+    },
+    {
+      "path": "app/src/prototypes/cedar/connections/HANDOFF.md",
+      "original_sha256": "8156e1ace9b64f79cfaf6304c7a77392587a2c996ad3b711bddd566a7e49eb0d",
+      "export_sha256": "62ad1ee86424fa2913d69c4df1324bfd32ed51a6a9560f2eb7005d8a37d0a529"
+    },
+    {
+      "path": "app/src/prototypes/cedar/connections/IMPLEMENTATION.md",
+      "original_sha256": "ef9ea3eb3589cb51a5a2c1f89fe20af757fb5d16c5d3c9081b93022c2dbc159c",
+      "export_sha256": "6ddb0ad6a262787b55a0aece8edf1c9273beae2d231959509f6ee87faa1d71d5"
+    },
+    {
+      "path": "app/src/prototypes/cedar/connections/README.md",
+      "original_sha256": "162a3f36e27e265807bce91887f11e0469878031ba0a6f558581a37de0d0cd0d",
+      "export_sha256": "8a3894064952c588f0e6be059ec2b7b3375b14641e45e30fd03f62e3a2545646"
+    },
+    {
+      "path": "app/src/prototypes/cedar/connections/configure.py",
+      "original_sha256": "39b7344cf4c07f21c776e9537fb42f30cd7b0c6cdc30a48fd4e3772f685142a4",
+      "export_sha256": "224cf65e25f40adf3146fa26cb54998a7a7b2b850fd3082cb11fd9786385bc74"
+    },
+    {
+      "path": "app/src/prototypes/cedar/connections/proof/service.py",
+      "original_sha256": "c15ba7a0cf0e6fed3ecf36bfb86f3bce89a27742e525ddcc999d73a04b07414c",
+      "export_sha256": "a3ed473335feb7e6142f321e0238af434aef9003aa09358eea3f8c8d5c0f3dec"
+    },
+    {
+      "path": "app/src/prototypes/cedar/fixtures/README.md",
+      "original_sha256": "53b1ca326f31001b75db067a16e53a1b2e741a98ed18c51a9c5e61669e7aebe8",
+      "export_sha256": "fcf8c770c1e9f9b844d7ad638363f089c16a8a510e81515e8fc5ff120e332c76"
+    },
+    {
+      "path": "app/src/prototypes/cedar/money-api.ts",
+      "original_sha256": "2442c31ea3c96c0c2fe43c3b977cbfcea5032852d6c155b3fd79dea633c80260",
+      "export_sha256": "0932e3bf640a015ab78a1af637ab8584530c215f4aa8b514e71e4627f8780a03"
+    },
+    {
+      "path": "app/src/prototypes/cedar/money-runtime.json",
+      "original_sha256": "868519d60afb465d14083b2f4897c6e1a82e46d796485018f341efd78df88b05",
+      "export_sha256": "6fdb94fd451b0229f681fded40b9ddae4b8470b8ae9e89a0aea82ec4191f6bbb"
+    },
+    {
+      "path": "app/src/prototypes/cedar/support.ts",
+      "original_sha256": "d4f8fc794415655c964af5f069eb6d41c8003f91461fe62892b2f04668f4b684",
+      "export_sha256": "42ab9a82b6bf8b424b432ece5a78c58eb100500a22efe9d555eb41b8350015c6"
+    },
+    {
+      "path": "app/src/prototypes/copper/README.md",
+      "original_sha256": "b80811ed9fe18b2f98a263bbdfd8a6de258a098c6f20228750b371d8070b5fab",
+      "export_sha256": "90119b7736c7b3368943127d8522161e49e03f9c513bc7c96cb5e285921b1fcc"
+    },
+    {
+      "path": "app/src/prototypes/copper/runtime/cedar_service.py",
+      "original_sha256": "78bf85b6671c417b1e1241b9b933daf99a34cb8a681f0409a2ffc3113ff3c99c",
+      "export_sha256": "0c489364ca9fb82bffa988a777860c0edaaaaf90f6b809eb27d95c215092ab2d"
+    },
+    {
+      "path": "app/src/prototypes/copper/tests/test_cedar_native.py",
+      "original_sha256": "e62db0dd2efbd1c7d1b3e27f79e803839b6c1f03e3582eaf088668de4702f7a4",
+      "export_sha256": "d5e39a7df679d61954269f9d6f54336bf58d02bf6a84c30e41401c4beaf76005"
+    },
+    {
+      "path": "app/src/prototypes/copper/tests/test_mercadopago.py",
+      "original_sha256": "6b94143e0adbd91a602f6d9693abf1b802898c07b63e1c3a9394569fa67a1030",
+      "export_sha256": "2403e7897668d1ca193692b17ef07b9d7dd87ae38b9b3d2a696feaa5e583a9b2"
+    },
+    {
+      "path": "app/tools/test-bodega-connection-experiment.mjs",
+      "original_sha256": "fcb0a805728fc7c5e421da1f8f18a751812b314270d0c1c684911c681f9c808a",
+      "export_sha256": "d67c6148c0cb516a7228620f19481b91fe72582a310a29430c597171ff311695"
+    },
+    {
+      "path": "app/tools/test-bodega-direct-callback.mjs",
+      "original_sha256": "0eb767ae626fb78bb9afaed6e2d89f9821933f402620218b6f88c6901663a110",
+      "export_sha256": "bebb2735a43da4b89792478ae07257b2d0dc31e3e5e9f50acc5efe8263d63c75"
+    },
+    {
+      "path": "app/tools/test-bodega-export.mjs",
+      "original_sha256": "9bf246fe508a367893491515278a2174b8e8d5b6152a9abd2bc5b0e22dfb5d0b",
+      "export_sha256": "aafa56dcdf5e36207b4c4da5cffbecb81d5d4f3798ff5113015ed9cfa572ab55"
+    },
+    {
+      "path": "app/tools/test-bodega-history.mjs",
+      "original_sha256": "3c9a2b820a91b0f9fa2eaf4b329f9926ea8923513d6a5cb63c6a9dc437f46e3f",
+      "export_sha256": "04d611b03dfd82c0ae379cdd57f75c84b067f202cabcbab044a7c74c7d9e5cf2"
+    },
+    {
+      "path": "app/tools/test-bodega-mobile-state.mjs",
+      "original_sha256": "cb534912b1211b04055ccda18d831fe9a017402395a07718fdde37c58b900060",
+      "export_sha256": "82bdf877feb642796725ae94d782f491ff190f93ad7e0fdf23ef73b554200f3c"
+    },
+    {
+      "path": "app/tools/test-bodega-referrals.mjs",
+      "original_sha256": "9800f3eec20ec13915f59a3bd9cec35d83b9bbec6ab55db53ae0539698f52546",
+      "export_sha256": "5237245725dd2039805806fe213e7b2c9122aca8d8e5b34f55c3c621d60983b4"
+    },
+    {
+      "path": "app/tools/test-bodega-session-experiment.mjs",
+      "original_sha256": "9e662a57b22d3b52e1fec3a082e956b83123b2ddae3ff8fcd2928bd1ff12e3e3",
+      "export_sha256": "9db1d5828d834eaa4e688dcc3a05b9a5a5c3afc02afb21f8876f6266bd025f8b"
+    },
+    {
+      "path": "docs/PRODUCT-MAP.md",
+      "original_sha256": "6b73947b9c3ee1f32ba37a4256495ced55555e4ebb32921392428af53ff3c2d4",
+      "export_sha256": "68ea96b745b40f1fb335bacd0ecf3a2e2449ef95fc41a996895f5f4e8ca58e6c"
+    },
+    {
+      "path": "docs/THE-QR-SPEC.md",
+      "original_sha256": "84ca0f6d55130ce53e857b45097e61096b427aecae2bdc18246d53e25b1243a0",
+      "export_sha256": "576301d3ac4b2c55f929026005c230bad7c894c8eb076de8ee08cec44fb18642"
+    },
+    {
+      "path": "docs/decisions/0001-the-repository-and-the-organisation.md",
+      "original_sha256": "7011cb89054c7a6d2889682e024c3b898d76c7da6a42cef5544532f26e98a17e",
+      "export_sha256": "080fbcb02f1c54766ef743e3b0ec553b8c8f2c39f5d00a72041a8d9c62757b6c"
+    },
+    {
+      "path": "docs/decisions/0002-the-model-is-always-anthropic.md",
+      "original_sha256": "82c7a02a16a6e661d0e4ecef0f352a5ce926a6797e52040a26358e80a84a65cc",
+      "export_sha256": "6510e6aea1fbea618e36ee960e9d51952dc7be24a27e535f63307173814391ba"
+    },
+    {
+      "path": "docs/decisions/0003-document-reading-by-anthropic-vision.md",
+      "original_sha256": "c95f79a4d63acc67ea98657c8c635ad1915c9c715b304e489a7de5feb9e351b9",
+      "export_sha256": "2b3de376c43dddd280ad202f52ad50290ae15acf055d524f56d33831aed8e920"
+    },
+    {
+      "path": "docs/decisions/0004-artwork-by-ideogram.md",
+      "original_sha256": "1a55a4a639ab308846cdecc51d24bc6da1c9a0ac80be3ba8a329f4e440c36e86",
+      "export_sha256": "61dfb3b3e358f032cfae3927f73515b6a9e38eef7ddb28c919351a76965bb6d7"
+    },
+    {
+      "path": "docs/decisions/0005-one-codebase-two-builds.md",
+      "original_sha256": "b8ea33f6f12c64e2f3472b7d400bc45994e286c1439ce0265fbf81979230228d",
+      "export_sha256": "6bfeb6864510d4225412333ad07ab4188dda8cddc7a16d816b19bf93bd24c40d"
+    },
+    {
+      "path": "docs/decisions/0006-the-kit-runtime-in-production.md",
+      "original_sha256": "180a6823233eb71f7ae0544a40a694b47df7aff44f5099c9a5c68b31753028a3",
+      "export_sha256": "0fc8ad95da927ac652f1d563d37b48339adfb85f31a42761cd8bc4e17f889271"
+    },
+    {
+      "path": "docs/decisions/0007-main-is-protected.md",
+      "original_sha256": "6efd0672a90ebb4dcac4f9b1883fef59b8e6f349c13536ca14456a388f4c78bc",
+      "export_sha256": "a95341d552564e37354ef0bf4ea10f4cd83cc49596292bb82da0f8b4ad37058c"
+    },
+    {
+      "path": "docs/decisions/0008-environments.md",
+      "original_sha256": "d769e20a2cd4f2ea6ac7f44caee37b1483a5c5978e9f37aa021ebf39c060f4d1",
+      "export_sha256": "5a8ed14c6d34ab4c3cbfe89a4028934e27e40dffe8a44d196d5fc121a6eafe83"
+    },
+    {
+      "path": "docs/decisions/0009-experiments.md",
+      "original_sha256": "5668d897a7ca6d1a2cb3e0b5424243a6c10d8aa102c51ed1cff61d238c970bb3",
+      "export_sha256": "5cbd2389eeb79c34d209091536fc4fcc24d59855f6fcd8394ef23582632f5e79"
+    },
+    {
+      "path": "docs/decisions/0010-three-repositories.md",
+      "original_sha256": "aea0f0fa96e660defd6f8c0434bef0b31d5a56ee47e38f848a7a1276092c2067",
+      "export_sha256": "b7c188626de0c398d3c9b94dba8ef07e5e6e5631389e18b95e60f00032ece660"
+    },
+    {
+      "path": "docs/decisions/0011-evidence-and-engineering-boundaries.md",
+      "original_sha256": "8a187ad61d6fe9c61bd9cb4f24257f9c93358caa2769a2518ebca57cc92c8e99",
+      "export_sha256": "499410036060dd404953e58ce5080356db35547b3ffe2fb498f1a77764ba282a"
+    },
+    {
+      "path": "docs/decisions/README.md",
+      "original_sha256": "66f613bbbde8d981ebf8011cbc6381f0d9ae872121866506c2ae6fe24834644a",
+      "export_sha256": "7e2a80ab0f2237d231b9662cb9a72b8823383b916befeedc1e6f54ffd1210bae"
+    },
+    {
+      "path": "mock-api/app/bodega.py",
+      "original_sha256": "d5b3fddb08a1d3ec91973704118efe500506a19c07863937b5ffd41f22bea443",
+      "export_sha256": "3b43310eea5652ce095bb09a5039f801ae62321f745415d231f3ff1654243263"
+    },
+    {
+      "path": "mock-api/app/bodega_connection_redirect.py",
+      "original_sha256": "10403b9b8d73fab8d2374bd7b544adb2eba17116e18a19714706299d2aab3889",
+      "export_sha256": "7d9b4ffee416954d2b5e144aa48f8a8724dc6c43f370c70bf3de5913c316c02d"
+    },
+    {
+      "path": "mock-api/app/bodega_testing.py",
+      "original_sha256": "9f0cd982b6855cb5a592115169135726ed3ee0bf5982027723f3d598cc5621c8",
+      "export_sha256": "083993f208f721e3d70776ac3f7ebaa22b0cc14ca631782c629c2a6958f61a65"
+    },
+    {
+      "path": "mock-api/app/cedar_access.py",
+      "original_sha256": "2e40c9053fa92c2ba599ecc200615f2efe2cfc1ff702064c8d9075cec9425570",
+      "export_sha256": "a866119672e94b2f9337518dda40f54e1780d50fed4c36490ce4f539fc464c74"
+    },
+    {
+      "path": "mock-api/app/cedar_whatsapp.py",
+      "original_sha256": "a9cde6bbadc981b78653b4c23122658688bc8cbf20484652b48345d605862338",
+      "export_sha256": "b3aa46331952f4639da7cbab76e4009254fe36c26e4a2477f6152a0e19f9bbc0"
+    },
+    {
+      "path": "mock-api/tests/test_bodega.py",
+      "original_sha256": "336221b70e147422ebfc5d71f7baed34509376c7601892cea1510e1809986f5a",
+      "export_sha256": "bc01951f95edff090bf86634ac1074f397775c4574b7a5cad394f47f7bfe5f24"
+    },
+    {
+      "path": "mock-api/tests/test_bodega_connection_redirect.py",
+      "original_sha256": "e31ae938ba2862f72f2b29692d3e7a81399195ccd626022f20c27bf4bebe32b4",
+      "export_sha256": "1649518e93c3aef70fb7e1e0d9c6bfa1c313f7de883bbe8395df1d4621ae41f8"
+    },
+    {
+      "path": "mock-api/tests/test_bodega_connection_test.py",
+      "original_sha256": "3d1fd322e846a831d05b0d2f77e2003ecb844d2c37dd3d87a33068d237a15ab0",
+      "export_sha256": "9fbde804185648130d86b777c8be9fa18400af48bdc3edd43d375d54e4dfb28d"
+    },
+    {
+      "path": "mock-api/tests/test_bodega_mobile_auth.py",
+      "original_sha256": "345487bd4c0a234fc0b1bf154388555d195263587c7564777772629a4a721068",
+      "export_sha256": "77846080e7d659eac761b3182fc5a89b3fdfe1ec1577259fad3bfa16241483fb"
+    },
+    {
+      "path": "mock-api/tests/test_bodega_otp.py",
+      "original_sha256": "ae97037cb06278970df52577890d2087741587efed1dd8eaf1c8ad2e3b88f5ff",
+      "export_sha256": "8150acad58b6a520a8b65ef31dc43355f31803b509b17a5665a8f8a220cf7745"
+    },
+    {
+      "path": "mock-api/tests/test_bodega_testing.py",
+      "original_sha256": "7bf844048fb99fc6d104d41f7c52867ddb680e9bc112cab100d1ac9e7814d373",
+      "export_sha256": "47ae2539ca50cb3eea898c091af01e3f76c710c0dd46dc8d301b382b81a69000"
+    },
+    {
+      "path": "mock-api/tests/test_cedar_access.py",
+      "original_sha256": "2d5bdc02f8e4ab3c823e5709a2a2827d76e5548ffcd68a00d560cde1e120eedb",
+      "export_sha256": "6a6be61de7d3eec8615097058d5784a75d9d6851210a4b9e2065b31b624f2b34"
+    },
+    {
+      "path": "mock-api/tests/test_cedar_whatsapp_bridge.py",
+      "original_sha256": "1592ecf7a44769dcb13172101726b78e03b549045c85ac74dc3c8dd1972ada35",
+      "export_sha256": "16f4738489a9605027a6d966df7e97f2501dafbbd04b9b42f32c58c3850a5bd2"
+    },
+    {
+      "path": "website/peru.html",
+      "original_sha256": "b73c2c321d6e276b333d9118b73c3d561220c7eb9ed95758368f9151edda23cc",
+      "export_sha256": "cc221cd7e2320b5d26e39ddfea9099cbe50c179d346d7abe49fa43a7b922df82"
+    },
+    {
+      "path": "website/peru/cookies.html",
+      "original_sha256": "d57b55cd6e6ead759e9de4820803a683c6a81c9bc19e583d37da853f3feb9c94",
+      "export_sha256": "5bf8bd89f2c7ca2f42f278b6b9dfe89fc4eddc53993246a6c407bcd98b700329"
+    },
+    {
+      "path": "website/peru/es/cookies.html",
+      "original_sha256": "ad20e11b82c9223c318ba4aa9e3136d3ba3bba235cf2959a95f0079ddea4b313",
+      "export_sha256": "931eab594c00a93bd1214d4707358f8c9d43b32850975a330b64b7781bbc234b"
+    },
+    {
+      "path": "website/peru/es/index.html",
+      "original_sha256": "30a6ae0f89bb4ae282915084060159816e4235869c349b2f7826efd1a728f9f3",
+      "export_sha256": "e9652e22b3621b719dea8c90b80c7cb0d4679b3181cd88caa6524f99129d40c8"
+    },
+    {
+      "path": "website/peru/es/privacy.html",
+      "original_sha256": "fe77be0e0978f67af2e001cf3e9e2d93a7d0d7438a5f58d2f479f935e79cd48b",
+      "export_sha256": "ac43d42a679934215a1084d451adc24789708e4928d1f8cf92eab62d07c4a9b5"
+    },
+    {
+      "path": "website/peru/es/selling.html",
+      "original_sha256": "c250e11d906f163337b506af269f6b3e694102ef5067f93cb57d9991b7c7bf95",
+      "export_sha256": "5da5ee01e03c43308814b47d787c434906f18ba8cb36b13b7c78f2e36dc70d29"
+    },
+    {
+      "path": "website/peru/es/terms.html",
+      "original_sha256": "f61859f5f4b7c863ce66ef8447ed171ac0133244c43b1e41e4e3b931d5671497",
+      "export_sha256": "2d4de4d81ae5adf2dc60a1310ca1da2b49f7f956bca2642e7aedac0e9d2fc3f1"
+    },
+    {
+      "path": "website/peru/i18n/en/main.json",
+      "original_sha256": "d562802083d66528df8124b2d1356e56363ca26067bc0aeba5252cbdb5c58778",
+      "export_sha256": "9e4870e094ceabb4126aa3ee6ff38f0ac0d83a7ffa8987be62986c6ea999720a"
+    },
+    {
+      "path": "website/peru/i18n/es/main.json",
+      "original_sha256": "1129e5abdc969078921456b0fd20925f88c1662b6328f32fbacb18c3f7f5b875",
+      "export_sha256": "70d81598720cd1d6052c390a722e063fcfb191d7bdff0d73ec008a0b2a1d626d"
+    },
+    {
+      "path": "website/peru/privacy.html",
+      "original_sha256": "7149efa1d6acbebda1a8eb2362829f793c0c8d54142ae27bde1c68df75c0fd9d",
+      "export_sha256": "7dd7ae913f7b71a89d19a2b8d6e722f894c8d88ebd71bb3fba5b38497001669a"
+    },
+    {
+      "path": "website/peru/sales.html",
+      "original_sha256": "f6ae5d79da414bb9afe1b7bbb3db0f21f73dda1322c7510fe38a1f6670bfeb36",
+      "export_sha256": "ea2aa4a6ddc3b582c59348560b8321edd846cef2cc09a7e894da73e7c14fac8f"
+    },
+    {
+      "path": "website/peru/terms.html",
+      "original_sha256": "3140a7074ee161053bb536452188b1a810baea85342cb05f5260fdf0541f54b9",
+      "export_sha256": "cd917e9808391bfe3f651d0f36219e02c944ac1e18a2f603d8fd4e303a3db93d"
+    },
+    {
+      "path": "website/peru/waitlist.js",
+      "original_sha256": "cdc94b9e1a97c84bb00792dd59c4b9755c22a822ce3598efeaa38d7ea4e9f9aa",
+      "export_sha256": "e98fd7c109c87b7c94dcaad3836afa449cf07aab8db2fd48a36639f6e6e85690"
+    },
+    {
+      "path": "website/tools/test_waitlist_referral.mjs",
+      "original_sha256": "59190c6ea5342a1dc5fcb16ae61dce25b31139d725626955654cd3f913d60bdf",
+      "export_sha256": "824ff622a97aaf5d3cf0afea6eaf91be395e0feca7d9f04b78b702e296827501"
+    }
+  ],
+  "omitted_from_initial_allowlist": [
+    "app/public/export-templates/README-erp-verify.md",
+    "app/public/export-templates/README.md",
+    "app/public/export-templates/THE-EXPORT-CANON.md",
+    "app/public/export-templates/erp-proof-plan.md",
+    "app/public/export-templates/integration-routes.md",
+    "app/public/export-templates/latam-erp-research.md",
+    "app/src/entry.ts",
+    "app/src/main.tsx",
+    "app/tools/run-tool-tests.sh"
+  ],
+  "licence": "MIT original source and authored fixtures; third-party notices retained"
+}

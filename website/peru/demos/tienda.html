@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=390">
+<title>Rocoto · When you sell, inside WhatsApp</title>
+<meta name="robots" content="noindex">
+<link rel="preload" href="/peru/wa/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/peru/wa/wa.css">
+</head>
+<body>
+<script src="/peru/wa/wa.js"></script>
+<script src="/peru/demos/pages.js"></script>
+<script>
+/* WHEN YOU SELL — the SELLING demo, on the shop's own phone (SPEC 17e, Peter verbatim: «The whole
+   thing about logging your Yape sales is that when people message them and they get sales in, it
+   automatically replies with a Yape link. In that Yape link, it shows the delivery note in our
+   format. Those customers get a really nice thing, and that's where it has the "Pay Now" button,
+   or that's where it has the copy amount, or that's where it has the button that, when clicked,
+   makes them just go to Yape to pay the amount. It shows them the amount, and it goes to Yape to
+   pay that amount. Do you get it? And the Yape and Plin logos need to be in the right place.»).
+
+   So the chat is with a CUSTOMER — Rosa menú, the lunch place on the corner, as the prototype's
+   own cast has her (`fixtures/cast-bodega.json`). She orders; Rocoto answers for the shop with
+   the link, wearing its own mark on that message; and the link's own page — what SHE sees — opens
+   in the chat's browser at the slower pace: the order set as OUR delivery note, the amount, «Pay
+   now», «Copy the amount», and the button that opens Yape, with Yape's and Plin's marks where she
+   pays. Then she says she has paid, and the sale is written down with the day's.
+
+   ROCOTO IS AN APP, NEVER A CONTACT (SPEC 16). There is no chat with Rocoto anywhere on this
+   phone: the shop's own messages are simply sent for it, and they say so.
+
+   MINIMAL NOISE (SPEC 17c): the thread opens EMPTY — the encryption notice and today's chip — and
+   the same loop runs for ever, one order after another under the one before it.
+
+   Nothing here is ever shown being typed: the shop's messages, and the ones Rocoto sends for it,
+   simply send. Everything that ARRIVES is announced first, which the kit weaves in for every
+   exchange of every cycle.
+
+   Both languages live in one table: English is what Peter reviews, Spanish is what ships. */
+
+var L = WA.pick({
+  en: {
+    customer: 'Rosa menú',
+    shop: 'Bodega Yesenia',
+    address: 'Av. Gran Chimú 1642, Zárate',
+    yape: '+51 976 431 412',
+    today: 'TODAY',
+    days: ['SUNDAY', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY'],
+    dayNames: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+    /* the one message Rocoto sends for the shop */
+    reply: function (amount) { return 'Your order comes to ' + amount + '. Pay here:'; },
+    url: function (n) { return 'soyrocoto.com/p/' + n; },
+    host: 'soyrocoto.com',
+    lead: 'Your order',
+    title: function (shop) { return 'Pay ' + shop; },
+    noted: function (who, amount) { return 'Sale recorded · ' + amount; },
+    sales: [
+      { ask: 'Morning Yesenia. Send me 1 sack of rice, 2 oil and 30 eggs.',
+        paid: 'Paid it, Yesenia 🙌',
+        amount: 'S/ 78.50', ref: '1907-238',
+        clock: ['11:12', '11:13', '11:16'],
+        lines: [
+          ['Rice 5 kg', '1', 'sack', '/peru/demos/av/faces/arroz.webp'],
+          ['Cooking oil 1 L', '2', 'unit', '/peru/demos/av/faces/aceite.webp'],
+          ['Farm eggs', '30', 'unit', '/peru/demos/av/faces/huevo.webp']
+        ] },
+      { ask: 'Yesenia, 6 breads, 4 evaporated milk and 2 soda for the menú.',
+        paid: 'Ya, I yaped you 🙌',
+        amount: 'S/ 46.00', ref: '1908-241',
+        clock: ['10:04', '10:05', '10:08'],
+        lines: [
+          ['Bread', '6', 'unit', '/peru/demos/av/faces/pan.webp'],
+          ['Evaporated milk 400 g', '4', 'unit', '/peru/demos/av/faces/leche.webp'],
+          ['Soda 3 L', '2', 'unit', '/peru/demos/av/faces/gaseosa.webp']
+        ] },
+      { ask: 'Buenas. 2 sugar, 3 noodles and 4 tinned tuna, please.',
+        paid: 'Sent it 🙌',
+        amount: 'S/ 62.00', ref: '1911-247',
+        clock: ['17:26', '17:27', '17:30'],
+        lines: [
+          ['Sugar 1 kg', '2', 'unit', '/peru/demos/av/faces/azucar.webp'],
+          ['Noodles 500 g', '3', 'unit', '/peru/demos/av/faces/fideo.webp'],
+          ['Tinned tuna 170 g', '4', 'unit', '/peru/demos/av/faces/atun.webp']
+        ] }
+    ]
+  },
+
+  es: {
+    customer: 'Rosa menú',
+    shop: 'Bodega Yesenia',
+    address: 'Av. Gran Chimú 1642, Zárate',
+    yape: '+51 976 431 412',
+    today: 'HOY',
+    days: ['DOMINGO', 'LUNES', 'MARTES', 'MIÉRCOLES', 'JUEVES', 'VIERNES', 'SÁBADO'],
+    dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+    reply: function (amount) { return 'Tu pedido suma ' + amount + '. Paga aquí:'; },
+    url: function (n) { return 'soyrocoto.com/p/' + n; },
+    host: 'soyrocoto.com',
+    lead: 'Tu pedido',
+    title: function (shop) { return 'Paga a ' + shop; },
+    noted: function (who, amount) { return 'Venta registrada · ' + amount; },
+    sales: [
+      { ask: 'Buen día Yesenia. Mándame 1 saco de arroz, 2 aceite y 30 huevos.',
+        paid: 'Ya te pagué, Yesenia 🙌',
+        amount: 'S/ 78.50', ref: '1907-238',
+        clock: ['11:12', '11:13', '11:16'],
+        lines: [
+          ['Arroz 5 kg', '1', 'saco', '/peru/demos/av/faces/arroz.webp'],
+          ['Aceite vegetal 1 L', '2', 'unidad', '/peru/demos/av/faces/aceite.webp'],
+          ['Huevo de granja', '30', 'unidad', '/peru/demos/av/faces/huevo.webp']
+        ] },
+      { ask: 'Yesenia, 6 panes, 4 leche evaporada y 2 gaseosas para el menú.',
+        paid: 'Ya te yapeé 🙌',
+        amount: 'S/ 46.00', ref: '1908-241',
+        clock: ['10:04', '10:05', '10:08'],
+        lines: [
+          ['Pan francés', '6', 'unidad', '/peru/demos/av/faces/pan.webp'],
+          ['Leche evaporada 400 g', '4', 'unidad', '/peru/demos/av/faces/leche.webp'],
+          ['Gaseosa 3 L', '2', 'unidad', '/peru/demos/av/faces/gaseosa.webp']
+        ] },
+      { ask: 'Buenas. 2 azúcar, 3 fideos y 4 atún en conserva, por favor.',
+        paid: 'Ya lo mandé 🙌',
+        amount: 'S/ 62.00', ref: '1911-247',
+        clock: ['17:26', '17:27', '17:30'],
+        lines: [
+          ['Azúcar rubia 1 kg', '2', 'unidad', '/peru/demos/av/faces/azucar.webp'],
+          ['Fideo tallarín 500 g', '3', 'unidad', '/peru/demos/av/faces/fideo.webp'],
+          ['Atún en conserva 170 g', '4', 'unidad', '/peru/demos/av/faces/atun.webp']
+        ] }
+    ]
+  }
+});
+
+var SALES = L.sales;
+
+/* THE DAY BELONGS TO THE CYCLE. The chat's own date chip and the day on the delivery note the
+   customer opens are the SAME day, so a thread that has run for an hour never shows a chip from
+   one day over a document from another. It rolls forward for ever off one base. */
+var BASE = Date.UTC(2026, 8, 25);          /* Friday 25 September 2026 */
+function dayOf(k) {
+  var d = new Date(BASE + k * 86400000);
+  var dd = ('0' + d.getUTCDate()).slice(-2), mm = ('0' + (d.getUTCMonth() + 1)).slice(-2);
+  return { chip: L.days[d.getUTCDay()], day: L.dayNames[d.getUTCDay()] + ' ' + dd + '.' + mm };
+}
+
+/* ── THE BEATS, one sale long ────────────────────────────────────────────────────────────
+      700  your customer's order lands            (the three dots run before it)
+     3000  ROCOTO ANSWERS FOR YOU: the link, with the order as its preview
+     5200  she opens it
+     5400  the browser rises (800 ms) and the page loads (960)
+     5400  HER PAGE: your shop, the order as our delivery note, the amount, «Pay now»
+     9000  she presses «Pay now»
+     9350  Yape and Plin, the amount, your number, «Copy the amount»
+    12000  she copies the amount
+    12350  «Open Yape» is awake
+    14600  she presses it
+    15200  the browser falls
+    16400  she writes that she has paid           (the dots run before it)
+    18200  Rocoto writes the sale down with the day's
+    19400  the sale is over; 2600 of rest, and the next order begins under it
+   ────────────────────────────────────────────────────────────────────────────────────────
+   THE BROWSER TRAVELS A THIRD SLOWER (SPEC 17b): the kit's rise is 800 ms rather than 600, its
+   loading line 960 rather than 720, and a page change 350 rather than 260 — so each page of her
+   own screen stands still long enough to be read. */
+var B = { ask: 700, link: 3000, open: 5200, up: 5400, now: 9000, yape: 9350,
+          copy: 12000, live: 12350, go: 14600, down: 15200, paid: 16400, noted: 18200 };
+var LAST = 19400;
+
+/* HER PAGE, inside the chat's browser: `pay/link.tsx` as the prototype draws it, with the order
+   set the way our delivery notes are set. */
+function sheetOf(v, k) {
+  return {
+    at: B.up, down: B.down, host: L.host, title: L.shop,
+    pages: WA_PAGES.pay({
+      shop: L.shop, address: L.address, payer: L.customer, yape: L.yape,
+      day: dayOf(k).day, number: v.ref, at3: v.clock[0], lines: v.lines, total: v.amount,
+      at: [B.up, B.yape, B.live]
+    })
+  };
+}
+
+/* THE LINK'S OWN PREVIEW: the order and what it comes to, drawn by the kit on Rocoto's paper —
+   what her phone shows her before she even opens it. */
+function preview(v) {
+  return {
+    card: { lead: L.lead, payee: L.shop, amount: v.amount, when: '', ref: '' },
+    title: L.title(L.shop),
+    host: L.host
+  };
+}
+
+function exchange(v) {
+  return [
+    { at: B.ask, dir: 'in', kind: 'text', time: v.clock[0], text: v.ask },
+    /* ROCOTO'S OWN ANSWER, sent for the shop: the message wears the kit's Rocoto mark, and the
+       link carries the order and its total. */
+    { key: 'link', at: B.link, dir: 'out', kind: 'text', time: v.clock[1], by: 'rocoto',
+      text: L.reply(v.amount), link: L.url(v.ref), preview: preview(v),
+      ticks: [{ at: B.link, state: 'pending' }, { state: 'sent' }, { state: 'dd' },
+              { at: B.open - 400, state: 'read' }] },
+    { at: B.paid, dir: 'in', kind: 'text', time: v.clock[2], text: v.paid },
+    { at: B.noted, kind: 'chip', icon: 'rocoto', text: L.noted(L.customer, v.amount) }
+  ];
+}
+
+var TAPS = [
+  { at: B.open, key: 'link', find: '.wa-txt .lk' },
+  { at: B.now, sel: '#pl-now', press: '#pl-now' },
+  { at: B.copy, sel: '#pl-copy', press: '#pl-copy' },
+  { at: B.go, sel: '#pl-open2', press: '#pl-open2' }
+];
+
+/* the next order, appended ahead of the clock: the thread simply carries on */
+function saleCycle(k) {
+  var v = SALES[k % SALES.length];
+  return {
+    date: dayOf(k).chip,
+    last: LAST,
+    clockAt: [{ at: 0, text: v.clock[0] }, { at: B.link, text: v.clock[1] },
+              { at: B.paid, text: v.clock[2] }],
+    items: exchange(v),
+    sheet: sheetOf(v, k),
+    taps: TAPS
+  };
+}
+
+var FIRST = SALES[0];
+var ITEMS = [
+  { at: 0, kind: 'e2e' },
+  { at: 0, kind: 'date', text: L.today }
+].concat(exchange(FIRST));
+
+WA.mount({
+  id: 'tienda',
+  duration: LAST,
+  /* the frame that says the most: her own page open on the order, with the amount and the act */
+  poster: 8200,
+  clock: FIRST.clock[0],
+  clockAt: [{ at: 0, text: FIRST.clock[0] }, { at: B.link, text: FIRST.clock[1] },
+            { at: B.paid, text: FIRST.clock[2] }],
+
+  cycle: { rest: 2600, was: dayOf(0).chip, next: saleCycle },
+
+  chat: {
+    title: L.customer,
+    unread: 2,
+    presence: [{ at: 0, text: WA.ui.online }]
+  },
+
+  items: ITEMS,
+
+  sheet: sheetOf(FIRST, 0),
+
+  taps: TAPS
+});
+</script>
+</body>
+</html>

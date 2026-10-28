@@ -1,0 +1,612 @@
+<!doctype html>
+<!-- ═══════════════════════════════════════════════════════════════════════════════════════════
+     /peru/sales — SELLING. One of the site's two pages.
+
+     Peter, 20 September (SPEC §17e): «This whole website is a buying and selling page. Super,
+     super easy.» Buying is `/peru`; this is Selling, and it is the feature that is live while the
+     credit is being prepared: «the selling is gonna be the subpage as that's the feature we have
+     until we are able to launch loans».
+
+     WHAT THE PAGE SAYS, AND NOTHING ELSE (his own list, §17e): a customer orders in the chat;
+     Rocoto replies by itself with the Yape link; the link opens the order as OUR delivery note
+     with the amount, «Pay now», «Copy the amount» and the button that opens Yape; Yape's and
+     Plin's marks stand where the customer pays; every sale is written down; the whole history of
+     buying and selling, with what was paid in full, is in the app; it exports for an inspection.
+     COMING SOON: auto-collect with Yape, which is FREE, and digital receipts. «You shouldn't make
+     up other stuff.»
+
+     `/peru/fiados` IS RETIRED. Auto-collecting is a COMING SOON block on this page — Peter: «we
+     don't need to have a debt page now because it would be a coming soon page within selling» —
+     and every old address points at `#auto-collect`.
+
+     ENGLISH, FOR NOW, like /peru (SPEC, «Peter on language»). Every string is in peru/STRINGS.md
+     with its Spanish twin, and the Spanish column is what ships in Peru.
+
+     NOTHING ON THIS PAGE IS DRAWN FROM IMAGINATION, AND EVERY STILL IS A SCREEN THE APP REALLY
+     DRAWS. The customer's payment page is `pay/link.tsx` in its own order, with the delivery
+     note's own rows between its head and its figure as the running prototype sets them
+     (`peru/cap/pedido-movil.webp`); its faces are the app's own product paintings. The cards are
+     `money-overview.tsx` over `fixtures/cast-bodega.json`; the export is `paper/export.tsx`. They
+     are STILLS, so their controls are spans — a bordered pill on a still is a target a thumb
+     presses into nothing.
+
+     The September 22 early signup offer in SPEC applies on both pages. Rocoto covers the
+     interest and fees; the customer repays principal. The provider disclosure stays in the footer.
+
+     THE PAGE IS LIGHT ON PURPOSE: two stylesheets, one font file, ONE demo, no 3D, and the only
+     scripts are the nav, the blinking face and the eighteen lines that mount that one demo.
+     ═══════════════════════════════════════════════════════════════════════════════════════════ -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rocoto | Log your Yape sales</title>
+<meta name="description" content="Receive orders on WhatsApp, send a Yape payment link and keep every sale in Rocoto.">
+<link rel="canonical" href="https://soyrocoto.com/en/selling">
+<link rel="alternate" hreflang="es-PE" href="https://soyrocoto.com/selling">
+<link rel="alternate" hreflang="en" href="https://soyrocoto.com/en/selling">
+<link rel="alternate" hreflang="x-default" href="https://soyrocoto.com/selling">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://soyrocoto.com/en/selling">
+<meta property="og:title" content="Rocoto | Log your Yape sales">
+<meta property="og:description" content="Receive orders on WhatsApp, send a Yape payment link and keep every sale in Rocoto.">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://soyrocoto.com/peru/og-peru.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Log your Yape sales.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="/brand/favicon-32.png">
+<link rel="apple-touch-icon" href="/brand/favicon-180.png">
+<link rel="preload" as="font" type="font/woff2" href="/peru/fonts/hanken-grotesk-latin-400-600.woff2" crossorigin>
+<link rel="stylesheet" href="/peru/phone.css">
+<link rel="stylesheet" href="/peru/peru.css">
+<script src="/peru/demo-controls.js" defer></script>
+</head>
+
+<body class="peru">
+<a class="pe-skip" href="#content">Skip to content</a>
+
+<!-- ══ 0 · NAV — the main page's own bar. The site is two pages, so the bar is two links ══════ -->
+<header class="pnav" id="pnav">
+  <div class="pnav-in">
+    <!-- THE BRAND GOES WHERE THE BUYING PAGE'S BRAND GOES. The nav is one object across the two
+         pages, and the site-switch pass points it at the root, which is where Peru's home lands. -->
+    <a class="pnav-brand" href="/en">
+      <img class="pnav-face" src="/brand/face-open.svg" width="28" height="28" alt="">
+      <span>Rocoto</span>
+    </a>
+    <nav class="pnav-links" aria-label="Rocoto in Peru">
+      <a href="/en">Buying</a>
+      <a href="/en/selling" aria-current="page">Selling</a>
+    </nav>
+    <div class="pnav-act">
+      <span class="plang-w" translate="no"><details class="plang"><summary class="plang-s" aria-label="Language — English"><span class="plang-now">EN</span><svg class="plang-v" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="m4 6.5 4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><div class="plang-m"><a class="plang-o" href="/selling" hreflang="es-PE" lang="es">Español</a><a class="plang-o is-on" href="/en/selling" hreflang="en" lang="en" aria-current="true">English</a></div></details><a class="plang-mini" href="/selling" hreflang="es-PE" lang="es" aria-label="Español">ES</a></span><!--/plang-->
+      <a class="act act-sm" href="http://127.0.0.1:18240/?lang=en"><svg class="act-wa" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12.04 2.5a9.4 9.4 0 0 0-8.1 14.13L2.5 21.5l4.98-1.4A9.4 9.4 0 1 0 12.04 2.5Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M8.9 7.6c.2-.05.42-.04.6.02.2.07.33.28.44.5l.62 1.3c.1.22.06.48-.1.66l-.4.46a.44.44 0 0 0-.07.5 6.3 6.3 0 0 0 2.98 2.72.44.44 0 0 0 .5-.12l.44-.52c.17-.2.45-.26.69-.15l1.35.62c.24.11.4.35.4.62 0 .93-.75 1.69-1.68 1.7a7.9 7.9 0 0 1-6.9-6.95A1.7 1.7 0 0 1 8.9 7.6Z" fill="currentColor"/></svg>Join the waitlist</a>
+    </div>
+  </div>
+</header>
+
+<main id="content">
+
+<!-- ══ 1 · THE PAGE'S OWN HEAD ═══════════════════════════════════════════════════════════════
+     THE PICTURE IS THE ONE PETER ASKED FOR (§17e): «She should be behind the counter, pointing to
+     a QR code or some little card… Usually, that's how they do it.» Generated 20 September in the
+     family's locked method — the anchor's own describe, only the subject sentences changed —
+     and recorded with its rejected candidate in peru/img/README.md. -->
+<section class="sp-hero">
+  <div class="pe-wrap">
+    <div class="sph">
+      <div class="sph-t">
+        <p class="sph-chip">Live today</p>
+        <h1 class="pe-h1">Log your Yape sales</h1>
+        <p class="pe-lead">Receive orders on WhatsApp, send a Yape payment link and keep every sale in Rocoto.</p>
+        <p class="pe-acts">
+          <a class="act" href="http://127.0.0.1:18240/?lang=en"><svg class="act-wa" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12.04 2.5a9.4 9.4 0 0 0-8.1 14.13L2.5 21.5l4.98-1.4A9.4 9.4 0 1 0 12.04 2.5Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M8.9 7.6c.2-.05.42-.04.6.02.2.07.33.28.44.5l.62 1.3c.1.22.06.48-.1.66l-.4.46a.44.44 0 0 0-.07.5 6.3 6.3 0 0 0 2.98 2.72.44.44 0 0 0 .5-.12l.44-.52c.17-.2.45-.26.69-.15l1.35.62c.24.11.4.35.4.62 0 .93-.75 1.69-1.68 1.7a7.9 7.9 0 0 1-6.9-6.95A1.7 1.7 0 0 1 8.9 7.6Z" fill="currentColor"/></svg>Join the waitlist</a>
+          <a class="act-o" href="/en#roadmap">See the whole roadmap</a>
+        </p>
+      </div>
+      <figure class="sph-art">
+        <img src="/peru/img/hero-sales.webp" srcset="/peru/img/hero-sales-sm.webp 640w, /peru/img/hero-sales.webp 1024w" sizes="(max-width: 899px) 92vw, 44vw" width="1024" height="768" alt="A bodega owner points at a code card on her counter while a customer holds up his phone to it." fetchpriority="high" decoding="async">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 2 · HOW SELLING WORKS ═════════════════════════════════════════════════════════════════
+     PETER'S OWN SENTENCE, SPLIT INTO ITS FOUR BEATS (§17e): «when people message them and they
+     get sales in, it automatically replies with a Yape link. In that Yape link, it shows the
+     delivery note in our format… that's where it has the "Pay Now" button, or that's where it
+     has the copy amount, or that's where it has the button that, when clicked, makes them just
+     go to Yape to pay the amount.»
+
+     ONE DEMO ON THE PAGE, and it is this one: the shop's own chat, playing for ever. -->
+<section class="pe-band" id="how">
+  <div class="pe-wrap">
+    <div class="pe-head">
+      <h2 class="pe-h2">How selling works</h2>
+      <p class="pe-head-p">From the order on WhatsApp to the payment in your sales history.</p>
+    </div>
+
+    <div class="sflow">
+      <div class="sflow-p">
+        <figure class="ph" data-demo="/peru/demos/tienda.html?lang=en&amp;auto=1" data-mode="auto">
+          <div class="ph-body"><div class="ph-stage">
+            <img class="ph-plate" src="/peru/handset/front.webp" width="1170" height="1500" alt="" aria-hidden="true" decoding="async">
+            <div class="ph-screen">
+              <img class="ph-poster" data-src="/peru/demos/posters/tienda.webp" width="780" height="1688" alt="A customer order and its Yape payment link in WhatsApp." decoding="async">
+              <noscript><img class="ph-shot" src="/peru/demos/posters/tienda.webp" width="780" height="1688" alt="A customer order and its Yape payment link in WhatsApp."></noscript>
+              <iframe class="ph-frame" title="Simulated conversation: a customer orders and receives a Yape payment link" tabindex="-1" aria-hidden="true" width="390" height="844"></iframe>
+              <span class="ph-island"></span>
+            </div>
+          </div></div>
+          <figcaption class="ph-note">Demo</figcaption>
+        </figure>
+      </div>
+
+      <div class="sflow-s">
+        <ol class="rm rm-flat">
+          <li class="rm-s">
+            <span class="rm-n" aria-hidden="true"><b class="pe-num">1</b><i></i></span>
+            <h3 class="rm-h">Receive the order</h3>
+            <div class="rm-b"><p>Your customer sends their order on WhatsApp.</p></div>
+          </li>
+          <li class="rm-s">
+            <span class="rm-n" aria-hidden="true"><b class="pe-num">2</b><i></i></span>
+            <h3 class="rm-h">Send the payment link</h3>
+            <div class="rm-b"><p>Rocoto sends your Yape payment link in the same chat.</p></div>
+          </li>
+          <li class="rm-s">
+            <span class="rm-n" aria-hidden="true"><b class="pe-num">3</b><i></i></span>
+            <h3 class="rm-h">Your customer pays</h3>
+            <div class="rm-b"><p>They review the order and amount, then open Yape to pay.</p></div>
+          </li>
+          <li class="rm-s">
+            <span class="rm-n" aria-hidden="true"><b class="pe-num">4</b><i></i></span>
+            <h3 class="rm-h">Payment recorded</h3>
+            <div class="rm-b"><p>The payment is saved with the order in your sales history.</p></div>
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- ── THE PAGE THE CUSTOMER OPENS ────────────────────────────────────────────────────────
+         `pay/link.tsx`, in its own order — the shop's name and address, the figure, what the sale
+         was for, the reference, `Pay now`, then the Yape panel with the shop's own number, the
+         sentence under it, `Copy the amount` and `Open Yape`. Between the head and the figure
+         stand the note's own rows as the app sets them: the product's face, its name, then the
+         quantity and its unit on one line.
+
+         THE SALE IS THE PROTOTYPE'S OWN. `fixtures/cast-bodega.json` · `prepDay.orders[3]`:
+         Nelly juguería, three lines, S/ 186.00. The faces are the app's own paintings
+         (`app/public/paintings/`), the shop, its address and its Yape number are `house`.
+
+         PLIN STANDS BESIDE YAPE, where the customer pays (Peter: «the Yape and Plin logos need to
+         be in the right place. It's also Plin, by the way, obviously»). Both marks belong to
+         their own owners and the footer says so. -->
+    <div class="sflow sflow-b">
+      <div class="sflow-s">
+        <h3 class="ssub">What your customer opens</h3>
+        <p class="pe-lead">Your delivery note, with the order total and payment details.</p>
+        <p class="pe-foot">Example sale in Rocoto.</p>
+      </div>
+
+      <figure class="ph customer-phone" data-mode="static">
+        <div class="ph-body"><div class="ph-stage">
+          <img class="ph-plate" src="/peru/handset/front.webp" width="1170" height="1500" alt="" aria-hidden="true" loading="lazy" decoding="async">
+          <div class="ph-screen">
+            <div class="customer-screen">
+              <div class="customer-status" aria-hidden="true"><span>9:41</span><span>••• ▰</span></div>
+      <div class="spay">
+      <div class="spay-in">
+        <div class="spay-h">
+          <b>Bodega Yesenia</b>
+          <span>Av. Gran Chimú 1642, Zárate, San Juan de Lurigancho</span>
+        </div>
+
+        <ul class="spay-l">
+          <li>
+            <img src="/peru/img/faces/leche.webp" width="40" height="40" alt="" loading="lazy" decoding="async">
+            <span class="spay-n">evaporated milk</span>
+            <span class="spay-q"><b>12</b>units</span>
+          </li>
+          <li>
+            <img src="/peru/img/faces/azucar.webp" width="40" height="40" alt="" loading="lazy" decoding="async">
+            <span class="spay-n">brown sugar</span>
+            <span class="spay-q"><b>4</b>kg</span>
+          </li>
+          <li>
+            <img src="/peru/img/faces/refresco.webp" width="40" height="40" alt="" loading="lazy" decoding="async">
+            <span class="spay-n">soft drink 3 L</span>
+            <span class="spay-q"><b>6</b>units</span>
+          </li>
+        </ul>
+
+        <div class="spay-f">
+          <p class="spay-fig"><em>S/</em>186.00</p>
+          <p>Saturday order</p>
+          <small>Reference BODEGA-4K9M2X7T</small>
+        </div>
+
+        <!-- `pay/link.tsx` carries a second act, `Pay later`, which tells the SHOP the customer
+             is running a tab. It stands outside this page on purpose: Peter's list for Selling is
+             «Pay Now», «copy the amount» and the button that opens Yape, and a tab is the subject
+             of the auto-collect block below, which says «soon». A live control for a thing the
+             same page calls planned would contradict itself, and on the page whose whole legal
+             posture is that credit is being prepared it is the one word to keep out. -->
+        <div class="spay-b">
+          <span class="spay-act">Pay now</span>
+        </div>
+
+        <div class="spay-y">
+          <div class="smarks">
+            <img src="/peru/banks/yape.webp" width="320" height="128" alt="Yape" loading="lazy" decoding="async">
+            <img src="/peru/banks/plin.webp" width="320" height="128" alt="Plin" loading="lazy" decoding="async">
+          </div>
+          <p class="spay-num">+51 976 431 412</p>
+          <p>Pay S/ 186.00 to this number with Yape or Plin. Include reference BODEGA-4K9M2X7T.</p>
+          <div class="spay-b">
+            <span class="spay-act spay-act-2">Copy the amount</span>
+            <span class="spay-act">Open Yape</span>
+          </div>
+        </div>
+      </div>
+      </div>
+            </div>
+            <span class="ph-island"></span>
+          </div>
+        </div></div>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 3 · YOUR HISTORY ══════════════════════════════════════════════════════════════════════
+     Peter (§17e): «Yes, they can see all of their history of transactions from buying and selling
+     in the app, and which ones were paid in full. That's all it is with that.»
+
+     TWO CARDS, BOTH THE APP'S OWN. Selling is `Payments received` — `moneyInRows()` over
+     `money.incoming30d` (Yape 812 credits at S/ 12,940.00, Plin 234 at S/ 4,180.00, the till at
+     S/ 7,950.00) with `bankWindowLine()` over them. Buying is `SuppliersCard` — `money.payables`,
+     its four open rows under `purchaseSummary()` and its settled row under the card's own word
+     `Settled`, which is where «paid in full» is written down. Every figure is `bodegaMoney()`. -->
+<section class="pe-band pe-cloud" id="history">
+  <div class="pe-wrap">
+    <div class="pe-head">
+      <h2 class="pe-h2">Purchase and sales history</h2>
+      <p class="pe-head-p">Review your purchases, sales and payment status in one place.</p>
+    </div>
+    <div class="sgrid sgrid-2">
+      <div class="scard">
+        <h3>Payments received</h3>
+        <p class="scard-w">Example data · 20 Aug to 18 Sep</p>
+        <div class="srow" data-ico="yape"><span class="srow-n">Yape · 812 payments</span><span class="srow-a">S/ 12,940.00</span></div>
+        <div class="srow" data-ico="plin"><span class="srow-n">Plin · 234 payments</span><span class="srow-a">S/ 4,180.00</span></div>
+        <div class="srow" data-ico="cash"><span class="srow-n">Counter</span><span class="srow-a">S/ 7,950.00</span></div>
+      </div>
+      <div class="scard">
+        <h3>Supplier payments</h3>
+        <p class="scard-w">4 pending payments · 1 overdue</p>
+        <div class="srow" data-av="LB"><span class="srow-n">Limpieza Brillo · Ericka<span class="srow-s">Late · 1 day</span></span><span class="srow-a">S/ 188.00</span></div>
+        <div class="srow" data-av="LD"><span class="srow-n">Lácteos del Valle · Jhonny<span class="srow-s">Due 21 Sep</span></span><span class="srow-a">S/ 274.00</span></div>
+        <div class="srow" data-av="DA"><span class="srow-n">Distribuidora Aurora<span class="srow-s">Due 23 Sep</span></span><span class="srow-a">S/ 682.00</span></div>
+        <div class="srow" data-av="MP"><span class="srow-n">Marcos pollos<span class="srow-s">Due 23 Sep</span></span><span class="srow-a">S/ 236.00</span></div>
+        <h4 class="sgroup">Settled</h4>
+        <div class="srow" data-av="DA"><span class="srow-n">Distribuidora Aurora<span class="srow-s">Settled 12 Sep · confirmed by your bank</span></span><span class="srow-a">S/ 420.00</span></div>
+      </div>
+    </div>
+    <p class="pe-foot">Rocoto screens with example transactions.</p>
+  </div>
+</section>
+
+<!-- ══ 4 · THE EXPORT ════════════════════════════════════════════════════════════════════════
+     Peter (§17e): «you need to have the fact that they can export to PDF and show their
+     inspector».
+
+     LIFTED FROM `paper/export.tsx`: the dialog's title, `windowWords()` over the fixtures' own
+     90-day money window (20 June to 18 September 2026), the `facts` line, the two `DOORS` with
+     their own sentences, and the SUNAT notice that stands under them.
+
+     THE `facts` LINE IS THE FILE'S OWN THREE PARTS — days, sales, customers — the walk's
+     `90 days · 915 sales · 18 customers` (WIRING-SPEC.md, «Today»).
+
+     THE SUNAT SENTENCE IS `regulatory.ts` · `SUNAT_EN`, COPIED, NEVER RETYPED. `S/ 38,500` is
+     held on one line by `.pe-nb`, so the mark stays with its number at 360 px.
+
+     ⚠ WHAT THE FILE IS, TODAY. `paper/export-files.ts` writes CSV — «A shop takes its book to its
+     contador, its bank or a spreadsheet. All three read CSV.» Peter said PDF. The page states
+     what the app writes today; the PDF is an open question back to him, and no sentence here
+     claims a file the app does not produce.
+
+     ⚠ AND THE LITTLE INSPECTOR IS OWED. Peter asked for «a little illustration of an inspector»
+     beside this block. The Ideogram plan reached its daily limit after the hero, so the seat is
+     empty rather than filled with a picture of something else; the prompt is written out in
+     peru/img/README.md, ready to send.
+
+     EACH DOOR'S WORD IS TEXT, NOT A BUTTON. This is a still of a screen, and a 36 px bordered
+     pill on a still is a target a thumb presses into nothing. -->
+<section class="pe-band" id="export">
+  <div class="pe-wrap">
+    <div class="pe-head">
+      <h2 class="pe-h2">Sales records for SUNAT</h2>
+      <p class="pe-head-p">Export your sales as a PDF or spreadsheet to share with your accountant or SUNAT.</p>
+    </div>
+    <div class="sexp">
+      <div class="sexp-h">
+        <p class="sexp-t">Sales export</p>
+        <p class="sexp-p">20 Jun to 18 Sep</p>
+        <p class="sexp-f">90 days · 915 sales · 18 customers</p>
+      </div>
+      <ul class="sexp-l">
+        <li><span class="sexp-d"><b>By transaction</b><span>One row per sale, with what it was for and how it was paid.</span></span><span class="sexp-go">Export</span></li>
+        <li><span class="sexp-d"><b>By customer</b><span>One row per person, with what they take and what they owe.</span></span><span class="sexp-go">Export</span></li>
+      </ul>
+      <p class="sexp-s"><span class="sexp-m">Your Yape money sits in a bank account, and the bank reports that account balance to SUNAT once it reaches <span class="pe-nb">S/ 38,500</span> in the month, which is 7 UIT in 2026.</span></p>
+    </div>
+    <p class="pe-foot">Example sales export from Rocoto.</p>
+  </div>
+</section>
+
+<!-- ══ DIRECT COLLECTION THROUGH YAPE ═══════════════════════════════════════════════════════════
+     Peter, 20 September, night: «Direct collection is meant to be in the selling page… a little list
+     on the right with cards and each one progressively being marked paid and then 2 or 3 left to go,
+     with a circle countdown bar around the date. animated on scroll then stops at the 3 left.»
+     The list is whole with the script off; the script only holds it back until it is seen. -->
+<section class="pe-band" id="auto-collect">
+  <div class="pe-wrap dcg">
+    <div class="dcg-t">
+      <h2 class="pe-h2" data-rise>Automatic Yape collections <em class="tl-tag">soon</em></h2>
+      <p class="pe-lead" data-rise>Track the credit you give other businesses and collect on the agreed date, from their Yape to yours. Automatic collection is free.</p>
+      <p class="pe-foot" data-rise>Example accounts receivable with agreed payment dates.</p>
+    </div>
+    <ul class="dc" id="dc" aria-label="Example automatic Yape collections">
+      <li class="dc-c is-paid" style="--i:0" data-av="MO"><span class="dc-n">Maribel obra<span class="dc-w"><span class="dc-w1">Collects 18 Sep</span><span class="dc-w2">Paid through Yape</span></span></span><span class="dc-a">S/ 460.00</span><span class="dc-ok" aria-hidden="true"></span></li>
+      <li class="dc-c is-paid" style="--i:1" data-av="RM"><span class="dc-n">Rosa menú<span class="dc-w"><span class="dc-w1">Collects 18 Sep</span><span class="dc-w2">Paid through Yape</span></span></span><span class="dc-a">S/ 318.00</span><span class="dc-ok" aria-hidden="true"></span></li>
+      <li class="dc-c is-paid" style="--i:2" data-av="CY"><span class="dc-n">Carmen Yupanqui<span class="dc-w"><span class="dc-w1">Collects 19 Sep</span><span class="dc-w2">Paid through Yape</span></span></span><span class="dc-a">S/ 86.50</span><span class="dc-ok" aria-hidden="true"></span></li>
+      <li class="dc-c is-paid" style="--i:3" data-av="FC"><span class="dc-n">Flor Ccahuana<span class="dc-w"><span class="dc-w1">Collects 20 Sep</span><span class="dc-w2">Paid through Yape</span></span></span><span class="dc-a">S/ 42.00</span><span class="dc-ok" aria-hidden="true"></span></li>
+      <li class="dc-c is-due" style="--i:4;--left:.78" data-av="NH"><span class="dc-n">Nancy Huamán<span class="dc-w">Collection date</span></span><span class="dc-a">S/ 64.00</span><span class="dc-d"><svg viewBox="0 0 44 44" aria-hidden="true" focusable="false"><circle class="dc-r0" cx="22" cy="22" r="19"/><circle class="dc-r1" cx="22" cy="22" r="19"/></svg><b>22</b><i>Sep</i></span></li>
+      <li class="dc-c is-due" style="--i:5;--left:.5" data-av="JP"><span class="dc-n">Julia 2do piso<span class="dc-w">Collection date</span></span><span class="dc-a">S/ 31.50</span><span class="dc-d"><svg viewBox="0 0 44 44" aria-hidden="true" focusable="false"><circle class="dc-r0" cx="22" cy="22" r="19"/><circle class="dc-r1" cx="22" cy="22" r="19"/></svg><b>25</b><i>Sep</i></span></li>
+      <li class="dc-c is-due" style="--i:6;--left:.22" data-av="TA"><span class="dc-n">Tito abarrotes<span class="dc-w">Collection date</span></span><span class="dc-a">S/ 120.00</span><span class="dc-d"><svg viewBox="0 0 44 44" aria-hidden="true" focusable="false"><circle class="dc-r0" cx="22" cy="22" r="19"/><circle class="dc-r1" cx="22" cy="22" r="19"/></svg><b>29</b><i>Sep</i></span></li>
+    </ul>
+  </div>
+  <script>(function(){var l=document.getElementById('dc');if(!l||!('IntersectionObserver' in window))return;l.classList.add('pre');new IntersectionObserver(function(e,o){if(e[0].isIntersecting){l.classList.remove('pre');o.disconnect();}},{threshold:.3}).observe(l);})();</script>
+</section>
+
+<!-- ══ 5 · WHAT'S COMING ═════════════════════════════════════════════════════════════════════
+     TWO QUIET BLOCKS, AND ONLY WHAT PETER NAMED (§17e).
+
+     `#auto-collect` IS THE ADDRESS `/peru/fiados` NOW POINTS AT. Peter: «If they're giving credit
+     to a business, they're going to be able to auto-collect with Yape, so that's a sort of
+     subsection of the selling page because that's another feature that's coming soon… It actually
+     works perfectly, and that's going to be free, by the way. I've decided this part is going to
+     be free: the auto collection.»
+
+     Automatic collection is free. The separate early signup credit offer is in the closing card. -->
+<section class="pe-band pe-cloud" id="coming">
+  <div class="pe-wrap">
+    <div class="pe-head">
+      <h2 class="pe-h2">What's coming</h2>
+    </div>
+    <div class="ssoons">
+      <div class="ssoon" id="receipts">
+        <div class="shead">
+          <h3>Digital receipts</h3>
+          <span class="stag">soon</span>
+        </div>
+        <p class="pe-lead">Send the digital receipt to your customer on WhatsApp when they pay.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ THE SELLING QUESTIONS live on the selling page (Peter: «faq for selling is in selling») ══ -->
+<section class="pe-band" id="questions">
+  <div class="pe-wrap">
+    <div class="pe-head" data-rise>
+      <h2 class="pe-h2">Selling questions</h2>
+    </div>
+    <div class="faq" id="faq">
+      <details class="faq-i" name="selling-questions">
+        <summary><span>Does it work with Yape?</span><span class="faq-s" aria-hidden="true"><i></i><i></i></span></summary>
+        <div class="faq-b"><p>Yes. Send the payment link on WhatsApp and record the Yape payment with the sale. Automatic Yape collections are planned for October.</p></div>
+      </details>
+      <details class="faq-i" name="selling-questions">
+        <summary><span>How does auto-collecting work?</span><span class="faq-s" aria-hidden="true"><i></i><i></i></span></summary>
+        <div class="faq-b"><p>Your customer authorises collection in Yape. The payment is collected on the agreed date. This feature is planned for October.</p></div>
+      </details>
+      <details class="faq-i" name="selling-questions">
+        <summary><span>What does SUNAT see of my Yape payments?</span><span class="faq-s" aria-hidden="true"><i></i><i></i></span></summary>
+        <div class="faq-b"><p>Your Yape money sits in a bank account, and the bank reports that account balance to SUNAT once it reaches <span class="pe-nb">S/ 38,500</span> in the month, which is 7 UIT in 2026.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 6 · THE ONE ACT ═══════════════════════════════════════════════════════════════════════ -->
+<section class="pe-band pe-close">
+  <div class="pe-wrap">
+    <div class="cl">
+      <figure class="cl-art">
+        <!-- THE CLOSING CARD'S PICTURE IS THE MAIN PAGE'S OWN (`cap/close-art.webp`, 1100 × 752), because
+             this slot is 491 × 422 on a desk and 16:9 art loses its subject in a 1.16 crop: the
+             16:9 counter was sliced down a customer's face at 1440 and lost him altogether at 1024.
+             One closing card, one picture, on both pages. -->
+        <img src="/peru/cap/close-art.webp" width="1100" height="752" alt="A bodega owner with her phone, among the shelves of her shop." loading="lazy" decoding="async">
+      </figure>
+      <div class="cl-t">
+        <h2>Join the waitlist</h2>
+        <!-- The same early signup offer as the Buying page. -->
+        <p>Join before launch for 3 loans at 0% interest, up to S/500 each, with 7 days to repay. Connect your WhatsApp to join the waitlist. <a href="/en/terms#early-offer">See terms</a>.</p>
+        <p class="pe-acts"><a class="act" href="http://127.0.0.1:18240/?lang=en"><svg class="act-wa" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12.04 2.5a9.4 9.4 0 0 0-8.1 14.13L2.5 21.5l4.98-1.4A9.4 9.4 0 1 0 12.04 2.5Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M8.9 7.6c.2-.05.42-.04.6.02.2.07.33.28.44.5l.62 1.3c.1.22.06.48-.1.66l-.4.46a.44.44 0 0 0-.07.5 6.3 6.3 0 0 0 2.98 2.72.44.44 0 0 0 .5-.12l.44-.52c.17-.2.45-.26.69-.15l1.35.62c.24.11.4.35.4.62 0 .93-.75 1.69-1.68 1.7a7.9 7.9 0 0 1-6.9-6.95A1.7 1.7 0 0 1 8.9 7.6Z" fill="currentColor"/></svg>Join the waitlist</a><a class="act-o" href="/en#roadmap">See the whole roadmap<svg class="lk-a" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3.2 8h9.6M8.8 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="pe-ft">
+  <div class="pe-wrap">
+    <div class="pe-ft-top">
+      <div class="pe-ft-brand">
+        <span class="pe-ft-mark"><img src="/brand/face-open.svg" width="44" height="44" alt=""><b>Rocoto</b></span>
+        <p>Rocoto for bodegas, market stalls and fish stalls in Peru.</p>
+      </div>
+      <div class="pe-ft-cols">
+        <nav class="pe-ft-g" aria-label="On this page">
+          <h2>On this page</h2>
+          <a href="#how">How selling works</a>
+          <a href="#history">Purchase and sales history</a>
+          <a href="#export">Sales records</a>
+          <a href="#auto-collect">Automatic Yape collections</a>
+          <a href="/en">Buying</a>
+        </nav>
+        <nav class="pe-ft-g" aria-label="Legal">
+          <h2>Legal</h2>
+          <a href="/en/privacy">Privacy policy</a>
+          <a href="/en/cookies">Cookies</a>
+          <a href="/en/terms">Terms</a>
+        </nav>
+        <nav class="pe-ft-g" aria-label="Write to us">
+          <h2>Write to us</h2>
+          <a href="/setup.html">hello@soyrocoto.com</a>
+          <a href="http://127.0.0.1:18240/?lang=en">Join the waitlist</a>
+        </nav>
+      </div>
+    </div>
+    <div class="pe-ft-legal">
+      <!-- THE REGULATOR'S OWN SENTENCE. It is law, it is the one negative construction this page
+           carries, and it is always visible. It ships verbatim; the Spanish original is the one
+           that ships in Peru, and it is in peru/STRINGS.md. -->
+      <p class="pe-ft-sbs">Rocoto holds no authorisation or supervision from the Superintendencia de Banca, Seguros y AFP.</p>
+      <div class="pe-ft-meta">
+        <p>WhatsApp is a trademark of Meta Platforms, Inc. Yape is a trademark of Credicorp. Plin is a trademark of the banks that run it. Every logo on this site belongs to the institution it identifies.</p>
+        <!-- The handset on this page is a licensed 3D model and CC BY 4.0 asks for the credit by
+             name, so it stays in the small print wherever the page goes. -->
+        <p class="pe-ft-c">3D phone model by <a href="https://sketchfab.com/3d-models/apple-iphone-15-pro-max-black-df17520841214c1792fb8a44c6783ee7" rel="noopener">polyman</a>, <a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">CC BY 4.0</a>.</p>
+        <p class="pe-ft-c">© 2026 Rocoto. Rocoto is a product of Leo Casa Ltd.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* THE BAR TIGHTENS AFTER THE FIRST SCROLL, exactly as peru.js tightens it on /peru. */
+(function () {
+  var bar = document.getElementById('pnav');
+  var on = function () { bar.classList.toggle('is-tight', (window.scrollY || 0) > 24); };
+  on();
+  addEventListener('scroll', on, { passive: true });
+})();
+
+/* THE LANGUAGE CONTROL, the same eighteen lines peru.js carries. The <details> already opens and
+   closes on its own; this adds what a reader expects of a menu — a click outside closes it,
+   Escape closes it and gives the control the focus back — and it carries the current #hash onto
+   both links, so switching language from halfway down the page lands on the same block.
+   The two addresses are written into the HTML by tools/peru_i18n.py; nothing here builds a path. */
+(function () {
+  var box = document.querySelector('.plang');
+  if (!box) return;
+  var head = box.querySelector('summary');
+  var links = [].slice.call(box.querySelectorAll('.plang-o'));
+
+  box.addEventListener('toggle', function () {
+    if (!box.open) return;
+    var hash = location.hash || '';
+    for (var i = 0; i < links.length; i++) {
+      var base = links[i].getAttribute('data-base');
+      if (base === null) {
+        base = links[i].getAttribute('href').split('#')[0];
+        links[i].setAttribute('data-base', base);
+      }
+      links[i].setAttribute('href', base + hash);
+    }
+  });
+  document.addEventListener('click', function (ev) {
+    if (box.open && !box.contains(ev.target)) box.open = false;
+  });
+  document.addEventListener('keydown', function (ev) {
+    if (ev.key === 'Escape' && box.open) { box.open = false; if (head) head.focus(); }
+  });
+})();
+
+/* ── THE ONE DEMO ─────────────────────────────────────────────────────────────────────────────
+   /peru carries five handsets and a 3D journey, and peru.js is the machine that arbitrates them.
+   This page carries ONE, so it mounts it here rather than pulling in 87 KB of arbitration: the
+   poster arrives a screen and a half early, the iframe attaches when the handset comes near, and
+   the demo plays itself (`?auto`, which wa.js reads). The document goes back when the handset is
+   well off screen, so a reader at the foot of the page is running nothing.
+
+   THE SWAP IS A CUT, TWO FRAMES AFTER `ready` — peru.js's own rule, and for its own reason: on
+   the message itself the iframe has built its first state but has not painted it, so the glass
+   went blank where the poster had been.
+
+   A POSTER NEVER SHOWS ITS ALT TEXT (SPEC §17e, Peter: «there's lag in the loading of these
+   frames look»). A picture that fails, or that has not been asked for yet, hides itself and the
+   glass stands as plain paper. */
+(function () {
+  var ph = document.querySelector('.ph[data-demo]');
+  if (!ph) return;
+  var frame = ph.querySelector('.ph-frame'), screen = ph.querySelector('.ph-screen');
+  var poster = ph.querySelector('.ph-poster[data-src]');
+  var attached = false;
+
+  if (poster) poster.addEventListener('error', function () { poster.style.visibility = 'hidden'; });
+
+  function attach() {
+    /* THE POSTER IS ASKED FOR ONCE. `attach` runs again every time the handset comes back, and
+       the second run read a `data-src` that the first one had already removed — so the poster's
+       `src` was set to the string «null» and the page asked the server for /peru/null. */
+    var late = poster && poster.getAttribute('data-src');
+    if (late) { poster.setAttribute('src', late); poster.removeAttribute('data-src'); }
+    if (attached) return;
+    attached = true;
+    frame.setAttribute('src', ph.getAttribute('data-demo'));
+  }
+  function detach() {
+    if (!attached || ph.getAttribute('data-demo-paused') === 'true') return;
+    attached = false;
+    ph.classList.remove('is-ready');
+    frame.setAttribute('src', 'about:blank');
+  }
+
+  addEventListener('message', function (ev) {
+    var d = ev.data;
+    if (!d || d.type !== 'rocoto-demo' || d.state !== 'ready') return;
+    if (!frame.contentWindow || ev.source !== frame.contentWindow) return;
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () { ph.classList.add('is-ready'); });
+    });
+  });
+
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (rows) {
+      for (var i = 0; i < rows.length; i++) rows[i].isIntersecting ? attach() : detach();
+    }, { rootMargin: '600px 0px' }).observe(ph);
+  } else {
+    attach();
+  }
+
+  /* THE IFRAME'S LAYOUT WIDTH STAYS 390 AT EVERY VIEWPORT; only the scale changes. The CSS
+     already holds a correct `--ph-s`, and this re-measures the glass as the browser painted it,
+     which is what keeps the demo's edge flush with the bezel after a sub-pixel layout. */
+  if ('ResizeObserver' in window) {
+    var scaleObserver = new ResizeObserver(function (rows) {
+      rows.forEach(function (row) {
+        var host = row.target.closest('.ph');
+        if (row.contentRect.width > 0 && host) host.style.setProperty('--ph-s', (row.contentRect.width / 390).toFixed(5));
+      });
+    });
+    document.querySelectorAll('.ph-screen').forEach(function (glass) { scaleObserver.observe(glass); });
+  }
+})();
+
+/* THE FACE BLINKS (Peter: «anywhere that you have the logo, is the blinking one»): the 115 KB GIF
+   is asked for once the page has loaded, so the first screen never waits for it. */
+addEventListener('load', function () { setTimeout(function () {
+  var f = document.querySelectorAll('img[src$="/brand/face-open.svg"]');
+  for (var i = 0; i < f.length; i++) f[i].src = '/brand/face-blink-transparent.gif';
+}, 1200); });
+</script>
+</body>
+</html>

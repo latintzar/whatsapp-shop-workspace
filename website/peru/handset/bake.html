@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Handset · frame baker</title>
+<meta name="robots" content="noindex">
+<style>
+  html, body { margin: 0; background: transparent; }
+  /* the render box, at CSS size; the device-scale factor supplies the 2× / 3× */
+  #box { position: relative; width: 390px; height: 500px; }   /* 0.78 */
+</style>
+</head>
+<body>
+<div id="box"></div>
+<script type="module">
+import { createHandset } from './handset.js';
+
+const box = document.getElementById('box');
+const Q = new URLSearchParams(location.search);
+/* The baker drives the render resolution itself: `?pr=` is the renderer's pixel ratio and the
+   page is shot at the same device scale, so the canvas is native at capture size and the only
+   supersampling is the one the baker applies on the way down. */
+/* THE BAKE IS OF THE SAME OBJECT THE PAGE RENDERS LIVE: the licensed iPhone. `?proc=1` builds
+   the procedural handset instead, which is how the two are compared side by side. */
+const opts = { screen: null, shadow: false, superSample: false, reducedMotion: false,
+               pixelRatio: parseFloat(Q.get('pr')) || null,
+               model: Q.has('proc') ? null : './model/iphone-15-pro-max.glb' };
+if (Q.get('finish')) opts.finish = Q.get('finish');
+if (Q.has('exp')) opts.exposure = parseFloat(Q.get('exp'));
+if (Q.has('envi')) opts.envIntensity = parseFloat(Q.get('envi'));
+if (Q.has('light')) opts.lighting = Q.get('light');
+if (Q.has('nopolish')) opts.polish = false;
+const h = await createHandset(box, opts);
+
+window.bake = (rotYdeg, rotZdeg) => {
+  h.setPose({ rotY: rotYdeg * Math.PI / 180, rotZ: (rotZdeg || 0) * Math.PI / 180, rotX: 0 });
+  const q = h.screenQuad();
+  const b = h.box();
+  return {
+    quad: q,
+    box: b,
+    facing: h.three.group.rotation.y,
+    // the screen is hidden past ~88°, same rule the live module uses
+    visible: Math.abs(rotYdeg) < 88
+  };
+};
+window.metrics = h.metrics;
+window.__h = h;          /* for diagnostics: materials, timings, the renderer */
+window.__ready = true;
+</script>
+</body>
+</html>

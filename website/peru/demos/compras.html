@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=390">
+<title>Rocoto · When you buy, inside WhatsApp</title>
+<meta name="robots" content="noindex">
+<link rel="preload" href="/peru/wa/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/peru/wa/wa.css">
+</head>
+<body>
+<script src="/peru/wa/wa.js"></script>
+<script>
+/* WHEN YOU BUY — YOUR phone, in your supplier's own chat. You hold Rocoto (SPEC 17b), so you are
+   the one who says you are paying later, and the confirmation that your supplier was paid is
+   YOUR message.
+
+   AND THE CONFIRMATION IS A LINK (SPEC 17c, Peter verbatim: «would actually be a link with the
+   social graph image preview being that confirmation tick that the funds were sent. a nifty way
+   to use previews as real data. get it? and then show the supplier reply saying got the funds,
+   thanks! then follow up with a message about how they'll get the thign they rodered tomorrow or
+   whatever. and then the whole thing loops with that»). So the message is a URL —
+   `soyrocoto.com/p/5409-118` — and above it WhatsApp's own preview card, whose picture is
+   Rocoto's confirmation: the tick, «Funds sent», the amount, the supplier's name. The kit draws
+   it (`cardHTML(card, wide)` inside `previewHTML`), so it is the real drawing rather than a
+   photograph of one, and it stays crisp at every width the page scales a handset to.
+
+   MINIMAL NOISE (the same message): «right now you have other timeconvo stuff int he messages
+   above the animated new oens and thats the thing that confuses people. minimal noise / infinite
+   loops therefore.» So the thread opens EMPTY — WhatsApp's encryption notice and today's chip,
+   and nothing else. No yesterday. No small talk. Six beats, then the next order under them, for
+   ever: order, the total, «I'll pay it later with Rocoto», the link with its preview, the thanks,
+   and the line that says when it arrives.
+
+   THIS PHONE IS ALSO THE HERO'S. It rises out of the hero's foot showing its top third, so the
+   chat's own head — your supplier's business name, and «online» under it — is what stands there
+   while the first order goes out, and the poster this demo names (10600) is the frame where the
+   whole exchange is on the screen at once.
+
+   Nothing here is ever shown being typed by you: your messages simply send. Everything that
+   ARRIVES is announced first — the three dots in the thread and «typing…» under the name — which
+   the kit weaves in for every exchange of every cycle, so the rule holds for ever.
+
+   Both languages live in one table: English is what Peter reviews, Spanish is what ships. */
+
+var L = WA.pick({
+  en: {
+    title: 'Distribuidora Ricardo',
+    payee: 'Distribuidora Ricardo',
+    /* the confirmation, drawn by the kit inside the preview's picture */
+    lead: 'Payment sent',
+    stamp: function (t) { return 'Today ' + t; },
+    ref: function (n) { return 'Ref. ' + n; },
+    sent: function () { return 'Payment receipt'; },
+    host: 'soyrocoto.com',
+    url: function (n) { return 'soyrocoto.com/p/' + n; },
+    pay: 'I’ll pay it later with Rocoto 👍',
+    today: 'TODAY',
+    days: ['SUNDAY', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY'],
+    was: 'SATURDAY',
+    /* the exchange, told four ways: the goods change, the mechanics never do. The first one is
+       the standing restock the paper in `entrega.html` is made out for — same supplier, same
+       four lines, same S/ 386.00 — so the three rows of the page tell ONE purchase. */
+    orders: [
+      { ask: 'Hi Ricardo, for tomorrow: 12 boxes of rice, 6 oil, 20 evaporated milk and 6 detergent.',
+        reply: 'Done, casero 👍 That comes to S/ 386.00.',
+        amount: 'S/ 386.00',
+        ref: '5409-118',
+        thanks: 'Got the funds, thanks! 🙌',
+        eta: 'Your order goes out tomorrow. It is with you at 6.',
+        clock: ['18:41', '18:42', '18:43'] },
+      { ask: 'Ricardo, send me 10 sugar, 8 noodles and 12 tinned tuna.',
+        reply: 'Right, casero 👍 That comes to S/ 298.00.',
+        amount: 'S/ 298.00',
+        ref: '5412-124',
+        thanks: 'The money is in, thanks! 🙌',
+        eta: 'It goes out tomorrow, casero. At 6 it is at your counter.',
+        clock: ['18:12', '18:13', '18:14'] },
+      { ask: 'Ricardo, for tomorrow: 20 soda 3 L, 12 bottled water and 6 lentils.',
+        reply: 'Done, casero 👍 That comes to S/ 452.00.',
+        amount: 'S/ 452.00',
+        ref: '5417-131',
+        thanks: 'Got it, thanks! 🙌',
+        eta: 'Tomorrow at 6 the van leaves it with you.',
+        clock: ['19:05', '19:06', '19:07'] },
+      { ask: 'Ricardo, 6 detergent, 6 bleach and 10 bar soap for tomorrow.',
+        reply: 'Listo, casero 👍 That comes to S/ 312.00.',
+        amount: 'S/ 312.00',
+        ref: '5423-137',
+        thanks: 'Got the funds, thanks! 🙌',
+        eta: 'Your order arrives tomorrow at 6.',
+        clock: ['18:33', '18:34', '18:35'] }
+    ]
+  },
+
+  es: {
+    title: 'Distribuidora Ricardo',
+    payee: 'Distribuidora Ricardo',
+    lead: 'Pago enviado',
+    stamp: function (t) { return 'Hoy ' + t; },
+    ref: function (n) { return 'Ref. ' + n; },
+    sent: function () { return 'Comprobante de pago'; },
+    host: 'soyrocoto.com',
+    url: function (n) { return 'soyrocoto.com/p/' + n; },
+    pay: 'Lo pago después con Rocoto 👍',
+    today: 'HOY',
+    days: ['DOMINGO', 'LUNES', 'MARTES', 'MIÉRCOLES', 'JUEVES', 'VIERNES', 'SÁBADO'],
+    was: 'SÁBADO',
+    orders: [
+      { ask: 'Hola Ricardo, para mañana: 12 cajas de arroz, 6 aceite, 20 leche evaporada y 6 detergente.',
+        reply: 'Listo, casero 👍 Son S/ 386.00.',
+        amount: 'S/ 386.00',
+        ref: '5409-118',
+        thanks: '¡Ya me llegó, gracias! 🙌',
+        eta: 'Tu pedido sale mañana. A las 6 lo tienes.',
+        clock: ['18:41', '18:42', '18:43'] },
+      { ask: 'Ricardo, mándame 10 azúcar, 8 fideos y 12 atún en conserva.',
+        reply: 'Ya, casero 👍 Son S/ 298.00.',
+        amount: 'S/ 298.00',
+        ref: '5412-124',
+        thanks: '¡Entró la plata, gracias! 🙌',
+        eta: 'Sale mañana, casero. A las 6 está en tu mostrador.',
+        clock: ['18:12', '18:13', '18:14'] },
+      { ask: 'Ricardo, para mañana: 20 gaseosas de 3 L, 12 aguas y 6 lentejas.',
+        reply: 'Anotado, casero 👍 Son S/ 452.00.',
+        amount: 'S/ 452.00',
+        ref: '5417-131',
+        thanks: '¡Ya está, gracias! 🙌',
+        eta: 'Mañana a las 6 la camioneta te lo deja.',
+        clock: ['19:05', '19:06', '19:07'] },
+      { ask: 'Ricardo, 6 detergente, 6 lejía y 10 jabón de barra para mañana.',
+        reply: 'Listo, casero 👍 Son S/ 312.00.',
+        amount: 'S/ 312.00',
+        ref: '5423-137',
+        thanks: '¡Ya me llegó, gracias! 🙌',
+        eta: 'Tu pedido llega mañana a las 6.',
+        clock: ['18:33', '18:34', '18:35'] }
+    ]
+  }
+});
+
+var ORDERS = L.orders;
+
+/* ── THE BEATS, one order long ───────────────────────────────────────────────────────────
+      600  the order goes out                  (it simply sends; nobody is shown typing)
+     2600  your supplier's total               (the three dots run before it)
+     4300  «I’ll pay it later with Rocoto»
+     6000  THE LINK, with the confirmation as its preview picture
+     8200  «Got the funds, thanks!»            (the dots run before it)
+     9900  and it arrives tomorrow             (the dots run before it)
+    11200  the exchange is over; 2600 of rest, and the next order begins under it
+   ──────────────────────────────────────────────────────────────────────────────────────── */
+var B = { ask: 600, reply: 2600, pay: 4300, link: 6000, thanks: 8200, eta: 9900 };
+var LAST = 11200;
+
+/* THE CONFIRMATION, as the preview's picture: the tick, «Funds sent», the amount, the supplier's
+   name. One object, drawn by the kit, so this file states the facts and nothing about the paint. */
+function preview(o) {
+  return {
+    card: { tick: true, lead: L.lead, payee: L.payee, amount: o.amount,
+            when: L.stamp(o.clock[1]), ref: L.ref(o.ref) },
+    title: L.sent(L.payee),
+    host: L.host
+  };
+}
+
+function exchange(o) {
+  return [
+    { at: B.ask, dir: 'out', kind: 'text', time: o.clock[0], text: o.ask,
+      ticks: [{ at: B.ask, state: 'pending' }, { state: 'sent' }, { state: 'dd' }, { at: B.ask + 400, state: 'read' }] },
+    { at: B.reply, dir: 'in', kind: 'text', time: o.clock[1], text: o.reply },
+    { at: B.pay, dir: 'out', kind: 'text', time: o.clock[1], text: L.pay,
+      ticks: [{ at: B.pay, state: 'pending' }, { state: 'sent' }, { state: 'dd' }, { at: B.pay + 500, state: 'read' }] },
+    { at: B.link, dir: 'out', kind: 'text', time: o.clock[1], text: L.url(o.ref), link: true,
+      preview: preview(o),
+      ticks: [{ at: B.link, state: 'pending' }, { state: 'sent' }, { state: 'dd' }, { at: B.link + 900, state: 'read' }] },
+    { at: B.thanks, dir: 'in', kind: 'text', time: o.clock[2], text: o.thanks },
+    { at: B.eta, dir: 'in', kind: 'text', time: o.clock[2], text: o.eta }
+  ];
+}
+
+/* the next day's order, appended ahead of the clock: nothing on the screen is touched, so the
+   thread simply carries on and the loop has no seam */
+function compraCycle(k) {
+  /* cycle k follows the exchange the thread OPENED with, which is `ORDERS[0]` */
+  var o = ORDERS[k % ORDERS.length];
+  return {
+    date: L.days[(k - 1) % L.days.length],
+    last: LAST,
+    clockAt: [{ at: 0, text: o.clock[0] }, { at: B.reply, text: o.clock[1] },
+              { at: B.thanks, text: o.clock[2] }],
+    items: exchange(o)
+  };
+}
+
+/* THE THREAD AS IT OPENS: the encryption notice, today, and then the first order.
+
+   ⚠ ONE CONSEQUENCE, AND THE DIAL THAT ANSWERS IT. The thread is pinned to the composer, so an
+   empty one leaves the top of the screen bare — and the HERO shows this phone's top THIRD. Painted
+   at 390 × 844, the hero's band carries the chat's head and wallpaper until about 10.6 s, when the
+   exchange has grown tall enough to reach it; from the second exchange on it is full. The poster
+   the hero paints first (10600) is the full frame, so the phone reads from the reader's first
+   glance, and the demo fills the band as they read the hero's words.
+   `OPENS_WITH = 1` opens the thread with the exchange BEFORE this one instead — the same six
+   beats, already read, an hour earlier on the same day, so no small talk of any kind enters and
+   the hero's band carries messages from the first frame. It is a ONE-CHARACTER change, and it is
+   OFF because item 17c asks for a thread that opens empty. */
+var OPENS_WITH = 0;
+
+var FIRST = ORDERS[0];
+/* the one before it, on its own earlier hour */
+var EARLIER = (function (o) {
+  var c = {}, k;
+  for (k in o) if (Object.prototype.hasOwnProperty.call(o, k)) c[k] = o[k];
+  c.clock = ['17:24', '17:25', '17:28'];
+  return c;
+})(ORDERS[ORDERS.length - 1]);
+
+/* an exchange that is already over: every beat at zero, every tick read, nothing announced */
+function settled(o) {
+  return exchange(o).map(function (it) {
+    var c = {}, k;
+    for (k in it) if (Object.prototype.hasOwnProperty.call(it, k)) c[k] = it[k];
+    c.at = 0;
+    c.typing = false;
+    if (c.ticks) c.ticks = [{ at: 0, state: 'read' }];
+    return c;
+  });
+}
+
+var ITEMS = [
+  { at: 0, kind: 'e2e' },
+  { at: 0, kind: 'date', text: L.today }
+].concat(OPENS_WITH ? settled(EARLIER) : [], exchange(FIRST));
+
+WA.mount({
+  id: 'compras',
+  duration: LAST,
+  /* the frame that says the most, and the one the hero paints before its iframe arrives: the
+     whole exchange on one screen, with the link and its confirmation in the middle of it */
+  poster: 10600,
+  clock: FIRST.clock[0],
+  clockAt: [{ at: 0, text: FIRST.clock[0] }, { at: B.reply, text: FIRST.clock[1] },
+            { at: B.thanks, text: FIRST.clock[2] }],
+
+  cycle: { rest: 2600, was: L.was, next: compraCycle },
+
+  chat: {
+    title: L.title,
+    unread: 3,
+    presence: [{ at: 0, text: WA.ui.online }]
+  },
+
+  items: ITEMS
+});
+</script>
+</body>
+</html>

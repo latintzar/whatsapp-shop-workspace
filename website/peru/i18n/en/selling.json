@@ -1,0 +1,527 @@
+[
+  {
+    "en": "Rocoto | Log your Yape sales",
+    "kind": "meta",
+    "where": "<title>"
+  },
+  {
+    "en": "Receive orders on WhatsApp, send a Yape payment link and keep every sale in Rocoto.",
+    "kind": "meta",
+    "where": "<meta description>"
+  },
+  {
+    "en": "Log your Yape sales.",
+    "kind": "meta",
+    "where": "<meta og:image:alt>"
+  },
+  {
+    "en": "Skip to content",
+    "kind": "html",
+    "where": "sales.html · <a.pe-skip>"
+  },
+  {
+    "en": "Rocoto in Peru",
+    "kind": "attr",
+    "where": "sales.html · #pnav · <nav> @aria-label"
+  },
+  {
+    "en": "<a href=\"/en\">Buying</a> <a href=\"/en/selling\" aria-current=\"page\">Selling</a>",
+    "kind": "html",
+    "where": "sales.html · #pnav · <nav.pnav-links>"
+  },
+  {
+    "en": "{i1}Join the waitlist",
+    "kind": "html",
+    "where": "sales.html · #pnav · <a.act>"
+  },
+  {
+    "en": "Live today",
+    "kind": "html",
+    "where": "sales.html · #content · <p.sph-chip>"
+  },
+  {
+    "en": "Log your Yape sales",
+    "kind": "html",
+    "where": "sales.html · #content · Log your Yape sales · <h1.pe-h1>"
+  },
+  {
+    "en": "<a class=\"act\" href=\"https://demo.soyrocoto.com/bodega-pay-later/?lang=en\">{i1}Join the waitlist</a> <a class=\"act-o\" href=\"/en#roadmap\">See the whole roadmap</a>",
+    "kind": "html",
+    "where": "sales.html · #content · Log your Yape sales · <p.pe-acts>"
+  },
+  {
+    "en": "A bodega owner points at a code card on her counter while a customer holds up his phone to it.",
+    "kind": "attr",
+    "where": "sales.html · #content · <img> @alt"
+  },
+  {
+    "en": "How selling works",
+    "kind": "html",
+    "where": "sales.html · #how · How selling works · <h2.pe-h2>"
+  },
+  {
+    "en": "From the order on WhatsApp to the payment in your sales history.",
+    "kind": "html",
+    "where": "sales.html · #how · How selling works · <p.pe-head-p>"
+  },
+  {
+    "en": "A customer order and its Yape payment link in WhatsApp.",
+    "kind": "attr",
+    "where": "sales.html · #content · #how · <img> @alt"
+  },
+  {
+    "en": "Simulated conversation: a customer orders and receives a Yape payment link",
+    "kind": "attr",
+    "where": "sales.html · #content · #how · <iframe> @title"
+  },
+  {
+    "en": "Demo",
+    "kind": "html",
+    "where": "sales.html · #content · #how · <figcaption.ph-note>"
+  },
+  {
+    "en": "Receive the order",
+    "kind": "html",
+    "where": "sales.html · #how · Receive the order · <h3.rm-h>"
+  },
+  {
+    "en": "Your customer sends their order on WhatsApp.",
+    "kind": "html",
+    "where": "sales.html · #how · Receive the order · <p>"
+  },
+  {
+    "en": "Send the payment link",
+    "kind": "html",
+    "where": "sales.html · #how · Send the payment link · <h3.rm-h>"
+  },
+  {
+    "en": "Rocoto sends your Yape payment link in the same chat.",
+    "kind": "html",
+    "where": "sales.html · #how · Send the payment link · <p>"
+  },
+  {
+    "en": "Your customer pays",
+    "kind": "html",
+    "where": "sales.html · #how · Your customer pays · <h3.rm-h>"
+  },
+  {
+    "en": "They review the order and amount, then open Yape to pay.",
+    "kind": "html",
+    "where": "sales.html · #how · Your customer pays · <p>"
+  },
+  {
+    "en": "Payment recorded",
+    "kind": "html",
+    "where": "sales.html · #how · Payment recorded · <h3.rm-h>"
+  },
+  {
+    "en": "The payment is saved with the order in your sales history.",
+    "kind": "html",
+    "where": "sales.html · #how · Payment recorded · <p>"
+  },
+  {
+    "en": "What your customer opens",
+    "kind": "html",
+    "where": "sales.html · #how · What your customer opens · <h3.ssub>"
+  },
+  {
+    "en": "Your delivery note, with the order total and payment details.",
+    "kind": "html",
+    "where": "sales.html · #how · What your customer opens · <p.pe-lead>"
+  },
+  {
+    "en": "Example sale in Rocoto.",
+    "kind": "html",
+    "where": "sales.html · #how · What your customer opens · <p.pe-foot>"
+  },
+  {
+    "en": "<b>Bodega Yesenia</b> <span>Av. Gran Chimú 1642, Zárate, San Juan de Lurigancho</span>",
+    "kind": "html",
+    "where": "sales.html · #content · #how · <div.spay-h>"
+  },
+  {
+    "en": "evaporated milk",
+    "kind": "html",
+    "where": "sales.html · #content · #how · <span.spay-n>"
+  },
+  {
+    "en": "<b>12</b>units",
+    "kind": "html",
+    "where": "sales.html · #content · #how · <span.spay-q>"
+  },
+  {
+    "en": "brown sugar",
+    "kind": "html",
+    "where": "sales.html · #content · #how · <span.spay-n>"
+  },
+  {
+    "en": "<b>4</b>kg",
+    "kind": "html",
+    "where": "sales.html · #content · #how · <span.spay-q>"
+  },
+  {
+    "en": "soft drink 3 L",
+    "kind": "html",
+    "where": "sales.html · #content · #how · <span.spay-n>"
+  },
+  {
+    "en": "<b>6</b>units",
+    "kind": "html",
+    "where": "sales.html · #content · #how · <span.spay-q>"
+  },
+  {
+    "en": "<em>S/</em>186.00",
+    "kind": "html",
+    "where": "sales.html · #content · #how · <p.spay-fig>"
+  },
+  {
+    "en": "Saturday order",
+    "kind": "html",
+    "where": "sales.html · #content · #how · <p>"
+  },
+  {
+    "en": "Reference BODEGA-4K9M2X7T",
+    "kind": "html",
+    "where": "sales.html · #content · #how · <small>"
+  },
+  {
+    "en": "<span class=\"spay-act\">Pay now</span>",
+    "kind": "html",
+    "where": "sales.html · #content · #how · <div.spay-b>"
+  },
+  {
+    "en": "Pay S/ 186.00 to this number with Yape or Plin. Include reference BODEGA-4K9M2X7T.",
+    "kind": "html",
+    "where": "sales.html · #content · #how · <p>"
+  },
+  {
+    "en": "<span class=\"spay-act spay-act-2\">Copy the amount</span> <span class=\"spay-act\">Open Yape</span>",
+    "kind": "html",
+    "where": "sales.html · #content · #how · <div.spay-b>"
+  },
+  {
+    "en": "Purchase and sales history",
+    "kind": "html",
+    "where": "sales.html · #history · Purchase and sales history · <h2.pe-h2>"
+  },
+  {
+    "en": "Review your purchases, sales and payment status in one place.",
+    "kind": "html",
+    "where": "sales.html · #history · Purchase and sales history · <p.pe-head-p>"
+  },
+  {
+    "en": "Payments received",
+    "kind": "html",
+    "where": "sales.html · #history · Payments received · <h3>"
+  },
+  {
+    "en": "Example data · 20 Aug to 18 Sep",
+    "kind": "html",
+    "where": "sales.html · #history · Payments received · <p.scard-w>"
+  },
+  {
+    "en": "<span class=\"srow-n\">Yape · 812 payments</span><span class=\"srow-a\">S/ 12,940.00</span>",
+    "kind": "html",
+    "where": "sales.html · #history · Payments received · <div.srow>"
+  },
+  {
+    "en": "<span class=\"srow-n\">Plin · 234 payments</span><span class=\"srow-a\">S/ 4,180.00</span>",
+    "kind": "html",
+    "where": "sales.html · #history · Payments received · <div.srow>"
+  },
+  {
+    "en": "<span class=\"srow-n\">Counter</span><span class=\"srow-a\">S/ 7,950.00</span>",
+    "kind": "html",
+    "where": "sales.html · #history · Payments received · <div.srow>"
+  },
+  {
+    "en": "Supplier payments",
+    "kind": "html",
+    "where": "sales.html · #history · Supplier payments · <h3>"
+  },
+  {
+    "en": "4 pending payments · 1 overdue",
+    "kind": "html",
+    "where": "sales.html · #history · Supplier payments · <p.scard-w>"
+  },
+  {
+    "en": "<span class=\"srow-n\">Limpieza Brillo · Ericka<span class=\"srow-s\">Late · 1 day</span></span><span class=\"srow-a\">S/ 188.00</span>",
+    "kind": "html",
+    "where": "sales.html · #history · Supplier payments · <div.srow>"
+  },
+  {
+    "en": "<span class=\"srow-n\">Lácteos del Valle · Jhonny<span class=\"srow-s\">Due 21 Sep</span></span><span class=\"srow-a\">S/ 274.00</span>",
+    "kind": "html",
+    "where": "sales.html · #history · Supplier payments · <div.srow>"
+  },
+  {
+    "en": "<span class=\"srow-n\">Distribuidora Aurora<span class=\"srow-s\">Due 23 Sep</span></span><span class=\"srow-a\">S/ 682.00</span>",
+    "kind": "html",
+    "where": "sales.html · #history · Supplier payments · <div.srow>"
+  },
+  {
+    "en": "<span class=\"srow-n\">Marcos pollos<span class=\"srow-s\">Due 23 Sep</span></span><span class=\"srow-a\">S/ 236.00</span>",
+    "kind": "html",
+    "where": "sales.html · #history · Supplier payments · <div.srow>"
+  },
+  {
+    "en": "Settled",
+    "kind": "html",
+    "where": "sales.html · #history · Settled · <h4.sgroup>"
+  },
+  {
+    "en": "<span class=\"srow-n\">Distribuidora Aurora<span class=\"srow-s\">Settled 12 Sep · confirmed by your bank</span></span><span class=\"srow-a\">S/ 420.00</span>",
+    "kind": "html",
+    "where": "sales.html · #history · Settled · <div.srow>"
+  },
+  {
+    "en": "Rocoto screens with example transactions.",
+    "kind": "html",
+    "where": "sales.html · #content · #history · <p.pe-foot>"
+  },
+  {
+    "en": "Sales records for SUNAT",
+    "kind": "html",
+    "where": "sales.html · #export · Sales records for SUNAT · <h2.pe-h2>"
+  },
+  {
+    "en": "Export your sales as a PDF or spreadsheet to share with your accountant or SUNAT.",
+    "kind": "html",
+    "where": "sales.html · #export · Sales records for SUNAT · <p.pe-head-p>"
+  },
+  {
+    "en": "Sales export",
+    "kind": "html",
+    "where": "sales.html · #content · #export · <p.sexp-t>"
+  },
+  {
+    "en": "20 Jun to 18 Sep",
+    "kind": "html",
+    "where": "sales.html · #content · #export · <p.sexp-p>"
+  },
+  {
+    "en": "90 days · 915 sales · 18 customers",
+    "kind": "html",
+    "where": "sales.html · #content · #export · <p.sexp-f>"
+  },
+  {
+    "en": "<span class=\"sexp-d\"><b>By transaction</b><span>One row per sale, with what it was for and how it was paid.</span></span><span class=\"sexp-go\">Export</span>",
+    "kind": "html",
+    "where": "sales.html · #content · #export · <li>"
+  },
+  {
+    "en": "<span class=\"sexp-d\"><b>By customer</b><span>One row per person, with what they take and what they owe.</span></span><span class=\"sexp-go\">Export</span>",
+    "kind": "html",
+    "where": "sales.html · #content · #export · <li>"
+  },
+  {
+    "en": "<span class=\"sexp-m\">Your Yape money sits in a bank account, and the bank reports that account balance to SUNAT once it reaches <span class=\"pe-nb\">S/ 38,500</span> in the month, which is 7 UIT in 2026.</span>",
+    "kind": "html",
+    "where": "sales.html · #content · #export · <p.sexp-s>"
+  },
+  {
+    "en": "Example sales export from Rocoto.",
+    "kind": "html",
+    "where": "sales.html · #content · #export · <p.pe-foot>"
+  },
+  {
+    "en": "Automatic Yape collections <em class=\"tl-tag\">soon</em>",
+    "kind": "html",
+    "where": "sales.html · #auto-collect · Automatic Yape collections soon · <h2.pe-h2>"
+  },
+  {
+    "en": "Track the credit you give other businesses and collect on the agreed date, from their Yape to yours. Automatic collection is free.",
+    "kind": "html",
+    "where": "sales.html · #auto-collect · Automatic Yape collections soon · <p.pe-lead>"
+  },
+  {
+    "en": "Example accounts receivable with agreed payment dates.",
+    "kind": "html",
+    "where": "sales.html · #auto-collect · Automatic Yape collections soon · <p.pe-foot>"
+  },
+  {
+    "en": "Example automatic Yape collections",
+    "kind": "attr",
+    "where": "sales.html · #content · #auto-collect · <ul> @aria-label"
+  },
+  {
+    "en": "<span class=\"dc-n\">Maribel obra<span class=\"dc-w\"><span class=\"dc-w1\">Collects 18 Sep</span><span class=\"dc-w2\">Paid through Yape</span></span></span><span class=\"dc-a\">S/ 460.00</span>{i1}",
+    "kind": "html",
+    "where": "sales.html · #auto-collect · #dc · <li.dc-c>"
+  },
+  {
+    "en": "<span class=\"dc-n\">Rosa menú<span class=\"dc-w\"><span class=\"dc-w1\">Collects 18 Sep</span><span class=\"dc-w2\">Paid through Yape</span></span></span><span class=\"dc-a\">S/ 318.00</span>{i1}",
+    "kind": "html",
+    "where": "sales.html · #auto-collect · #dc · <li.dc-c>"
+  },
+  {
+    "en": "<span class=\"dc-n\">Carmen Yupanqui<span class=\"dc-w\"><span class=\"dc-w1\">Collects 19 Sep</span><span class=\"dc-w2\">Paid through Yape</span></span></span><span class=\"dc-a\">S/ 86.50</span>{i1}",
+    "kind": "html",
+    "where": "sales.html · #auto-collect · #dc · <li.dc-c>"
+  },
+  {
+    "en": "<span class=\"dc-n\">Flor Ccahuana<span class=\"dc-w\"><span class=\"dc-w1\">Collects 20 Sep</span><span class=\"dc-w2\">Paid through Yape</span></span></span><span class=\"dc-a\">S/ 42.00</span>{i1}",
+    "kind": "html",
+    "where": "sales.html · #auto-collect · #dc · <li.dc-c>"
+  },
+  {
+    "en": "<span class=\"dc-n\">Nancy Huamán<span class=\"dc-w\">Collection date</span></span><span class=\"dc-a\">S/ 64.00</span><span class=\"dc-d\">{i1}<b>22</b><i>Sep</i></span>",
+    "kind": "html",
+    "where": "sales.html · #auto-collect · #dc · <li.dc-c>"
+  },
+  {
+    "en": "<span class=\"dc-n\">Julia 2do piso<span class=\"dc-w\">Collection date</span></span><span class=\"dc-a\">S/ 31.50</span><span class=\"dc-d\">{i1}<b>25</b><i>Sep</i></span>",
+    "kind": "html",
+    "where": "sales.html · #auto-collect · #dc · <li.dc-c>"
+  },
+  {
+    "en": "<span class=\"dc-n\">Tito abarrotes<span class=\"dc-w\">Collection date</span></span><span class=\"dc-a\">S/ 120.00</span><span class=\"dc-d\">{i1}<b>29</b><i>Sep</i></span>",
+    "kind": "html",
+    "where": "sales.html · #auto-collect · #dc · <li.dc-c>"
+  },
+  {
+    "en": "What's coming",
+    "kind": "html",
+    "where": "sales.html · #coming · What's coming · <h2.pe-h2>"
+  },
+  {
+    "en": "Digital receipts",
+    "kind": "html",
+    "where": "sales.html · #receipts · Digital receipts · <h3>"
+  },
+  {
+    "en": "soon",
+    "kind": "html",
+    "where": "sales.html · #receipts · Digital receipts · <span.stag>"
+  },
+  {
+    "en": "Send the digital receipt to your customer on WhatsApp when they pay.",
+    "kind": "html",
+    "where": "sales.html · #coming · #receipts · <p.pe-lead>"
+  },
+  {
+    "en": "Selling questions",
+    "kind": "html",
+    "where": "sales.html · #questions · Selling questions · <h2.pe-h2>"
+  },
+  {
+    "en": "<span>Does it work with Yape?</span>{i1}",
+    "kind": "html",
+    "where": "sales.html · #questions · #faq · <summary>"
+  },
+  {
+    "en": "Yes. Send the payment link on WhatsApp and record the Yape payment with the sale. Automatic Yape collections are planned for October.",
+    "kind": "html",
+    "where": "sales.html · #questions · #faq · <p>"
+  },
+  {
+    "en": "<span>How does auto-collecting work?</span>{i1}",
+    "kind": "html",
+    "where": "sales.html · #questions · #faq · <summary>"
+  },
+  {
+    "en": "Your customer authorises collection in Yape. The payment is collected on the agreed date. This feature is planned for October.",
+    "kind": "html",
+    "where": "sales.html · #questions · #faq · <p>"
+  },
+  {
+    "en": "<span>What does SUNAT see of my Yape payments?</span>{i1}",
+    "kind": "html",
+    "where": "sales.html · #questions · #faq · <summary>"
+  },
+  {
+    "en": "Your Yape money sits in a bank account, and the bank reports that account balance to SUNAT once it reaches <span class=\"pe-nb\">S/ 38,500</span> in the month, which is 7 UIT in 2026.",
+    "kind": "html",
+    "where": "sales.html · #questions · #faq · <p>"
+  },
+  {
+    "en": "A bodega owner with her phone, among the shelves of her shop.",
+    "kind": "attr",
+    "where": "sales.html · #content · <img> @alt"
+  },
+  {
+    "en": "Join the waitlist",
+    "kind": "html",
+    "where": "sales.html · #content · Join the waitlist · <h2>"
+  },
+  {
+    "en": "Join before launch for 3 loans at 0% interest, up to S/500 each, with 7 days to repay. Connect your WhatsApp to join the waitlist. <a href=\"/en/terms#early-offer\">See terms</a>.",
+    "kind": "html",
+    "where": "sales.html · #content · Join the waitlist · <p>"
+  },
+  {
+    "en": "<a class=\"act\" href=\"https://demo.soyrocoto.com/bodega-pay-later/?lang=en\">{i1}Join the waitlist</a><a class=\"act-o\" href=\"/en#roadmap\">See the whole roadmap{i2}</a>",
+    "kind": "html",
+    "where": "sales.html · #content · Join the waitlist · <p.pe-acts>"
+  },
+  {
+    "en": "Rocoto for bodegas, market stalls and fish stalls in Peru.",
+    "kind": "html",
+    "where": "sales.html · <p>"
+  },
+  {
+    "en": "On this page",
+    "kind": "attr",
+    "where": "sales.html · <nav> @aria-label"
+  },
+  {
+    "en": "Sales records",
+    "kind": "html",
+    "where": "sales.html · On this page · <a>"
+  },
+  {
+    "en": "Automatic Yape collections",
+    "kind": "html",
+    "where": "sales.html · On this page · <a>"
+  },
+  {
+    "en": "Buying",
+    "kind": "html",
+    "where": "sales.html · On this page · <a>"
+  },
+  {
+    "en": "Legal",
+    "kind": "attr",
+    "where": "sales.html · <nav> @aria-label"
+  },
+  {
+    "en": "Privacy policy",
+    "kind": "html",
+    "where": "sales.html · Legal · <a>"
+  },
+  {
+    "en": "Cookies",
+    "kind": "html",
+    "where": "sales.html · Legal · <a>"
+  },
+  {
+    "en": "Terms",
+    "kind": "html",
+    "where": "sales.html · Legal · <a>"
+  },
+  {
+    "en": "Write to us",
+    "kind": "attr",
+    "where": "sales.html · <nav> @aria-label"
+  },
+  {
+    "en": "Rocoto holds no authorisation or supervision from the Superintendencia de Banca, Seguros y AFP.",
+    "kind": "html",
+    "where": "sales.html · <p.pe-ft-sbs>"
+  },
+  {
+    "en": "WhatsApp is a trademark of Meta Platforms, Inc. Yape is a trademark of Credicorp. Plin is a trademark of the banks that run it. Every logo on this site belongs to the institution it identifies.",
+    "kind": "html",
+    "where": "sales.html · <p>"
+  },
+  {
+    "en": "3D phone model by <a href=\"https://sketchfab.com/3d-models/apple-iphone-15-pro-max-black-df17520841214c1792fb8a44c6783ee7\" rel=\"noopener\">polyman</a>, <a href=\"https://creativecommons.org/licenses/by/4.0/\" rel=\"license noopener\">CC BY 4.0</a>.",
+    "kind": "html",
+    "where": "sales.html · <p.pe-ft-c>"
+  },
+  {
+    "en": "© 2026 Rocoto. Rocoto is a product of Leo Casa Ltd.",
+    "kind": "html",
+    "where": "sales.html · <p.pe-ft-c>"
+  }
+]

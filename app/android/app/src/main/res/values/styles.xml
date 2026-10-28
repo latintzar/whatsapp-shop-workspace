@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/rocoto_ink</item>
+        <item name="colorPrimaryDark">@color/rocoto_ink</item>
+        <item name="colorAccent">@color/rocoto_ink</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+    <style name="AppTheme.NoActionBar" parent="AppTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:background">@null</item>
+    </style>
+    <style name="AppTheme.NoActionBarLaunch" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/rocoto_paper</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/rocoto_launcher_mark</item>
+        <item name="postSplashScreenTheme">@style/AppTheme.NoActionBar</item>
+    </style>
+    <style name="AppTheme.LauncherRoute" parent="android:style/Theme.NoDisplay" />
+</resources>

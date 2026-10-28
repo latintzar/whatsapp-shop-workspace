@@ -1,0 +1,331 @@
+{
+  "version": 1,
+  "synthetic": true,
+  "world": "bodega",
+  "referenceDay": "2026-09-18",
+  "referenceDayRule": "The anchor every seeded day is written against, and the app rolls the whole seed onto the day Prep reads (`seedDay` in `supplier-payments.ts`). So `due`, `delivered`, `paid`, `since`, `asOf`, the three windows and `inLineSince` keep their distance from this day, and Money and Prep name one day on every date the app is opened.",
+  "timezone": "America/Lima",
+  "currency": "PEN",
+  "amounts": "integers in minor units, as Cedar's money model stores them",
+  "rules": {
+    "amounts": "Every figure is an integer in minor units under `money`, `prepDay` and `record`. A currency token appears in this file nowhere, so the price grep reads it clean.",
+    "chatPrices": "`chatCorpus` carries figures nowhere: the seeded messages state quantities, days and names. An amount enters the book when the shop confirms a row with its own act.",
+    "phones": "Customer i takes +51 9{70+i} {400+3i} {100+7i}; supplier s takes +51 9{50+s} {600+3s} {300+7s}. Each is unique, reproducible from its own row, and shaped like a Peruvian mobile.",
+    "derived": "Every generated credit, sale, receipt and reason line is a pure function of its row's own index, so the same morning returns on every reload.",
+    "coordinates": "Locations are block words. The file holds coordinates nowhere, so the map stays off Prep."
+  },
+  "house": {
+    "name": "Bodega Yesenia",
+    "legalName": "Yesenia Quispe Huamán",
+    "legalPerson": "persona natural con negocio",
+    "taxId": "10419825764",
+    "taxIdShape": "10 + the owner's DNI + a check digit",
+    "address": "Av. Gran Chimú 1642, Zárate, San Juan de Lurigancho, Lima",
+    "district": "San Juan de Lurigancho",
+    "barrio": "Zárate",
+    "warehouse": "the shop's own counter and back room, at the same address",
+    "bank": "BCP",
+    "banksRead": ["BCP", "BBVA", "Interbank", "Scotiabank", "BanBif", "Banco Pichincha", "Mibanco"],
+    "bankRead": "Rocoto reads seven banks, and BCP leads them, so the shop's own account is one Rocoto reads. `banksRead` above is the list every surface prints.",
+    "account": "ahorros · moneda nacional · 193-2415678-0-33",
+    "cci": "002-193-002415678033-58",
+    "phone": "+51 976 431 412",
+    "whatsapp": "+51 976 431 412",
+    "yape": "+51 976 431 412",
+    "email": null,
+    "emailNote": "Onboarding reaches her on her number alone, so the field stays empty."
+  },
+  "owner": {
+    "id": "owner",
+    "name": "Yesenia Quispe Huamán",
+    "role": "dueña",
+    "age": 43,
+    "phone": "+51 976 431 412",
+    "admin": true
+  },
+  "customers": [
+    { "id": "julia", "name": "Julia 2do piso", "phone": "+51 971 403 107", "address": "Av. Gran Chimú 1660", "block": "Av. Gran Chimú", "settles": "fiado", "perWeek": 5, "bandMinor": [1800, 3500], "messages": 150 },
+    { "id": "elmer", "name": "Elmer taxi", "phone": "+51 972 406 114", "address": "Jr. Chinchaysuyo 214", "block": "Jr. Chinchaysuyo", "settles": "cash", "perWeek": 4, "bandMinor": [1500, 2800], "messages": 45 },
+    { "id": "flor", "name": "Flor Ccahuana", "phone": "+51 973 409 121", "address": "Psje. Las Dalias 108", "block": "Psje. Las Dalias", "settles": "fiado", "perWeek": 3, "bandMinor": [3000, 6000], "messages": 130 },
+    { "id": "walter", "name": "Walter Paucar", "phone": "+51 974 412 128", "address": "Av. Gran Chimú 1715", "block": "Av. Gran Chimú", "settles": "cash", "perWeek": 2, "bandMinor": [4000, 8000], "messages": 40 },
+    { "id": "nancy", "name": "Nancy Huamán", "phone": "+51 975 415 135", "address": "Jr. Los Amautas 330", "block": "Jr. Los Amautas", "settles": "fiado", "perWeek": 4, "bandMinor": [2500, 5500], "messages": 95 },
+    { "id": "victor", "name": "Víctor Condori", "phone": "+51 976 418 142", "address": "Psje. Santa Rosa 42", "block": "Psje. Santa Rosa", "settles": "cash", "perWeek": 3, "bandMinor": [2000, 4500], "messages": 45 },
+    { "id": "carmen", "name": "Carmen Yupanqui", "phone": "+51 977 421 149", "address": "Av. El Bosque 508", "block": "Av. El Bosque", "settles": "fiado", "perWeek": 5, "bandMinor": [2200, 4800], "messages": 150 },
+    { "id": "jose", "name": "José Quispe", "phone": "+51 978 424 156", "address": "Jr. Chinchaysuyo 260", "block": "Jr. Chinchaysuyo", "settles": "cash", "perWeek": 1, "bandMinor": [5500, 8000], "messages": 30 },
+    { "id": "milagros", "name": "Milagros Vásquez", "phone": "+51 979 427 163", "address": "Psje. Las Dalias 131", "block": "Psje. Las Dalias", "settles": "fiado", "perWeek": 4, "bandMinor": [2800, 5200], "messages": 90 },
+    { "id": "hugo", "name": "Hugo Atencio", "phone": "+51 980 430 170", "address": "Av. Gran Chimú 1590", "block": "Av. Gran Chimú", "settles": "cash", "perWeek": 2, "bandMinor": [3500, 7000], "messages": 40 },
+    { "id": "sonia", "name": "Sonia Ticona", "phone": "+51 981 433 177", "address": "Jr. Los Amautas 412", "block": "Jr. Los Amautas", "settles": "fiado", "perWeek": 3, "bandMinor": [2000, 4000], "messages": 85 },
+    { "id": "percy", "name": "Percy Flores", "phone": "+51 982 436 184", "address": "Psje. San Martín 77", "block": "Psje. San Martín", "settles": "cash", "perWeek": 3, "bandMinor": [1600, 3000], "messages": 70 },
+    { "id": "gladys", "name": "Gladys Chávez", "phone": "+51 983 439 191", "address": "Av. El Bosque 560", "block": "Av. El Bosque", "settles": "fiado", "perWeek": 5, "bandMinor": [2400, 4600], "messages": 140 },
+    { "id": "raul", "name": "Raúl Espinoza", "phone": "+51 984 442 198", "address": "Jr. Huanacaure 118", "block": "Jr. Huanacaure", "settles": "cash", "perWeek": 2, "bandMinor": [4500, 7500], "messages": 35 },
+    { "id": "yoli", "name": "Yoli Núñez", "phone": "+51 985 445 205", "address": "Psje. Santa Rosa 66", "block": "Psje. Santa Rosa", "settles": "cash", "perWeek": 4, "bandMinor": [1800, 3800], "messages": 80 },
+    { "id": "rosa", "name": "Rosa menú", "trade": "menú restaurant", "phone": "+51 986 448 212", "address": "Av. Próceres de la Independencia 2140", "block": "Av. Próceres de la Independencia", "settles": "fiado", "perWeek": 3, "days": ["Mon", "Wed", "Fri"], "bandMinor": [12000, 32000], "messages": 260 },
+    { "id": "nelly", "name": "Nelly juguería", "trade": "juguería", "phone": "+51 987 451 219", "address": "Av. Gran Chimú 1502", "block": "Av. Gran Chimú", "settles": "cash", "perWeek": 4, "bandMinor": [14000, 26000], "messages": 300 },
+    { "id": "maribel", "name": "Maribel obra", "trade": "the crew's cook", "phone": "+51 988 454 226", "address": "Jr. Los Amautas 480", "block": "Jr. Los Amautas", "settles": "fiado", "perWeek": 2, "days": ["Mon", "Thu"], "bandMinor": [18000, 40000], "messages": 150 }
+  ],
+  "customerRules": {
+    "names": "The shop's own WhatsApp contact names, which is what the read returns — a bodeguera's phone holds people, so half-labels stand: `Rosa menú`, `Elmer taxi`, `Julia 2do piso`.",
+    "settles": "Nine fiado, nine cash. Six of the nine fiado customers owe today.",
+    "bands": "A neighbour buys inside 1500–8000 minor units; a business inside 12000–40000."
+  },
+  "suppliers": [
+    { "id": "mercado", "name": "Elsa · puesto 214, Gran Mercado Mayorista", "trade": "fruit and vegetables", "phone": "+51 951 603 307", "days": ["Tue", "Fri"], "bandMinor": [18000, 32000], "terms": "cash", "messages": 180, "purchases": 13 },
+    { "id": "pollo", "name": "Marcos pollos", "trade": "chicken", "phone": "+51 952 606 314", "days": ["Mon", "Wed", "Fri", "Sat"], "dropsAt": "06:00", "bandMinor": [22000, 48000], "terms": "a week", "payLaterCandidate": true, "messages": 220, "purchases": 17 },
+    { "id": "huevos", "name": "Don Aníbal · huevos de Huaral", "trade": "eggs", "phone": "+51 953 609 321", "days": ["Tue", "Sat"], "bandMinor": [15000, 26000], "terms": "cash", "messages": 90, "purchases": 7 },
+    { "id": "lacteos", "name": "Lácteos del Valle · Jhonny", "trade": "dairy", "phone": "+51 954 612 328", "days": ["Mon", "Thu"], "bandMinor": [19000, 34000], "terms": "a week", "payLaterCandidate": true, "messages": 110, "purchases": 9 },
+    { "id": "pan", "name": "Panadería La Espiga de Oro", "trade": "bread", "phone": "+51 955 615 335", "days": ["daily"], "dropsAt": "06:10", "perDropMinor": [5500, 9000], "bandMinor": [38000, 52000], "settles": "Saturdays", "terms": "cash", "messages": 130, "purchases": 22 },
+    { "id": "bebidas", "name": "Iván gaseosas", "trade": "beverages, the bottler's route", "phone": "+51 956 618 342", "days": ["Tue", "Fri"], "bandMinor": [38000, 76000], "terms": "cash", "messages": 90, "purchases": 8 },
+    { "id": "abarrotes", "name": "Distribuidora Aurora", "trade": "abarrotes", "phone": "+51 957 621 349", "days": ["Wed", "Sat"], "bandMinor": [42000, 90000], "terms": "a week", "payLaterCandidate": true, "messages": 130, "purchases": 11 },
+    { "id": "limpieza", "name": "Limpieza Brillo · Ericka", "trade": "cleaning goods", "phone": "+51 958 624 356", "days": ["Thu, fortnightly"], "bandMinor": [16000, 30000], "terms": "a week", "payLaterCandidate": true, "messages": 40, "purchases": 4 },
+    { "id": "gas", "name": "Gas Santa Rosa", "trade": "10 kg cylinders", "phone": "+51 959 627 363", "days": ["on call, usually Mon"], "bandMinor": [17000, 26000], "terms": "cash", "messages": 35, "purchases": 3 }
+  ],
+  "supplierRules": {
+    "bread": "Bread drops every morning at its own per-drop band and settles on Saturdays, which is the figure the payables card carries.",
+    "payLater": "The four on a week's terms are the pay-later candidates: `pollo`, `lacteos`, `abarrotes`, `limpieza`. Aurora is the biggest, so its card carries the 30-day settlement.",
+    "purchases": "`purchases` is the orders the shop's chat with that supplier shows over the window, in the supplier's own rhythm: bread drops daily and leads with 22, chicken comes four mornings a week, the mayorista and the distributor twice, the gas man on call and reads 3. It is the figure the referral row prints as `Bought 22 times`, so the count ranks the suppliers the way the week does.",
+    "referrals": "The referral unit is suppliers: each one that joins is one more the shop can pay later, and that sentence ships once a lender is signed."
+  },
+  "chatCorpus": {
+    "windowDays": 180,
+    "from": "2026-03-22",
+    "to": "2026-09-18",
+    "threads": 27,
+    "messages": 2960,
+    "imageMessages": 530,
+    "groupsExcluded": true,
+    "priceRule": "A seeded message states quantities, days and names. Figures stay out, so the read draws reasons in words and asserts a total nowhere.",
+    "imageRule": "An image message is stored as its caption alone while media custody stays unbuilt: a Yape or Plin voucher reads as `[image]` plus what was written beside it.",
+    "groups": [
+      { "id": "heavy-fiado", "threads": 4, "messages": 570, "orders": 0.45, "receiptImages": 0.15, "fiadoNotes": 0.20, "priceAsks": 0.10, "other": 0.10 },
+      { "id": "medium-neighbours", "threads": 5, "messages": 420, "orders": 0.50, "receiptImages": 0.20, "fiadoNotes": 0.10, "priceAsks": 0.10, "other": 0.10 },
+      { "id": "light-neighbours", "threads": 6, "messages": 235, "orders": 0.55, "receiptImages": 0.25, "fiadoNotes": 0.00, "priceAsks": 0.10, "other": 0.10 },
+      { "id": "businesses", "threads": 3, "messages": 710, "orders": 0.50, "receiptImages": 0.20, "fiadoNotes": 0.15, "priceAsks": 0.10, "other": 0.05 },
+      { "id": "fresh-suppliers", "threads": 5, "messages": 730, "ordersOut": 0.40, "paymentImages": 0.15, "priceLists": 0.15, "confirmations": 0.30 },
+      { "id": "packaged-and-gas", "threads": 4, "messages": 295, "ordersOut": 0.35, "paymentImages": 0.10, "dueNotes": 0.20, "priceLists": 0.15, "confirmations": 0.20 }
+    ],
+    "register": "Lima, lowercase, few accents: `casera`, `porfa`, `al cuaderno`, `ya te yapeé`.",
+    "sampleTexts": [
+      { "direction": "in", "text": "señora buenas, me manda 2 gaseosas grandes y un pan con jamón, ahorita paso" },
+      { "direction": "in", "text": "casera me fía hasta el viernes? 1 kilo de arroz, azúcar y aceite" },
+      { "direction": "in", "text": "ya te yapeé señora, gracias" },
+      { "direction": "in", "image": true, "text": "el yapeo de hoy" },
+      { "direction": "in", "image": true, "text": "este es el yapeo de ayer sra yesenia" },
+      { "direction": "in", "text": "anóteme al cuaderno porfa, el lunes le pago todito" },
+      { "direction": "in", "text": "cuánto está el balón de gas?" },
+      { "direction": "in", "text": "mi hijo pasa por el pedido en 10 min" },
+      { "direction": "in", "text": "buenos días, tiene huevos de granja? media docena" },
+      { "direction": "in", "text": "me olvidé el pan, me guarda 6 francés porfa" },
+      { "direction": "in", "text": "sra yesenia disculpe la demora, ya le yapeé" },
+      { "direction": "in", "text": "necesito 2 cajas de tomate para el menú, a las 8 porfa" },
+      { "direction": "in", "text": "hoy 3 jabas de papaya y 2 de piña, lo mismo de siempre" },
+      { "direction": "in", "text": "señora para la obra: 5 kilos de pollo, 3 de arroz, 2 aceite y 12 gaseosas" },
+      { "direction": "in", "text": "ya llegó el chico, déjelo en la puerta nomás" },
+      { "direction": "in", "text": "me apunta lo de hoy, mañana vengo con el resto" },
+      { "direction": "in", "text": "gracias casera, buenas noches" },
+      { "direction": "in", "text": "me lo deja al precio de siempre? le compro los dos" },
+      { "direction": "out", "text": "Marcos buenas, para mañana 8 kilos de pierna y 4 de pechuga" },
+      { "direction": "in", "text": "listo señora, mañana 6am" },
+      { "direction": "in", "image": true, "text": "lista de precios de esta semana" },
+      { "direction": "out", "image": true, "text": "ahí está el yapeo" },
+      { "direction": "in", "text": "señora le queda pendiente lo del miércoles" },
+      { "direction": "out", "text": "Aurora, para el sábado: 3 sacos de arroz, 2 de azúcar, 1 caja de aceite, 4 cajas de atún" },
+      { "direction": "in", "text": "mañana paso a las 7 con el reparto, tenga listo el efectivo" },
+      { "direction": "in", "text": "jajaja esa gaseosa se acabó rapidito casera" },
+      { "direction": "in", "text": "jaja ya me conoce sra yesenia, lo de siempre" },
+      { "direction": "in", "text": "hahaha mi esposo dice que su pan es el mejor de zárate" }
+    ],
+    "laughs": {
+      "rule": "The rig ranks the top people by the «haha» and «jaja» each chat holds until the debt read replaces that rule, so the counts below decide the order on screen.",
+      "byCustomer": { "nelly": 34, "percy": 22, "elmer": 19, "yoli": 15, "maribel": 11, "rosa": 9, "gladys": 8, "julia": 6, "carmen": 5, "flor": 4 }
+    },
+    "whoOwesYou": {
+      "heading": "likely, until the shop confirms each row",
+      "recencyRule": "`lastOrderDaysAgo` is the READ's own answer over the projected chats (`history/read.ts`), and `app/tools/test-bodega-history.mjs` holds the two equal row by row — so this figure is changed there, never here. It counts the newest order in the CHAT CORPUS, which is a different book from `prepDay`: Maribel reads `last order yesterday` while Prep times her order this morning, and reconciling the two belongs to the read.",
+      "rule": "Rank on the chat's own evidence: fiado asked for, orders with a payment message missing after them, how recent, how often. Each row prints its reason in words, states an amount only where a message states one, and the confirmation is what the fiado book records.",
+      "rows": [
+        { "customer": "maribel", "fiadoAsks": 7, "ordersAwaitingPayment": 4, "lastOrderDaysAgo": 1, "paymentsSeen": 3, "reason": "Asked to pay later 7 times · last order yesterday · 3 payments seen" },
+        { "customer": "rosa", "fiadoAsks": 5, "ordersAwaitingPayment": 3, "lastOrderDaysAgo": 2, "paymentsSeen": 4, "reason": "Asked to pay later 5 times · last order 2 days ago · 4 payments seen" },
+        { "customer": "carmen", "fiadoAsks": 6, "ordersAwaitingPayment": 2, "lastOrderDaysAgo": 3, "paymentsSeen": 5, "reason": "Asked to pay later 6 times · last order 3 days ago · 5 payments seen" },
+        { "customer": "nancy", "fiadoAsks": 4, "ordersAwaitingPayment": 2, "lastOrderDaysAgo": 4, "paymentsSeen": 2, "reason": "Asked to pay later 4 times · last order 4 days ago · 2 payments seen" },
+        { "customer": "flor", "fiadoAsks": 3, "ordersAwaitingPayment": 1, "lastOrderDaysAgo": 6, "paymentsSeen": 3, "reason": "Asked to pay later 3 times · last order 6 days ago · 3 payments seen" },
+        { "customer": "julia", "fiadoAsks": 2, "ordersAwaitingPayment": 1, "lastOrderDaysAgo": 3, "paymentsSeen": 6, "reason": "Asked to pay later twice · last order 3 days ago · 6 payments seen" }
+      ]
+    }
+  },
+  "prepDay": {
+    "date": "2026-09-18",
+    "weekday": "Friday",
+    "groupedBy": "block",
+    "orders": [
+      { "n": 1, "customer": "maribel", "street": "Jr. Los Amautas 480", "block": "Jr. Los Amautas", "received": "07:05", "lines": 3, "totalMinor": 26500, "settles": "fiado", "state": "Asked for", "review": true },
+      { "n": 2, "customer": "rosa", "street": "Av. Próceres de la Independencia 2140", "block": "Av. Próceres de la Independencia", "received": "09:05", "lines": 4, "totalMinor": 16800, "settles": "fiado", "state": "Asked for", "review": true },
+      { "n": 3, "customer": "nelly", "street": "Av. Gran Chimú 1502", "block": "Av. Gran Chimú", "received": "07:34", "lines": 3, "totalMinor": 18600, "settles": "cash", "state": "Asked for", "review": true },
+      { "n": 4, "customer": "julia", "street": "Av. Gran Chimú 1660", "block": "Av. Gran Chimú", "received": "10:40", "lines": 2, "totalMinor": 2400, "settles": "fiado", "state": "Asked for" },
+      { "n": 5, "customer": "hugo", "street": "Av. Gran Chimú 1590", "block": "Av. Gran Chimú", "received": "07:34", "lines": 5, "totalMinor": 3800, "settles": "cash", "state": "Asked for" },
+      { "n": 6, "customer": "walter", "street": "Av. Gran Chimú 1715", "block": "Av. Gran Chimú", "received": "08:28", "lines": 3, "totalMinor": 6200, "settles": "cash", "state": "Asked for" },
+      { "n": 7, "customer": "elmer", "street": "Jr. Chinchaysuyo 214", "block": "Jr. Chinchaysuyo", "received": "08:11", "lines": 5, "totalMinor": 2100, "settles": "cash", "state": "Asked for" },
+      { "n": 8, "customer": "jose", "street": "Jr. Chinchaysuyo 260", "block": "Jr. Chinchaysuyo", "received": "07:11", "lines": 3, "totalMinor": 5800, "settles": "cash", "state": "Asked for" },
+      { "n": 9, "customer": "flor", "street": "Psje. Las Dalias 108", "block": "Psje. Las Dalias", "received": "10:16", "lines": 4, "totalMinor": 4400, "settles": "fiado", "state": "Asked for" },
+      { "n": 10, "customer": "milagros", "street": "Psje. Las Dalias 131", "block": "Psje. Las Dalias", "received": "11:10", "lines": 4, "totalMinor": 3500, "settles": "fiado", "state": "Asked for" },
+      { "n": 11, "customer": "nancy", "street": "Jr. Los Amautas 330", "block": "Jr. Los Amautas", "received": "07:46", "lines": 3, "totalMinor": 4100, "settles": "fiado", "state": "Asked for" },
+      { "n": 12, "customer": "sonia", "street": "Jr. Los Amautas 412", "block": "Jr. Los Amautas", "received": "07:20", "lines": 3, "totalMinor": 2700, "settles": "fiado", "state": "Asked for" }
+    ],
+    "ordersRule": "`received`, `lines` and `state` are what `cast-cedar.ts` builds for these twelve accounts, read back off the fold and pinned here, so a customer sheet and the Prep row name one order with one line count. A quantity lives here nowhere: `qtyFor` sizes every line and `wholeUnits` keeps a unit whole.",
+    "groups": [
+      { "block": "Av. Gran Chimú", "sales": 4, "totalMinor": 31000 },
+      { "block": "Jr. Los Amautas", "sales": 3, "totalMinor": 33300 },
+      { "block": "Psje. Las Dalias", "sales": 2, "totalMinor": 7900 },
+      { "block": "Jr. Chinchaysuyo", "sales": 2, "totalMinor": 7900 },
+      { "block": "Av. Próceres de la Independencia", "sales": 1, "totalMinor": 16800 }
+    ],
+    "ordersTotalMinor": 96900,
+    "counterTakingsMinor": 48000,
+    "dayTotalMinor": 144900,
+    "averageDayMinor": 98000,
+    "monthMinor": 2940000,
+    "order": "`To review` first, then the groups, orders by arrival.",
+    "counts": "Prep counts read `sales`, the record is a `Sale`, and the export runs by transaction and by customer."
+  },
+  "money": {
+    "windows": {
+      "chat": { "days": 180, "from": "2026-03-22", "to": "2026-09-18" },
+      "money": { "days": 90, "from": "2026-06-20", "to": "2026-09-18" },
+      "bank": { "days": 30, "from": "2026-08-20", "to": "2026-09-18" }
+    },
+    "bank": {
+      "bank": "BCP",
+      "kind": "ahorros, moneda nacional",
+      "currency": "PEN",
+      "openingMinor": 318000,
+      "closingMinor": 542000,
+      "averageDailyBalance90dMinor": 406000,
+      "sunatNote": "The balance stays far under the 7 UIT monthly line, which is why the shop's own export is its record."
+    },
+    "incoming30d": {
+      "credits": 1046,
+      "totalMinor": 1712000,
+      "yape": { "credits": 812, "totalMinor": 1294000 },
+      "plin": { "credits": 234, "totalMinor": 418000 },
+      "matchedToSale": 284,
+      "matchRule": "A matched credit carries `Receipt.status: 'matched'`; counter takings land in the day's figure, and a credit colliding on an amount lands in `review`.",
+      "cashTillMinor": 795000
+    },
+    "outgoing30d": {
+      "totalMinor": 2160000,
+      "throughBank": { "payments": 31, "totalMinor": 1390000 },
+      "fromTillMinor": 770000
+    },
+    "fiadoBook": {
+      "debtors": 6,
+      "totalMinor": 100200,
+      "rows": [
+        { "customer": "maribel", "amountMinor": 46000, "since": "2026-08-28", "sales": 2 },
+        { "customer": "rosa", "amountMinor": 31800, "since": "2026-09-05", "sales": 2 },
+        { "customer": "carmen", "amountMinor": 8650, "since": "2026-08-24", "sales": 1 },
+        { "customer": "nancy", "amountMinor": 6400, "since": "2026-09-02", "sales": 1 },
+        { "customer": "flor", "amountMinor": 4200, "since": "2026-09-09", "sales": 1 },
+        { "customer": "julia", "amountMinor": 3150, "since": "2026-09-15", "sales": 1 }
+      ],
+      "reminderRule": "A fiado reminder states the sale, the amount and the date, and it carries a fee nowhere.",
+      "confirmation": "Each row here stands because the shop confirmed it on the read screen; the corpus itself states amounts nowhere."
+    },
+    "payables": {
+      "due": 4,
+      "totalMinor": 138000,
+      "rows": [
+        { "supplier": "abarrotes", "amountMinor": 68200, "delivered": "2026-09-16", "due": "2026-09-23" },
+        { "supplier": "lacteos", "amountMinor": 27400, "delivered": "2026-09-14", "due": "2026-09-21" },
+        { "supplier": "pollo", "amountMinor": 23600, "delivered": "2026-09-16", "due": "2026-09-23" },
+        { "supplier": "limpieza", "amountMinor": 18800, "delivered": "2026-09-10", "due": "2026-09-17", "state": "due the day before the reference day, so it reads one day late on every clock" }
+      ],
+      "settled": [
+        { "supplier": "abarrotes", "amountMinor": 42000, "paid": "2026-09-12", "grade": "confirmed by your bank", "note": "paid on the day, 2 days early" }
+      ],
+      "payLater": "Pay-later is one record per purchase, settled at 30 days. The file holds a limit, a rate and a date nowhere, and `advanceLimitOf` stays unread."
+    },
+    "record": {
+      "level": "Steady",
+      "levels": ["Starting", "Steady", "Punctual"],
+      "indicators": [
+        { "id": "paid-on-the-day", "count": 8, "of": 9, "windowDays": 90, "asOf": "2026-09-18", "floor": 3, "bankGraded": 7, "newestReason": "Paid on the day · Distribuidora Aurora, 2 days early · confirmed by your bank" },
+        { "id": "days-with-a-sale", "count": 26, "of": 28, "windowDays": 28, "asOf": "2026-09-18", "floor": 7, "newestReason": "A sale recorded today" },
+        { "id": "sales-with-the-payment-recorded", "count": 218, "of": 284, "windowDays": 28, "asOf": "2026-09-18", "floor": 10, "newestReason": "Payment recorded · matched by Rocoto" }
+      ],
+      "reasonRule": "A reason states the fact alone; the day it carries is the day the app is read on, so `money-overview.tsx` writes `19 Sep · A sale recorded today` off the same clock Prep reads.",
+      "levelRule": "`Starting` while an indicator sits under its floor; `Steady` at 80 / 60 / 70 per cent or better; `Punctual` with every supplier payment in the 90 days paid on or before the day. The one late payable holds this shop at `Steady`.",
+      "reads": "The shop's own behaviour alone. Its customers' punctuality prints as its own ledger, and a third party in its chats stays unprofiled.",
+      "act": "Save as a document"
+    },
+    "queue": {
+      "inLineSince": "2026-09-03",
+      "place": 1204,
+      "referralCode": "K7M2QX",
+      "movesUpBy": 50,
+      "perCoveredPurchase": 3,
+      "placeRule": "The SAMPLE world's own waitlist place, its referral code and the two constants screen 9 states. The rig reads all four from `GET /api/bodega/waitlist`; these stand where no connection service answers, and the screen prints `Sample waitlist` beside them (ONBOARDING-SPEC.md §0).",
+      "suppliers": 9,
+      "invited": ["abarrotes", "pollo", "lacteos", "limpieza"],
+      "joined": ["abarrotes", "pollo"],
+      "clearedLine": "Los negocios que ya usan Rocoto entran primero, y cada negocio que traes te adelanta en la lista.",
+      "clearedLineSource": "Businesses already using Rocoto go first, and every business you bring moves you up.",
+      "rule": "A figure in money, a rate, a date and an approval word wait for a signed lender; the queue line above is what ships today."
+    }
+  },
+  "products": [
+    { "name": "arroz extra", "shelf": "Abarrotes", "face": "/paintings/arroz.webp", "how": "direct" },
+    { "name": "azúcar rubia", "shelf": "Abarrotes", "face": "/paintings/azucar.webp", "how": "direct" },
+    { "name": "aceite vegetal 1 L", "shelf": "Abarrotes", "face": "/paintings/aceite-de-girasol.webp", "how": "peru-map", "binding": "aceite vegetal", "why": "fills a miss" },
+    { "name": "fideo tallarín", "shelf": "Abarrotes", "face": "/paintings/pasta.webp", "how": "peru-map", "binding": "fideo tallarin", "why": "fills a miss" },
+    { "name": "atún en conserva", "shelf": "Abarrotes", "face": "/paintings/conserva-de-pescado.webp", "how": "peru-map", "binding": "atun en conserva", "why": "corrects `atun-lomos`, a raw tuna loin" },
+    { "name": "leche evaporada", "shelf": "Abarrotes", "face": "/paintings/leche.webp", "how": "direct", "why": "a jug, which says milk and stops there; judge it at 40 px" },
+    { "name": "lentejas", "shelf": "Abarrotes", "face": "/paintings/lenteja.webp", "how": "direct" },
+    { "name": "pan francés", "shelf": "Fresh", "face": "/paintings/pan.webp", "how": "direct" },
+    { "name": "huevo de granja", "shelf": "Fresh", "face": "/paintings/huevo.webp", "how": "direct" },
+    { "name": "pollo pierna", "shelf": "Fresh", "face": "/paintings/muslo-de-pollo.webp", "how": "peru-map", "binding": "pollo pierna", "why": "sharpens `pollo`, the whole bird" },
+    { "name": "pollo pechuga", "shelf": "Fresh", "face": "/paintings/pechuga-de-pollo.webp", "how": "peru-map", "binding": "pollo pechuga", "why": "sharpens `pollo`, the whole bird" },
+    { "name": "queso fresco", "shelf": "Fresh", "face": "/paintings/queso-fresco.webp", "how": "direct" },
+    { "name": "yogurt litro", "shelf": "Fresh", "face": "/paintings/yogur.webp", "how": "direct" },
+    { "name": "papa blanca", "shelf": "Produce", "face": null, "how": "held out", "why": "`patata` resolves to a named variety, `patata-kennebec`, and a picture of another variety is the sentence the library's own review refused; the drawn mark stands until a `papa blanca` tile is painted" },
+    { "name": "cebolla roja", "shelf": "Produce", "face": "/paintings/cebolla-morada.webp", "how": "peru-map", "binding": "cebolla roja", "why": "corrects `cebolla-blanca`, a white onion" },
+    { "name": "tomate", "shelf": "Produce", "face": "/paintings/tomate-rama.webp", "how": "peru-map", "binding": "tomate", "why": "corrects `tomate-corazon-de-buey`, another variety" },
+    { "name": "limón", "shelf": "Produce", "face": "/paintings/limon.webp", "how": "direct" },
+    { "name": "palta", "shelf": "Produce", "face": "/paintings/aguacate.webp", "how": "peru-map", "binding": "palta", "why": "fills a miss" },
+    { "name": "plátano de seda", "shelf": "Produce", "face": "/paintings/platano.webp", "how": "direct" },
+    { "name": "papaya", "shelf": "Produce", "face": "/paintings/papaya.webp", "how": "direct" },
+    { "name": "gaseosa 3 L", "shelf": "Drinks", "face": "/paintings/refresco.webp", "how": "peru-map", "binding": "gaseosa", "why": "fills a miss; a poured glass, which says soft drink and stops there" },
+    { "name": "gaseosa personal 500 ml", "shelf": "Drinks", "face": "/paintings/refresco.webp", "how": "peru-map", "binding": "gaseosa", "why": "fills a miss" },
+    { "name": "agua mineral 625 ml", "shelf": "Drinks", "face": "/paintings/agua.webp", "how": "direct" },
+    { "name": "cerveza 650 ml", "shelf": "Drinks", "face": "/paintings/cerveza.webp", "how": "direct" },
+    { "name": "detergente en polvo", "shelf": "Home", "face": null, "how": "to paint" },
+    { "name": "lejía 1 L", "shelf": "Home", "face": null, "how": "to paint" },
+    { "name": "jabón de barra", "shelf": "Home", "face": null, "how": "to paint" },
+    { "name": "papel higiénico ×4", "shelf": "Home", "face": null, "how": "to paint" },
+    { "name": "fósforos", "shelf": "Home", "face": null, "how": "to paint" },
+    { "name": "balón de gas 10 kg", "shelf": "Home", "face": null, "how": "to paint" }
+  ],
+  "faces": {
+    "resolvedBy": "paintingFor(name) in `app/src/prototypes/cedar/painting-map.ts`, over the 794 tiles in `app/public/paintings/`",
+    "verifiedOn": "2026-09-18, by running the resolver over all thirty names",
+    "tally": { "direct": 13, "peruMap": 10, "heldOut": 1, "toPaint": 6 },
+    "peruMapShape": "Whole-name keys, matched on the folded name entire, the way `KIND_STANDS_FOR` is keyed.",
+    "peruMapHazard": "A substring alias corrupts its neighbours: `papa`→`patata` rewrites `papaya` to `patatya`, and the resolver then hands papaya a red potato. Verified by running it.",
+    "peruMapBindings": [
+      { "key": "aceite vegetal", "slug": "aceite-de-girasol" },
+      { "key": "fideo tallarin", "slug": "pasta" },
+      { "key": "atun en conserva", "slug": "conserva-de-pescado" },
+      { "key": "pollo pierna", "slug": "muslo-de-pollo" },
+      { "key": "pollo pechuga", "slug": "pechuga-de-pollo" },
+      { "key": "cebolla roja", "slug": "cebolla-morada" },
+      { "key": "tomate", "slug": "tomate-rama" },
+      { "key": "palta", "slug": "aguacate" },
+      { "key": "gaseosa", "slug": "refresco" },
+      { "key": "gaseosa personal", "slug": "refresco" }
+    ],
+    "toPaint": ["detergente en polvo", "lejía 1 L", "jabón de barra", "papel higiénico ×4", "fósforos", "balón de gas 10 kg", "papa blanca"],
+    "register": "Painterly still life on a white ground, judged at 40, 80 and 120 px. The `ProduceIcon` family mark draws each of these until its tile lands."
+  },
+  "worldsToSeed": [
+    { "id": "produce-stall", "name": "the produce stall", "changes": "Crates and sacks stand in for shelves, the address is a puesto in a mercado, and trade runs in the morning." },
+    { "id": "fish-stall", "name": "the fish stall", "changes": "Ice and whole fish off a dawn run to the terminal, sold by the kilo, with the day's catch as the product list." }
+  ]
+}

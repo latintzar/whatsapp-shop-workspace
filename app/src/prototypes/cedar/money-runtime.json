@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "owner": "cedar",
+  "logicalEnvironment": "local/synthetic",
+  "uiOrigins": [
+    "http://127.0.0.1:18240"
+  ],
+  "uiEntry": "/cedar/",
+  "apiOrigin": "http://127.0.0.1:18242",
+  "apiTarget": "user-owned-collections"
+}

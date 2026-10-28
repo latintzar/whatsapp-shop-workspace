@@ -1,0 +1,1031 @@
+{
+  "scope": "Markdown local targets in exported source; external websites and historical anchors not network-verified",
+  "historical_references_outside_export": [
+    {
+      "file": "docs/PRODUCT-MAP.md",
+      "label": "app/app.html",
+      "original_target": "../app/app.html",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "docs/PRODUCT-MAP.md",
+      "label": "system",
+      "original_target": "THE-SYSTEM-SPEC.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "docs/PRODUCT-MAP.md",
+      "label": "interaction",
+      "original_target": "THE-INTERACTION-SPEC.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "docs/PRODUCT-MAP.md",
+      "label": "implementation",
+      "original_target": "THE-IMPLEMENTATION-SPEC.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "docs/PRODUCT-MAP.md",
+      "label": "compatible app entry",
+      "original_target": "../app/app.html",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "docs/PRODUCT-MAP.md",
+      "label": "AI spec",
+      "original_target": "THE-AI-SPEC.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "docs/PRODUCT-MAP.md",
+      "label": "outputs",
+      "original_target": "THE-OUTPUTS-SPEC.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "docs/PRODUCT-MAP.md",
+      "label": "Implementation \u00a73",
+      "original_target": "THE-IMPLEMENTATION-SPEC.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "docs/PRODUCT-MAP.md",
+      "label": "Intelligence INTEL-11",
+      "original_target": "THE-INTELLIGENCE-SPEC.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "docs/PRODUCT-MAP.md",
+      "label": "Library and maintenance tools",
+      "original_target": "../library/paintings/README.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "docs/PRODUCT-MAP.md",
+      "label": "Vendor bindings",
+      "original_target": "THE-VENDOR-REGISTER.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "docs/PRODUCT-MAP.md",
+      "label": "backend",
+      "original_target": "../backend",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "docs/PRODUCT-MAP.md",
+      "label": "shared seed manifest",
+      "original_target": "../testdata-cedar.json",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "docs/PRODUCT-MAP.md",
+      "label": "AI spec",
+      "original_target": "THE-AI-SPEC.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "docs/PRODUCT-MAP.md",
+      "label": "schema",
+      "original_target": "THE-SCHEMA-SPEC.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "docs/PRODUCT-MAP.md",
+      "label": "connections",
+      "original_target": "THE-CONNECTIONS-SPEC.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "docs/PRODUCT-MAP.md",
+      "label": "Backend guide",
+      "original_target": "../backend/README.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "docs/PRODUCT-MAP.md",
+      "label": "architecture",
+      "original_target": "../backend/ARCHITECTURE.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "docs/PRODUCT-MAP.md",
+      "label": "Console spec",
+      "original_target": "THE-OPERATOR-CONSOLE-SPEC.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "docs/PRODUCT-MAP.md",
+      "label": "ops.py",
+      "original_target": "../backend/ops.py",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "docs/PRODUCT-MAP.md",
+      "label": "Kit publication",
+      "original_target": "../deploy/kit/README.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "docs/PRODUCT-MAP.md",
+      "label": "documentation index",
+      "original_target": "INDEX.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "docs/PRODUCT-MAP.md",
+      "label": "Engineering workflow",
+      "original_target": "ENGINEERING.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "docs/PRODUCT-MAP.md",
+      "label": "readiness",
+      "original_target": "ENGINEERING-READINESS.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "docs/THE-QR-SPEC.md",
+      "label": "THE-PAPER-SPEC",
+      "original_target": "THE-PAPER-SPEC.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "docs/THE-QR-SPEC.md",
+      "label": "THE-PAPER-SPEC",
+      "original_target": "THE-PAPER-SPEC.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/copper/README.md",
+      "label": "drive-cedar-order-payments.py",
+      "original_target": "../../../../drives/drive-cedar-order-payments.py",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/bodega-pay-later/README.md",
+      "label": "Play commissioning",
+      "original_target": "../../../../deploy/android-play/README.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/bodega-pay-later/MOBILE-SPEC.md",
+      "label": "FEED-IA",
+      "original_target": "../../../../docs/FEED-IA.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/bodega-pay-later/CONNECTION-EXPERIMENT.md",
+      "label": "FEED-IA \u00a7269",
+      "original_target": "../../../../docs/FEED-IA.md#269--whatsapp-business-authorization-webview-experiment--22-september-2026",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/OPERATIONS-HUB-SPEC.md",
+      "label": "Peter\u2019s 10 September brief",
+      "original_target": "../../../../docs/briefs/cedar-operations-hub-2026-09-10.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/OPERATIONS-HUB-SPEC.md",
+      "label": "Outputs",
+      "original_target": "../../../../docs/THE-OUTPUTS-SPEC.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/OPERATIONS-HUB-SPEC.md",
+      "label": "FEED-IA \u00a7247.8",
+      "original_target": "../../../../docs/FEED-IA.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/PAYMENTS-SPEC.md",
+      "label": "September 9 direction",
+      "original_target": "../../../../docs/FEED-IA.md#225",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/PAYMENTS-SPEC.md",
+      "label": "FEED-IA \u00a7252",
+      "original_target": "../../../../docs/FEED-IA.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/PAYMENTS-SPEC.md",
+      "label": "browser drive",
+      "original_target": "../../../../drives/drive-cedar-unique-amount.py",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/PAYMENTS-SPEC.md",
+      "label": "drives/drive-cedar-order-payments.py",
+      "original_target": "../../../../drives/drive-cedar-order-payments.py",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/ONBOARDING-SPEC.md",
+      "label": "Founder direction \u00a7231\u2013232",
+      "original_target": "../../../../docs/FEED-IA.md#231",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/ONBOARDING-SPEC.md",
+      "label": "System ACT-01",
+      "original_target": "../../../../docs/THE-SYSTEM-SPEC.md#act-01--onboarding-migration-activation-and-support",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/CALL-UX.md",
+      "label": "Call model tests",
+      "original_target": "../../../tools/test-phone-call-model.mjs",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/CALL-UX.md",
+      "label": "Session tests",
+      "original_target": "../../../tools/test-phone-session.mjs",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/CALL-UX.md",
+      "label": "Route tests",
+      "original_target": "../../../tools/test-phone-route.mjs",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/CALL-UX.md",
+      "label": "Capability tests",
+      "original_target": "../../../tools/test-phone-capability.mjs",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/CALL-UX.md",
+      "label": "Browser drive",
+      "original_target": "../../../../drives/drive-cedar-phone.py",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/CALL-UX.md",
+      "label": "The Hermes-port drive",
+      "original_target": "../../../../drives/drive-199-voice-real.py",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/PHONE-IMPLEMENTATION.md",
+      "label": "the commissioning brief",
+      "original_target": "../../../../docs/briefs/cedar-provider-commissioning-2026-09-11.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/PHONE-IMPLEMENTATION.md",
+      "label": "The capability test",
+      "original_target": "../../../tools/test-phone-capability.mjs",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/PHONE-IMPLEMENTATION.md",
+      "label": "FEED-IA \u00a7245",
+      "original_target": "../../../../docs/FEED-IA.md#245--cedar-phone-and-email-go-live-the-number-is-issued-at-setup-no-notice-order-mail-only",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/PHONE-IMPLEMENTATION.md",
+      "label": "its tool test",
+      "original_target": "../../../tools/test-phone-capability.mjs",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/PHONE-IMPLEMENTATION.md",
+      "label": "`drives/drive-199-voice-real.py`",
+      "original_target": "../../../../drives/drive-199-voice-real.py",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/PHONE-IMPLEMENTATION.md",
+      "label": "the commissioning brief",
+      "original_target": "../../../../docs/briefs/cedar-provider-commissioning-2026-09-11.md#measured-on-13-september-2026-with-a-twilio-number-rig-no-human-handset",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/EMAIL-IMPLEMENTATION.md",
+      "label": "the commissioning brief",
+      "original_target": "../../../../docs/briefs/cedar-provider-commissioning-2026-09-11.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/EMAIL-IMPLEMENTATION.md",
+      "label": "FEED-IA \u00a7245.5",
+      "original_target": "../../../../docs/FEED-IA.md#2455--unipile-holds-everything-rocoto-reads-order-mail",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/EMAIL-IMPLEMENTATION.md",
+      "label": "\u00a7245.7",
+      "original_target": "../../../../docs/FEED-IA.md#2457--only-the-mail-rocoto-needs-may-reach-its-servers-13-september",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/EMAIL-IMPLEMENTATION.md",
+      "label": "\u00a7247.2",
+      "original_target": "../../../../docs/FEED-IA.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/EMAIL-IMPLEMENTATION.md",
+      "label": "`app/tools/test-email-capability.mjs`",
+      "original_target": "../../../tools/test-email-capability.mjs",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/CHANNEL-SEMANTICS.md",
+      "label": "`test-reply-channel.mjs`",
+      "original_target": "../../../tools/test-reply-channel.mjs",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/CHANNEL-SEMANTICS.md",
+      "label": "`test-reply-channel.mjs`",
+      "original_target": "../../../tools/test-reply-channel.mjs",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/CHANNEL-SEMANTICS.md",
+      "label": "`drives/README.md`",
+      "original_target": "../../../../drives/README.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/MONEY-SPEC.md",
+      "label": "Founder direction \u00a7227\u2013232",
+      "original_target": "../../../../docs/FEED-IA.md#227",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/MONEY-SPEC.md",
+      "label": "FEED-IA \u00a7247.8",
+      "original_target": "../../../../docs/FEED-IA.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/MONEY-SPEC.md",
+      "label": "FEED-IA \u00a7247.6",
+      "original_target": "../../../../docs/FEED-IA.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/MONEY-SPEC.md",
+      "label": "`library/illustrations`",
+      "original_target": "../../../../library/illustrations/README.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/MONEY-SPEC.md",
+      "label": "test-money-states.mjs",
+      "original_target": "../../../tools/test-money-states.mjs",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/MONEY-SPEC.md",
+      "label": "test-money-capability.mjs",
+      "original_target": "../../../tools/test-money-capability.mjs",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/MONEY-SPEC.md",
+      "label": "FEED-IA \u00a7249",
+      "original_target": "../../../../docs/FEED-IA.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/MONEY-SPEC.md",
+      "label": "the demo brief",
+      "original_target": "../../../../docs/briefs/cedar-unpaid-advance-dossier-campaigns-2026-09-14.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/MONEY-SPEC.md",
+      "label": "test-chase.mjs",
+      "original_target": "../../../tools/test-chase.mjs",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/MONEY-SPEC.md",
+      "label": "test-money-finance.mjs",
+      "original_target": "../../../tools/test-money-finance.mjs",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/MONEY-SPEC.md",
+      "label": "test-money-finance.mjs",
+      "original_target": "../../../tools/test-money-finance.mjs",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/MONEY-SPEC.md",
+      "label": "FEED-IA \u00a7249",
+      "original_target": "../../../../docs/FEED-IA.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/MONEY-SPEC.md",
+      "label": "test-dossier.mjs",
+      "original_target": "../../../tools/test-dossier.mjs",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/MONEY-SPEC.md",
+      "label": "test-dossier.mjs",
+      "original_target": "../../../tools/test-dossier.mjs",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/MONEY-SPEC.md",
+      "label": "drives/drive-cedar-dossier.py",
+      "original_target": "../../../../drives/drive-cedar-dossier.py",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/MONEY-SPEC.md",
+      "label": "FEED-IA \u00a7247.2",
+      "original_target": "../../../../docs/FEED-IA.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/MONEY-SPEC.md",
+      "label": "test-money-capability.mjs",
+      "original_target": "../../../tools/test-money-capability.mjs",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/MONEY-SPEC.md",
+      "label": "copper-preview.env.public",
+      "original_target": "../../../../deploy/development/copper-preview.env.public",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/MONEY-SPEC.md",
+      "label": "test-sample-bank.mjs",
+      "original_target": "../../../tools/test-sample-bank.mjs",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/MONEY-SPEC.md",
+      "label": "test-sample-bank.mjs",
+      "original_target": "../../../tools/test-sample-bank.mjs",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/MONEY-SPEC.md",
+      "label": "test-money-capability.mjs",
+      "original_target": "../../../tools/test-money-capability.mjs",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/MONEY-SPEC.md",
+      "label": "drive-cedar-hybrid.py",
+      "original_target": "../../../../drives/drive-cedar-hybrid.py",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/MONEY-SPEC.md",
+      "label": "testdata manifest",
+      "original_target": "../../../../testdata-cedar.json",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/MONEY-SPEC.md",
+      "label": "FEED-IA \u00a7257",
+      "original_target": "../../../../docs/FEED-IA.md#257",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/MONEY-SPEC.md",
+      "label": "drive-cedar-order-payments.py",
+      "original_target": "../../../../drives/drive-cedar-order-payments.py",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/README.md",
+      "label": "live preparation handover",
+      "original_target": "../../../../docs/HANDOFF-CEDAR-LIVE-PREP.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/README.md",
+      "label": "app.html",
+      "original_target": "../../../app.html",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/README.md",
+      "label": "app/README.md",
+      "original_target": "../../../README.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/README.md",
+      "label": "mock-api",
+      "original_target": "../../../../mock-api/README.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/README.md",
+      "label": "library maintenance",
+      "original_target": "../../../../library/paintings/README.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/README.md",
+      "label": "original situations brief, 21 August 2026",
+      "original_target": "../../../../docs/kit/BRIEF-ORIGINAL.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/README.md",
+      "label": "FEED-IA",
+      "original_target": "../../../../docs/FEED-IA.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/README.md",
+      "label": "System",
+      "original_target": "../../../../docs/THE-SYSTEM-SPEC.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/README.md",
+      "label": "interaction",
+      "original_target": "../../../../docs/THE-INTERACTION-SPEC.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/README.md",
+      "label": "AI",
+      "original_target": "../../../../docs/THE-AI-SPEC.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/README.md",
+      "label": "implementation",
+      "original_target": "../../../../docs/THE-IMPLEMENTATION-SPEC.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/README.md",
+      "label": "adoption plan",
+      "original_target": "../../../../docs/THE-KIT-TO-PRODUCT-PLAN.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/README.md",
+      "label": "The workflow",
+      "original_target": "../../../../docs/ENGINEERING.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/README.md",
+      "label": "September workspace refinement",
+      "original_target": "../../../../docs/RELEASE-CEDAR-REFINEMENT-2026-09-10.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/README.md",
+      "label": "live preparation release",
+      "original_target": "../../../../docs/RELEASE-CEDAR-PREP-2026-09-10.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/README.md",
+      "label": "Spanish snapshot",
+      "original_target": "../../../Spanish-snapshot.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/README.md",
+      "label": "product receiver",
+      "original_target": "../../../../deploy/product/README.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/EMAIL-INTEGRATION-SPEC.md",
+      "label": "the commissioning brief",
+      "original_target": "../../../../docs/briefs/cedar-provider-commissioning-2026-09-11.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/EMAIL-INTEGRATION-SPEC.md",
+      "label": "FEED-IA \u00a7245.13",
+      "original_target": "../../../../docs/FEED-IA.md#24513--the-hybrid-connection-prelinked-to-a-customer-specced-like-whatsapp-14-september",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/PRODUCT-SPEC.md",
+      "label": "refinement brief",
+      "original_target": "../../../../docs/briefs/cedar-workspace-refinement-2026-09-10.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/PRINT-WORKFLOW.md",
+      "label": "THE-OUTPUTS-SPEC.md",
+      "original_target": "../../../../docs/THE-OUTPUTS-SPEC.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/PRINT-WORKFLOW.md",
+      "label": "THE-PAPER-SPEC.md",
+      "original_target": "../../../../docs/THE-PAPER-SPEC.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/PRINT-WORKFLOW.md",
+      "label": "the licences and the quota posture",
+      "original_target": "../../../../docs/kit/LICENSES-AND-ATTRIBUTION.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/PRINT-WORKFLOW.md",
+      "label": "The licences and the quota posture",
+      "original_target": "../../../../docs/kit/LICENSES-AND-ATTRIBUTION.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/PHONE-INTEGRATION-SPEC.md",
+      "label": "the commissioning brief",
+      "original_target": "../../../../docs/briefs/cedar-provider-commissioning-2026-09-11.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/PHONE-INTEGRATION-SPEC.md",
+      "label": "FEED-IA \u00a7245.13",
+      "original_target": "../../../../docs/FEED-IA.md#24513--the-hybrid-connection-prelinked-to-a-customer-specced-like-whatsapp-14-september",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/PHONE-INTEGRATION-SPEC.md",
+      "label": "\u00a7245.14",
+      "original_target": "../../../../docs/FEED-IA.md#24514--same-for-phone-14-september",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/PHONE-INTEGRATION-SPEC.md",
+      "label": "mock-api/deploy/CEDAR-CHANNELS.md",
+      "original_target": "../../../../mock-api/deploy/CEDAR-CHANNELS.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/bodega-pay-later/mobile/README.md",
+      "label": "prototype API",
+      "original_target": "../../../../../mock-api/README.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/fixtures/README.md",
+      "label": "manifest",
+      "original_target": "../../../../../testdata-cedar.json",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/connections/README.md",
+      "label": "Peter's original brief and clarifications",
+      "original_target": "../../../../../docs/FEED-IA.md#224",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/connections/README.md",
+      "label": "current deployment and repair receipt",
+      "original_target": "deploy/verification-2026-09-09-48838752.json",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/connections/README.md",
+      "label": "Deployment receipt",
+      "original_target": "deploy/verification-2026-09-09-2417e69e.json",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/connections/README.md",
+      "label": "lifecycle deployment",
+      "original_target": "deploy/verification-2026-09-09-c46f1059.json",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/connections/README.md",
+      "label": "initial deployment receipt",
+      "original_target": "deploy/verification-2026-09-09.json",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/connections/README.md",
+      "label": "provider receipt",
+      "original_target": "deploy/provider-verification-2026-09-09.json",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/connections/README.md",
+      "label": "webhook route",
+      "original_target": "../../../../../backend/app.py",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/connections/README.md",
+      "label": "tenant resolver",
+      "original_target": "../../../../../backend/tenancy.py",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/connections/README.md",
+      "label": "wa_onboard.py",
+      "original_target": "../../../../../backend/wa_onboard.py",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/connections/README.md",
+      "label": "wa_coexistence.py",
+      "original_target": "../../../../../backend/wa_coexistence.py",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/connections/README.md",
+      "label": "sup_api.py",
+      "original_target": "../../../../../backend/sup_api.py",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/connections/README.md",
+      "label": "native materializer",
+      "original_target": "../../../../../deploy/development/provider-env.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/connections/README.md",
+      "label": "registered development publisher",
+      "original_target": "deploy/README.md#redeploy-a-reviewed-revision",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/connections/README.md",
+      "label": "demo deployment",
+      "original_target": "deploy/README.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/connections/IMPLEMENTATION.md",
+      "label": "deployment and repair receipt",
+      "original_target": "deploy/verification-2026-09-09-48838752.json",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/src/prototypes/cedar/connections/HANDOFF.md",
+      "label": "verified runtime",
+      "original_target": "deploy/verification-2026-09-09-48838752.json",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/public/cedar-artwork/README.md",
+      "label": "`library/illustrations`",
+      "original_target": "../../../library/illustrations/README.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/public/cedar-artwork/README.md",
+      "label": "`library/illustrations`",
+      "original_target": "../../../library/illustrations/README.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/public/bodega-artwork/README.md",
+      "label": "`library/illustrations`",
+      "original_target": "../../../library/illustrations/README.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/public/bodega-artwork/README.md",
+      "label": "source and edit receipt",
+      "original_target": "../../../library/illustrations/accepted/receipts.json",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "app/public/bodega-artwork/README.md",
+      "label": "exact edit prompt",
+      "original_target": "../../../library/illustrations/prompts/welcome-fish-tiles-2026-09-22.txt",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "docs/decisions/0004-artwork-by-ideogram.md",
+      "label": "`docs/FEED-IA.md`",
+      "original_target": "../FEED-IA.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "docs/decisions/0004-artwork-by-ideogram.md",
+      "label": "THE-OUTPUTS-SPEC",
+      "original_target": "../THE-OUTPUTS-SPEC.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "docs/decisions/0004-artwork-by-ideogram.md",
+      "label": "`mock-api/deploy/env-names.txt`",
+      "original_target": "../../mock-api/deploy/env-names.txt",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "docs/decisions/0005-one-codebase-two-builds.md",
+      "label": "THE-KIT-TO-PRODUCT-PLAN",
+      "original_target": "../THE-KIT-TO-PRODUCT-PLAN.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "docs/decisions/0005-one-codebase-two-builds.md",
+      "label": "`docs/FEED-IA.md`",
+      "original_target": "../FEED-IA.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "docs/decisions/0007-main-is-protected.md",
+      "label": "`deploy/release.sh`",
+      "original_target": "../../deploy/release.sh",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "docs/decisions/0001-the-repository-and-the-organisation.md",
+      "label": "`deploy/release.sh`",
+      "original_target": "../../deploy/release.sh",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "docs/decisions/0001-the-repository-and-the-organisation.md",
+      "label": "`CHANGELOG.md`",
+      "original_target": "../../CHANGELOG.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "docs/decisions/0003-document-reading-by-anthropic-vision.md",
+      "label": "THE-IMPLEMENTATION-SPEC \u00a75",
+      "original_target": "../THE-IMPLEMENTATION-SPEC.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "docs/decisions/0003-document-reading-by-anthropic-vision.md",
+      "label": "`docs/FEED-IA.md`",
+      "original_target": "../FEED-IA.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "docs/decisions/0003-document-reading-by-anthropic-vision.md",
+      "label": "THE-PAPER-SPEC",
+      "original_target": "../THE-PAPER-SPEC.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "docs/decisions/0003-document-reading-by-anthropic-vision.md",
+      "label": "THE-PARSING-SPEC",
+      "original_target": "../THE-PARSING-SPEC.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "docs/decisions/0008-environments.md",
+      "label": "staging configuration",
+      "original_target": "../../deploy/staging/Caddyfile",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "docs/decisions/0008-environments.md",
+      "label": "`deploy/staging/`",
+      "original_target": "../../deploy/staging/README.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "docs/decisions/0008-environments.md",
+      "label": "`.github/workflows/ci.yml`",
+      "original_target": "../../.github/workflows/ci.yml",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "docs/decisions/0008-environments.md",
+      "label": "FEED-IA \u00a7214",
+      "original_target": "../FEED-IA.md#214",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "docs/decisions/0008-environments.md",
+      "label": "staging runbook",
+      "original_target": "../../deploy/staging/README.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "docs/decisions/0008-environments.md",
+      "label": "independent targets",
+      "original_target": "../../deploy/product/README.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "docs/decisions/0008-environments.md",
+      "label": "the kit runbook",
+      "original_target": "../../deploy/kit/README.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "docs/decisions/0008-environments.md",
+      "label": "engineering readiness",
+      "original_target": "../ENGINEERING-READINESS.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "docs/decisions/0010-three-repositories.md",
+      "label": "`STACK.md`",
+      "original_target": "../../STACK.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "docs/decisions/0009-experiments.md",
+      "label": "FEED-IA \u00a7215",
+      "original_target": "../FEED-IA.md#215",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "docs/decisions/0009-experiments.md",
+      "label": "the engineering workflow",
+      "original_target": "../ENGINEERING.md#keep-useful-discoveries-and-share-adopted-behaviour",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "docs/decisions/README.md",
+      "label": "`docs/FEED-IA.md`",
+      "original_target": "../FEED-IA.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "docs/decisions/0011-evidence-and-engineering-boundaries.md",
+      "label": "FEED-IA \u00a7210",
+      "original_target": "../FEED-IA.md#210",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "docs/decisions/0011-evidence-and-engineering-boundaries.md",
+      "label": "Engineering workflow",
+      "original_target": "../ENGINEERING.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "docs/decisions/0011-evidence-and-engineering-boundaries.md",
+      "label": "readiness evidence",
+      "original_target": "../ENGINEERING-READINESS.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "docs/decisions/0002-the-model-is-always-anthropic.md",
+      "label": "`docs/FEED-IA.md`",
+      "original_target": "../FEED-IA.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "docs/decisions/0002-the-model-is-always-anthropic.md",
+      "label": "THE-AI-SPEC \u00a76",
+      "original_target": "../THE-AI-SPEC.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "docs/decisions/0002-the-model-is-always-anthropic.md",
+      "label": "THE-IMPLEMENTATION-SPEC \u00a75",
+      "original_target": "../THE-IMPLEMENTATION-SPEC.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "docs/decisions/0006-the-kit-runtime-in-production.md",
+      "label": "`mock-api/deploy/`",
+      "original_target": "../../mock-api/deploy/",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "docs/decisions/0006-the-kit-runtime-in-production.md",
+      "label": "`backend/`",
+      "original_target": "../../backend/README.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "docs/decisions/0006-the-kit-runtime-in-production.md",
+      "label": "`mock-api/README.md`",
+      "original_target": "../../mock-api/README.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "docs/decisions/0006-the-kit-runtime-in-production.md",
+      "label": "`mock-api/deploy/`",
+      "original_target": "../../mock-api/deploy/",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "docs/decisions/0006-the-kit-runtime-in-production.md",
+      "label": "THE-RUNTIME-SPEC",
+      "original_target": "../THE-RUNTIME-SPEC.md",
+      "handling": "historical target outside export; retained as named reference"
+    },
+    {
+      "file": "docs/decisions/0006-the-kit-runtime-in-production.md",
+      "label": "`docs/FEED-IA.md`",
+      "original_target": "../FEED-IA.md",
+      "handling": "historical target outside export; retained as named reference"
+    }
+  ]
+}

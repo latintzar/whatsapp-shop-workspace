@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Rocoto</string>
+    <string name="title_activity_main">Rocoto</string>
+    <string name="package_name">com.soyrocoto.app</string>
+    <string name="custom_url_scheme">com.soyrocoto.app</string>
+</resources>

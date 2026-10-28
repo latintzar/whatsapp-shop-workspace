@@ -1,0 +1,234 @@
+[
+ {
+  "name": "supplier_connected",
+  "language": "es",
+  "category": "UTILITY",
+  "allow_category_change": true,
+  "components": [
+   {
+    "type": "BODY",
+    "text": "Tu proveedor {{1}} ya entró. Ya son {{2}} proveedores tuyos en Rocoto.",
+    "example": {
+     "body_text": [
+      [
+       "Mayorista San Jorge",
+       "3"
+      ]
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "name": "statement_ready",
+  "language": "es",
+  "category": "UTILITY",
+  "allow_category_change": true,
+  "components": [
+   {
+    "type": "BODY",
+    "text": "Tu resumen del {{1}}: {{2}} ventas por S/ {{3}}. En tus fiados confirmados te deben S/ {{4}}, y en tus compras anotadas debes S/ {{5}}. Revísalo y corrígeme.",
+    "example": {
+     "body_text": [
+      [
+       "8 al 14 de setiembre",
+       "42",
+       "3,180",
+       "1,240",
+       "3,980"
+      ]
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "name": "payment_received",
+  "language": "es",
+  "category": "UTILITY",
+  "allow_category_change": true,
+  "components": [
+   {
+    "type": "BODY",
+    "text": "Pago recibido: {{1}} pagó S/ {{2}} de la venta {{3}}. Ya quedó anotado.",
+    "example": {
+     "body_text": [
+      [
+       "Rosa Quispe",
+       "48.00",
+       "1042"
+      ]
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "name": "payment_due_today",
+  "language": "es",
+  "category": "UTILITY",
+  "allow_category_change": true,
+  "components": [
+   {
+    "type": "BODY",
+    "text": "Hoy le toca el pago a {{1}}: S/ {{2}}. Cuando lo hagas, mándame el voucher y lo anoto.",
+    "example": {
+     "body_text": [
+      [
+       "Mayorista San Jorge",
+       "640.00"
+      ]
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "name": "payment_request",
+  "language": "es",
+  "category": "UTILITY",
+  "allow_category_change": true,
+  "components": [
+   {
+    "type": "BODY",
+    "text": "Hola {{1}}. Tu pedido de {{2}} sale S/ {{3}}. Toca el botón y ahí tienes el monto exacto y la cuenta de {{4}} para pagar por Yape o transferencia.",
+    "example": {
+     "body_text": [
+      [
+       "Rosa",
+       "2 cajas de tomate",
+       "48.00",
+       "Bodega Yesenia"
+      ]
+     ]
+    }
+   },
+   {
+    "type": "BUTTONS",
+    "buttons": [
+     {
+      "type": "URL",
+      "text": "Pagar",
+      "url": "https://soyrocoto.com/pago/{{1}}",
+      "example": [
+       "https://soyrocoto.com/pago/a7f2k9"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "name": "connect_invite_peru",
+  "language": "es",
+  "category": "MARKETING",
+  "components": [
+   {
+    "type": "BODY",
+    "text": "Hola {{1}}. Rocoto anota quién te debe y a quién le debes, desde tu WhatsApp. Estamos preparando crédito de capital de trabajo para negocios como el tuyo, con una entidad financiera supervisada por la SBS. Los negocios que ya usan Rocoto entran primero, y cada negocio que traes te adelanta en la lista.",
+    "example": {
+     "body_text": [
+      [
+       "Doña Rosa"
+      ]
+     ]
+    }
+   },
+   {
+    "type": "BUTTONS",
+    "buttons": [
+     {
+      "type": "URL",
+      "text": "Ver cómo funciona",
+      "url": "https://soyrocoto.com/peru"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "name": "shop_ready",
+  "language": "es",
+  "category": "UTILITY",
+  "allow_category_change": true,
+  "components": [
+   {
+    "type": "BODY",
+    "text": "Listo, {{1}}. Tu negocio ya está en Rocoto. Acá me quedo en WhatsApp: te aviso cuando entre un proveedor tuyo, cuando te paguen y cuando toque un pago.",
+    "example": {
+     "body_text": [
+      [
+       "Yesenia"
+      ]
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "name": "waitlist_hello",
+  "language": "es",
+  "category": "UTILITY",
+  "allow_category_change": true,
+  "components": [
+   {
+    "type": "BODY",
+    "text": "Hola {{1}}, tu negocio ya está en la lista de espera de Rocoto, en el puesto {{2}}. Aquí ves tu puesto y quién entró por ti.",
+    "example": {
+     "body_text": [
+      [
+       "Yesenia",
+       "1,204"
+      ]
+     ]
+    }
+   },
+   {
+    "type": "BUTTONS",
+    "buttons": [
+     {
+      "type": "URL",
+      "text": "Ver mi puesto",
+      "url": "https://demo.soyrocoto.com/bodega-pay-later/?lista={{1}}",
+      "example": [
+       "https://demo.soyrocoto.com/bodega-pay-later/?lista=K7M2QX"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "name": "waitlist_hello",
+  "language": "en",
+  "category": "UTILITY",
+  "allow_category_change": true,
+  "components": [
+   {
+    "type": "BODY",
+    "text": "Hi {{1}}, your business is on the Rocoto waitlist, at place {{2}}. Your place and who joined through you are here.",
+    "example": {
+     "body_text": [
+      [
+       "Yesenia",
+       "1,204"
+      ]
+     ]
+    }
+   },
+   {
+    "type": "BUTTONS",
+    "buttons": [
+     {
+      "type": "URL",
+      "text": "See my place",
+      "url": "https://demo.soyrocoto.com/bodega-pay-later/?lista={{1}}",
+      "example": [
+       "https://demo.soyrocoto.com/bodega-pay-later/?lista=K7M2QX"
+      ]
+     }
+    ]
+   }
+  ]
+ }
+]

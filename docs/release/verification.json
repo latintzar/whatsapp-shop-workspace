@@ -1,0 +1,152 @@
+{
+  "source": "e4801f58454c3a7fa639d0570b71f3434d2dc759",
+  "python_network": "loopback-only",
+  "suites": [
+    {
+      "name": "typescript",
+      "returncode": 0,
+      "seconds": 3.78
+    },
+    {
+      "name": "test-bodega-connection-experiment",
+      "returncode": 0,
+      "seconds": 0.15
+    },
+    {
+      "name": "test-bodega-direct-callback",
+      "returncode": 0,
+      "seconds": 0.17
+    },
+    {
+      "name": "test-bodega-export",
+      "returncode": 0,
+      "seconds": 0.39
+    },
+    {
+      "name": "test-bodega-history",
+      "returncode": 0,
+      "seconds": 0.28
+    },
+    {
+      "name": "test-bodega-mobile-state",
+      "returncode": 0,
+      "seconds": 0.16
+    },
+    {
+      "name": "test-bodega-money",
+      "returncode": 0,
+      "seconds": 1.4
+    },
+    {
+      "name": "test-bodega-prep-order",
+      "returncode": 0,
+      "seconds": 0.19
+    },
+    {
+      "name": "test-bodega-referrals",
+      "returncode": 0,
+      "seconds": 0.22
+    },
+    {
+      "name": "test-bodega-session-experiment",
+      "returncode": 0,
+      "seconds": 0.16
+    },
+    {
+      "name": "prototype-api",
+      "returncode": 0,
+      "seconds": 11.75
+    },
+    {
+      "name": "whatsapp-history",
+      "returncode": 0,
+      "seconds": 15.02
+    },
+    {
+      "name": "collections",
+      "returncode": 0,
+      "seconds": 20.5
+    },
+    {
+      "name": "portable-setup",
+      "returncode": 0,
+      "seconds": 0.85
+    },
+    {
+      "name": "marketing-referrals",
+      "returncode": 0,
+      "seconds": 0.04
+    }
+  ],
+  "date": "2026-10-28",
+  "python_tests": {
+    "prototype_api": 156,
+    "whatsapp_history": 162,
+    "collections": 249,
+    "collections_subtests": 49,
+    "portable_setup": 7
+  },
+  "typescript": "passed",
+  "bodega_tool_suites": 9,
+  "marketing_referrals": "passed",
+  "web_build": "passed",
+  "android_web_bundle": "passed",
+  "native_apk_aab": "recipient JDK/SDK/signing/device acceptance required; not compiled for this export",
+  "provider_calls": "none; transport suites injected and Python networking loopback-only",
+  "secret_scan": {
+    "tool": "gitleaks 8.30.1",
+    "scope": "history-free public source closure, generated/private directories excluded",
+    "findings": [
+      {
+        "file": "app/src/prototypes/cedar/albaran-intake-memory.ts",
+        "line": 26,
+        "rule": "generic-api-key",
+        "classification": "literal browser storage namespace, not a credential"
+      }
+    ],
+    "qualification": "Source scan and bounded manual review; not comprehensive secret clearance"
+  },
+  "browser": {
+    "fixture": "authored Bodega world",
+    "ledger": {
+      "request_created": true,
+      "idempotent_request": true,
+      "sample_principal_minor": 10000,
+      "sample_receipt_minor": 4000,
+      "remaining_minor": 6000,
+      "state": "partial",
+      "new_http_session_same_ledger": true
+    },
+    "browser": [
+      {
+        "width": 1440,
+        "routes": [
+          "prep",
+          "money",
+          "customers"
+        ],
+        "sample_source_label": true,
+        "persistent_collection_workspace": true,
+        "sample_bank_http": 200,
+        "page_errors": 0,
+        "external_requests": 0,
+        "horizontal_overflow": false
+      },
+      {
+        "width": 390,
+        "routes": [
+          "prep",
+          "money",
+          "customers"
+        ],
+        "sample_source_label": true,
+        "persistent_collection_workspace": true,
+        "sample_bank_http": 200,
+        "page_errors": 0,
+        "external_requests": 0,
+        "horizontal_overflow": false
+      }
+    ]
+  },
+  "missing_historical_image_links": 0
+}

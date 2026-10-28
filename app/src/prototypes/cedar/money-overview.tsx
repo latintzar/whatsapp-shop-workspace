@@ -423,7 +423,7 @@ export function MoneyOverview({ scope, sales, view = 'overview', advanceMinor }:
   const outstanding = invoices.reduce((sum, invoice) => sum + invoiceBalance(state, invoice.id), 0);
   const collected = payments.filter(receipt => receipt.status === 'matched').reduce((sum, receipt) => sum + receipt.amountMinor, 0);
   const bankId = bank.bank ?? state.setup.bank;
-  const bankName = { bbva: 'BBVA', interbank: 'Interbank', scotiabank: 'Scotiabank' }[bankId] ?? 'Receiving bank';
+  const bankName = { bcp: 'BCP', bbva: 'BBVA', interbank: 'Interbank', scotiabank: 'Scotiabank' }[bankId] ?? 'Receiving bank';
   const card = css({ display: 'grid', alignContent: 'start', gap: theme.sizing.scale600, minWidth: 0,
     padding: theme.sizing.scale700, border: `1px solid ${theme.colors.borderOpaque}`, borderRadius: theme.borders.radius400,
     backgroundColor: theme.colors.backgroundPrimary, color: theme.colors.contentPrimary, textDecoration: 'none',

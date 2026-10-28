@@ -1,0 +1,60 @@
+{
+  "fixture": {
+    "schema": 2,
+    "source": "app/src/prototypes/bodega-pay-later/fixtures/cast-bodega.json · authored synthetic Bodega Yesenia; balance is the fixture closing balance; no historical receipts are asserted",
+    "collections": {
+      "accounts": [
+        {
+          "scope": "fish",
+          "houseName": "Bodega Yesenia",
+          "bank": "bcp",
+          "accountNumber": "1932415678033",
+          "currency": "PEN",
+          "openingBalanceMinor": 542000,
+          "referenceTime": "12:00:00-05:00",
+          "wallets": {
+            "yape": true,
+            "plin": true
+          }
+        }
+      ],
+      "receiptsByWeekday": {
+        "0": [],
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [],
+        "5": [],
+        "6": []
+      }
+    },
+    "legacy": {
+      "collections": {
+        "accounts": [
+          {
+            "scope": "fish",
+            "houseName": "Bodega Yesenia",
+            "bank": "bcp",
+            "accountNumber": "1932415678033",
+            "currency": "PEN",
+            "openingBalanceMinor": 542000,
+            "referenceTime": "12:00:00-05:00",
+            "wallets": {
+              "yape": true,
+              "plin": true
+            }
+          }
+        ],
+        "receiptsByWeekday": {
+          "0": [],
+          "1": [],
+          "2": [],
+          "3": [],
+          "4": [],
+          "5": [],
+          "6": []
+        }
+      }
+    }
+  }
+}

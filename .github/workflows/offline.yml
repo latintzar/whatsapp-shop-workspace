@@ -21,5 +21,7 @@ jobs:
       - run: make install
       - run: make doctor
       - run: make test
+      - run: PYTHONPATH=.:tools/offline .venv/bin/python -m unittest tools.tests.test_guest_preview
+      - run: cd app && VITE_ATELIER_GUEST_PREFIX=/apps/peru npm run build -- --base=/apps/peru/
       - run: make build
       - run: make android

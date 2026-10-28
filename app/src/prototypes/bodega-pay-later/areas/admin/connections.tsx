@@ -75,7 +75,8 @@ function Door({ label, hash }: { label: string; hash: string }) {
 }
 
 /** The banks Rocoto reads, in the shop's own words, off the capability's own ids. */
-const BANK_WORD: Record<'bbva' | 'interbank' | 'scotiabank', string> = {
+const BANK_WORD: Record<'bbva' | 'interbank' | 'scotiabank' | 'bcp', string> = {
+  bcp: 'BCP',
   bbva: 'BBVA',
   interbank: 'Interbank',
   scotiabank: 'Scotiabank',

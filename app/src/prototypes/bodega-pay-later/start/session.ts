@@ -1,3 +1,4 @@
+import { guestPrefix } from '../../cedar/guest-preview';
 /* THE SESSION'S OWN PLUMBING — the sign-in, the reset, the referral record, the closing message
  * (WIRING-SPEC.md §1, §4).
  *
@@ -42,7 +43,7 @@ import { chatSource } from '../source';
 import { SCOPE, readStage, signIn, signOut, type SignedVia, type Stage } from '../stage';
 import { nativeWalk } from './runtime';
 
-export const BODEGA_API = '/api/bodega';
+export const BODEGA_API = `${guestPrefix()}/api/bodega`;
 
 /** Rocoto's own number on Meta's Cloud API, the one that writes to the shop (MESSAGES.md §2). */
 export const ROCOTO_NUMBER = publicSettings.botNumber || 'Configure your WhatsApp number';

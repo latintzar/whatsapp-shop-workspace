@@ -22,13 +22,14 @@ the account and on every movement — rather than in the words a merchant reads.
 from __future__ import annotations
 
 import json
+import os
 from datetime import datetime, timedelta
 from functools import lru_cache
 from pathlib import Path
 from typing import Any
 from zoneinfo import ZoneInfo
 
-DATA = Path(__file__).resolve().parent.parent / "sample_bank_v1.json"
+DATA = Path(os.environ.get("CEDAR_SAMPLE_BANK_FILE", "")) if os.environ.get("CEDAR_SAMPLE_BANK_FILE") else Path(__file__).resolve().parent.parent / "sample_bank_v1.json"
 # Money is Peru's surface (FEED-IA §247.9), and the browser reads every Cedar day in this zone.
 WORKSPACE_ZONE = ZoneInfo("America/Lima")
 METHOD_WORDS = {"yape": "Yape", "plin": "Plin", "transfer": "Bank transfer", "cash": "Cash"}

@@ -1,3 +1,4 @@
+import { guestPrefix } from './guest-preview';
 /* WORKSPACE CAPABILITIES — whether this house uses Pricing and Inventory at all.
  *
  * This is deliberately separate from `grants.ts`. A grant answers what Rocoto may do without a
@@ -21,7 +22,7 @@ export type WorkspaceCapabilities = {
 
 export const WORKSPACE_CAPABILITIES_KEY = 'rocoto-workspace-capabilities';
 export const workspaceCapabilitiesKey = (scope: string): string =>
-  `${WORKSPACE_CAPABILITIES_KEY}:${scope || 'default'}`;
+  `${guestPrefix() ? 'atelier-peru:' : ''}${WORKSPACE_CAPABILITIES_KEY}:${scope || 'default'}`;
 
 export const WORKSPACE_CAPABILITIES_DEFAULTS: WorkspaceCapabilities = {
   version: 1,
@@ -75,6 +76,7 @@ export function parseWorkspaceCapabilities(
 /** The browser Kit has three demo houses; production replaces this with its trusted tenant scope. */
 function activeScope(): string {
   if (typeof window === 'undefined') return 'default';
+  if (guestPrefix()) return 'fish';
   try {
     const raw: unknown = JSON.parse(window.localStorage.getItem('rocoto-app-config') ?? 'null');
     if (raw && typeof raw === 'object') {

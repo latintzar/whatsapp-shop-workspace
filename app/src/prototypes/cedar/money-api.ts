@@ -1,3 +1,4 @@
+import { guestPrefix } from './guest-preview';
 import target from './money-runtime.json';
 import { decimalText, paymentReference, moneyStorageKey, peruDate, validFiscal, validPaymentQuote, receiptPrincipal, type PaymentQuote, type FiscalState, type Invoice, type MoneySetupState, type PaymentRequest, type Receipt, type ReceiptInput } from './money-model';
 import { moneyWorkspace } from './money-seed';
@@ -77,6 +78,7 @@ if (typeof window !== 'undefined') window.addEventListener('storage', event => {
 /** The declared preview uses its owned API. A local run may select its own loopback service. */
 export function collectionOrigin(): string | null {
   if (typeof window === 'undefined') return null;
+  const guest = guestPrefix(); if (guest) return window.location.origin + guest;
   if ((target.uiOrigins as string[]).includes(window.location.origin)) return target.apiOrigin;
   if (!['127.0.0.1', 'localhost'].includes(window.location.hostname)) return null;
   try {
@@ -292,7 +294,7 @@ export async function submitCollectionInvoice(scope: string, id: string, query =
  *  commissioned Prometeo account answers — so every Money door reads one snapshot, and the day the
  *  key is commissioned the same doors read the real account. Provenance lives here, in the data. */
 export type BankSnapshot = { ready: false; mode: 'sample' } | {
-  ready: true; bank: 'bbva' | 'interbank' | 'scotiabank'; account_label: string; account_mask: string;
+  ready: true; bank: 'bbva' | 'interbank' | 'scotiabank' | 'bcp'; account_label: string; account_mask: string;
   balance_minor: number; currency: 'PEN' | 'USD'; as_of: string; mode: 'sandbox' | 'live' | 'sample'; source: 'prometeo' | 'sample';
   monitor?: { status: 'off' | 'scheduled' | 'running' | 'retrying' | 'reauthorization-required'; last_success?: string; next_due?: number | null };
   /** THE WALLETS ARE THEIR OWN COMMISSIONING (FEED-IA §247.2). An authorized account says how
@@ -345,7 +347,7 @@ export async function readBankSnapshot(scope: string): Promise<BankSnapshot | nu
   if (!origin) return null;
   const raw = await collectionOwnerRequest<BankSnapshot>(scope, bankReadPath(scope, '/bank'));
   if (raw?.ready === false) return { ready: false, mode: 'sample' };
-  if (raw?.ready !== true || !['bbva', 'interbank', 'scotiabank'].includes(raw.bank)
+  if (raw?.ready !== true || !['bbva', 'interbank', 'scotiabank', 'bcp'].includes(raw.bank)
     || !Number.isSafeInteger(raw.balance_minor) || !['PEN', 'USD'].includes(raw.currency)
     || typeof raw.account_label !== 'string' || typeof raw.account_mask !== 'string'
     || !['sandbox', 'live', 'sample'].includes(raw.mode) || !['prometeo', 'sample'].includes(raw.source)

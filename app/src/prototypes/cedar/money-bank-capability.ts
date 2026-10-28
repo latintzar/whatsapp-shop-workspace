@@ -89,7 +89,7 @@ type Common = {
 };
 
 export type BankCapability = Common & {
-  bank: 'bbva' | 'interbank' | 'scotiabank' | null;
+  bank: 'bbva' | 'interbank' | 'scotiabank' | 'bcp' | null;
   accountLabel: string;
   accountMask: string;
   balanceMinor: number | null;

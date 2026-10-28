@@ -1,3 +1,4 @@
+import { guestPrefix } from "../../cedar/guest-preview";
 /* THE SOURCE — ONE SEAM, and the whole reason the screens hold one code path.
  *
  * Every surface that reads the shop's chats reads THIS interface. Behind it stand two
@@ -350,6 +351,7 @@ const looksLikeState = (value: unknown): value is ProofState =>
 let chosen: Promise<ChatSource> | null = null;
 
 async function choose(): Promise<ChatSource> {
+  if (guestPrefix()) return sampleSource();
   // Browser proof cookies never become native authority. Until the account-scoped history
   // bridge is available, native onboarding offers the shop's real referral link with no cast.
   if (nativeWalk()) return {

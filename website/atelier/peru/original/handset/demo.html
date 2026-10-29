@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Handset · judge it alone</title>
+<meta name="robots" content="noindex">
+<style>
+  :root {
+    --paper: #FAF7F3;
+    --ink: #14140f;
+    --box: 520px;                       /* the render box's width */
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font: 400 15px/1.45 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100svh;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-content: start;
+  }
+
+  header {
+    display: flex; align-items: baseline; gap: 14px;
+    padding: 18px 24px; border-bottom: 1px solid rgba(20,20,15,.08);
+  }
+  header b { font-weight: 600; letter-spacing: -.01em; }
+  header span { color: rgba(20,20,15,.5); font-size: 13px; }
+
+  main {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 290px;
+    gap: 32px;
+    padding: 28px 24px 60px;
+    align-items: start;
+  }
+  @media (max-width: 860px) { main { grid-template-columns: 1fr; } }
+
+  .stage {
+    display: grid; place-items: center;
+    min-height: 60svh;
+  }
+
+  /* THE RENDER BOX — aspect .78, the handset sits in the middle ~58% so a quarter turn
+     never clips. This is the box the page builder reproduces. */
+  .frame {
+    position: relative;
+    width: min(var(--box), 84vw);
+    aspect-ratio: .78;
+  }
+
+  .ph-screen { background: #000; }
+  .ph-frame { position: absolute; inset: 0; width: 390px; height: 844px; border: 0; }
+  .ph-island { background: #0b0b0c; }
+
+  aside {
+    position: sticky; top: 24px;
+    border: 1px solid rgba(20,20,15,.1);
+    border-radius: 14px;
+    padding: 18px;
+    background: #fff;
+  }
+  aside h2 { margin: 0 0 14px; font-size: 13px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: rgba(20,20,15,.45); }
+  .ctl { margin-bottom: 16px; }
+  .ctl label { display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 6px; }
+  .ctl label i { font-style: normal; font-variant-numeric: tabular-nums; color: rgba(20,20,15,.55); }
+  .ctl input[type=range] { width: 100%; accent-color: #d2452b; }
+  .row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+  .row button {
+    font: inherit; font-size: 12px; padding: 5px 9px; border-radius: 999px;
+    border: 1px solid rgba(20,20,15,.16); background: #fff; cursor: pointer;
+  }
+  .row button:hover { background: #f1efe9; }
+  dl { margin: 0; font-size: 12px; display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; }
+  dt { color: rgba(20,20,15,.5); }
+  dd { margin: 0; font-variant-numeric: tabular-nums; }
+  .fail { color: #b3341c; font-size: 13px; }
+</style>
+</head>
+<body>
+
+<header>
+  <b>Handset</b>
+  <span>procedural, ours · three.js r169 · render on demand</span>
+</header>
+
+<main>
+  <div class="stage">
+    <div class="frame" id="frame">
+      <div class="ph-screen" id="screen">
+        <iframe class="ph-frame" id="demo" title="Demo" src="/peru/original/demos/compras.html" scrolling="no"></iframe>
+      </div>
+      <span class="ph-island" id="island"></span>
+    </div>
+  </div>
+
+  <aside>
+    <h2>Pose</h2>
+    <div class="ctl">
+      <label>rotationY <i id="vY">0°</i></label>
+      <input type="range" id="rY" min="0" max="90" step="0.5" value="0">
+    </div>
+    <div class="ctl">
+      <label>rotationZ <i id="vZ">0.0°</i></label>
+      <input type="range" id="rZ" min="-8" max="8" step="0.1" value="0">
+    </div>
+    <div class="ctl">
+      <label>rotationX <i id="vX">0.0°</i></label>
+      <input type="range" id="rX" min="-14" max="14" step="0.1" value="0">
+    </div>
+    <div class="row">
+      <button data-y="0">0°</button>
+      <button data-y="15">15°</button>
+      <button data-y="35">35°</button>
+      <button data-y="60">60°</button>
+      <button data-y="80">80°</button>
+      <button data-y="90">90°</button>
+      <button id="journey">the turn</button>
+    </div>
+    <h2>Finish</h2>
+    <div class="row">
+      <button data-finish="graphite">graphite</button>
+      <button data-finish="titanium">natural titanium</button>
+    </div>
+    <h2>Measured</h2>
+    <dl>
+      <dt>box</dt><dd id="mBox">—</dd>
+      <dt>pixel ratio</dt><dd id="mDpr">—</dd>
+      <dt>ms / frame</dt><dd id="mCost">—</dd>
+      <dt>screen error</dt><dd id="mErr">—</dd>
+    </dl>
+    <p class="fail" id="fail" hidden></p>
+  </aside>
+</main>
+
+<script type="module">
+import { createHandset } from './handset.js';
+
+const frame = document.getElementById('frame');
+const screenEl = document.getElementById('screen');
+const island = document.getElementById('island');
+const rY = document.getElementById('rY'), rZ = document.getElementById('rZ'), rX = document.getElementById('rX');
+const vY = document.getElementById('vY'), vZ = document.getElementById('vZ'), vX = document.getElementById('vX');
+const D = Math.PI / 180;
+
+let h = null;
+let finish = new URL(location).searchParams.get('finish') || 'graphite';
+
+async function mount() {
+  if (h) h.dispose();
+  try {
+    /* the licensed model, unless `?proc=1` asks for the procedural handset this module was
+       written around — which is the whole point of this page: the two, side by side */
+    h = await createHandset(frame, {
+      screen: screenEl, island, finish,
+      model: new URL(location).searchParams.has('proc')
+        ? null : './model/iphone-15-pro-max.glb'
+    });
+    window.__handset = h;
+  } catch (err) {
+    const f = document.getElementById('fail');
+    f.hidden = false;
+    f.textContent = String(err && err.message || err);
+  }
+}
+await mount();
+
+/* the alignment check: where the four glass corners land, versus where the transformed
+   element's own corners land. It should read 0.00 px. */
+function measureError() {
+  if (!h) return NaN;
+  const quad = h.screenQuad();
+  const r = frame.getBoundingClientRect();
+  const m = new DOMMatrix(getComputedStyle(screenEl).transform);
+  const src = [[0, 0], [390, 0], [390, 844], [0, 844]];
+  let worst = 0;
+  for (let i = 0; i < 4; i++) {
+    const p = m.transformPoint(new DOMPoint(src[i][0], src[i][1], 0, 1));
+    const x = p.x / p.w, y = p.y / p.w;
+    worst = Math.max(worst, Math.hypot(x - quad[i][0], y - quad[i][1]));
+  }
+  return worst;
+}
+
+function apply() {
+  if (!h) return;
+  const y = +rY.value, z = +rZ.value, x = +rX.value;
+  vY.textContent = y.toFixed(1) + '°';
+  vZ.textContent = z.toFixed(1) + '°';
+  vX.textContent = x.toFixed(1) + '°';
+  h.setPose({ rotY: y * D, rotZ: z * D, rotX: x * D });
+  const b = h.box();
+  document.getElementById('mBox').textContent = b.w + ' × ' + b.h + ' (' + (b.w / b.h).toFixed(3) + ')';
+  document.getElementById('mDpr').textContent = h.pixelRatio.toFixed(2);
+  document.getElementById('mCost').textContent = h.cost.toFixed(2);
+  document.getElementById('mErr').textContent = measureError().toFixed(3) + ' px';
+}
+
+for (const el of [rY, rZ, rX]) el.addEventListener('input', apply);
+for (const b of document.querySelectorAll('.row button[data-y]')) {
+  b.addEventListener('click', () => { rY.value = b.dataset.y; apply(); });
+}
+document.getElementById('journey').addEventListener('click', () => {
+  const t0 = performance.now();
+  (function step() {
+    const u = Math.min(1, (performance.now() - t0) / 2600);
+    const e = u < .5 ? 2 * u * u : 1 - Math.pow(-2 * u + 2, 2) / 2;
+    rY.value = (e * 90).toFixed(1);
+    rZ.value = (-e * 1.6).toFixed(1);
+    apply();
+    if (u < 1) requestAnimationFrame(step);
+  })();
+});
+
+for (const b of document.querySelectorAll('.row button[data-finish]')) {
+  b.addEventListener('click', async () => { finish = b.dataset.finish; await mount(); apply(); });
+}
+
+window.__handsetError = measureError;
+apply();
+</script>
+</body>
+</html>

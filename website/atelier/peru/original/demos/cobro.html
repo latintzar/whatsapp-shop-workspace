@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=390">
+<title>Rocoto · When it is time to pay</title>
+<meta name="robots" content="noindex">
+<link rel="preload" href="/peru/original/wa/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/peru/original/wa/wa.css">
+</head>
+<body>
+<script src="/peru/original/wa/wa.js"></script>
+<script src="/peru/original/demos/pages.js"></script>
+<script>
+/* WHEN IT IS TIME TO PAY — ONE MOMENT, AND NOTHING ELSE (SPEC 17d, Peter verbatim: «Do we really
+   need to see what your supplier sees? I think here we just need to show that they can get their
+   money deposited in their Yape. I think that's the important thing to show there: automatically
+   debited at the time, so they don't have to worry about missing a payment. That's it.»).
+
+   So this is YOUR phone, asleep. Rocoto — the app, never a contact — says your purchase was
+   collected from your Yape today. You press it, and Rocoto opens on that purchase, paid in full:
+   the same document `entrega.html` reads off the invoice, with the settled block where the act
+   stood. Then the phone sleeps, and the next purchase arrives the same way, for ever.
+
+   THE DOCUMENT IS LIFTED, never drawn (`WA_PAGES.collected`, off `app/src/prototypes/
+   bodega-pay-later/` and the real capture at `peru/cap/pedido-movil.webp`): the document head
+   `detail.tsx` pushes on a phone, the lines at the prototype's 66 px pitch with their painted
+   faces, the figure lockup of `rocoto/figure`, and the closed row's own shape from
+   `money-overview.tsx`, where a settled purchase carries no act at all.
+
+   THE WORDS CARRY NO CREDIT (`credit-advertising-rules.md`): the purchase's own total, «Paid in
+   full», «Collected from your Yape today». No rate, no term, no day it was owed by, no amount of
+   credit, no approval word.
+
+   Both languages live in one table: English is what Peter reviews, Spanish is what ships. */
+
+var L = WA.pick({
+  en: {
+    status: 'Credit repaid',
+    note: function (who, amount) { return amount + ' from Yape · ' + who; },
+    /* THE PURCHASES. The first one is the paper `entrega.html` photographs — the same supplier,
+       the same four lines, the same S/ 386.00 — so the three rows of the page tell ONE purchase
+       from the order to the day it settles. The two after it are the shop's other suppliers, as
+       the prototype's own cast has them (`fixtures/cast-bodega.json`). */
+    buys: [
+      { payee: 'Distribuidora Ricardo', day: 'Saturday 19.09', number: 'E001-004812',
+        at3: '07:13', clock: '09:20', lock: 'Saturday 26 September', total: 'S/ 386.00',
+        lines: [
+          ['Rice 5 kg', '12', 'box', '/peru/original/demos/av/faces/arroz.webp'],
+          ['Cooking oil 1 L', '6', 'unit', '/peru/original/demos/av/faces/aceite.webp'],
+          ['Evaporated milk 400 g', '20', 'unit', '/peru/original/demos/av/faces/leche.webp'],
+          ['Powder detergent 780 g', '6', 'unit', '/peru/original/demos/av/faces/detergente.webp']
+        ] },
+      { payee: 'Lácteos del Valle', day: 'Tuesday 22.09', number: 'E001-000934',
+        at3: '06:48', clock: '09:20', lock: 'Tuesday 29 September', total: 'S/ 214.00',
+        lines: [
+          ['Evaporated milk 400 g', '24', 'unit', '/peru/original/demos/av/faces/leche.webp'],
+          ['Fresh cheese 500 g', '8', 'unit', '/peru/original/demos/av/faces/queso.webp'],
+          ['Yoghurt 1 L', '12', 'unit', '/peru/original/demos/av/faces/yogur.webp']
+        ] },
+      { payee: 'Iván gaseosas', day: 'Wednesday 23.09', number: 'E001-002271',
+        at3: '11:05', clock: '09:20', lock: 'Wednesday 30 September', total: 'S/ 268.00',
+        lines: [
+          ['Soda 3 L', '18', 'unit', '/peru/original/demos/av/faces/gaseosa.webp'],
+          ['Bottled water 625 ml', '24', 'unit', '/peru/original/demos/av/faces/agua.webp'],
+          ['Beer 650 ml', '12', 'unit', '/peru/original/demos/av/faces/cerveza.webp']
+        ] }
+    ]
+  },
+
+  es: {
+    status: 'Crédito pagado',
+    note: function (who, amount) { return amount + ' desde tu Yape · ' + who; },
+    buys: [
+      { payee: 'Distribuidora Ricardo', day: 'Sábado 19.09', number: 'E001-004812',
+        at3: '07:13', clock: '09:20', lock: 'Sábado 26 de septiembre', total: 'S/ 386.00',
+        lines: [
+          ['Arroz 5 kg', '12', 'caja', '/peru/original/demos/av/faces/arroz.webp'],
+          ['Aceite vegetal 1 L', '6', 'unidad', '/peru/original/demos/av/faces/aceite.webp'],
+          ['Leche evaporada 400 g', '20', 'unidad', '/peru/original/demos/av/faces/leche.webp'],
+          ['Detergente en polvo 780 g', '6', 'unidad', '/peru/original/demos/av/faces/detergente.webp']
+        ] },
+      { payee: 'Lácteos del Valle', day: 'Martes 22.09', number: 'E001-000934',
+        at3: '06:48', clock: '09:20', lock: 'Martes 29 de septiembre', total: 'S/ 214.00',
+        lines: [
+          ['Leche evaporada 400 g', '24', 'unidad', '/peru/original/demos/av/faces/leche.webp'],
+          ['Queso fresco 500 g', '8', 'unidad', '/peru/original/demos/av/faces/queso.webp'],
+          ['Yogurt 1 L', '12', 'unidad', '/peru/original/demos/av/faces/yogur.webp']
+        ] },
+      { payee: 'Iván gaseosas', day: 'Miércoles 23.09', number: 'E001-002271',
+        at3: '11:05', clock: '09:20', lock: 'Miércoles 30 de septiembre', total: 'S/ 268.00',
+        lines: [
+          ['Gaseosa 3 L', '18', 'unidad', '/peru/original/demos/av/faces/gaseosa.webp'],
+          ['Agua mineral 625 ml', '24', 'unidad', '/peru/original/demos/av/faces/agua.webp'],
+          ['Cerveza 650 ml', '12', 'unidad', '/peru/original/demos/av/faces/cerveza.webp']
+        ] }
+    ]
+  }
+});
+
+var BUYS = L.buys;
+
+/* ── THE BEATS, one collection long ──────────────────────────────────────────────────────
+        0  the phone is asleep: the wallpaper, the day and the hour
+      900  Rocoto's notification lands on the lock screen
+     2900  a finger presses it
+     3250  the lock lifts to a prominent credit-repaid confirmation
+     7400  the invoice opens after the receipt action
+    10200  the screen dims
+    10500  the phone is locked again, behind the dim
+    11400  the cycle is over, and the next purchase lands the same way
+   ──────────────────────────────────────────────────────────────────────────────────────── */
+var BAN = 900, TAP = 2900, OPEN = 3250, DETAIL = 7400, SLEEP = 10200, LOCK = 10500, LAST = 11400;
+
+function app(p, at) {
+  return { at: at, down: LOCK, pages: WA_PAGES.collected({
+    payee: p.payee, day: p.day, number: p.number, at3: p.at3,
+    lines: p.lines, total: p.total, at: [at, DETAIL]
+  }) };
+}
+
+function banner(p) {
+  return {
+    at: BAN, until: OPEN, pos: 'lock', badge: false,
+    title: L.status, body: L.note(p.payee, p.total),
+    icon: { brand: 'rocoto', src: '/peru/original-brand/face-open.svg', bg: '#FAF7F3' }
+  };
+}
+
+/* the next purchase, on the next agreed day: the screen lights on the lock screen with its
+   notification, and the same one moment plays. Nothing resets. */
+function collection(k) {
+  var p = BUYS[k % BUYS.length];
+  return {
+    last: LAST,
+    lock: { date: p.lock, time: p.clock },
+    clockAt: [{ at: 0, text: p.clock }],
+    /* THE SCREEN DIMS, IT NEVER GOES BLACK: on the page a handset with black glass for most of a
+       second reads as a broken phone. It dims the way iOS dims before sleep, and lights again. */
+    veil: [{ at: 300, dur: 480, to: 0 }, { at: SLEEP, dur: 300, to: .58 }],
+    lockAt: [{ at: 0, up: true }, { at: OPEN, up: false }, { at: LOCK, up: true }],
+    app: app(p, OPEN),
+    banners: [banner(p)],
+    taps: [{ at: TAP, sel: '.wa-banner.lock' },
+      { at: DETAIL - 240, sel: '#rp-collected-done', press: '#rp-collected-done' }]
+  };
+}
+
+var P0 = BUYS[0];
+
+WA.mount({
+  id: 'cobro',
+  duration: LAST,
+  /* THE FRAME THAT SAYS THE MOST, AND THE ONE THAT TELLS ROW TWO APART. Rocoto's own screen is
+     the proof, but `entrega.html` in row three already stands as that document, and two still
+     phones drawing the same page read as one picture twice. So the poster is the news itself:
+     the sleeping phone, and Rocoto saying the purchase came out of your Yape today. */
+  poster: 2000,
+  clock: P0.clock,
+  clockAt: [{ at: 0, text: P0.clock }],
+
+  lock: { wall: '/peru/original/demos/av/lock-wall.webp', date: P0.lock, time: P0.clock },
+  lockAt: [{ at: 0, up: true }, { at: OPEN, up: false }, { at: LOCK, up: true }],
+  veil: [{ at: SLEEP, dur: 300, to: .58 }],
+
+  cycle: { rest: 0, next: collection },
+
+  /* the phone holds no conversation here: Rocoto is an app, and the messenger behind it is
+     never seen */
+  chat: { title: '' },
+  items: [],
+
+  app: app(P0, OPEN),
+  banners: [banner(P0)],
+  taps: [{ at: TAP, sel: '.wa-banner.lock' },
+      { at: DETAIL - 240, sel: '#rp-collected-done', press: '#rp-collected-done' }]
+});
+</script>
+</body>
+</html>

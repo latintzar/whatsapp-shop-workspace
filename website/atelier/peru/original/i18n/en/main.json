@@ -1,0 +1,682 @@
+[
+  {
+    "en": "Rocoto | Credit to stock your business",
+    "kind": "meta",
+    "where": "<title>"
+  },
+  {
+    "en": "We're preparing credit to stock your business. Join before launch for 3 loans at 0% interest, up to S/500 each, with 7 days to repay. Subject to approval.",
+    "kind": "meta",
+    "where": "<meta description>"
+  },
+  {
+    "en": "Pay with credit, from WhatsApp.",
+    "kind": "meta",
+    "where": "<meta og:image:alt>"
+  },
+  {
+    "en": "Skip to content",
+    "kind": "html",
+    "where": "peru.html · <a.pe-skip>"
+  },
+  {
+    "en": "<a class=\"act act-sm\" href=\"https://wa.me/19789589459?text=I%E2%80%99d%20like%20to%20join%20the%20Rocoto%20waitlist.\" data-waitlist-join>{i1}Join the waitlist</a>",
+    "kind": "html",
+    "where": "peru.html · #pnav · <div.pnav-act>"
+  },
+  {
+    "en": "Credit to{br} stock your business",
+    "kind": "html",
+    "where": "peru.html · #top · Credit to stock your business · the H1"
+  },
+  {
+    "en": "We're preparing credit for your next stock purchase. Your supplier gets paid when you buy; you repay on the agreed date.",
+    "kind": "html",
+    "where": "peru.html · #top · Credit to stock your business · <p.pe-sub>"
+  },
+  {
+    "en": "<a class=\"act\" href=\"https://wa.me/19789589459?text=I%E2%80%99d%20like%20to%20join%20the%20Rocoto%20waitlist.\" data-waitlist-join>{i1}Join the waitlist</a> <a class=\"act-2\" href=\"#how-it-works\">See how it works<span class=\"act-2-c\">{i2}</span></a>",
+    "kind": "html",
+    "where": "peru.html · #top · Credit to stock your business · <p.pe-acts>"
+  },
+  {
+    "en": "3 loans at 0% interest when you join before launch. <span class=\"pe-offer-terms\">Up to S/500 each · 7 days to repay.</span><span class=\"pe-offer-conditions\">Each loan is subject to assessment and approval. <a href=\"/en/terms#early-offer\">See terms</a></span>",
+    "kind": "html",
+    "where": "peru.html · #top · Credit to stock your business · <p.pe-status>"
+  },
+  {
+    "en": "An order and its payment confirmation in the supplier chat.",
+    "kind": "attr",
+    "where": "peru.html · #heroslot · #jphone · <img> @alt"
+  },
+  {
+    "en": "Simulated conversation: an order paid with Rocoto credit",
+    "kind": "attr",
+    "where": "peru.html · #heroslot · #jphone · <iframe> @title"
+  },
+  {
+    "en": "You already buy and sell on {wa} WhatsApp. Rocoto lets you pay with credit.",
+    "kind": "html",
+    "where": "peru.html · #content · #message · the lit sentence"
+  },
+  {
+    "en": "How it works",
+    "kind": "html",
+    "where": "peru.html · #how-it-works · How it works · <h2.pe-vh>"
+  },
+  {
+    "en": "Buy on credit through WhatsApp",
+    "kind": "html",
+    "where": "peru.html · How it works · Buy on credit through WhatsApp · <h3>"
+  },
+  {
+    "en": "Place your order and share the payment confirmation in your supplier chat.",
+    "kind": "html",
+    "where": "peru.html · How it works · Buy on credit through WhatsApp · <p>"
+  },
+  {
+    "en": "Pay your invoice with a photo",
+    "kind": "html",
+    "where": "peru.html · How it works · Pay your invoice with a photo · <h3>"
+  },
+  {
+    "en": "When your order arrives, review the amount and confirm payment with credit.",
+    "kind": "html",
+    "where": "peru.html · How it works · Pay your invoice with a photo · <p>"
+  },
+  {
+    "en": "Invoice payment review: S/386 at 0% interest, with automatic repayment on 26 September.",
+    "kind": "attr",
+    "where": "peru.html · #delivery-slot · #delivery-phone · <img> @alt"
+  },
+  {
+    "en": "Simulated invoice payment: review, confirmation and payment receipt",
+    "kind": "attr",
+    "where": "peru.html · #delivery-slot · #delivery-phone · <iframe> @title"
+  },
+  {
+    "en": "Automatic repayment from Yape",
+    "kind": "html",
+    "where": "peru.html · How it works · Automatic repayment from Yape · <h3>"
+  },
+  {
+    "en": "Your credit is collected on the date you agreed when confirming your purchase.",
+    "kind": "html",
+    "where": "peru.html · How it works · Automatic repayment from Yape · <p>"
+  },
+  {
+    "en": "A Yape debit notification and the credit marked as repaid.",
+    "kind": "attr",
+    "where": "peru.html · #repayment-slot · #repayment-phone · <img> @alt"
+  },
+  {
+    "en": "Simulated credit repayment through Yape",
+    "kind": "attr",
+    "where": "peru.html · #repayment-slot · #repayment-phone · <iframe> @title"
+  },
+  {
+    "en": "What's coming",
+    "kind": "html",
+    "where": "peru.html · #roadmap · What's coming · <h2.pe-h2>"
+  },
+  {
+    "en": "Join today. We'll let you know when each part is ready to try.",
+    "kind": "html",
+    "where": "peru.html · #roadmap · What's coming · <p.tl-note>"
+  },
+  {
+    "en": "Today",
+    "kind": "html",
+    "where": "peru.html · #content · #roadmap · <p.tl-when>"
+  },
+  {
+    "en": "Join the waitlist",
+    "kind": "html",
+    "where": "peru.html · #roadmap · Join the waitlist · <h3.tl-h>"
+  },
+  {
+    "en": "Be among the first to try Rocoto. Each business you invite moves you up the list.",
+    "kind": "html",
+    "where": "peru.html · #roadmap · Join the waitlist · <p>"
+  },
+  {
+    "en": "<a class=\"act\" href=\"https://wa.me/19789589459?text=I%E2%80%99d%20like%20to%20join%20the%20Rocoto%20waitlist.\" data-waitlist-join>{i1}<span>Join the waitlist</span></a>",
+    "kind": "html",
+    "where": "peru.html · #roadmap · Join the waitlist · <p.tl-act>"
+  },
+  {
+    "en": "In preparation",
+    "kind": "html",
+    "where": "peru.html · #content · #roadmap · <p.tl-when>"
+  },
+  {
+    "en": "<a class=\"tl-open\" href=\"#feature-sales\" data-sheet-open aria-haspopup=\"dialog\">Sales on your phone<span class=\"tl-plus\" aria-hidden=\"true\">+</span></a>",
+    "kind": "html",
+    "where": "peru.html · #roadmap · Sales on your phone+ · <h3.tl-h>"
+  },
+  {
+    "en": "A simple register for counter sales and WhatsApp orders.",
+    "kind": "html",
+    "where": "peru.html · #roadmap · Sales on your phone+ · <p>"
+  },
+  {
+    "en": "<a class=\"tl-open\" href=\"#feature-tabs\" data-sheet-open aria-haspopup=\"dialog\">Tabs and collections<span class=\"tl-plus\" aria-hidden=\"true\">+</span></a>",
+    "kind": "html",
+    "where": "peru.html · #roadmap · Tabs and collections+ · <h3.tl-h>"
+  },
+  {
+    "en": "Who owes you, how much, and when they pay.",
+    "kind": "html",
+    "where": "peru.html · #roadmap · Tabs and collections+ · <p>"
+  },
+  {
+    "en": "<a class=\"tl-open\" href=\"#feature-receipts\" data-sheet-open aria-haspopup=\"dialog\">Electronic receipts<span class=\"tl-plus\" aria-hidden=\"true\">+</span></a>",
+    "kind": "html",
+    "where": "peru.html · #roadmap · Electronic receipts+ · <h3.tl-h>"
+  },
+  {
+    "en": "Issue the receipt using the details of the sale.",
+    "kind": "html",
+    "where": "peru.html · #roadmap · Electronic receipts+ · <p>"
+  },
+  {
+    "en": "<a class=\"tl-open\" href=\"#feature-credit\" data-sheet-open aria-haspopup=\"dialog\">Credit for your stock<span class=\"tl-plus\" aria-hidden=\"true\">+</span></a>",
+    "kind": "html",
+    "where": "peru.html · #roadmap · Credit for your stock+ · <h3.tl-h>"
+  },
+  {
+    "en": "Your supplier gets paid when you buy. You repay on the agreed date.",
+    "kind": "html",
+    "where": "peru.html · #roadmap · Credit for your stock+ · <p>"
+  },
+  {
+    "en": "Your sales and payment history helps us understand your business and assess your credit.",
+    "kind": "html",
+    "where": "peru.html · #content · #roadmap · <p.roadmap-context>"
+  },
+  {
+    "en": "Your orders and delivery notes",
+    "kind": "html",
+    "where": "peru.html · #orders · Your orders and delivery notes · <h2.pe-h2>"
+  },
+  {
+    "en": "Orders from your chats are saved with their delivery notes. Review them on your phone or computer and export them when you need them.",
+    "kind": "html",
+    "where": "peru.html · #orders · Your orders and delivery notes · <p.pe-lead>"
+  },
+  {
+    "en": "<a href=\"https://demo.soyrocoto.com/bodega-pay-later/?lang=en\">See a delivery note{i1}</a>",
+    "kind": "html",
+    "where": "peru.html · #orders · Your orders and delivery notes · <p.pe-lk>"
+  },
+  {
+    "en": "Screens from the Rocoto app.",
+    "kind": "html",
+    "where": "peru.html · #orders · Your orders and delivery notes · <p.pe-foot>"
+  },
+  {
+    "en": "The day's order open on the computer, with its lines and its delivery note.",
+    "kind": "attr",
+    "where": "peru.html · #orders · #pdstage · <img> @alt"
+  },
+  {
+    "en": "The same order open on the phone.",
+    "kind": "attr",
+    "where": "peru.html · #orders · #pdstage · <img> @alt"
+  },
+  {
+    "en": "A fishmonger sends a voice note from his stall.",
+    "kind": "attr",
+    "where": "peru.html · #content · #banks · <img> @alt"
+  },
+  {
+    "en": "Connect the account you already use",
+    "kind": "html",
+    "where": "peru.html · #banks · Connect the account you already use · <h2.pe-h2>"
+  },
+  {
+    "en": "Connect your bank account to keep your payments in Rocoto.",
+    "kind": "html",
+    "where": "peru.html · #banks · Connect the account you already use · <p.pe-lead>"
+  },
+  {
+    "en": "Each logo identifies its financial institution.",
+    "kind": "html",
+    "where": "peru.html · #banks · Connect the account you already use · <p.pe-foot>"
+  },
+  {
+    "en": "<a href=\"/en/privacy\">How we look after your data{i1}</a>",
+    "kind": "html",
+    "where": "peru.html · #banks · Connect the account you already use · <p.pe-lk>"
+  },
+  {
+    "en": "For your business",
+    "kind": "html",
+    "where": "peru.html · #who · For your business · <h2.pe-h2>"
+  },
+  {
+    "en": "Credit for bodegas, retailers and wholesalers to restock and cover purchases while customers pay their tabs.",
+    "kind": "html",
+    "where": "peru.html · #who · For your business · <p.pe-head-p>"
+  },
+  {
+    "en": "A bodeguera behind her counter of packets and tins, her phone in her hand.",
+    "kind": "attr",
+    "where": "peru.html · #content · #who · <img> @alt"
+  },
+  {
+    "en": "Bodegas",
+    "kind": "html",
+    "where": "peru.html · #who · Bodegas · <h3>"
+  },
+  {
+    "en": "Restock your shelves while your customers pay their tabs.",
+    "kind": "html",
+    "where": "peru.html · #who · Bodegas · <p>"
+  },
+  {
+    "en": "A fishmonger and his customer hold up their phones over the counter of iced fish.",
+    "kind": "attr",
+    "where": "peru.html · #content · #who · <img> @alt"
+  },
+  {
+    "en": "Retailers",
+    "kind": "html",
+    "where": "peru.html · #who · Retailers · <h3>"
+  },
+  {
+    "en": "Buy extra stock for busy dates such as Fiestas Patrias.",
+    "kind": "html",
+    "where": "peru.html · #who · Retailers · <p>"
+  },
+  {
+    "en": "A distributor hands a crate of produce to a shopkeeper at the door of her shop.",
+    "kind": "attr",
+    "where": "peru.html · #content · #who · <img> @alt"
+  },
+  {
+    "en": "Wholesalers",
+    "kind": "html",
+    "where": "peru.html · #who · Wholesalers · <h3>"
+  },
+  {
+    "en": "Pay your suppliers while the shops you supply pay their invoices.",
+    "kind": "html",
+    "where": "peru.html · #who · Wholesalers · <p>"
+  },
+  {
+    "en": "Questions",
+    "kind": "html",
+    "where": "peru.html · #questions · Questions · <h2.pe-h2>"
+  },
+  {
+    "en": "About connecting WhatsApp, supplier payments and credit.",
+    "kind": "html",
+    "where": "peru.html · #questions · Questions · <p.pe-head-p>"
+  },
+  {
+    "en": "<span>What happens when I connect my WhatsApp?</span>{i1}",
+    "kind": "html",
+    "where": "peru.html · #questions · #faq · <summary>"
+  },
+  {
+    "en": "You join the waitlist. Each business you invite moves you up the list, and we'll let you know when Rocoto is ready to try. Joining before launch gives you access to the early credit offer, subject to assessment and approval.",
+    "kind": "html",
+    "where": "peru.html · #questions · #faq · <p>"
+  },
+  {
+    "en": "<span>How does the 0% interest offer work?</span>{i1}",
+    "kind": "html",
+    "where": "peru.html · #questions · #faq · <summary>"
+  },
+  {
+    "en": "Your first 3 loans have 0% interest for 7 days, up to S/500 each, when you join before launch. Rocoto covers the interest and fees; you repay the amount borrowed. Credit is subject to the financial institution's assessment and approval. <a href=\"/en/terms#early-offer\">See offer terms</a>.",
+    "kind": "html",
+    "where": "peru.html · #questions · #faq · <p>"
+  },
+  {
+    "en": "<span>Do I need WhatsApp Business?</span>{i1}",
+    "kind": "html",
+    "where": "peru.html · #questions · #faq · <summary>"
+  },
+  {
+    "en": "Yes. Rocoto connects to WhatsApp Business, the free app for businesses. You can transfer your existing number and chats to it.",
+    "kind": "html",
+    "where": "peru.html · #questions · #faq · <p>"
+  },
+  {
+    "en": "<span>How does Rocoto connect to my WhatsApp?</span>{i1}",
+    "kind": "html",
+    "where": "peru.html · #questions · #faq · <summary>"
+  },
+  {
+    "en": "Rocoto connects through the official WhatsApp Business integration. Your app keeps working on your phone.",
+    "kind": "html",
+    "where": "peru.html · #questions · #faq · <p>"
+  },
+  {
+    "en": "<span>When will credit be available?</span>{i1}",
+    "kind": "html",
+    "where": "peru.html · #faq · #q-when · <summary>"
+  },
+  {
+    "en": "We're preparing working-capital credit for businesses like yours, with a financial institution supervised by the SBS. Join the waitlist and we'll let you know when applications open. Each loan is subject to assessment and approval.",
+    "kind": "html",
+    "where": "peru.html · #faq · #q-when · <p>"
+  },
+  {
+    "en": "<span>How do I repay my credit?</span>{i1}",
+    "kind": "html",
+    "where": "peru.html · #faq · #q-payback · <summary>"
+  },
+  {
+    "en": "Repayment is collected automatically from your Yape on the agreed date. Before confirming, you see the amount to repay, the payment date and the credit terms. The financial institution providing the credit sets these terms and is supervised by the SBS.",
+    "kind": "html",
+    "where": "peru.html · #faq · #q-payback · <p>"
+  },
+  {
+    "en": "<span>Does my supplier have to use Rocoto?</span>{i1}",
+    "kind": "html",
+    "where": "peru.html · #questions · #faq · <summary>"
+  },
+  {
+    "en": "Your supplier registers the account where they want to receive payment and accepts the terms once. Payment confirmations then arrive in your chat with them.",
+    "kind": "html",
+    "where": "peru.html · #questions · #faq · <p>"
+  },
+  {
+    "en": "<span>What does Rocoto read from my WhatsApp?</span>{i1}",
+    "kind": "html",
+    "where": "peru.html · #questions · #faq · <summary>"
+  },
+  {
+    "en": "Your individual conversations from the last 6 months. Group chats keep working as usual, and broadcast lists become read-only.",
+    "kind": "html",
+    "where": "peru.html · #questions · #faq · <p>"
+  },
+  {
+    "en": "<span>Is Rocoto a financial institution?</span>{i1}",
+    "kind": "html",
+    "where": "peru.html · #questions · #faq · <summary>"
+  },
+  {
+    "en": "Rocoto is preparing working-capital credit for businesses like yours, with a financial institution supervised by the SBS. Businesses that already use Rocoto go first, and each business you bring moves you up the list.",
+    "kind": "html",
+    "where": "peru.html · #questions · #faq · <p>"
+  },
+  {
+    "en": "<a href=\"/en/privacy\">Privacy policy{i1}</a>",
+    "kind": "html",
+    "where": "peru.html · #content · #questions · <p.pe-lk>"
+  },
+  {
+    "en": "A bodega owner with her phone, among the shelves of her shop.",
+    "kind": "attr",
+    "where": "peru.html · #content · <img> @alt"
+  },
+  {
+    "en": "Join before launch for 3 loans at 0% interest, up to S/500 each, with 7 days to repay. Each loan is subject to assessment and approval. <a href=\"/en/terms#early-offer\">See terms</a>.",
+    "kind": "html",
+    "where": "peru.html · #content · Join the waitlist · <p>"
+  },
+  {
+    "en": "<a class=\"act\" href=\"https://wa.me/19789589459?text=I%E2%80%99d%20like%20to%20join%20the%20Rocoto%20waitlist.\" data-waitlist-join>{i1}Join the waitlist</a><a class=\"act-o\" href=\"mailto:hello@soyrocoto.com\">Write to us{i2}</a>",
+    "kind": "html",
+    "where": "peru.html · #content · Join the waitlist · <p.pe-acts>"
+  },
+  {
+    "en": "Close details",
+    "kind": "attr",
+    "where": "peru.html · #content · #feature-sales · <button> @aria-label"
+  },
+  {
+    "en": "Sales on your phone",
+    "kind": "html",
+    "where": "peru.html · #feature-sales · Sales on your phone · <h2>"
+  },
+  {
+    "en": "Your counter sales and WhatsApp orders, with a Yape link to collect payment.",
+    "kind": "html",
+    "where": "peru.html · #feature-sales · Sales on your phone · <p.sheet-intro>"
+  },
+  {
+    "en": "A customer order and its Yape payment link in WhatsApp.",
+    "kind": "attr",
+    "where": "peru.html · #feature-sales · Sales on your phone · <img> @alt"
+  },
+  {
+    "en": "Simulated conversation: a customer orders and receives a Yape payment link",
+    "kind": "attr",
+    "where": "peru.html · #feature-sales · Sales on your phone · <iframe> @title"
+  },
+  {
+    "en": "Your sales and payments build your business history for credit assessment.",
+    "kind": "html",
+    "where": "peru.html · #feature-sales · Sales on your phone · <p.sheet-note>"
+  },
+  {
+    "en": "Back to what's coming<span aria-hidden=\"true\">←</span>",
+    "kind": "html",
+    "where": "peru.html · #feature-sales · Sales on your phone · <button.sheet-done>"
+  },
+  {
+    "en": "Tabs and collections",
+    "kind": "html",
+    "where": "peru.html · #feature-tabs · Tabs and collections · <h2>"
+  },
+  {
+    "en": "See who owes you and collect through Yape, with their authorisation.",
+    "kind": "html",
+    "where": "peru.html · #feature-tabs · Tabs and collections · <p.sheet-intro>"
+  },
+  {
+    "en": "Example Yape collections: two customers have paid and three have an upcoming collection date.",
+    "kind": "attr",
+    "where": "peru.html · #feature-tabs · Tabs and collections · <figure> @aria-label"
+  },
+  {
+    "en": "Customers and collection dates",
+    "kind": "attr",
+    "where": "peru.html · #feature-tabs · Tabs and collections · <ul> @aria-label"
+  },
+  {
+    "en": "<span class=\"dc-n\">Maribel obra<span class=\"dc-w\"><span class=\"dc-w1\" aria-hidden=\"true\">Collects 18 Sep</span><span class=\"dc-w2\">Paid through Yape</span></span></span><span class=\"dc-a\">S/ 460.00</span>{i1}",
+    "kind": "html",
+    "where": "peru.html · #feature-tabs · Tabs and collections · <li.dc-c>"
+  },
+  {
+    "en": "<span class=\"dc-n\">Rosa menú<span class=\"dc-w\"><span class=\"dc-w1\" aria-hidden=\"true\">Collects 18 Sep</span><span class=\"dc-w2\">Paid through Yape</span></span></span><span class=\"dc-a\">S/ 318.00</span>{i1}",
+    "kind": "html",
+    "where": "peru.html · #feature-tabs · Tabs and collections · <li.dc-c>"
+  },
+  {
+    "en": "<span class=\"dc-n\">Nancy Huamán<span class=\"dc-w\">Collection date</span></span><span class=\"dc-a\">S/ 64.00</span><span class=\"dc-d\">{i1}<b>22</b><i>Sep</i></span>",
+    "kind": "html",
+    "where": "peru.html · #feature-tabs · Tabs and collections · <li.dc-c>"
+  },
+  {
+    "en": "<span class=\"dc-n\">Julia 2do piso<span class=\"dc-w\">Collection date</span></span><span class=\"dc-a\">S/ 31.50</span><span class=\"dc-d\">{i1}<b>25</b><i>Sep</i></span>",
+    "kind": "html",
+    "where": "peru.html · #feature-tabs · Tabs and collections · <li.dc-c>"
+  },
+  {
+    "en": "<span class=\"dc-n\">Tito abarrotes<span class=\"dc-w\">Collection date</span></span><span class=\"dc-a\">S/ 120.00</span><span class=\"dc-d\">{i1}<b>29</b><i>Sep</i></span>",
+    "kind": "html",
+    "where": "peru.html · #feature-tabs · Tabs and collections · <li.dc-c>"
+  },
+  {
+    "en": "Each payment updates the customer's outstanding balance.",
+    "kind": "html",
+    "where": "peru.html · #feature-tabs · Tabs and collections · <p.sheet-note>"
+  },
+  {
+    "en": "Electronic receipts",
+    "kind": "html",
+    "where": "peru.html · #feature-receipts · Electronic receipts · <h2>"
+  },
+  {
+    "en": "Turn a recorded sale into your customer's electronic receipt.",
+    "kind": "html",
+    "where": "peru.html · #feature-receipts · Electronic receipts · <p.sheet-intro>"
+  },
+  {
+    "en": "Draft electronic receipt for the same three products, totalling S/78.50, ready for review.",
+    "kind": "attr",
+    "where": "peru.html · #feature-receipts · Electronic receipts · <figure> @aria-label"
+  },
+  {
+    "en": "Draft",
+    "kind": "html",
+    "where": "peru.html · #feature-receipts · Electronic receipts · <span.rv-tag>"
+  },
+  {
+    "en": "<strong>Electronic receipt</strong><span translate=\"no\">Bodega Yesenia</span>",
+    "kind": "html",
+    "where": "peru.html · #feature-receipts · Electronic receipts · <div.rv-document-heading>"
+  },
+  {
+    "en": "<span>Customer</span><strong translate=\"no\">Rosa menú</strong>",
+    "kind": "html",
+    "where": "peru.html · #feature-receipts · Electronic receipts · <div.rv-document-customer>"
+  },
+  {
+    "en": "Rice 5 kg",
+    "kind": "html",
+    "where": "peru.html · #feature-receipts · Electronic receipts · <span>"
+  },
+  {
+    "en": "Cooking oil 1 L",
+    "kind": "html",
+    "where": "peru.html · #feature-receipts · Electronic receipts · <span>"
+  },
+  {
+    "en": "Farm eggs",
+    "kind": "html",
+    "where": "peru.html · #feature-receipts · Electronic receipts · <span>"
+  },
+  {
+    "en": "<span>Total</span><span class=\"rv-money \" translate=\"no\"><span class=\"rv-currency\">S/</span>78<span class=\"rv-cents\">.50</span></span>",
+    "kind": "html",
+    "where": "peru.html · #feature-receipts · Electronic receipts · <div.rv-total>"
+  },
+  {
+    "en": "{i1}To be issued",
+    "kind": "html",
+    "where": "peru.html · #feature-receipts · Electronic receipts · <div.rv-draft-status>"
+  },
+  {
+    "en": "Requires your RUC and electronic invoicing setup.",
+    "kind": "html",
+    "where": "peru.html · #feature-receipts · Electronic receipts · <p.sheet-note>"
+  },
+  {
+    "en": "Credit for your stock",
+    "kind": "html",
+    "where": "peru.html · #feature-credit · Credit for your stock · <h2>"
+  },
+  {
+    "en": "Your supplier gets paid today. You repay in 7 days.",
+    "kind": "html",
+    "where": "peru.html · #feature-credit · Credit for your stock · <p.sheet-intro>"
+  },
+  {
+    "en": "Early-offer example: the supplier receives S/386 today. You repay S/386 in seven days, with 0% interest and S/0 in fees.",
+    "kind": "attr",
+    "where": "peru.html · #feature-credit · Credit for your stock · <figure> @aria-label"
+  },
+  {
+    "en": "{i1}<span>Supplier payment</span><span class=\"rv-money rv-hero-amount\" translate=\"no\"><span class=\"rv-currency\">S/</span>386</span><strong translate=\"no\">Distribuidora Ricardo</strong>",
+    "kind": "html",
+    "where": "peru.html · #feature-credit · Credit for your stock · <div.rv-credit-paid>"
+  },
+  {
+    "en": "<span><b translate=\"no\">0%</b> interest</span><span><b translate=\"no\">S/0</b> fees</span>",
+    "kind": "html",
+    "where": "peru.html · #feature-credit · Credit for your stock · <div.rv-credit-terms>"
+  },
+  {
+    "en": "<strong>In 7 days</strong><span>You repay</span>",
+    "kind": "html",
+    "where": "peru.html · #feature-credit · Credit for your stock · <div>"
+  },
+  {
+    "en": "<strong>3 loans at 0% interest when you join before launch.</strong> Up to S/500 each · 7 days to repay. Rocoto covers the interest and fees; you repay the amount borrowed.",
+    "kind": "html",
+    "where": "peru.html · #feature-credit · Credit for your stock · <p.sheet-offer>"
+  },
+  {
+    "en": "Each loan is subject to assessment and approval. <a href=\"/en/terms#early-offer\">See offer terms</a>.",
+    "kind": "html",
+    "where": "peru.html · #feature-credit · Credit for your stock · <p.sheet-note>"
+  },
+  {
+    "en": "Rocoto for bodegas, market stalls and fish stalls in Peru.",
+    "kind": "html",
+    "where": "peru.html · <p>"
+  },
+  {
+    "en": "On this page",
+    "kind": "attr",
+    "where": "peru.html · <nav> @aria-label"
+  },
+  {
+    "en": "What is coming",
+    "kind": "html",
+    "where": "peru.html · On this page · <a>"
+  },
+  {
+    "en": "Your orders",
+    "kind": "html",
+    "where": "peru.html · On this page · <a>"
+  },
+  {
+    "en": "Banks",
+    "kind": "html",
+    "where": "peru.html · On this page · <a>"
+  },
+  {
+    "en": "Legal",
+    "kind": "attr",
+    "where": "peru.html · <nav> @aria-label"
+  },
+  {
+    "en": "Privacy policy",
+    "kind": "html",
+    "where": "peru.html · Legal · <a>"
+  },
+  {
+    "en": "Cookies",
+    "kind": "html",
+    "where": "peru.html · Legal · <a>"
+  },
+  {
+    "en": "Terms",
+    "kind": "html",
+    "where": "peru.html · Legal · <a>"
+  },
+  {
+    "en": "Write to us",
+    "kind": "attr",
+    "where": "peru.html · <nav> @aria-label"
+  },
+  {
+    "en": "Rocoto holds no authorisation or supervision from the Superintendencia de Banca, Seguros y AFP.",
+    "kind": "html",
+    "where": "peru.html · <p.pe-ft-sbs>"
+  },
+  {
+    "en": "WhatsApp is a trademark of Meta Platforms, Inc. Yape is a trademark of Credicorp. Every logo on this site belongs to the institution it identifies.",
+    "kind": "html",
+    "where": "peru.html · <p>"
+  },
+  {
+    "en": "3D phone model by <a href=\"https://sketchfab.com/3d-models/apple-iphone-15-pro-max-black-df17520841214c1792fb8a44c6783ee7\" rel=\"noopener\">polyman</a>, <a href=\"https://creativecommons.org/licenses/by/4.0/\" rel=\"license noopener\">CC BY 4.0</a>.",
+    "kind": "html",
+    "where": "peru.html · <p.pe-ft-c>"
+  },
+  {
+    "en": "© 2026 Rocoto. Rocoto is a product of Leo Casa Ltd.",
+    "kind": "html",
+    "where": "peru.html · <p.pe-ft-c>"
+  }
+]

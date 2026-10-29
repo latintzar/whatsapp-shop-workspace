@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=390">
+<title>Rocoto · On delivery, the invoice photographed</title>
+<meta name="robots" content="noindex">
+<link rel="preload" href="/peru/original/wa/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/peru/original/wa/wa.css">
+</head>
+<body>
+<script src="/peru/original/wa/wa.js"></script>
+<script src="/peru/original/demos/pages.js"></script>
+<script>
+/* ON DELIVERY, AND THE PHONE NEVER LEAVES ROCOTO (SPEC 17b, Peter verbatim: «when they take the
+   invoice pic that should literally auto turn into a "pay later" screen that they just tap and
+   boom. not go to "sharing" to add to rocoto. would be in the real rocoto app. and that would
+   look after they had "pay later" and it's confirmed … say when they'll be charged automatically
+   for it, and then it goes to the [camera] again. as the loop» · «And the invoice should be in
+   the nice format that we do them in our site.»).
+
+   So there is no WhatsApp on this phone, no iOS camera and no share sheet. The whole demo is ONE
+   app: Rocoto's own camera on the paper Distribuidora Ricardo's driver just handed over the
+   counter, the shutter, and the photograph turning by itself into the purchase — set the way our
+   delivery notes are set, lifted part by part in `WA_PAGES.purchase` off the real prototype and
+   its own capture (`peru/cap/pedido-movil.webp`). One act at the foot: pay later. A touch, and
+   the supplier is paid today and Rocoto collects it on the agreed day. Then the camera again,
+   for the next invoice — a loop that never resets.
+
+   THE PAPER AND THE APP AGREE. The photograph is one asset (`av/invoice-counter.webp`, an
+   invoice of Distribuidora Ricardo: E001-004812, 19/09/2026, four lines, S/ 386.00), so the day,
+   the number, the lines and the total the app reads back are that paper's own, and the loop is
+   the same delivery rather than a new date the paper would contradict. A per-supplier paper is a
+   re-run of `scratchpad/landing/delivery/shoot_invoice.py` with its fields changed, ~100 KB each.
+   THE PAPER IS PRINTED IN ENGLISH and the Spanish one is `invoice-counter-es.webp`, shot from
+   the same rig (`peru/tools/shoot_invoice.py`). The demo loads the selected language directly.
+
+   Both languages live in one table: English is what Peter reviews, Spanish is what ships. */
+
+var L = WA.pick({
+  en: {
+    payee: 'Distribuidora Ricardo',
+    day: 'Saturday 19.09',
+    doc: 'E001-004812',
+    at3: '07:13',
+    /* the standing restock, as the paper states it and as Rocoto reads it back */
+    lines: [
+      ['Rice 5 kg', '12', 'box', '/peru/original/demos/av/faces/arroz.webp'],
+      ['Cooking oil 1 L', '6', 'unit', '/peru/original/demos/av/faces/aceite.webp'],
+      ['Evaporated milk 400 g', '20', 'unit', '/peru/original/demos/av/faces/leche.webp'],
+      ['Powder detergent 780 g', '6', 'unit', '/peru/original/demos/av/faces/detergente.webp']
+    ],
+    total: 'S/ 386.00', fees: 'S/ 0.00', due: '26 September'
+  },
+
+  es: {
+    payee: 'Distribuidora Ricardo',
+    day: 'Sábado 19.09',
+    doc: 'E001-004812',
+    at3: '07:13',
+    lines: [
+      ['Arroz 5 kg', '12', 'caja', '/peru/original/demos/av/faces/arroz.webp'],
+      ['Aceite vegetal 1 L', '6', 'unidad', '/peru/original/demos/av/faces/aceite.webp'],
+      ['Leche evaporada 400 g', '20', 'unidad', '/peru/original/demos/av/faces/leche.webp'],
+      ['Detergente en polvo 780 g', '6', 'unidad', '/peru/original/demos/av/faces/detergente.webp']
+    ],
+    total: 'S/ 386.00', fees: 'S/ 0.00', due: '26 de septiembre'
+  }
+});
+
+/* Both invoice photographs are published; fetch only the selected language. */
+var PAPER = '/peru/original/demos/av/invoice-counter' + (WA.lang === 'es' ? '-es' : '') + '.webp';
+
+/* A full payment demonstration, with time to read both review and receipt.
+   0 camera → 1900 reading → 3000 invoice → 5500 review sheet → 9400 confirm/processing
+   → 10700 supplier receipt → 14600 invoice with repayment scheduled → 16900 camera. */
+var PAGES = [0, 1900, 3000, 5500, 9400, 10700, 14600];
+var SHOT = 1700;
+var LAST = 16900;
+
+function app() {
+  return {
+    at: 0, down: null,
+    pages: WA_PAGES.purchase({
+      payee: L.payee, day: L.day, number: L.doc, at3: L.at3, src: PAPER,
+      lines: L.lines, total: L.total, fees: L.fees, due: L.due, at: PAGES
+    })
+  };
+}
+
+var TAPS = [
+  { at: SHOT - 60, sel: '#rc-shut', press: '#rc-shut' },
+  { at: 5260, sel: '#rp-later', press: '#rp-later' },
+  { at: 9160, sel: '#rp-confirm', press: '#rp-confirm' },
+  { at: 14360, sel: '#rp-payment-done', press: '#rp-payment-done' }
+];
+
+/* the next invoice: the same act, on the same counter, for ever. Nothing resets — the app's
+   pages are simply given the next cycle's clock, and the camera takes the screen again. */
+function delivery() {
+  return { last: LAST, app: app(), taps: TAPS, flash: [{ at: SHOT + 50, dur: 300 }] };
+}
+
+WA.mount({
+  id: 'entrega',
+  duration: LAST,
+  /* A readable payment review for still and reduced-motion views. */
+  poster: 7200,
+  clock: L.at3,
+
+  cycle: { rest: 0, next: delivery },
+
+  /* the phone is inside Rocoto from its first frame to its last; the messenger behind it holds
+     nothing and is never seen */
+  chat: { title: '' },
+  items: [],
+
+  app: app(),
+  flash: [{ at: SHOT + 50, dur: 300 }],
+  taps: TAPS
+});
+
+</script>
+</body>
+</html>

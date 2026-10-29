@@ -1,0 +1,422 @@
+[
+  {
+    "en": "Rocoto | Privacy",
+    "kind": "meta",
+    "where": "<title>"
+  },
+  {
+    "en": "What Rocoto reads in your WhatsApp, what it keeps, who else sees it, and how you take it back. Your rights under Peru's Ley N° 29733.",
+    "kind": "meta",
+    "where": "<meta description>"
+  },
+  {
+    "en": "What Rocoto reads in your WhatsApp, what it keeps, who else sees it, and how you take it back.",
+    "kind": "meta",
+    "where": "<meta og:description>"
+  },
+  {
+    "en": "The site",
+    "kind": "attr",
+    "where": "privacy.html · <nav> @aria-label"
+  },
+  {
+    "en": "<a href=\"/creditoperu/en\">Home</a> <a href=\"/creditoperu/en#roadmap\">What's coming</a>",
+    "kind": "html",
+    "where": "privacy.html · <nav>"
+  },
+  {
+    "en": "Privacy",
+    "kind": "html",
+    "where": "privacy.html · Privacy · <h1>"
+  },
+  {
+    "en": "Rocoto reads your business's WhatsApp to write down what you buy and what you sell. This page says what it reads, what it keeps, who else sees it, and how you take it back.",
+    "kind": "html",
+    "where": "privacy.html · Privacy · <p.lead>"
+  },
+  {
+    "en": "Peru · Ley N° 29733 · Last updated 20 September 2026",
+    "kind": "html",
+    "where": "privacy.html · Privacy · <p.stamp>"
+  },
+  {
+    "en": "This text is a draft, under review by our lawyer in Peru.",
+    "kind": "html",
+    "where": "privacy.html · Privacy · <p.draft>"
+  },
+  {
+    "en": "Who Rocoto is",
+    "kind": "html",
+    "where": "privacy.html · Who Rocoto is · <h2>"
+  },
+  {
+    "en": "Rocoto is run by Leo Casa Limited, an English company registered under number 16259714, with its office in London, United Kingdom. Leo Casa Limited decides what happens to the data on this page.",
+    "kind": "html",
+    "where": "privacy.html · Who Rocoto is · <p>"
+  },
+  {
+    "en": "Write to us at <a href=\"mailto:hello@soyrocoto.com\">hello@soyrocoto.com</a>.",
+    "kind": "html",
+    "where": "privacy.html · Who Rocoto is · <p>"
+  },
+  {
+    "en": "What connecting your WhatsApp lets Rocoto read",
+    "kind": "html",
+    "where": "privacy.html · What connecting your WhatsApp lets Rocoto read · <h2>"
+  },
+  {
+    "en": "You connect the WhatsApp of the business you run. From then on Rocoto reads the chats where you buy and where you sell: the orders, the totals your supplier sends you, the confirmations, and the photographs of the invoices you take inside the app.",
+    "kind": "html",
+    "where": "privacy.html · What connecting your WhatsApp lets Rocoto read · <p>"
+  },
+  {
+    "en": "It reads them for one job: to write down each purchase and each sale, so your whole history sits in one place and leaves as a PDF whenever you ask for it.",
+    "kind": "html",
+    "where": "privacy.html · What connecting your WhatsApp lets Rocoto read · <p>"
+  },
+  {
+    "en": "What Rocoto keeps",
+    "kind": "html",
+    "where": "privacy.html · What Rocoto keeps · <h2>"
+  },
+  {
+    "en": "<b>Your business</b> — its name, its WhatsApp number, and the person who connected it.",
+    "kind": "html",
+    "where": "privacy.html · What Rocoto keeps · <li>"
+  },
+  {
+    "en": "<b>Your book</b> — every purchase and every sale Rocoto wrote down: who, what, how much and when.",
+    "kind": "html",
+    "where": "privacy.html · What Rocoto keeps · <li>"
+  },
+  {
+    "en": "<b>Your pictures</b> — the invoices and receipts you photograph inside the app.",
+    "kind": "html",
+    "where": "privacy.html · What Rocoto keeps · <li>"
+  },
+  {
+    "en": "<b>Your place on the waitlist</b>, and the businesses you brought with you.",
+    "kind": "html",
+    "where": "privacy.html · What Rocoto keeps · <li>"
+  },
+  {
+    "en": "Who else sees it",
+    "kind": "html",
+    "where": "privacy.html · Who else sees it · <h2>"
+  },
+  {
+    "en": "These are the companies Rocoto runs on. Each one works under contract and on our instructions.",
+    "kind": "html",
+    "where": "privacy.html · Who else sees it · <p>"
+  },
+  {
+    "en": "<b>Meta Platforms</b><span>WhatsApp Business, the channel your chats travel on · Ireland and the United States</span>",
+    "kind": "html",
+    "where": "privacy.html · Who else sees it · <div>"
+  },
+  {
+    "en": "<b>Anthropic</b><span>Reads the messages and the invoice photographs so a purchase can be written down · United States</span>",
+    "kind": "html",
+    "where": "privacy.html · Who else sees it · <div>"
+  },
+  {
+    "en": "<b>Deepgram</b><span>Turns a voice note into text · United States</span>",
+    "kind": "html",
+    "where": "privacy.html · Who else sees it · <div>"
+  },
+  {
+    "en": "<b>Supabase</b><span>Your account and your sign-in · United States and the European Union</span>",
+    "kind": "html",
+    "where": "privacy.html · Who else sees it · <div>"
+  },
+  {
+    "en": "<b>Hetzner</b><span>The database where your book rests · Nuremberg, Germany</span>",
+    "kind": "html",
+    "where": "privacy.html · Who else sees it · <div>"
+  },
+  {
+    "en": "<b>Vercel</b><span>This website and its access logs · United States and worldwide</span>",
+    "kind": "html",
+    "where": "privacy.html · Who else sees it · <div>"
+  },
+  {
+    "en": "<b>Resend</b><span>The emails Rocoto sends you · United States</span>",
+    "kind": "html",
+    "where": "privacy.html · Who else sees it · <div>"
+  },
+  {
+    "en": "Your book is used to run Rocoto for you. It stays with us and with the companies on this list.",
+    "kind": "html",
+    "where": "privacy.html · Who else sees it · <p>"
+  },
+  {
+    "en": "Where it lives",
+    "kind": "html",
+    "where": "privacy.html · Where it lives · <h2>"
+  },
+  {
+    "en": "Your book rests in the European Union, in Hetzner's data centre in Nuremberg, Germany. Some of the companies above are in the United States, and those transfers travel under the contracts Peru's rules ask for.",
+    "kind": "html",
+    "where": "privacy.html · Where it lives · <p>"
+  },
+  {
+    "en": "How long Rocoto keeps it",
+    "kind": "html",
+    "where": "privacy.html · How long Rocoto keeps it · <h2>"
+  },
+  {
+    "en": "Your book stays while you use Rocoto. When you leave, we export it for you and delete it, and what Peru's tax and accounting rules ask us to hold stays for the time they ask.",
+    "kind": "html",
+    "where": "privacy.html · How long Rocoto keeps it · <p>"
+  },
+  {
+    "en": "Your rights under Ley N° 29733",
+    "kind": "html",
+    "where": "privacy.html · Your rights under Ley N° 29733 · <h2>"
+  },
+  {
+    "en": "Peru's Ley N° 29733 and its reglamento give you four rights over your own data: to see it, to correct it, to have it deleted, and to object to what we do with it.",
+    "kind": "html",
+    "where": "privacy.html · Your rights under Ley N° 29733 · <p>"
+  },
+  {
+    "en": "Write to <a href=\"mailto:hello@soyrocoto.com\">hello@soyrocoto.com</a> from the number or the email you use with Rocoto, and we answer inside the time the law gives us.",
+    "kind": "html",
+    "where": "privacy.html · Your rights under Ley N° 29733 · <p>"
+  },
+  {
+    "en": "If our answer leaves the matter open, you can take it to the Autoridad Nacional de Protección de Datos Personales, at Peru's Ministerio de Justicia y Derechos Humanos.",
+    "kind": "html",
+    "where": "privacy.html · Your rights under Ley N° 29733 · <p>"
+  },
+  {
+    "en": "Cookies",
+    "kind": "html",
+    "where": "privacy.html · Cookies · <h2>"
+  },
+  {
+    "en": "These pages are plain files, and what your browser asks for is on the <a href=\"/en/cookies\">cookies page</a>.",
+    "kind": "html",
+    "where": "privacy.html · Cookies · <p>"
+  },
+  {
+    "en": "Changes to this page",
+    "kind": "html",
+    "where": "privacy.html · Changes to this page · <h2>"
+  },
+  {
+    "en": "The version in force is always the one on this page, with the date it was updated at the top.",
+    "kind": "html",
+    "where": "privacy.html · Changes to this page · <p>"
+  },
+  {
+    "en": "Legal",
+    "kind": "attr",
+    "where": "privacy.html · <nav> @aria-label"
+  },
+  {
+    "en": "<a href=\"/en/privacy\">Privacy</a> <a href=\"/en/terms\">Terms</a> <a href=\"/en/cookies\">Cookies</a> <a href=\"mailto:hello@soyrocoto.com\">hello@soyrocoto.com</a>",
+    "kind": "html",
+    "where": "privacy.html · <nav>"
+  },
+  {
+    "en": "Rocoto holds no authorisation or supervision from the Superintendencia de Banca, Seguros y AFP.",
+    "kind": "html",
+    "where": "privacy.html · <p>"
+  },
+  {
+    "en": "WhatsApp is a trademark of Meta Platforms, Inc. Yape is a trademark of Credicorp. Every logo on this site belongs to the institution it identifies.",
+    "kind": "html",
+    "where": "privacy.html · <p>"
+  },
+  {
+    "en": "© 2026 Rocoto. Rocoto is a product of Leo Casa Ltd.",
+    "kind": "html",
+    "where": "privacy.html · <p>"
+  },
+  {
+    "en": "Rocoto | Terms",
+    "kind": "meta",
+    "where": "<title>"
+  },
+  {
+    "en": "What Rocoto does for your business, what you agree to, what it costs, and how you leave.",
+    "kind": "meta",
+    "where": "<meta description>"
+  },
+  {
+    "en": "Terms",
+    "kind": "html",
+    "where": "terms.html · Terms · <h1>"
+  },
+  {
+    "en": "Peru · Last updated 22 September 2026",
+    "kind": "html",
+    "where": "terms.html · Terms · <p.stamp>"
+  },
+  {
+    "en": "What Rocoto does today",
+    "kind": "html",
+    "where": "terms.html · What Rocoto does today · <h2>"
+  },
+  {
+    "en": "You can join Rocoto's waitlist by connecting your business's WhatsApp. We will let you know when the services below are ready to try.",
+    "kind": "html",
+    "where": "terms.html · What Rocoto does today · <p>"
+  },
+  {
+    "en": "What is coming",
+    "kind": "html",
+    "where": "terms.html · What is coming · <h2>"
+  },
+  {
+    "en": "Rocoto is preparing a simple register for counter sales and WhatsApp orders, with a record of each sale, payment and outstanding balance.",
+    "kind": "html",
+    "where": "terms.html · What is coming · <p>"
+  },
+  {
+    "en": "Auto-collect with Yape arrives soon, for a business that gives credit to other businesses. It is free.",
+    "kind": "html",
+    "where": "terms.html · What is coming · <p>"
+  },
+  {
+    "en": "The digital receipt — the boleta digital — arrives soon.",
+    "kind": "html",
+    "where": "terms.html · What is coming · <p>"
+  },
+  {
+    "en": "Rocoto is preparing working-capital credit for businesses like yours, with a financial institution supervised by the SBS. Businesses that already use Rocoto go first, and each business you bring moves you up the list.",
+    "kind": "html",
+    "where": "terms.html · What is coming · <p>"
+  },
+  {
+    "en": "What you agree to",
+    "kind": "html",
+    "where": "terms.html · What you agree to · <h2>"
+  },
+  {
+    "en": "You connect the WhatsApp of a business you run.",
+    "kind": "html",
+    "where": "terms.html · What you agree to · <li>"
+  },
+  {
+    "en": "You keep your access to yourself, the way you keep the keys to your shop.",
+    "kind": "html",
+    "where": "terms.html · What you agree to · <li>"
+  },
+  {
+    "en": "What you put into Rocoto is yours, and you let Rocoto read it to do the work above.",
+    "kind": "html",
+    "where": "terms.html · What you agree to · <li>"
+  },
+  {
+    "en": "The chats Rocoto reads carry other people's names and numbers, and you stay responsible for them the way you are today.",
+    "kind": "html",
+    "where": "terms.html · What you agree to · <li>"
+  },
+  {
+    "en": "What it costs",
+    "kind": "html",
+    "where": "terms.html · What it costs · <h2>"
+  },
+  {
+    "en": "Joining the waitlist is free, and auto-collect with Yape is free when it arrives.",
+    "kind": "html",
+    "where": "terms.html · What it costs · <p>"
+  },
+  {
+    "en": "What anything else costs is agreed with you before it starts.",
+    "kind": "html",
+    "where": "terms.html · What it costs · <p>"
+  },
+  {
+    "en": "Early signup offer",
+    "kind": "html",
+    "where": "terms.html · Early signup offer · <h2>"
+  },
+  {
+    "en": "Businesses that join the waitlist before credit launches can use the 0% interest offer on their first three loans when the service opens. Each loan is for up to S/500, with 7 days to repay. Rocoto covers the interest and fees for those seven days, so you repay the amount borrowed.",
+    "kind": "html",
+    "where": "terms.html · Early signup offer · <p>"
+  },
+  {
+    "en": "For example, borrow S/500 and repay S/500 after seven days: S/0 in interest and S/0 in fees for you. Each loan is subject to the financial institution's credit assessment and approval.",
+    "kind": "html",
+    "where": "terms.html · Early signup offer · <p>"
+  },
+  {
+    "en": "The 0% offer describes the cost to you after Rocoto covers the interest and fees. The financial institution, its contractual rates and the full credit terms are shown before you accept each loan. Credit is in preparation. We'll let you know when it is available.",
+    "kind": "html",
+    "where": "terms.html · Early signup offer · <p>"
+  },
+  {
+    "en": "How you leave",
+    "kind": "html",
+    "where": "terms.html · How you leave · <h2>"
+  },
+  {
+    "en": "Write to <a href=\"mailto:hello@soyrocoto.com\">hello@soyrocoto.com</a>. We export your book for you and delete it, and what Peru's tax and accounting rules ask us to hold stays for the time they ask.",
+    "kind": "html",
+    "where": "terms.html · How you leave · <p>"
+  },
+  {
+    "en": "Your data",
+    "kind": "html",
+    "where": "terms.html · Your data · <h2>"
+  },
+  {
+    "en": "What Rocoto reads, what it keeps and who else sees it are on the <a href=\"/en/privacy\">privacy page</a>. What these pages put on your device is on the <a href=\"/en/cookies\">cookies page</a>.",
+    "kind": "html",
+    "where": "terms.html · Your data · <p>"
+  },
+  {
+    "en": "Who you are dealing with",
+    "kind": "html",
+    "where": "terms.html · Who you are dealing with · <h2>"
+  },
+  {
+    "en": "Rocoto is run by Leo Casa Limited, an English company registered under number 16259714, with its office in London, United Kingdom.",
+    "kind": "html",
+    "where": "terms.html · Who you are dealing with · <p>"
+  },
+  {
+    "en": "Rocoto | Cookies",
+    "kind": "meta",
+    "where": "<title>"
+  },
+  {
+    "en": "What Rocoto's pages put on your device: the page, its stylesheet, its type and the mark, held in your browser's own cache.",
+    "kind": "meta",
+    "where": "<meta description>"
+  },
+  {
+    "en": "Rocoto's pages for Peru are plain files: your browser asks this one origin for the page, its stylesheet, its type and the mark, and that is the whole list. Your device keeps those in its own cache the way it keeps any page, the cache is everything this site puts on it, and the page opens straight away.",
+    "kind": "html",
+    "where": "cookies.html · Cookies · <p.lead>"
+  },
+  {
+    "en": "Peru · Checked 20 September 2026",
+    "kind": "html",
+    "where": "cookies.html · Cookies · <p.stamp>"
+  },
+  {
+    "en": "The Rocoto app",
+    "kind": "html",
+    "where": "cookies.html · The Rocoto app · <h2>"
+  },
+  {
+    "en": "Joining the waitlist opens Rocoto's app at demo.soyrocoto.com. The app keeps your book and your session on your own device, so your work is there when you come back. This page covers the pages at soyrocoto.com.",
+    "kind": "html",
+    "where": "cookies.html · The Rocoto app · <p>"
+  },
+  {
+    "en": "Questions",
+    "kind": "html",
+    "where": "cookies.html · Questions · <h2>"
+  },
+  {
+    "en": "Write to <a href=\"mailto:hello@soyrocoto.com\">hello@soyrocoto.com</a>. What Rocoto reads and keeps is on the <a href=\"/en/privacy\">privacy page</a>.",
+    "kind": "html",
+    "where": "cookies.html · Questions · <p>"
+  }
+]

@@ -1,0 +1,681 @@
+<!doctype html>
+<!-- ═══════════════════════════════════════════════════════════════════════════════════════════
+     /peru — Rocoto for a bodega, a market stall or a fish stall in Peru.
+
+     ENGLISH, FOR NOW (SPEC, «Peter on language», 20 September). Every visible string on this page
+     is English so the design can be reviewed in English; Spanish is what ships. `peru/STRINGS.md`
+     holds every string as key · English · Spanish, and the Spanish column is the text this page
+     carried before this pass, so nothing was lost in the swap.
+
+     Two laws govern every string below and are worth restating where a future edit will meet them:
+
+       1. SAY WHAT IS. There is no negative construction in the copy. The one exception is the
+          regulator's own sentence in the footer, which is law and ships verbatim.
+       2. CREDIT ADVERTISING. The September 22 offer in SPEC owns customer pricing: three
+          seven-day credits of up to S/500, with Rocoto covering interest and fees. The service
+          remains planned, and the provider and credit-approval disclosures stay visible.
+
+     THE ORDER OF THE PAGE (SPEC, «Peter on structure, weight and light»): hero · the dark
+     statement band the phone flies over · the three USES, each a split row with one looping phone ·
+     the three STEPS to start · the orders band · the bank band · for whom · questions · the closing
+     card · footer. There is no pinned scrubbed stage, no carousel, no tabs and no drifting rail.
+
+     The page reads WHOLE with scripts off: every phone shows a real poster, the rows are plain
+     rows, the accordion is eight <details>, and the bank grid is in the HTML. peru/peru.js only
+     upgrades what is already here.
+     ═══════════════════════════════════════════════════════════════════════════════════════════ -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Rocoto Peru | Mobile ERP for bodegas’ orders and payments</title>
+<meta name="description" content="Manage WhatsApp orders, Yape and Plin payments, stock and purchases. Planned credit would connect eligible businesses with a lender.">
+<link rel="canonical" href="https://atelierneyra.com/peru/">
+<link rel="alternate" hreflang="es-PE" href="https://atelierneyra.com/peru/es/">
+<link rel="alternate" hreflang="en" href="https://atelierneyra.com/peru/">
+<link rel="alternate" hreflang="x-default" href="https://atelierneyra.com/peru/es/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://atelierneyra.com/peru/">
+<meta property="og:title" content="Mobile ERP for bodegas’ orders and payments">
+<meta property="og:description" content="Manage WhatsApp orders, Yape and Plin payments, stock and purchases. Planned credit would connect eligible businesses with a lender.">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://soyrocoto.com/peru/original/og-peru.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Pay with credit, from WhatsApp.">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:site_name" content="Rocoto">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://soyrocoto.com/peru/original/og-peru.jpg">
+<link rel="icon" type="image/png" href="/peru/original-brand/favicon-32.png">
+<link rel="apple-touch-icon" href="/peru/original-brand/favicon-180.png">
+<!-- THE FACE IS OURS AND IT IS ON THIS ORIGIN. Hanken Grotesk (OFL) is served from
+     `/peru/original/fonts/` as a Latin subset, so the page opens no connection to a font host and the
+     headline has its own file in flight with the stylesheets rather than after a second DNS
+     lookup, a handshake and a stylesheet that has to be parsed first. -->
+<script>
+/* Keep the reserved handset space clear until its plate and screen are decoded. */
+(function () {
+  var root = document.documentElement;
+  root.classList.add('ph-ready-gate');
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    root.classList.add(window.innerWidth >= 900 ? 'phone-journeys' : 'lit-pin');
+  }
+  function reveal(phone) {
+    var plate = phone.querySelector('.ph-plate');
+    var screen = phone.querySelector('.ph-poster, .ph-shot');
+    if (phone.classList.contains('has-poster') || !plate || !screen || !screen.getAttribute('src') ||
+        !plate.complete || !screen.complete || !plate.naturalWidth || !screen.naturalWidth) return;
+    /* A decoded image can arrive before the blocking stylesheets. Keep the layers together
+       through the first styled layout; async image painting otherwise reveals the CSS rim. */
+    plate.decoding = screen.decoding = 'sync';
+    Promise.all([plate, screen].map(function (img) {
+      return img.decode ? img.decode() : Promise.resolve();
+    })).then(function () {
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          if (plate.complete && screen.complete && plate.naturalWidth && screen.naturalWidth) {
+            phone.classList.add('has-poster');
+          }
+        });
+      });
+    }).catch(function () {});
+  }
+  function loaded(event) {
+    var img = event.target;
+    if (img.tagName !== 'IMG') return;
+    var phone = img.closest('.ph');
+    if (phone) reveal(phone);
+  }
+  document.addEventListener('load', loaded, true);
+  document.addEventListener('error', loaded, true);
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.ph').forEach(reveal);
+  }, { once: true });
+})();
+</script>
+<link rel="preload" as="font" type="font/woff2" href="/peru/original/fonts/hanken-grotesk-latin-400-600.woff2" crossorigin>
+<!-- One shared plate dresses every phone. Reserve its box immediately and reveal it with
+     its decoded screen, after the first styled layout. -->
+<link rel="preload" as="image" href="/peru/original/handset/front.webp" fetchpriority="high">
+<link rel="preload" as="image" href="/peru/original/demos/posters/compras-520.webp" imagesrcset="/peru/original/demos/posters/compras-520.webp 520w, /peru/original/demos/posters/compras.webp 780w" imagesizes="(min-width: 1440px) 276px, (min-width: 900px) 260px, 220px" fetchpriority="high">
+<link rel="stylesheet" href="/peru/original/phone.css">
+<link rel="stylesheet" href="/peru/original/peru.css">
+<link rel="stylesheet" href="/peru/original/journey.css">
+<script src="/peru/original/peru.js" defer></script>
+
+<link rel="stylesheet" href="/peru/atelier-site.css"><script defer src="/peru/native-nav/atelier-nav.js" data-project="shop-workspace"></script></head>
+
+<body class="peru">
+<a class="pe-skip" href="#content">Skip to content</a>
+
+<!-- ══ 0 · NAV ═══════════════════════════════════════════════════════════════════════════════
+     The face, the name and the signup act. It tightens after
+     the first scroll and turns its tone over a dark band. -->
+<header class="pnav" id="pnav">
+  <div class="pnav-in">
+    <a class="pnav-brand" href="/peru/">
+      <img class="pnav-face" src="/peru/original-brand/face-open.svg" width="28" height="28" alt="">
+      <span>Rocoto</span>
+    </a>
+    <div class="pnav-act">
+
+      <a class="act" href="https://preview.atelierneyra.com/apps/peru/bodega-pay-later.html#/money">Open demo</a>
+    </div>
+  </div>
+</header>
+
+<main id="content">
+
+<!-- ══ 1 · HERO ══════════════════════════════════════════════════════════════════════════════
+     The H1 is the LCP element and it paints in the first frame: the words are already spans in
+     this file, so the line breaks are identical whether or not the script ever runs. -->
+<section class="pe-hero" id="top">
+  <div class="pe-wrap pe-hero-in">
+    <h1 class="pe-h1">Mobile ERP for bodegas’ orders and payments</h1>
+    <p class="pe-sub">Manage WhatsApp orders, Yape and Plin payments, stock and purchases. Planned credit would connect eligible businesses with a lender.</p>
+    <p class="pe-acts">
+      <a class="act" href="https://preview.atelierneyra.com/apps/peru/bodega-pay-later.html#/money">Open demo</a>
+      <a class="act-2" href="https://github.com/latintzar/whatsapp-shop-workspace" target="_blank" rel="noopener noreferrer"><img src="/peru/github.webp" width="20" height="20" alt=""> GitHub</a>
+    </p>
+    <p class="pe-status">Credit is planned and subject to lender assessment and approval.</p>
+  </div>
+
+  <!-- The phone's top third rises out of the hero's foot. With the script on, THIS element is the
+       one that travels: peru.js lifts it to `position:fixed`, turns it over the dark band below,
+       and docks it into the first row of «For selling, for buying and in your shop». The slot
+       keeps its height, so nothing shifts. -->
+  <div class="pe-heroslot">
+    <div class="hs-in" id="heroslot">
+      <figure class="ph" id="jphone" data-demo="/peru/original/demos/compras.html?lang=en" data-mode="auto" data-demo-still>
+        <div class="ph-body"><div class="ph-stage">
+          <img class="ph-plate" src="/peru/original/handset/front.webp" width="1170" height="1500" alt="" aria-hidden="true" fetchpriority="high" decoding="async">
+          <div class="ph-screen">
+            <img class="ph-poster" src="/peru/original/demos/posters/compras-520.webp" srcset="/peru/original/demos/posters/compras-520.webp 520w, /peru/original/demos/posters/compras.webp 780w" sizes="(min-width: 1440px) 276px, (min-width: 900px) 260px, 220px" width="780" height="1688" alt="An order and its payment confirmation in the supplier chat." fetchpriority="high" decoding="async">
+            <iframe class="ph-frame" title="Simulated conversation: an order paid with Rocoto credit" tabindex="-1" aria-hidden="true" width="390" height="844"></iframe>
+            <span class="ph-island"></span>
+          </div>
+        </div></div>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 2 · THE DARK STATEMENT BAND ═══════════════════════════════════════════════════════════
+     The phone flies over this band, turned, while the sentence lights letter by letter. The
+     letters are spans in this file, so the sentence is one solid block without the script. -->
+<section class="pe-lit" id="message" data-nav="dark">
+  <!-- THE HOLD AND THE TAIL exist only while the script runs (`html.flight`): they are the scroll
+       the sentence is read over, and they are what buys the handset its turned pause beside it.
+       With the script off, or under reduced motion, they collapse and the band is a plain band. -->
+  <div class="pe-lit-hold" aria-hidden="true"></div>
+  <div class="pe-lit-stick">
+    <div class="pe-wrap pe-lit-in">
+    <p class="pe-lit-t" data-lit><span class="pe-vh">You already buy and sell on WhatsApp. Rocoto lets you pay with credit.</span><span aria-hidden="true"><span class="lw" aria-hidden="true">Y</span><span class="lw" aria-hidden="true">o</span><span class="lw" aria-hidden="true">u</span> <span class="lw" aria-hidden="true">a</span><span class="lw" aria-hidden="true">l</span><span class="lw" aria-hidden="true">r</span><span class="lw" aria-hidden="true">e</span><span class="lw" aria-hidden="true">a</span><span class="lw" aria-hidden="true">d</span><span class="lw" aria-hidden="true">y</span> <span class="lw" aria-hidden="true">b</span><span class="lw" aria-hidden="true">u</span><span class="lw" aria-hidden="true">y</span> <span class="lw" aria-hidden="true">a</span><span class="lw" aria-hidden="true">n</span><span class="lw" aria-hidden="true">d</span> <span class="lw" aria-hidden="true">s</span><span class="lw" aria-hidden="true">e</span><span class="lw" aria-hidden="true">l</span><span class="lw" aria-hidden="true">l</span> <span class="lw" aria-hidden="true">o</span><span class="lw" aria-hidden="true">n</span> <span class="pe-mk pe-mk-wa"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12.04 2.5a9.4 9.4 0 0 0-8.1 14.13L2.5 21.5l4.98-1.4A9.4 9.4 0 1 0 12.04 2.5Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8.9 7.6c.2-.05.42-.04.6.02.2.07.33.28.44.5l.62 1.3c.1.22.06.48-.1.66l-.4.46a.44.44 0 0 0-.07.5 6.3 6.3 0 0 0 2.98 2.72.44.44 0 0 0 .5-.12l.44-.52c.17-.2.45-.26.69-.15l1.35.62c.24.11.4.35.4.62 0 .93-.75 1.69-1.68 1.7a7.9 7.9 0 0 1-6.9-6.95A1.7 1.7 0 0 1 8.9 7.6Z" fill="currentColor"/></svg><span class="pe-mkw"><span class="lw" aria-hidden="true">W</span><span class="lw" aria-hidden="true">h</span><span class="lw" aria-hidden="true">a</span><span class="lw" aria-hidden="true">t</span><span class="lw" aria-hidden="true">s</span><span class="lw" aria-hidden="true">A</span><span class="lw" aria-hidden="true">p</span><span class="lw" aria-hidden="true">p</span><span class="lw" aria-hidden="true">.</span></span></span> <span class="lw" aria-hidden="true">R</span><span class="lw" aria-hidden="true">o</span><span class="lw" aria-hidden="true">c</span><span class="lw" aria-hidden="true">o</span><span class="lw" aria-hidden="true">t</span><span class="lw" aria-hidden="true">o</span> <span class="lw" aria-hidden="true">l</span><span class="lw" aria-hidden="true">e</span><span class="lw" aria-hidden="true">t</span><span class="lw" aria-hidden="true">s</span> <span class="lw" aria-hidden="true">y</span><span class="lw" aria-hidden="true">o</span><span class="lw" aria-hidden="true">u</span> <span class="lw" aria-hidden="true">p</span><span class="lw" aria-hidden="true">a</span><span class="lw" aria-hidden="true">y</span> <span class="lw" aria-hidden="true">w</span><span class="lw" aria-hidden="true">i</span><span class="lw" aria-hidden="true">t</span><span class="lw" aria-hidden="true">h</span> <span class="lw" aria-hidden="true">c</span><span class="lw" aria-hidden="true">r</span><span class="lw" aria-hidden="true">e</span><span class="lw" aria-hidden="true">d</span><span class="lw" aria-hidden="true">i</span><span class="lw" aria-hidden="true">t</span><span class="lw" aria-hidden="true">.</span></span></p>
+    </div>
+  </div>
+  <div class="pe-lit-tail" aria-hidden="true"></div>
+</section>
+
+<!-- ══ 3 · THE THREE USES ════════════════════════════════════════════════════════════════════
+     Three stories: ordering with credit, paying an invoice, then repaying through Yape.
+     Text precedes its phone on mobile; desktop alternates the two columns.
+
+     ROW 1 IS THE DOCK. On a desk the hero's phone travels here and lands in `#dock`. On a phone,
+     without scripts, or with reduced motion, the figure inside the dock is the row's own phone. -->
+<section class="pe-band" id="how-it-works">
+  <div class="pe-wrap">
+    <h2 class="pe-vh">How it works</h2>
+
+    <div class="sr">
+      <div class="sr-row sr-flip" data-rise>
+        <div class="sr-text">
+          <h3>Buy on credit through WhatsApp</h3>
+          <p>Place your order and share the payment confirmation in your supplier chat.</p>
+        </div>
+        <div class="sr-stage">
+          <div class="sr-dock" id="dock">
+            <figure class="ph ph-fallback" data-demo="/peru/original/demos/compras.html?lang=en" data-mode="auto">
+              <div class="ph-body"><div class="ph-stage">
+                <img class="ph-plate" src="/peru/original/handset/front.webp" width="1170" height="1500" alt="" aria-hidden="true" decoding="async">
+                <div class="ph-screen">
+                  <img class="ph-poster" data-src="/peru/original/demos/posters/compras-520.webp" data-srcset="/peru/original/demos/posters/compras-520.webp 520w, /peru/original/demos/posters/compras.webp 780w" sizes="(min-width: 1440px) 276px, (min-width: 900px) 260px, 220px" width="780" height="1688" alt="An order and its payment confirmation in the supplier chat." decoding="async">
+                  <noscript><img class="ph-shot" src="/peru/original/demos/posters/compras-520.webp" srcset="/peru/original/demos/posters/compras-520.webp 520w, /peru/original/demos/posters/compras.webp 780w" sizes="(min-width: 1440px) 276px, (min-width: 900px) 260px, 220px" width="780" height="1688" alt="An order and its payment confirmation in the supplier chat."></noscript>
+                  <iframe class="ph-frame" title="Simulated conversation: an order paid with Rocoto credit" tabindex="-1" aria-hidden="true" width="390" height="844"></iframe>
+                  <span class="ph-island"></span>
+                </div>
+              </div></div>
+            </figure>
+          </div>
+        </div>
+      </div>
+
+      <div class="sr-row" data-rise>
+        <div class="sr-text">
+          <h3>Pay your invoice with a photo</h3>
+          <p>When your order arrives, review the amount and confirm payment with credit.</p>
+        </div>
+        <div class="sr-stage" id="delivery-slot">
+          <figure class="ph" id="delivery-phone" data-demo="/peru/original/demos/entrega.html?lang=en" data-mode="auto">
+            <div class="ph-body"><div class="ph-stage">
+              <img class="ph-plate" src="/peru/original/handset/front.webp" width="1170" height="1500" alt="" aria-hidden="true" decoding="async">
+              <div class="ph-screen">
+                <img class="ph-poster" data-src="/peru/original/demos/posters/entrega-520.webp" data-srcset="/peru/original/demos/posters/entrega-520.webp 520w, /peru/original/demos/posters/entrega.webp 780w" sizes="(min-width: 1440px) 276px, (min-width: 900px) 260px, 220px" width="780" height="1688" alt="Invoice payment review: S/386 at 0% interest, with automatic repayment on 26 September." decoding="async">
+                <noscript><img class="ph-shot" src="/peru/original/demos/posters/entrega-520.webp" srcset="/peru/original/demos/posters/entrega-520.webp 520w, /peru/original/demos/posters/entrega.webp 780w" sizes="(min-width: 1440px) 276px, (min-width: 900px) 260px, 220px" width="780" height="1688" alt="Invoice payment review: S/386 at 0% interest, with automatic repayment on 26 September."></noscript>
+                <iframe class="ph-frame" title="Simulated invoice payment: review, confirmation and payment receipt" tabindex="-1" aria-hidden="true" width="390" height="844"></iframe>
+                <span class="ph-island"></span>
+              </div>
+            </div></div>
+          </figure>
+        </div>
+      </div>
+
+      <div class="sr-row sr-flip" data-rise>
+        <div class="sr-text">
+          <h3>Automatic repayment from Yape</h3>
+          <p>Your credit is collected on the date you agreed when confirming your purchase.</p>
+        </div>
+        <div class="sr-stage" id="repayment-slot">
+          <figure class="ph" id="repayment-phone" data-demo="/peru/original/demos/cobro.html?lang=en" data-mode="auto">
+            <div class="ph-body"><div class="ph-stage">
+              <img class="ph-plate" src="/peru/original/handset/front.webp" width="1170" height="1500" alt="" aria-hidden="true" decoding="async">
+              <div class="ph-screen">
+                <img class="ph-poster" data-src="/peru/original/demos/posters/cobro-520.webp" data-srcset="/peru/original/demos/posters/cobro-520.webp 520w, /peru/original/demos/posters/cobro.webp 780w" sizes="(min-width: 1440px) 276px, (min-width: 900px) 260px, 220px" width="780" height="1688" alt="A Yape debit notification and the credit marked as repaid." decoding="async">
+                <noscript><img class="ph-shot" src="/peru/original/demos/posters/cobro-520.webp" srcset="/peru/original/demos/posters/cobro-520.webp 520w, /peru/original/demos/posters/cobro.webp 780w" sizes="(min-width: 1440px) 276px, (min-width: 900px) 260px, 220px" width="780" height="1688" alt="A Yape debit notification and the credit marked as repaid."></noscript>
+                <iframe class="ph-frame" title="Simulated credit repayment through Yape" tabindex="-1" aria-hidden="true" width="390" height="844"></iframe>
+                <span class="ph-island"></span>
+              </div>
+            </div></div>
+          </figure>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Planned capabilities: details stay on this page; the phone journey keeps its slot. -->
+<section class="pe-band pe-cloud" id="roadmap">
+  <div class="pe-wrap">
+    <div class="tl-head" data-rise>
+      <h2 class="pe-h2">What's coming</h2>
+      <p class="tl-note">Explore the original product vision and the current demonstration.</p>
+    </div>
+    <!-- A TIMELINE, NEVER A HOW-TO (Peter, 20 September: «this feels like it's step by step for using
+         the app. we have to make it clear it's What's coming… why not dots… more space… TODAY should
+         be clear and have a cta inside it… Think about information overwhelm»). So: dots on a spine,
+         the WHEN set large, one name, one short sentence, and air. Live entries carry a filled dot. -->
+    <div class="roadmap-layout">
+    <div class="roadmap-phone" id="roadmap-phone-slot" aria-hidden="true"></div>
+    <ol class="tl">
+      <li class="tl-e is-live" data-rise>
+        <p class="tl-when">Today</p>
+        <div class="tl-b">
+          <h3 class="tl-h">Explore the app</h3>
+          <p>Explore the original shop workflow with sample records.</p>
+          <p class="tl-act"><a class="act" href="https://preview.atelierneyra.com/apps/peru/bodega-pay-later.html#/money">Open demo</a></p>
+        </div>
+      </li>
+      <li class="tl-e" data-rise>
+        <p class="tl-when">In preparation</p>
+        <div class="tl-b">
+          <h3 class="tl-h"><a class="tl-open" href="#feature-sales" data-sheet-open aria-haspopup="dialog">Sales on your phone<span class="tl-plus" aria-hidden="true">+</span></a></h3>
+          <p>A simple register for counter sales and WhatsApp orders.</p>
+        </div>
+      </li>
+      <li class="tl-e" data-rise>
+        <p class="tl-when">In preparation</p>
+        <div class="tl-b">
+          <h3 class="tl-h"><a class="tl-open" href="#feature-tabs" data-sheet-open aria-haspopup="dialog">Tabs and collections<span class="tl-plus" aria-hidden="true">+</span></a></h3>
+          <p>Who owes you, how much, and when they pay.</p>
+        </div>
+      </li>
+      <li class="tl-e" data-rise>
+        <p class="tl-when">In preparation</p>
+        <div class="tl-b">
+          <h3 class="tl-h"><a class="tl-open" href="#feature-receipts" data-sheet-open aria-haspopup="dialog">Electronic receipts<span class="tl-plus" aria-hidden="true">+</span></a></h3>
+          <p>Issue the receipt using the details of the sale.</p>
+        </div>
+      </li>
+      <li class="tl-e" data-rise>
+        <p class="tl-when">In preparation</p>
+        <div class="tl-b">
+          <h3 class="tl-h"><a class="tl-open" href="#feature-credit" data-sheet-open aria-haspopup="dialog">Credit for your stock<span class="tl-plus" aria-hidden="true">+</span></a></h3>
+          <p>Your supplier gets paid when you buy. You repay on the agreed date.</p>
+        </div>
+      </li>
+    </ol>
+    </div>
+    <p class="roadmap-context">Your sales and payment history helps us understand your business and assess your credit.</p>
+  </div>
+</section>
+
+<!-- ══ 5 · ORDERS, ON THE PHONE AND ON THE COMPUTER ══════════════════════════════════════════
+     Words left, picture right. Both plates are real captures of the running prototype taken with
+     Playwright — nothing here is drawn, redrawn or composited — and both show the SAME order.
+     Each is served at the size it is drawn: the desk at 1440 on a desk and at 1440 on a phone
+     too small to need more, the handset at 585 because its glass is never wider than 300 CSS px. -->
+<section class="pe-band" id="orders">
+  <div class="pe-wrap pd-grid">
+    <div class="pd-text">
+      <h2 class="pe-h2" data-rise>Your orders and delivery notes</h2>
+      <p class="pe-lead" data-rise>Orders from your chats are saved with their delivery notes. Review them on your phone or computer and export them when you need them.</p>
+      <p class="pe-lk" data-rise><a href="https://preview.atelierneyra.com/apps/peru/bodega-pay-later.html#/money">See a delivery note<svg class="lk-a" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3.2 8h9.6M8.8 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></p>
+      <p class="pe-foot" data-rise>Screens from the Rocoto app.</p>
+    </div>
+    <!-- SCROLL-LED, AND STILL WHOLE WITHOUT THE SCROLL. peru.js writes `--pd` (0 → 1) on this
+         element as the band crosses the screen; the desk rises with it and the phone slides in
+         over its right edge. With the script off `--pd` falls back to 1 and the composition is
+         simply there. -->
+    <div class="pd" id="pdstage">
+      <!-- THE COMPUTER IS A LAPTOP, DRAWN. Vectors and one capture: the lid, the camera, the
+           chin and the base are CSS, so the whole object is sharp at any size and any pixel
+           ratio, and it scales as ONE piece exactly as the handsets do. -->
+      <figure class="lap pd-desk">
+        <div class="lap-lid">
+          <span class="lap-cam"></span>
+          <div class="lap-scr">
+            <img src="/peru/original/cap/pedido-escritorio-sm.webp" srcset="/peru/original/cap/pedido-escritorio-sm.webp 1440w, /peru/original/cap/pedido-escritorio.webp 2880w" sizes="(min-width: 900px) 46vw, 92vw" width="1440" height="900" alt="The day's order open on the computer, with its lines and its delivery note." loading="lazy" decoding="async">
+          </div>
+        </div>
+        <div class="lap-base"></div>
+      </figure>
+      <figure class="ph pd-phone" data-mode="static">
+        <div class="ph-body"><div class="ph-stage">
+          <img class="ph-plate" src="/peru/original/handset/front.webp" width="1170" height="1500" alt="" aria-hidden="true" decoding="async">
+          <div class="ph-screen">
+            <img class="ph-shot" src="/peru/original/cap/pedido-movil-sm.webp" width="585" height="1266" alt="The same order open on the phone." loading="lazy" decoding="async">
+            <span class="ph-island"></span>
+          </div>
+        </div></div>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 6 · THE BANK BAND ═════════════════════════════════════════════════════════════════════
+     A dark band with the words and the grid on the left and a picture on the right. The grid sits
+     DIRECTLY under the paragraph, so a reader sees their own bank in the same glance as the
+     sentence about it.
+
+     THE PICTURE IS ART-DIRECTED, NOT RESIZED: a landscape cut at the top of the section on a
+     phone, a portrait cut in the right column on a desk, each drawn from the fishmonger plate at
+     the size it is painted. -->
+<section class="pe-band pe-dark" id="banks" data-nav="dark">
+  <div class="pe-wrap bb">
+    <figure class="bb-art bb-art-wide" data-rise>
+      <img src="/peru/original/cap/bank-art-wide.webp" width="900" height="648" alt="A fishmonger sends a voice note from his stall." loading="lazy" decoding="async">
+    </figure>
+    <div class="bb-text">
+      <h2 class="pe-h2" data-rise>Connect the account you already use</h2>
+      <p class="pe-lead" data-rise>Connect your bank account to keep your payments in Rocoto.</p>
+      <!-- THE SEVEN, in the founder's order. The page promises these banks and no others, so this
+           is the whole grid, written here rather than fetched: a 53 KB manifest read at runtime
+           bought nothing this file does not already say. -->
+      <ul class="bk" id="bankgrid">
+        <li class="bk-t"><img src="/peru/original/banks/bcp.svg" width="160" height="40" alt="BCP" loading="lazy" decoding="async"></li>
+        <li class="bk-t"><img src="/peru/original/banks/bbva.svg" width="160" height="48" alt="BBVA" loading="lazy" decoding="async"></li>
+        <li class="bk-t"><img src="/peru/original/banks/interbank.svg" width="160" height="29" alt="Interbank" loading="lazy" decoding="async"></li>
+        <li class="bk-t"><img src="/peru/original/banks/scotiabank.svg" width="160" height="23" alt="Scotiabank" loading="lazy" decoding="async"></li>
+        <li class="bk-t"><img src="/peru/original/banks/banbif.svg" width="160" height="44" alt="BanBif" loading="lazy" decoding="async"></li>
+        <li class="bk-t"><img src="/peru/original/banks/banco-pichincha.svg" width="160" height="34" alt="Banco Pichincha" loading="lazy" decoding="async"></li>
+        <li class="bk-t"><img src="/peru/original/banks/mibanco.svg" width="127" height="64" alt="Mibanco" loading="lazy" decoding="async"></li>
+      </ul>
+      <p class="pe-foot" data-rise>Each logo identifies its financial institution.</p>
+      <p class="pe-lk pe-lk-light" data-rise><a href="https://docs.atelierneyra.com/shop-workspace/overview/">How we look after your data<svg class="lk-a" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3.2 8h9.6M8.8 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></p>
+    </div>
+    <figure class="bb-art bb-art-tall" data-rise>
+      <img src="/peru/original/cap/bank-art-tall.webp" width="780" height="1066" alt="A fishmonger sends a voice note from his stall." loading="lazy" decoding="async">
+    </figure>
+  </div>
+</section>
+
+<!-- ══ 7 · WHO IT HELPS ══════════════════════════════════════════════════════════════════════
+     THREE SQUARE BOXES (SPEC, «Peter, the same afternoon», decision 12). Peter: «it helps
+     bodegas, minoristas, mayoristas. cos they fiar people that;s th epoint / and they have hgh
+     demand events too.» So each box adds ONE fact about that business — the fiado it gives and
+     the date it stocks up for — and the section's own sentence says what Rocoto does about it.
+
+     THE PICTURES are Rocoto's own illustration library (library/illustrations/accepted), cut to
+     16:9 at the size the box draws them; peru/img/README.md records each cut and its source. -->
+<section class="pe-band" id="who">
+  <div class="pe-wrap">
+    <div class="pe-head" data-rise>
+      <h2 class="pe-h2">For your business</h2>
+      <p class="pe-head-p">Credit for bodegas, retailers and wholesalers to restock and cover purchases while customers pay their tabs.</p>
+    </div>
+    <div class="who">
+      <figure class="who-c" data-rise>
+        <img src="/peru/original/img/who-bodega.webp" width="690" height="460" alt="A bodeguera behind her counter of packets and tins, her phone in her hand." loading="lazy" decoding="async">
+        <figcaption><h3>Bodegas</h3><p>Restock your shelves while your customers pay their tabs.</p></figcaption>
+      </figure>
+      <figure class="who-c" data-rise>
+        <img src="/peru/original/img/who-retail.webp" width="690" height="460" alt="A fishmonger and his customer hold up their phones over the counter of iced fish." loading="lazy" decoding="async">
+        <figcaption><h3>Retailers</h3><p>Buy extra stock for busy dates such as Fiestas Patrias.</p></figcaption>
+      </figure>
+      <figure class="who-c" data-rise>
+        <img src="/peru/original/img/who-wholesale.webp" width="690" height="460" alt="A distributor hands a crate of produce to a shopkeeper at the door of her shop." loading="lazy" decoding="async">
+        <figcaption><h3>Wholesalers</h3><p>Pay your suppliers while the shops you supply pay their invoices.</p></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 8 · QUESTIONS ═════════════════════════════════════════════════════════════════════════
+     Real <details>, so every answer is readable and findable with the script off. -->
+<section class="pe-band" id="questions">
+  <div class="pe-wrap">
+    <div class="pe-head" data-rise>
+      <h2 class="pe-h2">Questions</h2>
+      <p class="pe-head-p">About connecting WhatsApp, supplier payments and credit.</p>
+    </div>
+    <div class="faq" id="faq">
+      <details class="faq-i" name="questions" open>
+        <summary><span>What happens when I connect my WhatsApp?</span><span class="faq-s" aria-hidden="true"><i></i><i></i></span></summary>
+        <div class="faq-b"><p>WhatsApp integration connects business conversations to orders when configured by the shop.</p></div>
+      </details>
+      
+      <details class="faq-i" name="questions">
+        <summary><span>Do I need WhatsApp Business?</span><span class="faq-s" aria-hidden="true"><i></i><i></i></span></summary>
+        <div class="faq-b"><p>Yes. Rocoto connects to WhatsApp Business, the free app for businesses. You can transfer your existing number and chats to it.</p></div>
+      </details>
+      <details class="faq-i" name="questions">
+        <summary><span>How does Rocoto connect to my WhatsApp?</span><span class="faq-s" aria-hidden="true"><i></i><i></i></span></summary>
+        <div class="faq-b"><p>Rocoto connects through the official WhatsApp Business integration. Your app keeps working on your phone.</p></div>
+      </details>
+      <!-- THE MONTH IS THE ROADMAP'S OWN AND IT IS PRINTED AS A PLAN. The two CLEARED SENTENCES
+           (SPEC, «Credit advertising») follow it, verbatim, and step 5 of the roadmap links here. -->
+      <details class="faq-i" name="questions" id="q-when">
+        <summary><span>When will credit be available?</span><span class="faq-s" aria-hidden="true"><i></i><i></i></span></summary>
+        <div class="faq-b"><p>Credit is planned and subject to lender assessment and approval.</p></div>
+      </details>
+      <!-- PAYING BACK, SAID SIMPLY (Peter, 20 September, night: «paying back the credit has conditions
+           etc which are explained SIMPLY in the FAQ»). The amount, date and full conditions
+           are shown before the customer confirms. -->
+      <details class="faq-i" name="questions" id="q-payback">
+        <summary><span>How do I repay my credit?</span><span class="faq-s" aria-hidden="true"><i></i><i></i></span></summary>
+        <div class="faq-b"><p>The planned flow presents the repayment amount, date and lender terms before confirmation. The lender assesses and approves each application.</p></div>
+      </details>
+      <!-- THE MECHANICS PETER LANDED ON (SPEC item 15): the credit is the buyer's, the supplier is
+           paid at once and agrees to the terms once. -->
+      <details class="faq-i" name="questions">
+        <summary><span>Does my supplier have to use Rocoto?</span><span class="faq-s" aria-hidden="true"><i></i><i></i></span></summary>
+        <div class="faq-b"><p>Your supplier registers the account where they want to receive payment and accepts the terms once. Payment confirmations then arrive in your chat with them.</p></div>
+      </details>
+      <details class="faq-i" name="questions">
+        <summary><span>What does Rocoto read from my WhatsApp?</span><span class="faq-s" aria-hidden="true"><i></i><i></i></span></summary>
+        <div class="faq-b"><p>Your individual conversations from the last 6 months. Group chats keep working as usual, and broadcast lists become read-only.</p></div>
+      </details>
+      <!-- YAPE IS A THIRD PARTY'S MARK. The answer names the thing and the permission, and claims
+           no partnership; the footer carries the marks line. What the decision record leaves
+           UNVERIFIED — limits, commissions, which banks — is printed nowhere. -->
+      <details class="faq-i" name="questions">
+        <summary><span>Is Rocoto a financial institution?</span><span class="faq-s" aria-hidden="true"><i></i><i></i></span></summary>
+        <!-- CLEARED SENTENCES (SPEC, «Credit advertising»): both ship verbatim. The footer carries
+             the regulator's own sentence, always visible. -->
+        <div class="faq-b"><p>Credit is planned and subject to lender assessment and approval.</p></div>
+      </details>
+    </div>
+    <p class="pe-lk" data-rise><a href="https://docs.atelierneyra.com/shop-workspace/overview/">Privacy policy<svg class="lk-a" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3.2 8h9.6M8.8 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></p>
+  </div>
+</section>
+
+<!-- ══ 9 · CLOSING CARD ══════════════════════════════════════════════════════════════════════ -->
+<section class="pe-band pe-close">
+  <div class="pe-wrap">
+    <div class="cl" data-rise>
+      <!-- A customer paying at the counter, which is the act the card is asking for. One cut,
+           drawn at the size the card paints it. -->
+      <figure class="cl-art">
+        <img src="/peru/original/cap/close-art.webp" width="1100" height="752" alt="A bodega owner with her phone, among the shelves of her shop." loading="lazy" decoding="async">
+      </figure>
+      <div class="cl-t">
+        <h2>Explore Rocoto</h2>
+        <p>Credit is planned and subject to lender assessment and approval.</p>
+        <p class="pe-acts"><a class="act" href="https://preview.atelierneyra.com/apps/peru/bodega-pay-later.html#/money">Open demo</a><a class="act-o" href="https://github.com/latintzar/whatsapp-shop-workspace">GitHub<svg class="lk-a" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3.2 8h9.6M8.8 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<dialog class="feature-sheet" id="feature-sales" aria-labelledby="feature-sales-title">
+  <div class="sheet-top">
+    <span class="sheet-brand" translate="no"><img src="/peru/original-brand/face-open.svg" width="30" height="30" alt="">Rocoto</span>
+    <button class="sheet-close" type="button" data-sheet-close aria-label="Close details"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+  </div>
+  <div class="sheet-content">
+    <p class="sheet-status">In preparation</p>
+    <h2 id="feature-sales-title" tabindex="-1">Sales on your phone</h2>
+    <p class="sheet-intro">Your counter sales and WhatsApp orders, with a Yape link to collect payment.</p>
+    <div class="roadmap-visual rv-sales">
+      <figure class="ph rv-phone" data-demo="/peru/original/demos/tienda.html?lang=en" data-mode="auto">
+        <div class="ph-body"><div class="ph-stage">
+          <img class="ph-plate" src="/peru/original/handset/front.webp" width="1170" height="1500" alt="" aria-hidden="true" loading="lazy" decoding="async">
+          <div class="ph-screen">
+            <img class="ph-poster" data-src="/peru/original/demos/posters/tienda.webp" width="780" height="1688" alt="A customer order and its Yape payment link in WhatsApp." decoding="async">
+            <noscript><img class="ph-shot" src="/peru/original/demos/posters/tienda.webp" width="780" height="1688" alt="A customer order and its Yape payment link in WhatsApp."></noscript>
+            <iframe class="ph-frame" title="Simulated conversation: a customer orders and receives a Yape payment link" tabindex="-1" aria-hidden="true" width="390" height="844"></iframe>
+            <span class="ph-island"></span>
+          </div>
+        </div></div>
+      </figure>
+    </div>
+    <p class="sheet-note">Your sales and payments build your business history for credit assessment.</p>
+    <button class="sheet-done" type="button" data-sheet-close>Back to what's coming<span aria-hidden="true">←</span></button>
+  </div>
+</dialog>
+<dialog class="feature-sheet" id="feature-tabs" aria-labelledby="feature-tabs-title">
+  <div class="sheet-top">
+    <span class="sheet-brand" translate="no"><img src="/peru/original-brand/face-open.svg" width="30" height="30" alt="">Rocoto</span>
+    <button class="sheet-close" type="button" data-sheet-close aria-label="Close details"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+  </div>
+  <div class="sheet-content">
+    <p class="sheet-status">In preparation</p>
+    <h2 id="feature-tabs-title" tabindex="-1">Tabs and collections</h2>
+    <p class="sheet-intro">See who owes you and collect through Yape, with their authorisation.</p>
+    <figure class="roadmap-visual rv-tabs" aria-label="Example Yape collections: two customers have paid and three have an upcoming collection date.">
+      <ul class="dc" aria-label="Customers and collection dates">
+      <li class="dc-c is-paid" style="--i:0" data-av="MO"><span class="dc-n">Maribel obra<span class="dc-w"><span class="dc-w1" aria-hidden="true">Collects 18 Sep</span><span class="dc-w2">Paid through Yape</span></span></span><span class="dc-a">S/ 460.00</span><span class="dc-ok" aria-hidden="true"></span></li>
+      <li class="dc-c is-paid" style="--i:1" data-av="RM"><span class="dc-n">Rosa menú<span class="dc-w"><span class="dc-w1" aria-hidden="true">Collects 18 Sep</span><span class="dc-w2">Paid through Yape</span></span></span><span class="dc-a">S/ 318.00</span><span class="dc-ok" aria-hidden="true"></span></li>
+      <li class="dc-c is-due" style="--i:2;--left:.78" data-av="NH"><span class="dc-n">Nancy Huamán<span class="dc-w">Collection date</span></span><span class="dc-a">S/ 64.00</span><span class="dc-d"><svg viewBox="0 0 44 44" aria-hidden="true" focusable="false"><circle class="dc-r0" cx="22" cy="22" r="19"/><circle class="dc-r1" cx="22" cy="22" r="19"/></svg><b>22</b><i>Sep</i></span></li>
+      <li class="dc-c is-due" style="--i:3;--left:.5" data-av="JP"><span class="dc-n">Julia 2do piso<span class="dc-w">Collection date</span></span><span class="dc-a">S/ 31.50</span><span class="dc-d"><svg viewBox="0 0 44 44" aria-hidden="true" focusable="false"><circle class="dc-r0" cx="22" cy="22" r="19"/><circle class="dc-r1" cx="22" cy="22" r="19"/></svg><b>25</b><i>Sep</i></span></li>
+      <li class="dc-c is-due" style="--i:4;--left:.22" data-av="TA"><span class="dc-n">Tito abarrotes<span class="dc-w">Collection date</span></span><span class="dc-a">S/ 120.00</span><span class="dc-d"><svg viewBox="0 0 44 44" aria-hidden="true" focusable="false"><circle class="dc-r0" cx="22" cy="22" r="19"/><circle class="dc-r1" cx="22" cy="22" r="19"/></svg><b>29</b><i>Sep</i></span></li>
+      </ul>
+    </figure>
+    <p class="sheet-note">Each payment updates the customer's outstanding balance.</p>
+    <button class="sheet-done" type="button" data-sheet-close>Back to what's coming<span aria-hidden="true">←</span></button>
+  </div>
+</dialog>
+<dialog class="feature-sheet" id="feature-receipts" aria-labelledby="feature-receipts-title">
+  <div class="sheet-top">
+    <span class="sheet-brand" translate="no"><img src="/peru/original-brand/face-open.svg" width="30" height="30" alt="">Rocoto</span>
+    <button class="sheet-close" type="button" data-sheet-close aria-label="Close details"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+  </div>
+  <div class="sheet-content">
+    <p class="sheet-status">In preparation</p>
+    <h2 id="feature-receipts-title" tabindex="-1">Electronic receipts</h2>
+    <p class="sheet-intro">Turn a recorded sale into your customer's electronic receipt.</p>
+    <figure class="roadmap-visual rv-receipts" aria-label="Draft electronic receipt for the same three products, totalling S/78.50, ready for review.">
+      <div class="rv-paper">
+        <div class="rv-topline"><img src="/peru/original-brand/face-open.svg" width="28" height="36" alt=""><span class="rv-tag">Draft</span></div>
+        <div class="rv-document-heading"><strong>Electronic receipt</strong><span translate="no">Bodega Yesenia</span></div>
+        <div class="rv-document-customer"><span>Customer</span><strong translate="no">Rosa menú</strong></div>
+        <div class="rv-products">
+          <div class="rv-product"><img src="/peru/original/demos/av/faces/arroz.webp" alt="" width="42" height="42" loading="lazy" decoding="async"><span>Rice 5 kg</span><span class="rv-quantity" translate="no">× 1</span></div>
+          <div class="rv-product"><img src="/peru/original/demos/av/faces/aceite.webp" alt="" width="42" height="42" loading="lazy" decoding="async"><span>Cooking oil 1 L</span><span class="rv-quantity" translate="no">× 2</span></div>
+          <div class="rv-product"><img src="/peru/original/demos/av/faces/huevo.webp" alt="" width="42" height="42" loading="lazy" decoding="async"><span>Farm eggs</span><span class="rv-quantity" translate="no">× 30</span></div>
+        </div>
+        <div class="rv-total"><span>Total</span><span class="rv-money " translate="no"><span class="rv-currency">S/</span>78<span class="rv-cents">.50</span></span></div>
+        <div class="rv-draft-status rv-reveal"><span aria-hidden="true"></span>To be issued</div>
+      </div>
+    </figure>
+    <p class="sheet-note">Requires your RUC and electronic invoicing setup.</p>
+    <button class="sheet-done" type="button" data-sheet-close>Back to what's coming<span aria-hidden="true">←</span></button>
+  </div>
+</dialog>
+<dialog class="feature-sheet" id="feature-credit" aria-labelledby="feature-credit-title">
+  <div class="sheet-top">
+    <span class="sheet-brand" translate="no"><img src="/peru/original-brand/face-open.svg" width="30" height="30" alt="">Rocoto</span>
+    <button class="sheet-close" type="button" data-sheet-close aria-label="Close details"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+  </div>
+  <div class="sheet-content">
+    <p class="sheet-status">In preparation</p>
+    <h2 id="feature-credit-title" tabindex="-1">Credit for your stock</h2>
+    <p class="sheet-intro">Illustrative credit concept: the supplier is paid today and repayment is scheduled for a later date.</p>
+    <figure class="roadmap-visual rv-credit" aria-label="Illustrative credit concept: the supplier receives S/386 today. You repay S/386 in seven days, with 0% interest and S/0 in fees.">
+      <div class="rv-card">
+        <div class="rv-credit-paid"><svg class="rv-check" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="21" fill="none" stroke="currentColor" stroke-width="2"/><path d="m14 24 7 7 14-15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" pathLength="1"/></svg><span>Supplier payment</span><span class="rv-money rv-hero-amount" translate="no"><span class="rv-currency">S/</span>386</span><strong translate="no">Distribuidora Ricardo</strong></div>
+        <div class="rv-credit-terms"><span><b translate="no">0%</b> interest</span><span><b translate="no">S/0</b> fees</span></div>
+        <div class="rv-schedule rv-reveal"><span class="rv-schedule-dot" aria-hidden="true"></span><div><strong>In 7 days</strong><span>You repay</span></div><span class="rv-money " translate="no"><span class="rv-currency">S/</span>386</span></div>
+      </div>
+    </figure>
+    <p class="sheet-offer">Credit is planned and subject to lender assessment and approval.</p>
+    <p class="sheet-note">Credit is planned and subject to lender assessment and approval.</p>
+    <button class="sheet-done" type="button" data-sheet-close>Back to what's coming<span aria-hidden="true">←</span></button>
+  </div>
+</dialog>
+
+</main>
+
+<!-- ══ 10 · FOOTER ═══════════════════════════════════════════════════════════════════════════ -->
+<footer class="pe-ft">
+  <div class="pe-wrap">
+    <div class="pe-ft-top">
+      <div class="pe-ft-brand">
+        <span class="pe-ft-mark"><img src="/peru/original-brand/face-open.svg" width="44" height="44" alt=""><b>Rocoto</b></span>
+        <p>Rocoto for bodegas, market stalls and fish stalls in Peru.</p>
+        <div class="footer-language"><span class="plang-w" translate="no"><details class="plang"><summary class="plang-s" aria-label="Language — English"><span class="plang-now">EN</span><svg class="plang-v" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="m4 6.5 4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><div class="plang-m"><a class="plang-o" href="/peru/es/" hreflang="es-PE" lang="es">Español</a><a class="plang-o is-on" href="/peru/" hreflang="en" lang="en" aria-current="true">English</a></div></details><a class="plang-mini" href="/peru/es/" hreflang="es-PE" lang="es" aria-label="Español">ES</a></span><!--/plang--></div>
+      </div>
+      <div class="pe-ft-cols">
+        <nav class="pe-ft-g" aria-label="On this page">
+          <h2>On this page</h2>
+          <a href="#how-it-works">How it works</a>
+          <a href="#roadmap">What is coming</a>
+          <a href="#orders">Your orders</a>
+          <a href="#banks">Banks</a>
+          <a href="#who">For your business</a>
+          <a href="#questions">Questions</a>
+        </nav>
+        <nav class="pe-ft-g" aria-label="Legal">
+          <h2>Legal</h2>
+          <a href="https://docs.atelierneyra.com/shop-workspace/overview/">Privacy policy</a>
+          <a href="https://docs.atelierneyra.com/shop-workspace/overview/">Cookies</a>
+          <a href="https://docs.atelierneyra.com/shop-workspace/overview/">Terms</a>
+        </nav>
+        <nav class="pe-ft-g" aria-label="Write to us">
+          <h2>GitHub</h2>
+          <a href="https://docs.atelierneyra.com/shop-workspace/overview/">Project documentation</a>
+          <a class="act" href="https://preview.atelierneyra.com/apps/peru/bodega-pay-later.html#/money">Open demo</a>
+        </nav>
+      </div>
+    </div>
+    <div class="pe-ft-legal">
+      <!-- THE REGULATOR'S OWN SENTENCE. It is law, it is the one negative construction this page
+           carries, and it is always visible. It ships verbatim; the Spanish original is the one
+           that ships in Peru, and it is in peru/STRINGS.md. -->
+      <p class="pe-ft-sbs">Rocoto holds no authorisation or supervision from the Superintendencia de Banca, Seguros y AFP.</p>
+      <div class="pe-ft-meta">
+        <p>WhatsApp is a trademark of Meta Platforms, Inc. Yape is a trademark of Credicorp. Every logo on this site belongs to the institution it identifies.</p>
+        <!-- The handset on this page is a licensed 3D model and CC BY 4.0 asks for the credit by
+             name, so it stays in the small print wherever the page goes. -->
+        <p class="pe-ft-c">3D phone model by <a href="https://sketchfab.com/3d-models/apple-iphone-15-pro-max-black-df17520841214c1792fb8a44c6783ee7" rel="noopener">polyman</a>, <a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">CC BY 4.0</a>.</p>
+        <p class="pe-ft-c">© 2026 Rocoto. Rocoto is a product of Leo Casa Ltd.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* Two vector states preserve the original blink without downloading a raster animation. */
+addEventListener('load', function () {
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var faces = document.querySelectorAll('img[src$="/peru/original-brand/face-open.svg"]');
+  var times = [3400,200,5200,200,3000,200,6200,200,3800,200,4600,200,7000,200,160,200,3200,200,5600,200,4000,200,4800,200];
+  var frame = 0, timer = 0, ready = false, requested = false;
+  function paint(closed) {
+    faces.forEach(function (face) { face.src = closed ? '/peru/original-brand/face-closed.svg' : '/peru/original-brand/face-open.svg'; });
+  }
+  function step() {
+    frame = (frame + 1) % times.length;
+    paint(frame % 2);
+    timer = setTimeout(step, times[frame]);
+  }
+  function sync() {
+    clearTimeout(timer); frame = 0; paint(false);
+    if (document.hidden || reduce.matches) return;
+    if (ready) timer = setTimeout(step, times[0]);
+    else if (!requested) {
+      requested = true;
+      var closed = new Image();
+      closed.src = '/peru/original-brand/face-closed.svg';
+      closed.decode().then(function () { ready = true; sync(); }).catch(function () {});
+    }
+  }
+  document.addEventListener('visibilitychange', sync);
+  if (reduce.addEventListener) reduce.addEventListener('change', sync);
+  sync();
+});
+</script>
+</body>
+</html>

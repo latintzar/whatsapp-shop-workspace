@@ -1,0 +1,1884 @@
+/* ═══════════════════════════════════════════════════════════════════════════════════════════
+   peru/peru.css — the page.
+
+   THE FIT IS MEASURED, NOT FELT. The proportions come from the craft reference's own measured
+   system (`scratchpad/landing/reference-study.md`, §B): gutter clamp(22–62 px), content max
+   1200, copy max 500, section join clamp(96–144 px), chapter gap clamp(84–148 px), grid gap
+   clamp(44–112 px), one easing everywhere. What fills those proportions is ours — our words, our
+   pictures, our colour, an open-licence face and a handset we draw.
+
+   THREE RULES PRODUCE THE LIGHTNESS:
+
+   1. DISPLAY TYPE IS BIG AND SET AT 400. Weight is what makes a headline heavy; size is what
+      makes it loud. Hanken Grotesk (OFL) at 400 with −0.045em of tracking and a line-height near
+      0.98 gives a 94 px line that still whispers. `--display` holds the family, so another face
+      is one line away.
+   2. ONE COLOUR DOES ONE JOB. Rocoto red is the numerals and nothing else. WhatsApp green lives
+      inside a phone and on the act's glyph. Everything else is ink, stone and paper.
+   3. FEW THINGS IN VIEW AT ONCE. Sections breathe, the measure is capped, a paragraph never runs
+      the width of a desk, and the bank grid shows seven names until a reader asks for the rest.
+
+   ORDER: tokens · the fallback face · reset · chrome · sections in page order · motion.
+   ═══════════════════════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  /* the family, behind one property */
+  --display: 'Hanken Grotesk', 'HG fb', Arial, 'Helvetica Neue', sans-serif;
+  --body:    'Hanken Grotesk', 'HG fb', Arial, 'Helvetica Neue', sans-serif;
+
+  /* paper and ink */
+  --pe-paper:  #FAF7F3;
+  --pe-cloud:  #F2ECE5;
+  --pe-card:   #FFFFFF;
+  --pe-line:   #DAD2C8;
+  --pe-line-2: #E8E1D8;
+  --pe-ink:    #1A1413;
+  --pe-stone:  #6F665C;
+  --pe-red:    #C01B2C;
+  --pe-wa:     #25D366;
+
+  /* rhythm — the reference's measured system, our own values inside it */
+  --pe-gut:   clamp(22px, 3.2vw, 62px);
+  --pe-max:   1200px;
+  --pe-copy:  500px;
+  --pe-sec:   clamp(74px, 9vw, 136px);
+  /* THE JOIN BETWEEN TWO BANDS OF THE SAME PAPER. One token for every seam put 260 px of blank
+     paper between «Para quién» and «Preguntas» at 1440 and left the foot of the page reading as
+     three islands. The big value now buys what it is for — the change of ground into the cloud
+     band and into the dark one. */
+  --pe-sec-t: clamp(52px, 5.6vw, 84px);
+  --pe-chap:  clamp(84px, 9vw, 148px);
+  --pe-grid:  clamp(44px, 6.4vw, 112px);
+
+  /* one easing, everywhere */
+  --pe-ease:  cubic-bezier(.23, 1, .32, 1);
+  --pe-ease2: cubic-bezier(.22, 1, .36, 1);
+
+  --pe-shadow-card: 0 0 0 1px rgba(26, 20, 19, .05), 0 4px 16px rgba(26, 20, 19, .04);
+}
+
+/* ── THE FACE, ON OUR OWN ORIGIN ──────────────────────────────────────────────────────────────
+   Hanken Grotesk, by Alfredo Marco Pradil, under the SIL Open Font License 1.1 — the licence
+   travels with the files in `peru/fonts/OFL.txt`. The two files are the Latin and Latin-Extended
+   subsets of the variable face (weight axis 400–600, which is every weight this page sets),
+   copied off Google's own CSS and served from this origin: the page opens no third-party
+   connection, and the headline's file is in flight with the stylesheets rather than after a DNS
+   lookup, a handshake and a stylesheet that has to be parsed before the font is even named.
+
+   `unicode-range` keeps the Latin-Extended file out of flight until a glyph needs it, which this
+   page's English never does; the Spanish that ships later will pull it and nothing else changes.
+   `swap` plus the metric-matched fallback below means the H1 paints immediately in Arial's
+   metrics and re-renders in Hanken Grotesk on the SAME line breaks. */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url('/peru/original/fonts/hanken-grotesk-latin-400-600.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304,
+                 U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+                 U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url('/peru/original/fonts/hanken-grotesk-latinext-400-600.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308,
+                 U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0,
+                 U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* ── THE FALLBACK FACE, METRIC-MATCHED ────────────────────────────────────────────────────────
+   Measured, not guessed. An earlier build scored CLS 0.101 at 1440 because the headline re-wrapped
+   when the web font arrived and everything under it moved. `size-adjust` scales the fallback so it
+   sets the same sentence to the same width, which keeps the line count — and so the height —
+   identical across the swap. Hanken Grotesk against Arial came out at 100.3 % for this page's own
+   H1 string, rendered and read off the box. `local()` only: nothing is downloaded. */
+@font-face {
+  font-family: 'HG fb';
+  src: local('Arial'), local('Helvetica Neue'), local('Liberation Sans'), local('Arimo');
+  size-adjust: 100.3%;
+  ascent-override: 96%;
+  descent-override: 24%;
+  line-gap-override: 0%;
+}
+
+/* ── reset ───────────────────────────────────────────────────────────────────────────────── */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 84px;
+}
+html, body { overflow-x: clip; }
+/* a full-height demo under a finger at 390 should not chain into pull-to-refresh */
+html { overscroll-behavior: contain; }              /* `clip`, never `hidden`: `hidden` would make the
+                                                 root a scroll container and kill every sticky */
+
+body.peru {
+  /* ONE HANDSET SIZE FOR THE WHOLE PAGE (Peter, 20 September: «maintain a consistent size across the
+     website»): the hero's phone, the docked journey phone and every row's phone take this width, so a
+     frame is the same object wherever it stands. 236 px at 360, 237 at 390, 260 at 768, 300 from 1440. */
+  --ph-w-page: clamp(236px, calc(214px + 6vw), 300px);
+  margin: 0;
+  background: var(--pe-paper);
+  color: var(--pe-ink);
+  font: 400 17px/1.55 var(--body);
+  letter-spacing: -.01em;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, svg { max-width: 100%; }
+a { color: inherit; }
+::selection { background: rgba(192, 27, 44, .16); }
+
+:focus-visible { outline: 2px solid var(--pe-red); outline-offset: 3px; border-radius: 3px; }
+.pe-dark :focus-visible, .pe-lit :focus-visible { outline-color: #fff; }
+
+.pe-skip {
+  position: fixed; left: 16px; top: 8px; z-index: 200;
+  transform: translateY(-62px); opacity: 0;
+  background: var(--pe-ink); color: #fff;
+  padding: 12px 18px; border-radius: 999px; font-size: 15px; text-decoration: none;
+  transition: opacity .14s ease-out, transform .18s cubic-bezier(.2, .8, .2, 1);
+}
+.pe-skip:focus { transform: none; opacity: 1; }
+
+/* ── the measure ─────────────────────────────────────────────────────────────────────────── */
+
+.pe-wrap { max-width: calc(var(--pe-max) + var(--pe-gut) * 2); margin: 0 auto; padding: 0 var(--pe-gut); }
+.pe-band { padding: var(--pe-sec) 0; }
+.pe-cloud { background: var(--pe-cloud); }
+.pe-dark { background: var(--pe-ink); color: #fff; }
+
+/* ── display type ────────────────────────────────────────────────────────────────────────── */
+
+.pe-h1, .pe-h2, .pe-lit-t, .cl h2, .sr-text h3 {
+  font-family: var(--display);
+  font-weight: 400;
+  letter-spacing: -.045em;
+  margin: 0;
+  text-wrap: balance;
+}
+
+/* NO `text-wrap: balance` ON THE H1. Balancing re-runs when the web font lands and can change the
+   line COUNT, which moved the whole hero once in three loads and put CLS at 0.087 at 1920 —
+   measured over repeated runs. The width below fixes the wrap instead, and the metric-matched
+   fallback keeps it the same before and after the swap. */
+/* THE ORDER OF VOICES, and it was upside down. A section heading owns everything under it, so it
+   is the loudest thing in its band; a row heading is a chapter inside that band and steps down
+   from it. Measured at 1440 before this: «En tus ventas, en tus compras y en tu tienda» set at
+   56 px over «Tu cliente paga desde el chat» at 83.5 px — the child shouting over the parent. */
+/* the three pages are one site: Buying, Selling, Debts — the page you are on is inked */
+.pnav-links a[aria-current="page"] { color: var(--pe-ink); }
+/* a poster that has not been asked for yet is plain paper, never its alt text */
+.ph-poster:not([src]), .ph-shot:not([src]) { visibility: hidden; }
+.pe-vh { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+/* A MONEY MARK STAYS WITH ITS NUMBER. «S/» on one line and «38,500» on the next is the same
+   mis-read as a rate unit on its own line: the eye takes the first line as the whole figure.
+   The class wraps the amount INSIDE a sentence that ships verbatim, so the characters stay the
+   product's own and only the line box changes. */
+.pe-nb { white-space: nowrap; }
+/* THE REFERENCE'S SCALE (SPEC, first section, item 2): 8vw, leading .92, tracking -.05em, which is
+   115 px at 1440. The `svh` term is ours: on a short laptop the line steps down so the handset
+   still stands over the fold. */
+.pe-h1 { font-size: clamp(44px, min(8vw, 13.5svh), 136px); line-height: .92; letter-spacing: -.05em; max-width: 1200px; text-wrap: initial; }
+.pe-h2 { font-size: clamp(42px, 6.2vw, 84px); line-height: 1.0; letter-spacing: -.046em; max-width: 17ch; }
+.pe-h2-c { max-width: 21ch; }
+
+/* A SECTION HEADER IS A PAIR: the label on the left, one sentence of what the list is on the
+   right, sitting on the heading's last baseline. */
+.pe-head { display: grid; grid-template-columns: 1fr; gap: clamp(18px, 2.4vw, 34px); }
+.pe-head-p {
+  margin: 0; font-size: clamp(16px, 1.6vw, 22px); line-height: 1.45;
+  color: var(--pe-stone); max-width: 36ch;
+}
+@media (min-width: 760px) {
+  .pe-head {
+    grid-template-columns: minmax(0, 1.12fr) minmax(300px, .88fr);
+    align-items: end; gap: clamp(40px, 8vw, 138px);
+  }
+  .pe-head-p { padding-bottom: .4em; }
+}
+
+/* ── the text door: a verb, its object and an arrow that moves ──────────────────────────── */
+.pe-lk { margin: clamp(18px, 2vw, 26px) 0 0; }
+.pe-lk a {
+  display: inline-flex; align-items: center; gap: .45em; min-height: 44px;
+  font-size: clamp(16.5px, 1.35vw, 18px); font-weight: 500; letter-spacing: -.018em;
+  color: var(--pe-ink); text-decoration: none;
+}
+.lk-a { width: 1.08em; height: 1.08em; flex: 0 0 auto; transition: transform .18s var(--pe-ease); }
+.pe-lk a:hover .lk-a, .pe-lk a:focus-visible .lk-a { transform: translateX(4px); }
+.pe-lk-light a { color: #fff; }
+
+.pe-lead {
+  margin: clamp(16px, 1.6vw, 24px) 0 0;
+  font-size: clamp(17px, 1.35vw, 20px);
+  line-height: 1.5;
+  color: var(--pe-stone);
+  max-width: var(--pe-copy);
+}
+.pe-dark .pe-lead { color: rgba(255, 255, 255, .74); }
+
+.pe-foot {
+  margin: clamp(20px, 2.2vw, 30px) 0 0;
+  font-size: 14px; line-height: 1.5;
+  color: var(--pe-stone);
+  max-width: 58ch;
+}
+.pe-dark .pe-foot { color: rgba(255, 255, 255, .56); }
+/* a link inside the small print is still a finger's target: 44 px, measured */
+.pe-foot a {
+  display: inline-flex; align-items: center; min-height: 44px;
+  text-decoration-color: var(--pe-line); text-underline-offset: 3px;
+}
+.pe-foot a:hover { text-decoration-color: currentColor; }
+
+/* ═══ NAV ═════════════════════════════════════════════════════════════════════════════════
+   The face and the name, three links, the act. Nothing else. */
+
+.pnav {
+  position: fixed; inset: 0 0 auto 0; z-index: 60;
+  height: 68px;
+  background: rgba(250, 247, 243, .58);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  box-shadow: inset 0 -1px 0 rgba(26, 20, 19, .06);
+  transition: height .32s cubic-bezier(.2, 0, 0, 1),
+              background-color .32s cubic-bezier(.2, 0, 0, 1),
+              box-shadow .32s cubic-bezier(.2, 0, 0, 1);
+}
+.pnav.is-tight {
+  height: 58px;
+  background: rgba(250, 247, 243, .84);
+  box-shadow: inset 0 -1px 0 rgba(26, 20, 19, .09), 0 12px 34px rgba(26, 20, 19, .05);
+}
+/* over a dark band the bar changes tone rather than dissolving into it */
+.pnav.on-dark { background: rgba(20, 16, 15, .55); color: #fff; box-shadow: inset 0 -1px 0 rgba(255,255,255,.1); }
+.pnav.on-dark.is-tight { background: rgba(20, 16, 15, .84); box-shadow: inset 0 -1px 0 rgba(255,255,255,.12), 0 12px 34px rgba(0,0,0,.22); }
+.pnav.on-dark .pnav-links a { color: rgba(255, 255, 255, .7); }
+.pnav.on-dark .pnav-links a:hover { color: #fff; }
+.pnav.on-dark .pnav-links a[aria-current="page"] { color: #fff; }
+.pnav.on-dark .pnav-face { filter: invert(1); }
+.pnav.on-dark .act { background: #fff; color: var(--pe-ink); box-shadow: 0 6px 20px rgba(0,0,0,.3); }
+
+.pnav-in {
+  height: 100%; padding: 0 var(--pe-gut);
+  display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 16px;
+}
+.pnav-brand {
+  display: inline-flex; align-items: center; min-height: 44px; gap: 9px; justify-self: start;
+  text-decoration: none;
+  font-family: var(--display); font-weight: 500; font-size: 19.5px; letter-spacing: -.035em;
+}
+.pnav-face { display: block; flex: none; border-radius: 50%; transition: filter .32s; }
+
+.pnav-links { display: flex; gap: clamp(16px, 2.2vw, 36px); justify-self: center; }
+.pnav-links a {
+  display: inline-flex; align-items: center; min-height: 44px;
+  font-size: 14.5px; font-weight: 500; letter-spacing: -.012em;
+  color: var(--pe-stone); text-decoration: none;
+  transition: color .2s ease-out;
+}
+.pnav-links a {
+  text-decoration: underline transparent;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 6px;
+  transition: color .16s ease-out, text-decoration-color .18s ease-out;
+}
+.pnav-links a:hover, .pnav-links a:focus-visible { color: var(--pe-ink); text-decoration-color: currentColor; }
+.pnav .act { justify-self: end; }
+
+/* ═══ THE LANGUAGE CONTROL — beside the act, and before it ════════════════════════════════
+   Peter, 20 September: «put a language dropdown in the navbar by the CTA». So the end of the
+   bar is ONE cell holding two objects, and the grid still has its three columns: brand, links,
+   act. The control is the quieter of the two — an outline pill next to the ink one — because
+   the page asks for one thing and it is the act.
+
+   IT OPENS WITHOUT MOVING ANYTHING. The menu is a card positioned out of flow under the
+   control, so the bar's height and every box in it are the same open or closed; the only thing
+   that changes is the chevron. `<details>` carries the open state itself, so the control still
+   works with the script off, which is the same rule the rest of this page is built on. */
+.pnav-act { display: flex; align-items: center; gap: 10px; justify-self: end; }
+/* NEITHER OBJECT IS ALLOWED TO BE SQUASHED. A flex item shrinks before it overflows, so a bar
+   that was 30 px too wide came back measuring perfectly while the act's own label painted
+   outside its pill. They keep their size, and the widths below are what actually fits. */
+.pnav-act > *, .plang-w > * { flex: none; }
+
+/* THE CONTROL HAS TWO DOORS and the stylesheet shows one: the dropdown, or — below 360 px —
+   the other language's two letters. The wrapper is `display: contents`, so the bar's grid and
+   the legal pages' flex row see the door itself and never the wrapper. */
+.plang-w { display: contents; }
+.plang { position: relative; }
+.plang-mini {
+  display: none; align-items: center; justify-content: center;
+  min-width: 38px; height: 40px; padding: 0 9px; border-radius: 999px;
+  border: 1px solid rgba(26, 20, 19, .14); background: rgba(255, 255, 255, .54);
+  color: var(--pe-ink); text-decoration: none;
+  font: 600 13px/1 var(--body); letter-spacing: .02em;
+}
+.plang-mini:focus-visible { outline: 2px solid var(--pe-ink); outline-offset: 2px; }
+.pnav.on-dark .plang-mini { border-color: rgba(255, 255, 255, .3); background: rgba(255, 255, 255, .1); color: #fff; }
+.pnav.on-dark .plang-mini:focus-visible { outline-color: #fff; }
+.plang-s {
+  display: inline-flex; align-items: center; gap: 5px;
+  height: 46px; padding: 0 11px 0 14px; border-radius: 999px;
+  border: 1px solid rgba(26, 20, 19, .14);
+  background: rgba(255, 255, 255, .54);
+  color: var(--pe-ink);
+  font: 500 14.5px/1 var(--body); letter-spacing: -.005em;
+  cursor: pointer; list-style: none; white-space: nowrap;
+  transition: border-color .22s ease, background-color .22s ease;
+}
+.plang-s::-webkit-details-marker { display: none; }
+.plang-s::marker { content: ''; }
+.plang-s:hover { border-color: rgba(26, 20, 19, .28); background: #fff; }
+.plang-s:focus-visible { outline: 2px solid var(--pe-ink); outline-offset: 2px; }
+.plang-now { font-weight: 600; letter-spacing: .01em; }
+.plang-v { width: 13px; height: 13px; display: block; transition: transform .22s var(--pe-ease); }
+.plang[open] .plang-v { transform: rotate(180deg); }
+
+.plang-m {
+  position: absolute; top: calc(100% + 9px); right: 0; z-index: 4;
+  min-width: 156px; padding: 6px; border-radius: 16px;
+  background: var(--pe-card); border: 1px solid var(--pe-line);
+  box-shadow: 0 18px 44px rgba(26, 20, 19, .16);
+  display: grid; gap: 2px;
+}
+.plang-o {
+  display: flex; align-items: center; min-height: 40px; padding: 0 12px;
+  border-radius: 11px; color: var(--pe-ink); text-decoration: none;
+  font-size: 15px; letter-spacing: -.01em; white-space: nowrap;
+}
+.plang-o:hover, .plang-o:focus-visible { background: var(--pe-cloud); }
+.plang-o.is-on { font-weight: 600; background: var(--pe-cloud); }
+
+/* over a dark band the control changes tone with the bar, exactly as the act does */
+.pnav.on-dark .plang-s { border-color: rgba(255, 255, 255, .3); background: rgba(255, 255, 255, .1); color: #fff; }
+.pnav.on-dark .plang-s:hover { border-color: rgba(255, 255, 255, .52); background: rgba(255, 255, 255, .18); }
+.pnav.on-dark .plang-s:focus-visible { outline-color: #fff; }
+
+@media (prefers-reduced-motion: reduce) { .plang-v { transition: none; } }
+
+/* THE SITE IS TWO PAGES, SO THE TWO LINKS STAY ON A PHONE. They used to go below 860 px, which
+   left a phone reader on Buying with no door to Selling at all. Two short words fit between the
+   brand and the act; on a phone the brand is its face alone, and the word «Rocoto» stays in the
+   link's name for a screen reader.
+
+   THE BAR NOW CARRIES FOUR OBJECTS — brand, links, language, act — and the four of them have to
+   stand in one row inside 320 px. The blocks below run from wide to narrow, in that order, so
+   each one can take back what the one above it set; they used to run 860 · 520 · 340 · 400, and
+   the 340 block was dead because the 400 block came after it and matched too. Measured at
+   1440 · 1024 · 768 · 520 · 390 · 360 · 320 in both languages; the table is in peru/SPEC.md. */
+@media (max-width: 860px) {
+  .pnav-in { grid-template-columns: auto 1fr auto; gap: 12px; }
+  .pnav-links { gap: 16px; justify-self: center; }
+  .pnav-links a { font-size: 14px; }
+}
+@media (max-width: 700px) { .pnav { height: 62px; } .pnav.is-tight { height: 54px; } }
+@media (max-width: 520px) {
+  .pnav-brand span {
+    position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
+    overflow: hidden; clip-path: inset(50%); white-space: nowrap;
+  }
+}
+
+/* ═══ THE ACT — the one door, and the one loud object ═════════════════════════════════════ */
+
+.act {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  height: 54px; padding: 0 26px; border-radius: 999px;
+  background: var(--pe-ink); color: #fff;
+  font: 500 16.5px/1 var(--body); letter-spacing: -.015em;
+  text-decoration: none; white-space: nowrap;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .14), 0 6px 20px rgba(26, 20, 19, .16);
+  transition: transform .12s ease, box-shadow .22s ease, background-color .22s ease, color .22s ease;
+}
+.act:hover { background: #0F0E0C; box-shadow: inset 0 1px 0 rgba(255,255,255,.16), 0 10px 28px rgba(26,20,19,.22); }
+.act:active { transform: scale(.985); }
+.act-wa { width: 21px; height: 21px; flex: 0 0 auto; color: var(--pe-wa); }
+.act-sm { height: 46px; padding: 0 18px; font-size: 14.5px; gap: 8px; }
+.act-sm .act-wa { width: 18px; height: 18px; }
+
+/* the outline pill: the same shape, half the weight, so the primary act stays the loud one */
+.act-o {
+  display: inline-flex; align-items: center; justify-content: center; gap: .5em;
+  min-height: 54px; padding: 0 26px; border-radius: 999px;
+  background: rgba(255, 255, 255, .54);
+  border: 1px solid rgba(26, 20, 19, .14);
+  color: var(--pe-ink); text-decoration: none;
+  font: 500 17px/1 var(--body); letter-spacing: -.015em; white-space: nowrap;
+  transition: border-color .22s ease, background-color .22s ease;
+}
+.act-o:hover { border-color: rgba(26, 20, 19, .28); background: #fff; }
+.act-o .lk-a { width: 1.08em; height: 1.08em; transition: transform .18s var(--pe-ease); }
+.act-o:hover .lk-a, .act-o:focus-visible .lk-a { transform: translateX(4px); }
+
+.act-2 {
+  display: inline-flex; align-items: center; gap: 12px; min-height: 44px; padding: 0 4px;
+  font-size: 16.5px; font-weight: 500; letter-spacing: -.015em;
+  color: var(--pe-ink); text-decoration: none;
+}
+.act-2-c {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 38px; height: 38px; border-radius: 50%;
+  border: 1px solid var(--pe-line); background: var(--pe-card);
+  transition: transform .28s var(--pe-ease), border-color .2s;
+}
+.act-2-c svg { width: 17px; height: 17px; display: block; }
+.act-2:hover .act-2-c { transform: translateY(3px); border-color: var(--pe-ink); }
+
+/* THE PHONE BAR IS SET HERE, AFTER THE ACT ITSELF, and that is the point. `.act-sm` is defined
+   below the nav, so a phone rule written up in the nav section lost to it every time: the
+   @media (max-width: 400px) block that was supposed to shrink the act at 360 never applied, and
+   the act was 160 px wide at 1440 and at 320 alike. Measured, not assumed. */
+/* AT 390 THE BAR IS 352 PX OF CONTENT IN 390. The act keeps its full label, because it is a verb
+   and its object and the page has exactly one of them; what gives way is the type it is set in,
+   the air around it and the face, which drops to 24 px. */
+@media (max-width: 420px) {
+  .pnav-in { padding: 0 16px; gap: 8px; }
+  .pnav-brand { font-size: 18px; gap: 7px; }
+  .pnav-face { width: 24px; height: 24px; }
+  .pnav-links { gap: 12px; }
+  .pnav-links a { font-size: 13.5px; }
+  .pnav-act { gap: 6px; }
+  .act-sm { height: 40px; padding: 0 12px; font-size: 13px; gap: 6px; }
+  .act-sm .act-wa { width: 15px; height: 15px; }
+  .plang-s { height: 40px; padding: 0 7px 0 9px; font-size: 13px; gap: 3px; }
+  .plang-v { width: 11px; height: 11px; }
+  .plang-m { min-width: 140px; }
+}
+/* THE SPANISH BAR PAYS FOR ITS OWN LENGTH. «Comprar Vender» is 109 px where «Buying Selling»
+   is 89 px, and on a phone that 20 px is the whole of what the bar has left: measured, the
+   Spanish grid overran its own content box by 3 px at 360 and 4 px at 320, so the act's right
+   gutter came out 13 px against the mark's 16 px, and 8 px against 12 px. The air between the
+   two links is where it comes back from — every other measure in the bar stays exactly what the
+   English has, and the English bar is untouched. */
+@media (max-width: 420px) { .pnav-links:lang(es) { gap: 8px; } }
+@media (max-width: 359px) { .pnav-links:lang(es) { gap: 6px; } }
+
+/* BELOW 360 THE CONTROL IS A DOOR, NOT A MENU. A pill with a chevron and a card hanging off it
+   needs 38 px the bar no longer has, so what stands there is the other language's two letters,
+   linking straight to this same page in it. Both are in the HTML; this is the one the reader on
+   a 320 px phone is shown. */
+@media (max-width: 359px) {
+  .pnav-in { padding: 0 12px; gap: 7px; }
+  .pnav-links { gap: 10px; }
+  .pnav-links a { font-size: 12.5px; }
+  .act-sm { padding: 0 10px; font-size: 12.5px; }
+  .plang { display: none; }
+  .plang-mini { display: inline-flex; }
+}
+
+/* ═══ 1 · HERO ════════════════════════════════════════════════════════════════════════════ */
+
+/* THE PHONE IS IN THE HERO FROM THE FIRST PAINT. The founder looked at a build where the handset
+   had been pushed below the fold and called it what it was. So the hero is at least a screen tall,
+   its foot is a 40 svh slot pinned to the bottom of that screen, and the handset stands in it with
+   its top half over the fold: the fold cuts it, on purpose, and it is there with the script off. */
+.pe-hero {
+  position: relative;
+  min-height: 100svh;
+  /* THE AIR IS A NUMBER, NOT WHAT IS LEFT OVER. The slot is pinned to the foot and the words sat
+     wherever they ended, so on a 900 px screen the last line stood 12 px over the glass (Peter:
+     «why is there such small padding»). The foot now reserves the handset AND its air. */
+  padding: calc(68px + clamp(20px, 7svh, 96px)) 0 calc(var(--pe-hero-foot) + var(--pe-hero-air));
+  text-align: center;
+  --pe-hero-foot: clamp(240px, 30svh, 300px);
+  --pe-hero-air: clamp(40px, 8svh, 120px);
+}
+
+.pe-hero .pe-h1 { margin: 0 auto; }
+@media (min-width: 900px) {
+  .pe-hero { padding-top: calc(68px + clamp(22px, 3.5svh, 44px)); --pe-hero-air: clamp(36px, 4svh, 52px); }
+  .pe-hero .pe-h1 { font-size: clamp(64px, min(7vw, 11svh), 112px); }
+}
+
+.pe-sub {
+  margin: clamp(14px, 1.5vw, 20px) auto 0;
+  max-width: 56ch;
+  font-size: clamp(16.5px, 1.32vw, 20px); line-height: 1.4;
+  color: var(--pe-stone);
+}
+.pe-sub b { font-weight: 600; color: var(--pe-ink); }
+
+.pe-acts {
+  margin: clamp(18px, 2vw, 28px) 0 0;
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 14px 26px;
+}
+/* what the act does, said once under it: an offer, so it is set as a sentence and not as small print */
+.pe-status {
+  margin: clamp(14px, 1.5vw, 22px) auto 0; max-width: 60ch;
+  font-size: clamp(14.5px, 1.1vw, 16px); line-height: 1.45; color: rgba(26, 20, 19, .74);
+}
+
+.pe-offer-terms { display: block; margin-top: 3px; font-size: 12px; color: var(--pe-stone); }
+.pe-offer-terms a { color: inherit; text-underline-offset: 3px; }
+
+.ph-demo-toggle {
+  position: relative; display: inline-grid; place-items: center; vertical-align: middle;
+  width: 28px; height: 28px; margin: -5px 0 -5px 10px; padding: 0;
+  border: 1px solid var(--pe-line); border-radius: 50%;
+  color: var(--pe-stone); background: var(--pe-paper); cursor: pointer; pointer-events: auto;
+}
+.ph-demo-toggle::before { content: ''; position: absolute; inset: -8px; }
+.ph-demo-toggle svg { display: block; width: 16px; height: 16px; }
+.ph-demo-toggle[hidden] { display: none; }
+.ph-demo-toggle:focus-visible { outline-color: var(--pe-ink); border-radius: 50%; }
+@media (hover: hover) { .ph-demo-toggle:hover { color: var(--pe-ink); border-color: var(--pe-stone); } }
+
+/* the slot at the hero's foot. It shows the phone's top third and keeps its height when peru.js
+   lifts the phone out of it to fly — which is why the page never shifts. */
+.pe-heroslot {
+  position: absolute;
+  inset: auto 0 0 0;
+  height: var(--pe-hero-foot);
+  overflow: hidden;            /* the fold cuts the handset, and this is the fold */
+}
+/* `.hs-in` is the phone's START RECT and it stays in the document after the phone is lifted out */
+.pe-heroslot .hs-in { position: relative; width: var(--ph-w-page); height: 100%; margin: 0 auto; }
+.pe-heroslot .ph { --ph-w: var(--ph-w-page); position: absolute; top: 0; left: 0; }
+.pe-heroslot .ph-note { display: none; }       /* the caption belongs to the journey's phone */
+
+/* the break falls where the phrase does — «Pagar después, / dentro de tu WhatsApp» — on a desk,
+   where the balanced wrap put «WhatsApp» alone on the second line. On a phone the three natural
+   lines stand as they fall. */
+.h1-br { display: none; }
+@media (min-width: 700px) { .h1-br { display: inline; } }
+
+@media (max-width: 899px) {
+  .pe-hero { --pe-hero-foot: clamp(215px, 40svh, 400px); --pe-hero-air: clamp(28px, 4.5svh, 56px); padding-top: calc(52px + 24px); }
+  .pe-h1 { font-size: clamp(40px, 12vw, 76px); }
+}
+/* ON A PHONE THE WORDS HAVE TO CLEAR THE FOOT: measured at 390 × 844 the status line ended 3 px
+   above the handset and at 360 × 780 it ran into it. These trims buy the gap without dropping a
+   word. */
+/* the second display voice steps down with the first: theirs is 46.8 px at 390, and a min that
+   sits at the desktop clamp's floor leaves it a caption on a phone. */
+@media (max-width: 700px) {
+  .pe-hero .act { height: 50px; }
+}
+@media (max-width: 480px) {
+  .pe-h1 { font-size: clamp(36px, 12vw, 50px); }
+  .pe-sub { margin-top: 12px; font-size: 16px; }
+  .pe-acts { margin-top: 16px; gap: 4px 20px; }
+  .pe-status { margin-top: 10px; font-size: 13.5px; }
+}
+/* THE LAST TEN PIXELS AT 360. The hero is `min-height: 100svh` with the handset's slot pinned to
+   its foot, so any copy that overruns the screen pushes the slot down and eats the handset: at
+   360 × 780 the legal line ended flush against the glass and the phone was left 37 % of the
+   screen instead of 40. The ten pixels come out of the gaps, which is where they were idle. */
+@media (max-width: 400px) {
+  .pe-sub { margin-top: 10px; font-size: 15.5px; }
+  .pe-acts { margin-top: 12px; }
+  .pe-status { margin-top: 8px; font-size: 13px; }
+  .pe-hero .act { height: 48px; }
+}
+/* SLACK IS WHAT KEEPS THE FONT SWAP FREE. The hero is `min-height: 100svh` with the handset's
+   slot pinned to its foot, so as long as the copy fits inside that screen the slot cannot move —
+   and when Hanken Grotesk lands and re-wraps a line, nothing shifts. At 360 the copy filled the
+   screen to the pixel and the swap moved the whole foot 22 px, which is 0.06 of layout shift on
+   the device most of these readers use. */
+@media (max-width: 374px) {
+  .pe-sub { font-size: 15px; line-height: 1.36; }
+  .pe-status { font-size: 12.5px; }
+  .pe-acts { margin-top: 10px; }
+}
+/* THE HANDSET KEEPS ITS 40 % ON THE SMALLEST SCREEN TOO. The trim that used to live here
+   bought the copy its room by taking the phone's, which left it a sliver at 360 — measured at
+   31 % of the viewport against 40 % everywhere else. The room now comes out of the type, above. */
+@media (max-width: 374px) { .pe-hero { --pe-hero-foot: clamp(220px, 40svh, 320px); } }
+/* a tablet held upright has the height to show more of the handset, and a bigger one */
+@media (min-width: 600px) and (max-width: 899px) {
+  .pe-hero { --pe-hero-foot: clamp(260px, 42svh, 470px); }
+}
+
+/* ═══ 2 · THE DARK STATEMENT BAND ═════════════════════════════════════════════════════════
+   A MOMENT, NOT A SLIDE. The sentence pins in the optical centre of the screen and stays there
+   while the reader scrolls a held distance past it: that hold is what the handset's edge-on
+   pause is spent on, so the two are one event rather than two things happening in the same
+   band. Both spacers are `html.flight` only — with the script off, or under reduced motion,
+   they collapse and this is an ordinary band with an ordinary paragraph in it.
+
+   On a desk the sentence sits in the RIGHT half, because the left gutter is where the titanium
+   rail stands edge-on while it reads. */
+
+.pe-lit {
+  background: var(--pe-ink); color: #fff;
+  padding: clamp(80px, 9vw, 124px) 0;
+  --lit-h: clamp(250px, 22vw, 330px);
+}
+.pe-lit-hold, .pe-lit-tail { display: none; }
+/* THE THREE LENGTHS THAT MAKE THE HOLD ONE EVENT. A sticky block slides exactly the tail's
+   height between the frame it pins on and the frame it lets go, so the TAIL IS THE HOLD: the
+   scroll the sentence stands still for, and the same scroll peru.js gives the handset to stand
+   edge-on beside it, because FLIGHT reads S1 and S2 off this block rather than guessing them.
+   The HOLD spacer is the lead-in — what carries the band's own top above the handset's top
+   before the pin opens. Measured at 1440 × 900 before these were tied together: the handset
+   stood still for 354 px and the sentence pinned for 90 of them, so for three quarters of the
+   beat the sentence slid past a phone stuck to the glass. */
+html.flight .pe-lit-hold { display: block; height: clamp(96px, 12svh, 140px); }
+html.flight .pe-lit-tail { display: block; height: clamp(300px, 39svh, 420px); }
+html.flight .pe-lit-stick { position: sticky; top: max(72px, calc((100svh - var(--lit-h)) / 2)); }
+/* THE BAND IS AS TALL AS THE THING IT HAS TO KEEP ON BLACK. Held edge-on the handset is 617 px
+   of a 900 px screen, and a hard cream edge crossing it cuts the object in two — which is the
+   other reason a dark rail fails to read. What stands below the sticky block at the moment it
+   unpins is exactly this padding, so it is set from the handset's own height rather than from
+   the band's: half the handset, less half the block it stands beside, plus the margin the short
+   viewports need, where the handset is pushed down by its own 72 px floor. 206 px at 1440 × 900
+   against the 150 the geometry asks for. Measured at the end of the hold, the handset's foot
+   clears the band's by 30 px at 1280 × 720, 38 at 1440 × 900 and 45 at 1920 × 1080. */
+html.flight .pe-lit { padding-bottom: calc(var(--ph-w-page) / 0.48641 / 2 - var(--lit-h) / 2 + 56px); }
+/* on a phone the sentence takes the TOP of the screen, because the handset is held peeking over
+   the fold below it — centred, the two would land on each other */
+@media (max-width: 899px) {
+  html.flight .pe-lit-stick { top: clamp(84px, 11svh, 120px); }
+  html.flight .pe-lit-hold { height: clamp(180px, 24svh, 250px); }
+  html.flight .pe-lit-tail { height: 48px; }
+  .pe-lit { --lit-h: clamp(180px, 30svh, 260px); padding: clamp(72px, 12vw, 120px) 0; }
+}
+/* ON A PHONE NOTHING FLIES (peru.js, `FLIES`), so the sentence has the screen to itself: it pins
+   in the middle and the tail is the distance it is read over. */
+@media (max-width: 899px) {
+  html.lit-pin .pe-lit-stick { position: sticky; top: max(72px, calc((100svh - var(--lit-h)) / 2)); }
+  html.lit-pin .pe-lit-tail { display: block; height: clamp(160px, 34svh, 320px); }
+}
+.pe-lit-in { min-height: var(--lit-h); display: flex; align-items: center; }
+
+/* THE BLOCK RESOLVES AS A UNIT, then the letters light inside it. One filter on one element:
+   the same reveal per letter would be 65 blurred layers repainted on every scroll frame, which
+   is a bill the flight beside it cannot afford. `--lit-r` is scrubbed, so scrolling back up
+   takes the sentence apart again. */
+/* ONE NUMBER LIGHTS THE WHOLE SENTENCE. `--lit-p` is how far the light has reached, measured in
+   letters, and it is the only thing peru.js writes per frame; `--i` is a letter's own index,
+   written once at startup. Each letter's share is `clamp(0, --lit-p − --i, 1)`, which is the
+   arithmetic the script used to do seventy-six times a frame before writing seventy-six inline
+   values. The softening rides on `--lit-p` itself, so there is ONE transition for the sentence
+   where there were seventy-six colour transitions. Both fall back to «lit»: with the script off
+   `--lit-p` is a number bigger than the sentence is long and every letter is white. */
+@property --lit-p { syntax: '<number>'; inherits: true;  initial-value: 999; }
+@property --i     { syntax: '<number>'; inherits: false; initial-value: 0; }
+@property --lit-r { syntax: '<number>'; inherits: false; initial-value: 1; }
+
+.pe-lit-t {
+  font-size: clamp(30px, 4.6vw, 60px); line-height: 1.1; letter-spacing: -.04em;
+  max-width: 19ch;
+  opacity: var(--lit-r, 1);
+  filter: blur(calc((1 - var(--lit-r, 1)) * 10px));
+  transform: translateX(calc((1 - var(--lit-r, 1)) * clamp(48px, 7vw, 104px)));
+  transition: opacity .36s cubic-bezier(.22,1,.36,1), filter .36s cubic-bezier(.22,1,.36,1),
+              transform .52s cubic-bezier(.22,1,.36,1), --lit-p .16s linear;
+}
+.pe-lit-t .lw { color: rgba(255, 255, 255, calc(.16 + .84 * clamp(0, var(--lit-p) - var(--i), 1))); }
+.pe-lit-t.all-lit .lw { color: #fff; }
+@media (min-width: 900px) { .pe-lit-t { margin-left: auto; } }
+
+.pe-mk {
+  display: inline-flex; align-items: baseline; gap: .2em;
+  white-space: nowrap;      /* the glyph, the word and the full stop are one unbreakable unit */
+  font-weight: 500;
+}
+/* the glyph and the word are one lockup: the flex gap belongs BEFORE the glyph only, or the
+   full stop floats twelve pixels clear of the p and the line reads «WhatsApp .» */
+.pe-mk { gap: 0; }
+.pe-mk svg { width: .8em; height: .8em; align-self: center; flex: 0 0 auto; margin-right: .2em; }
+.pe-mk-wa svg { color: var(--pe-wa); }
+
+/* ═══ 3 · THE TRAVELLING PHONE ═══════════════════════════════════════════════════════════
+   ONE JOURNEY, NO SCRUB (Peter, 20 September: «remove the carousel… the scrolling thing remove
+   it»). What is left of the flight is the thing he liked: the handset rises out of the hero's
+   foot, slides to the page's left rule and stands FULLY EDGE-ON — a lit titanium rail — while
+   the dark sentence is read beside it, then rotates into place in the first row of the section
+   below, whose phone column is on the same side. Nothing is pinned, no caption swaps, no
+   timeline is seeked, and the three dots are gone.
+
+   The phone is re-parented to <body> and goes `position: fixed`, so no ancestor can clip it,
+   transform it or trap it in a stacking context; the hero keeps its layout because
+   `.pe-heroslot` has its own height, and the dock keeps its layout because the static figure
+   inside it stays in flow. Every frame is computed from live rectangles — there is no CSS
+   transition on this element, ever, because a transition would fight the scroll. The whole law
+   and its numbers are in `peru.js`, under FLIGHT. */
+
+.ph.ph-flying {
+  position: fixed; left: 0; top: 0; z-index: 40;
+  transform-origin: 0 0;                /* scale about the top-left: then x IS the left edge */
+  will-change: transform;
+  pointer-events: none;
+}
+.ph.ph-flying.is-gone { visibility: hidden; }
+/* THE CAPTION BELONGS TO THE PHONE AT REST. It names what is on the glass, and in the air there
+   is no glass to name; it is also drawn at the hero's width and scaled, so at the hand-off it
+   would have to change size in a single frame. peru.js fades it out with the first movement and
+   back in once the row is carrying the phone. */
+.ph.ph-flying .ph-note, .ph.ph-docked .ph-note { transition: opacity .28s ease-out; }
+
+/* THE DOCK IS A REAL PHONE, AND THAT IS WHAT RESERVES ITS SPACE. With the script off, or under
+   reduced motion, the figure inside it is the row's phone and shows the poster. When the flight
+   runs it keeps its box and hands its place to the handset that flew here, so the row is the same
+   size either way and nothing shifts at the moment of the swap.
+
+   THE HAND-OFF STACKS THEM. At the end of the journey the travelling phone is appended INTO the
+   dock and the page carries it from there; the figure that was reserving the space stays in flow
+   under it, hidden, so the row's height is the one it always had. One grid cell, two children. */
+html.flight .sr-dock { display: grid; }
+html.flight .sr-dock > * { grid-area: 1 / 1; }
+html.flight .sr-dock .ph-fallback { visibility: hidden; }
+/* docked, the handset is an ordinary figure in an ordinary row again */
+.ph.ph-docked { position: relative; }
+
+/* Story copy leads its phone; desktop alternates the two columns. */
+.sr { display: grid; gap: var(--pe-chap); }
+.sr-row {
+  display: grid; grid-template-columns: minmax(0, 1fr);
+  gap: clamp(32px, 4.5vw, 40px); align-items: center;
+  justify-items: center; text-align: start;
+}
+.sr-text { width: 100%; max-width: var(--pe-copy); justify-self: start; }
+.sr-text h3 {
+  font-size: clamp(36px, 9.3vw, 56px); line-height: 1.02;
+  letter-spacing: -.045em; margin: 0 0 14px; max-width: 16ch;
+}
+.sr-text p {
+  margin: 0; font-size: 17px; line-height: 1.4;
+  color: var(--pe-stone); max-width: 42ch;
+}
+.sr-stage { display: flex; align-items: flex-end; }
+.sr-stage .ph { --ph-w: var(--ph-w-page); }
+@media (max-width: 899px) {
+  #how-it-works .sr { max-width: 600px; margin-inline: auto; }
+  #how-it-works .sr-text { justify-self: center; text-align: center; }
+  #how-it-works .sr-text h3,
+  #how-it-works .sr-text p { margin-inline: auto; }
+}
+@media (min-width: 900px) {
+  .sr-row {
+    grid-template-columns: minmax(0, 1fr) minmax(300px, 380px);
+    justify-items: start; gap: clamp(48px, 6.4vw, 92px);
+  }
+  .sr-row .sr-stage { justify-self: end; }
+  .sr-flip { grid-template-columns: minmax(300px, 380px) minmax(0, 1fr); }
+  .sr-flip .sr-text { grid-column: 2; grid-row: 1; }
+  .sr-flip .sr-stage { grid-column: 1; grid-row: 1; justify-self: start; }
+  .sr-text h3 { font-size: clamp(52px, 5.8vw, 88px); margin-bottom: 24px; }
+  .sr-text p { font-size: clamp(17px, 1.4vw, 20px); }
+}
+/* ═══ 5a · WHAT'S COMING — dots on a spine, the WHEN set large, and air ═══════════════════════
+   It is a timeline of what opens and when, never a how-to: so no numerals. Each entry is a dot, a
+   date, one name and one short sentence, and the entries stand far enough apart to be felt one at
+   a time. What is live carries a filled dot; what is planned carries a ring. */
+.tl-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 10px 32px; }
+.tl-note { margin: 0; font-size: 15px; color: var(--pe-stone); }
+.tl { list-style: none; padding: 0; margin: clamp(56px, 7vw, 112px) 0 0; position: relative; }
+.tl-e {
+  position: relative; display: grid; grid-template-columns: minmax(0, 1fr);
+  padding: 0 0 clamp(72px, 9vw, 148px) clamp(36px, 4vw, 56px);
+}
+.tl-e:last-child { padding-bottom: 0; }
+/* the spine, and the dot that sits on it */
+.tl-e::before {
+  content: ''; position: absolute; left: 8px; top: 14px; bottom: -14px; width: 1.5px;
+  background: rgba(26, 20, 19, .16);
+}
+.tl-e:last-child::before { display: none; }
+.tl-e::after {
+  content: ''; position: absolute; left: 0; top: clamp(8px, 1vw, 14px); width: 17px; height: 17px; border-radius: 50%;
+  box-sizing: border-box; border: 1.5px solid rgba(26, 20, 19, .34); background: var(--pe-cloud);
+}
+.tl-e.is-live::after { border-color: var(--pe-red); background: var(--pe-red); box-shadow: 0 0 0 6px rgba(200, 30, 45, .12); }
+.tl-e.is-live::before { background: var(--pe-red); opacity: .5; }
+.tl-when {
+  margin: 0 0 clamp(10px, 1.2vw, 16px);
+  font-family: var(--display); font-weight: 400; font-size: clamp(20px, 1.9vw, 28px); line-height: 1.1; letter-spacing: -.03em;
+  color: var(--pe-stone);
+}
+.tl-e.is-live .tl-when { color: var(--pe-red); }
+.tl-h {
+  margin: 0; font-family: var(--display); font-weight: 400;
+  font-size: clamp(34px, 4.4vw, 64px); line-height: .98; letter-spacing: -.045em; color: var(--pe-ink);
+}
+/* «today» and «soon», said quietly at the end of the name */
+.tl-tag { font-style: italic; font-weight: 400; font-size: .4em; letter-spacing: -.01em; color: var(--pe-stone); margin-left: .35em; white-space: nowrap; vertical-align: .55em; }
+.tl-e.is-live .tl-tag { color: var(--pe-red); }
+.tl-b p { margin: clamp(12px, 1.3vw, 18px) 0 0; font-size: clamp(17px, 1.4vw, 20px); line-height: 1.4; color: var(--pe-stone); max-width: 36ch; }
+.tl-b .tl-act { margin-top: clamp(20px, 2.2vw, 30px); max-width: none; }
+.tl-b .pe-lk { margin-top: clamp(14px, 1.5vw, 20px); }
+@media (min-width: 900px) {
+  /* the date stands in its own column to the left of the spine, the way a calendar reads */
+  .tl { padding-left: clamp(150px, 15vw, 220px); }
+  .tl-when { position: absolute; right: calc(100% + clamp(28px, 3vw, 44px)); top: clamp(4px, .5vw, 8px); margin: 0; white-space: nowrap; text-align: right; }
+}
+
+/* ═══ 5 · THE ROADMAP ═════════════════════════════════════════════════════════════════════
+   THE LITERAL TIMELINE (SPEC, «THE PAGE'S STORY», item 18): five steps down one hairline, each
+   one carrying the month it opens in the label the eye reaches first.
+
+   THE SPINE IS A FLEX CHILD, NEVER AN ABSOLUTE RULE. Each step's numeral cell is a column — the
+   numeral, then a 1 px line that takes whatever height is left — and the cell stretches to its
+   own step. So the line is centred under every numeral at 360 px and at 1920 px alike, runs into
+   the next numeral without a seam, and simply ends at the fifth. The numerals are tabular, so the
+   five cells are one width and the spine is one straight line rather than five near-misses.
+
+   THE AIR UNDER A STEP BELONGS TO ITS TEXT, not to the list item: put it on the item and the
+   spine stops short of the next numeral, and the timeline reads as five separate marks. */
+
+.pe-num {
+  font-family: var(--display); font-weight: 400;
+  font-size: clamp(34px, 3.1vw, 46px); line-height: 1; letter-spacing: -.05em;
+  color: var(--pe-red);
+}
+
+.rm { list-style: none; padding: 0; margin: clamp(44px, 5.2vw, 76px) 0 0; }
+
+.rm-s {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  grid-template-areas: 'n w' 'n h' 'n b';
+  column-gap: clamp(16px, 2.2vw, 28px);
+  align-items: start;
+}
+.rm-n {
+  grid-area: n; align-self: stretch;
+  display: flex; flex-direction: column; align-items: center;
+  gap: clamp(10px, 1.1vw, 15px);
+}
+/* THE NUMERAL'S BOX IS THE NUMERAL. At `line-height: 1` a 45 px digit carries about 7 px of
+   leading over its cap and the same under its baseline, and the spine — which runs to the edge of
+   that box — stopped a clear gap short of the next digit at both ends, so five segments read as
+   five stubs rather than one line. The tight box puts the hairline where the eye expects it, and
+   the flex gap is then the only air between them. */
+.rm-n b { font-weight: 400; line-height: .78; font-variant-numeric: tabular-nums; }
+.rm-n i { flex: 1 1 auto; width: 1px; background: var(--pe-line); }
+.rm-s:last-child .rm-n i { display: none; }
+
+.rm-w { grid-area: w; margin: 0 0 clamp(5px, .6vw, 9px); font-size: 14px; line-height: 1.35; color: var(--pe-stone); }
+.rm-b { grid-area: b; padding-bottom: clamp(36px, 4.2vw, 64px); }
+.rm-s:last-child .rm-b { padding-bottom: 0; }
+.rm-b p { margin: 8px 0 0; font-size: 16.5px; line-height: 1.5; color: var(--pe-stone); max-width: 44ch; }
+.rm-b .pe-lk { margin: clamp(10px, 1.1vw, 15px) 0 0; }
+
+.rm-h, .who-c h3, .who-wide h3 {
+  font-family: var(--display); font-weight: 600;
+  font-size: clamp(19px, 1.55vw, 22px); line-height: 1.24; letter-spacing: -.028em;
+  margin: 0;
+}
+.who-c h3, .who-wide h3 { margin: clamp(16px, 1.6vw, 24px) 0 8px; }
+.rm-h { grid-area: h; font-size: clamp(21px, 1.9vw, 27px); line-height: 1.2; letter-spacing: -.03em; }
+
+/* ON A DESK THE STEP TAKES THE WHOLE COLUMN, in four cells: the month outside the spine, the
+   numeral on it, the step's name, and what it does. It is the page's own header grammar — the
+   label on the left, one sentence on the right — repeated once per step, and it is what keeps
+   the timeline from standing as a narrow list against half a band of blank paper.
+   Under 900 px the four cells stack into one column beside the numeral. */
+@media (min-width: 900px) {
+  .rm-s {
+    /* THE NAME'S COLUMN IS SIZED TO THE NAME, never to a fraction. A `15ch` cap on a 27 px
+       display heading is about 200 px, which broke «Connect your WhatsApp» in two and left 270 px
+       of blank paper between the name and its sentence. */
+    grid-template-columns:
+      minmax(0, clamp(104px, 9vw, 150px)) max-content clamp(230px, 25vw, 360px) minmax(0, 1fr);
+    grid-template-areas: 'w n h b';
+    column-gap: clamp(20px, 2.6vw, 40px);
+  }
+  .rm-w { text-align: right; margin: 0; padding-top: 5px; }
+  .rm-h { padding-top: 1px; }
+  .rm-b { padding-top: 1px; }
+  .rm-b p { margin: 0; max-width: 52ch; }
+}
+
+/* ═══ 6 · ORDERS, PHONE AND COMPUTER ══════════════════════════════════════════════════════ */
+
+/* `--pd` runs 0 → 1 as the band crosses the screen; peru.js writes it on `.pd` from the same
+   rAF that flies the handset. It is a SCRUB, so it reads the same going up as coming down, and
+   its fallback is 1 — with the script off the composition is simply there, already landed. */
+@property --pd { syntax: '<number>'; inherits: true; initial-value: 1; }
+
+.pd-grid { display: grid; grid-template-columns: 1fr; gap: clamp(34px, 4.4vw, 62px); align-items: center; }
+.pd-text { max-width: var(--pe-copy); }
+.pd { position: relative; --pd: 1; container-type: inline-size; }
+.pd-desk {
+  transform: translate3d(0, calc((1 - var(--pd)) * 26px), 0);
+  opacity: min(1, calc(.3 + 2.4 * var(--pd)));
+  will-change: transform;
+}
+.pd-desk { --lap-w: 92%; }
+.pd-phone {
+  /* A PHONE BESIDE A LAPTOP, AT A PHONE'S SIZE (Peter, 20 September: «scaling bad here»). The handset
+     is sized from the composition itself: 17% of its width puts the phone at about three fifths of
+     the laptop's height, the way the two objects stand on a real counter, and it sits on the
+     laptop's lower right corner, clear of the delivery note. */
+  /* REAL PROPORTIONS (Peter: an iPhone 15 is 7.16 cm wide and 14.76 tall, a 13-inch MacBook Air
+     30.41 cm wide): the handset is 7.16 / 30.41 = 23.5 % of the laptop's width, at every size. */
+  --ph-w: calc(92cqw * .2354); position: absolute; right: 0; bottom: -4%;
+  transform: translate3d(calc((1 - var(--pd)) * 70px), calc((1 - var(--pd)) * 30px), 0);
+  /* opaque early: a phone that is see-through over the laptop reads as a bug, so only its place animates */
+  opacity: min(1, calc(var(--pd) * 4));
+  will-change: transform;
+}
+.pd-phone .ph-note { display: none; }
+
+/* THE HEADING NEEDS A COLUMN IT CAN BREATHE IN. «Your orders, on your phone and on your
+   computer» set at 84 px in a 396 px track is five lines of two words — a skinny grey ladder
+   down the left of the band, rendered at 1440 and looked at. The track takes a third more width
+   and the heading steps down one notch in this band only, which puts it on two lines. */
+@media (min-width: 900px) {
+  .pd-grid { grid-template-columns: minmax(0, .86fr) minmax(0, 1.14fr); gap: var(--pe-grid); }
+  #orders .pe-h2 { font-size: clamp(38px, 4.2vw, 58px); max-width: 15ch; }
+}
+@media (max-width: 720px) {
+  /* the same two objects at the same proportions, only smaller: a handset stacked under the laptop
+     at the page's handset size made the phone two thirds as wide as the computer */
+  .pd-desk { --lap-w: 94%; }
+  .pd-phone { --ph-w: calc(94cqw * .2354); right: -1%; }
+}
+/* ON A PHONE THE PICTURE LEADS AND THE HANDSET IS THE LEGIBLE ONE (Peter, 20 September: «the list of
+   orders is its own thing, with the computer and phone… or just the ui of the list+delivery note»).
+   At real proportions a 390 px screen drew the handset 80 px wide and the laptop's screen at a
+   quarter size, so neither could be read. Here the computer runs off the left edge behind, large
+   enough to read as the list and its note, and the phone stands in front at a size its delivery
+   note can be read at. The band clips the overhang, so the page never scrolls sideways. */
+@media (max-width: 720px) {
+  #orders { overflow: hidden; }
+  #orders .pd { order: -1; min-height: 118cqw; }
+  #orders .pd-desk { --lap-w: 150%; margin-left: -58%; }
+  #orders .pd-phone { --ph-w: 56cqw; right: 1%; bottom: 0; }
+}
+
+/* ═══ 7 · THE BANK BAND ═══════════════════════════════════════════════════════════════════
+   The slot a security band holds on the reference: a dark band, words left, picture right — with
+   the grid of tiles DIRECTLY under the paragraph, so a shopkeeper meets their own bank in the
+   same glance as the sentence about it. On a phone the picture moves to the top in a landscape
+   frame; it is the same file, cropped with object-position so the man and his counter stay whole.
+
+   SEVEN NAMES, AND ONLY SEVEN. The page promises the banks the founder names and no others, so
+   the grid is exactly those seven: four and three on a desk, three to a row on a phone. */
+
+.bb { display: grid; grid-template-columns: 1fr; gap: clamp(30px, 4vw, 56px); align-items: center; }
+.bb-art { margin: 0; overflow: hidden; border-radius: 18px; background: #0f0d0c; }
+.bb-art img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.bb-art-wide { aspect-ratio: 5 / 3.6; }
+.bb-art-wide img { object-position: 50% 40%; }
+.bb-art-tall { display: none; }
+
+@media (min-width: 900px) {
+  .bb { grid-template-columns: minmax(0, 1.22fr) minmax(0, .78fr); gap: var(--pe-grid); }
+  .bb-art-wide { display: none; }
+  .bb-art-tall { display: block; aspect-ratio: 3 / 4.1; border-radius: 22px; }
+  .bb-art-tall img { object-position: 50% 44%; }
+  .bb-text { order: -1; }
+}
+
+.bk {
+  list-style: none; padding: 0; margin: clamp(28px, 3vw, 42px) 0 0;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;
+}
+@media (max-width: 359px) { .bk { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 680px) { .bk { grid-template-columns: repeat(4, 1fr); gap: 10px; } }
+/* seven tiles in four columns leave the last row three wide; it hangs on the left edge with the
+   paragraph above it rather than floating in the middle of the column */
+.bk-t { justify-self: stretch; }
+
+.bk-t {
+  display: flex; align-items: center; justify-content: center;
+  height: clamp(58px, 6.4vw, 76px); padding: 10px;
+  background: var(--pe-card); border-radius: 10px;
+}
+.bk-t img { width: auto; height: auto; max-width: 100%; max-height: clamp(24px, 2.8vw, 34px); object-fit: contain; }
+/* Mibanco's mark is a 2:1 sun-and-word, where the other six are 4:1 words. Capped by the same
+   height it lands at half their optical size — judged on the rendered tiles, not in the file. */
+.bk-t img[alt="Mibanco"] { max-height: clamp(40px, 4.6vw, 56px); }
+
+/* ═══ 8 · WHO IT HELPS ════════════════════════════════════════════════════════════════════
+   THREE SQUARE BOXES (SPEC, decision 12). Peter: «then the square little boxes i guess are about
+   who it helps… it helps bodegas, minoristas, mayoristas. cos they fiar people that;s th epoint
+   and they have hgh demand events too.»
+
+   THE SHAPE, MEASURED ON THE RENDERED PAGE rather than claimed here: a 3:2 picture over a
+   caption, closing a little taller than it is wide — 380 × 395 at 1440, 304 × 350 at 1024,
+   346 × 353 at 390 and 316 × 357 at 360. A true square would ask the caption to live in 101 px
+   at 1024, where the name and its sentence take 177, so the picture keeps its 3:2 and the caption
+   keeps its measure. The three boxes stand equal to each other at every width, which is the part
+   a reader sees. */
+
+.who {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: clamp(18px, 2.2vw, 30px); margin: clamp(40px, 5vw, 64px) 0 0;
+}
+.who-c {
+  margin: 0; background: var(--pe-card); border: 1px solid var(--pe-line);
+  border-radius: 16px; overflow: hidden; display: flex; flex-direction: column;
+}
+/* the aspect ratio is on the element, so the box holds its shape before the picture lands */
+.who-c img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; }
+.who-c figcaption {
+  flex: 1 1 auto; display: flex; flex-direction: column; justify-content: center;
+  padding: clamp(20px, 2vw, 28px) clamp(20px, 2vw, 28px) clamp(22px, 2.2vw, 30px);
+}
+.who-c h3 { margin-top: 0; }
+.who-c p { margin: 0; font-size: 16px; line-height: 1.5; color: var(--pe-stone); }
+
+@media (max-width: 860px) { .who { grid-template-columns: 1fr; } }
+
+/* ═══ 8b · THE SALES BOX ══════════════════════════════════════════════════════════════════
+   ONE WIDE BOX THAT OPENS THE SIDE PAGE (SPEC, decision 11). Peter: «it can papear as a click on
+   that wide rectangular box you canput for ventas.» So the whole box is the link — the picture,
+   the heading and the act are one target, and the act moves its arrow when any part is hovered. */
+
+.sbox {
+  display: grid; grid-template-columns: 1fr; align-items: center;
+  background: var(--pe-card); border: 1px solid var(--pe-line); border-radius: 18px;
+  overflow: hidden; text-decoration: none; color: var(--pe-ink);
+  margin: clamp(34px, 4vw, 52px) 0 0;
+  transition: border-color .22s ease, transform .16s var(--pe-ease);
+}
+.sbox:hover { border-color: rgba(26, 20, 19, .26); }
+.sbox:focus-visible { outline: 2px solid var(--pe-ink); outline-offset: 3px; }
+.sbox img { display: block; width: 100%; height: 100%; object-fit: cover; aspect-ratio: 16 / 9; }
+.sbox-t { padding: clamp(26px, 3.2vw, 48px) clamp(24px, 3vw, 46px) clamp(30px, 3.4vw, 50px); }
+.sbox h3 {
+  font-family: var(--display); font-weight: 400; letter-spacing: -.035em;
+  font-size: clamp(27px, 2.8vw, 40px); line-height: 1.05; margin: 0; max-width: 14ch;
+}
+.sbox p { margin: clamp(12px, 1.2vw, 18px) 0 0; font-size: 16.5px; line-height: 1.5; color: var(--pe-stone); max-width: 34ch; }
+.sbox-go {
+  display: inline-flex; align-items: center; gap: .45em; min-height: 44px;
+  margin-top: clamp(10px, 1.2vw, 16px);
+  font-size: clamp(16.5px, 1.35vw, 18px); font-weight: 500; letter-spacing: -.018em;
+}
+.sbox:hover .lk-a, .sbox:focus-visible .lk-a { transform: translateX(4px); }
+
+@media (min-width: 860px) { .sbox { grid-template-columns: minmax(0, 1.06fr) minmax(0, .94fr); } }
+
+/* ═══ 8c · WHO OWES YOU ═══════════════════════════════════════════════════════════════════
+   THE FIADO BOOK, LIFTED (SPEC, decision 13). Peter: «We keep track of who owes them what.
+   perhaps this can be a section with just a list of cards, isolated, for who owes them how much.»
+
+   Every row is the prototype's own: the name, the amount and `2 fiados · Since 28 Aug` are what
+   `money-credit.tsx` prints over `money-store.ts`'s book, off `fixtures/cast-bodega.json`. The
+   card is quiet on purpose — a hairline on the page's own paper, ink rather than red, and the
+   amount set in the display face as a figure, which is the one thing a shopkeeper looks for. */
+
+/* THE SAME GRID AS «WHO IT HELPS», to the pixel. The two three-column grids sit one section
+   apart on a page built from hairlines and air, and they were 380 px columns at 30 px gaps over
+   388 px columns at 18 px — inner edges at 500/530 against 508/526, close enough to read as a
+   mistake. One gap token, and one width at which both drop out of three columns. */
+.owes {
+  list-style: none; padding: 0;
+  margin: clamp(34px, 4vw, 52px) 0 0;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(18px, 2.2vw, 30px);
+}
+.owe {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: baseline;
+  gap: 8px 18px; min-height: 92px; align-content: center;
+  padding: clamp(18px, 1.8vw, 24px) clamp(18px, 1.8vw, 24px);
+  border: 1px solid var(--pe-line); border-radius: 14px;
+}
+.owe-n {
+  font-size: 17px; font-weight: 600; letter-spacing: -.022em; line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+.owe-w { grid-column: 1; margin: 5px 0 0; font-size: 13.5px; line-height: 1.4; color: var(--pe-stone); }
+.owe-a {
+  grid-row: 1; grid-column: 2;
+  font-family: var(--display); font-weight: 400; font-size: clamp(21px, 1.8vw, 25px);
+  letter-spacing: -.035em; line-height: 1; white-space: nowrap; font-variant-numeric: tabular-nums;
+}
+
+/* 939 px is MEASURED, not chosen: at 940 the card is 280 px and every name, amount and date
+   holds its own line; at 939 «Carmen Yupanqui» and «Since 28 Aug» start to wrap and the six cards
+   go ragged. Above it the two grids stand column over column. */
+/* ═══ DIRECT COLLECTION — a short book that pays itself as it is seen, and stops at three to go ═══ */
+.dcg { display: grid; grid-template-columns: 1fr; gap: clamp(30px, 4vw, 56px); align-items: center; }
+@media (min-width: 900px) { .dcg { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: var(--pe-grid); } }
+#auto-collect .pe-h2 .tl-tag { font-size: .34em; vertical-align: middle; margin-left: .35em; letter-spacing: 0; }
+.dc { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.dc-c {
+  display: grid; grid-template-columns: auto minmax(0, 1fr) auto auto; align-items: center; gap: 14px;
+  padding: 13px 16px; background: #fff; border: 1px solid var(--pe-line); border-radius: 16px;
+  transition: opacity .5s ease-out, transform .55s cubic-bezier(.2, .8, .3, 1);
+  transition-delay: calc(var(--i) * 80ms);
+}
+.dc-c::before {
+  content: attr(data-av); width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center;
+  background: var(--pe-ink); color: #fff; font-size: 12.5px; font-weight: 600; letter-spacing: .02em;
+}
+.dc-n { display: grid; gap: 2px; min-width: 0; font-size: 16px; font-weight: 600; letter-spacing: -.016em; }
+.dc-w { position: relative; display: block; font-size: 13.5px; font-weight: 400; letter-spacing: 0; color: var(--pe-stone); }
+.dc-w1, .dc-w2 { display: block; transition: opacity .35s ease-out; transition-delay: calc(var(--i) * 480ms + 650ms); }
+.dc-w2 { position: absolute; inset: 0; color: #1f7a45; white-space: nowrap; }
+.is-paid .dc-w1 { opacity: 0; }
+.dc-a {
+  font-family: var(--display); font-size: clamp(18px, 1.6vw, 21px); letter-spacing: -.03em; white-space: nowrap;
+  font-variant-numeric: tabular-nums; transition: color .35s ease-out; transition-delay: calc(var(--i) * 480ms + 650ms);
+}
+.is-paid .dc-a { color: var(--pe-stone); }
+.dc-ok {
+  width: 28px; height: 28px; border-radius: 50%; margin: 0 8px;
+  background: #1f9d55 center / 15px no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E");
+  transition: transform .5s cubic-bezier(.3, 1.6, .5, 1); transition-delay: calc(var(--i) * 480ms + 650ms);
+}
+.dc-d { position: relative; width: 44px; height: 44px; display: grid; place-content: center; text-align: center; line-height: 1; }
+.dc-d svg { position: absolute; inset: 0; width: 44px; height: 44px; transform: rotate(-90deg); }
+.dc-r0, .dc-r1 { fill: none; stroke-width: 3; }
+.dc-r0 { stroke: var(--pe-line); }
+.dc-r1 {
+  stroke: var(--pe-red); stroke-linecap: round; stroke-dasharray: 119.4;
+  stroke-dashoffset: calc(119.4 * (1 - var(--left)));
+  transition: stroke-dashoffset 1.2s cubic-bezier(.2, .8, .3, 1); transition-delay: calc(var(--i) * 80ms + 2500ms);
+}
+.dc-d b { font-size: 15px; font-weight: 600; letter-spacing: -.02em; }
+.dc-d i { display: block; margin-top: 1px; font-style: normal; font-size: 9.5px; letter-spacing: .04em; text-transform: uppercase; color: var(--pe-stone); }
+/* held back until it is seen (the class is the script's own, so the list is whole without it) */
+.dc.pre .dc-c { opacity: 0; transform: translate3d(0, 14px, 0); }
+.dc.pre .is-paid .dc-ok { transform: scale(0); }
+.dc.pre .is-paid .dc-w1 { opacity: 1; }
+.dc.pre .is-paid .dc-w2 { opacity: 0; }
+.dc.pre .is-paid .dc-a { color: var(--pe-ink); }
+.dc.pre .dc-r1 { stroke-dashoffset: 119.4; }
+@media (max-width: 420px) { .dc-c { gap: 10px; padding: 12px; } .dc-ok { margin: 0 8px 0 4px; } }
+@media (prefers-reduced-motion: reduce) { .dc-c, .dc-ok, .dc-w1, .dc-w2, .dc-a, .dc-r1 { transition: none; } }
+
+/* EVERY LIST CARRIES A PICTURE (Peter, 20 September: «any time you show lists of stuff, ensure it
+   has illustrations»). People and suppliers get the app's own initials disc, read from `data-av`
+   so the words stay one unit for the Spanish build; money rows get the wallets' own marks. */
+.owe[data-av] { grid-template-columns: auto minmax(0, 1fr) auto; }
+.owe[data-av]::before, .srow[data-av]::before {
+  content: attr(data-av); flex: 0 0 auto; width: 40px; height: 40px; border-radius: 50%;
+  display: grid; place-items: center; align-self: center;
+  background: var(--pe-ink); color: #fff; font-size: 13px; font-weight: 600; letter-spacing: .02em;
+}
+.owe[data-av]::before { grid-row: 1 / span 2; grid-column: 1; }
+.owe[data-av] .owe-n, .owe[data-av] .owe-w { grid-column: 2; }
+.owe[data-av] .owe-a { grid-column: 3; }
+.srow[data-av], .srow[data-ico] { justify-content: flex-start; align-items: center; }
+.srow[data-av] .srow-n, .srow[data-ico] .srow-n { flex: 1 1 auto; }
+.srow[data-av]::before { width: 36px; height: 36px; font-size: 12px; }
+.srow[data-ico]::before {
+  content: ""; flex: 0 0 auto; width: 36px; height: 36px; border-radius: 9px;
+  background: center / auto 100% no-repeat;
+}
+.srow[data-ico="yape"]::before { background-image: url(/peru/original/banks/yape.webp); }
+.srow[data-ico="plin"]::before { background-image: url(/peru/original/banks/plin.webp); }
+.srow[data-ico="cash"]::before {
+  background: var(--pe-cloud, #f3ece6) center / 22px no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2314100f' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='2.5' y='6' width='19' height='12' rx='2'/%3E%3Ccircle cx='12' cy='12' r='2.6'/%3E%3Cpath d='M6 9.5v5M18 9.5v5'/%3E%3C/svg%3E");
+}
+
+/* the one collection, drawn above the book: Yape's icon, who paid, the tick */
+.owe-hit {
+  display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 14px;
+  margin: 26px 0 4px; padding: 14px 18px; max-width: 560px;
+  background: #fff; border: 1px solid var(--pe-line, rgba(20,16,15,.1)); border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(20, 16, 15, .07);
+}
+.owe-hit img { display: block; width: auto; height: 40px; border-radius: 9px; }
+.owe-hit-t { display: grid; gap: 2px; min-width: 0; }
+.owe-hit-t b { font-weight: 600; font-size: 16.5px; letter-spacing: -.012em; color: var(--pe-ink); }
+.owe-hit-t span { font-size: 13.5px; color: var(--pe-stone); }
+.owe-hit-ok { width: 24px; height: 24px; color: #1f9d55; }
+#owes .pe-h2 .tl-tag { font-size: .34em; vertical-align: middle; margin-left: .35em; letter-spacing: 0; }
+@media (max-width: 939px) { .owes { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .owes { grid-template-columns: 1fr; } .owe { min-height: 0; } }
+
+/* ═══ 9 · PREGUNTAS ═══════════════════════════════════════════════════════════════════════ */
+
+/* THE LIST IS THE COLUMN. Capped at 880 inside a 1200 column it left the whole right half of
+   the section empty beside eight pills, at 1440 and at 1920 both. */
+.faq { margin-top: clamp(34px, 4vw, 54px); }
+.faq-i {
+  background: var(--pe-card); border: 1px solid var(--pe-line); border-radius: 999px; margin-bottom: 10px;
+  /* A CLOSED CARD IS STILL A CARD. Only the open one carried a shadow, so seven flat pills sat
+     on paper with no edge and the list read as loose text. */
+  box-shadow: 0 0 0 1px rgba(26, 20, 19, .055), 0 4px 14px rgba(26, 20, 19, .024);
+  transition: border-radius .32s var(--pe-ease2), box-shadow .32s var(--pe-ease2);
+}
+.faq-i[open] { border-radius: 28px; box-shadow: 0 0 0 1px rgba(26, 20, 19, .07), 0 10px 30px rgba(26, 20, 19, .055); }
+.faq-i > summary {
+  display: flex; align-items: center; justify-content: space-between; gap: 18px;
+  min-height: 74px; padding: 19px clamp(22px, 3.2vw, 46px);
+  cursor: pointer; list-style: none;
+  font: 500 clamp(17px, 1.55vw, 22px)/1.3 var(--body); letter-spacing: -.026em;
+}
+.faq-i > summary::-webkit-details-marker { display: none; }
+.faq-i > summary::marker { content: ''; }
+
+.faq-s { position: relative; width: 20px; height: 20px; flex: 0 0 auto; }
+.faq-s i {
+  position: absolute; left: 0; top: 50%; width: 20px; height: 1.5px;
+  border-radius: 1px; background: var(--pe-ink); transform: translateY(-50%);
+}
+.faq-s i:last-child { transform: translateY(-50%) rotate(90deg); transition: transform .32s var(--pe-ease2), opacity .22s ease; }
+.faq-i[open] .faq-s i:last-child { transform: translateY(-50%) rotate(180deg) scaleX(0); opacity: 0; }
+
+.faq-b { overflow: hidden; }
+.faq-b p {
+  margin: 0; padding: 0 clamp(22px, 3.2vw, 46px) clamp(22px, 2.4vw, 28px);
+  max-width: 58ch; font-size: 17px; line-height: 1.5; color: var(--pe-stone);
+}
+
+/* ═══ 10 · CLOSING CARD ═══════════════════════════════════════════════════════════════════ */
+
+.pe-close { padding-top: var(--pe-sec-t); padding-bottom: var(--pe-sec-t); }
+.cl {
+  background: var(--pe-card); border: 1px solid var(--pe-line); border-radius: 22px;
+  overflow: hidden; text-align: center;
+  display: grid; grid-template-columns: 1fr;
+}
+.cl-art { margin: 0; display: block; overflow: hidden; position: relative; aspect-ratio: 16 / 9; }
+.cl-art img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 38%; }
+.cl-t { padding: clamp(32px, 4vw, 54px) clamp(22px, 4vw, 56px) clamp(38px, 4.4vw, 58px); }
+.cl h2 { font-size: clamp(34px, 4.6vw, 64px); line-height: 1; margin: 0 auto; max-width: 15ch; }
+/* `:not(.pe-acts)` because the act row is a <p> too, and a 40ch cap on it is 400 px — which is
+   22 px less than the two pills need, so the secondary act dropped to its own line under the
+   primary one at 1440, on a card with 300 px of clear paper beside them. */
+.cl-t > p:not(.pe-acts) { margin: 16px auto 0; max-width: 40ch; font-size: clamp(16.5px, 1.3vw, 19px); color: var(--pe-stone); }
+.cl .pe-acts { margin-top: clamp(24px, 2.6vw, 34px); }
+
+/* On a desk the card is two columns: the act on the left where a reader's eye leaves the page,
+   the bodega on the right at the size a picture needs to be a picture. It stacks — picture
+   first — only where a column would be too narrow to read in. */
+@media (min-width: 900px) {
+  .cl { grid-template-columns: minmax(0, 1.18fr) minmax(300px, .82fr); align-items: stretch; text-align: left; }
+  .cl-t { padding: clamp(46px, 4.6vw, 72px) clamp(30px, 3.4vw, 56px); align-self: center; }
+  .cl h2, .cl-t > p, .cl-t > p:not(.pe-acts) { margin-inline: 0; }   /* the :not() twin: the centred rule above outranks a bare `p` */
+  .cl .pe-acts { justify-content: flex-start; gap: 12px 16px; }
+  /* the picture is the column: `aspect-ratio` gives way to the row's own height, and the plate
+     fills it from the middle of the frame */
+  .cl-art { grid-column: 2; grid-row: 1; aspect-ratio: auto; height: 100%; }
+}
+
+/* ═══ 11 · FOOTER ═════════════════════════════════════════════════════════════════════════ */
+
+.pe-ft { border-top: 1px solid var(--pe-line); padding: clamp(40px, 4.8vw, 66px) 0 clamp(30px, 3.4vw, 46px); }
+.pe-ft-top { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr); gap: clamp(30px, 4vw, 70px); align-items: start; }
+
+/* the lockup at footer scale — the company signs the page with its name, not with a 30 px glyph */
+.pe-ft-brand { max-width: 31ch; }
+.pe-ft-mark { display: inline-flex; align-items: center; gap: 12px; }
+.pe-ft-mark img { flex: 0 0 auto; border-radius: 50%; }
+.pe-ft-mark b {
+  font-family: var(--display); font-weight: 500;
+  font-size: clamp(30px, 3vw, 40px); line-height: 1; letter-spacing: -.045em;
+}
+.pe-ft-brand p { margin: 14px 0 0; font-size: 14px; line-height: 1.45; color: var(--pe-stone); }
+
+/* THREE NAMED GROUPS. «Política de privacidad» and an email address were sitting in the same
+   undifferentiated list as «Bancos», so the reader had to read all eight to find either. */
+.pe-ft-cols { display: grid; grid-template-columns: repeat(3, minmax(130px, 1fr)); gap: clamp(24px, 4vw, 62px); }
+.pe-ft-g { display: flex; flex-direction: column; }
+.pe-ft-g h2 {
+  margin: 0 0 4px; font: 500 13px/1.4 var(--body); letter-spacing: .01em;
+  color: var(--pe-stone);
+}
+.pe-ft-g a {
+  font-size: 15px; color: var(--pe-stone); text-decoration: none;
+  min-height: 42px; display: inline-flex; align-items: center;
+  transition: color .2s ease-out;
+}
+.pe-ft-g a:hover { color: var(--pe-ink); }
+@media (max-width: 560px) { .pe-ft-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+.pe-ft-legal {
+  margin-top: clamp(30px, 3.6vw, 52px); padding-top: clamp(20px, 2.2vw, 28px);
+  border-top: 1px solid var(--pe-line-2); display: grid; gap: 7px;
+}
+.pe-ft-legal p { margin: 0; font-size: 13px; line-height: 1.5; color: var(--pe-stone); max-width: 86ch; }
+.pe-ft-sbs { color: var(--pe-ink) !important; font-weight: 500; }
+
+/* the meta bar: the marks line on one side, the company line on the other, under their own
+   hairline — so the regulator's sentence above keeps the weight it is owed */
+.pe-ft-meta {
+  margin-top: 22px; padding-top: 18px; border-top: 1px solid rgba(26, 20, 19, .08);
+  display: flex; justify-content: space-between; align-items: flex-end; gap: 18px 40px;
+}
+.pe-ft-meta p { font-size: 12px; color: var(--pe-stone); }
+.pe-ft-c { white-space: nowrap; }
+@media (max-width: 760px) { .pe-ft-top { grid-template-columns: 1fr; } }
+@media (max-width: 560px) { .pe-ft-meta { flex-direction: column; align-items: flex-start; } .pe-ft-c { white-space: normal; } }
+
+/* ═══ THE RHYTHM OF THE JOINS ═════════════════════════════════════════════════════════════
+   The big token is for a change of ground — into the cloud band, into the dark one, out of it.
+   Where one paper band simply follows another, 260 px of blank paper between them is not
+   breathing room, it is a gap; those seams take the tight token. */
+#how-it-works { padding-top: var(--pe-sec-t); }
+#who { padding-bottom: var(--pe-sec-t); }
+/* three paper bands now follow one another — who it helps, the sales box, who owes you — so
+   every seam between them takes the tight token and only the change of ground keeps the big one */
+#sales { padding-top: var(--pe-sec-t); padding-bottom: var(--pe-sec-t); }
+#owes { padding-top: var(--pe-sec-t); padding-bottom: var(--pe-sec-t); }
+#questions { padding-top: var(--pe-sec-t); padding-bottom: var(--pe-sec-t); }
+
+/* ═══ MOTION ══════════════════════════════════════════════════════════════════════════════
+   Everything below is an upgrade on a page that already reads. Each rule is armed by a class
+   peru.js adds, so with the script off nothing here is hidden and nothing here moves. */
+
+html.rise-armed [data-rise].rise-pending { opacity: 0; transform: translateY(15px); }
+html.rise-armed [data-rise].is-in {
+  opacity: 1; transform: none;
+  transition: opacity .64s var(--pe-ease), transform .64s var(--pe-ease);
+}
+
+/* The title and navigation keep their first painted position. */
+.pe-h1 .w { display: inline-block; }
+
+
+/* the bank tiles' stagger — armed by peru.js, so the grid is solid with the script off */
+.bk.bk-armed .bk-t { opacity: 0; transform: translateY(12px); }
+.bk.bk-armed .bk-t.is-in {
+  opacity: 1; transform: none;
+  transition: opacity .55s var(--pe-ease), transform .55s var(--pe-ease);
+}
+
+/* ═══ REDUCED MOTION ══════════════════════════════════════════════════════════════════════
+   The still state, not a faster one: the flight is cancelled (peru.js never adds `flight`, so
+   the journey stays three rows), nothing rises, nothing scrubs. */
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .pe-h1 .w { opacity: 1 !important; transform: none !important; }
+  html.js .pnav-in { animation: none; }
+  html.rise-armed [data-rise].rise-pending { opacity: 1; transform: none; }
+  .pe-lit-t .lw { color: #fff; }
+  .bk.bk-armed .bk-t { opacity: 1; transform: none; }
+  .pe-lit-t { opacity: 1 !important; filter: none !important; transform: none !important; }
+}
+
+/* ═══ 11 · THE SELLING PAGE (/peru/original/sales) ═════════════════════════════════════════════════
+   Peter, 20 September (SPEC §17e): «This whole website is a buying and selling page. Super,
+   super easy.» So the site is two pages, Buying and Selling, and this section dresses the
+   second one. `/peru/original/fiados` is gone: auto-collecting is now a COMING SOON block inside this
+   page, and every old address points at `#auto-collect`.
+
+   The page borrows the main page's chrome whole — the nav, `.pe-band`, `.pe-wrap`, `.pe-h2`, the
+   act, the footer — and adds only what this story needs: a two-column head, one handset, the
+   page the customer opens, a card with rows, the export's two doors, and the tag that says a
+   thing is coming. One demo runs here and no 3D loads. Every screen that is a STILL draws its
+   controls as spans, which no finger can press into a dead end. */
+
+/* THE SIDE PAGE'S HERO IS A PANEL WITH TWO COLUMNS (Peter, 20 September, pointing at Monzo's product
+   pages): a label, the title, one sentence and the acts on the left; one of our own illustrations
+   on the right. The panel is the page's cloud tint with a generous corner, the picture keeps the
+   same corner inside it, and on a phone the picture stands under the words. */
+.sp-hero { padding: calc(68px + clamp(14px, 2vw, 28px)) 0 clamp(36px, 5vw, 72px); }
+.sph {
+  display: grid; grid-template-columns: minmax(0, 1fr); gap: clamp(28px, 4vw, 56px);
+  background: var(--pe-cloud, #F3ECE5); border-radius: clamp(28px, 4vw, 56px);
+  padding: clamp(24px, 5vw, 72px);
+}
+.sph-t { align-self: center; max-width: 640px; }
+.sph-chip {
+  display: inline-block; margin: 0 0 clamp(16px, 1.8vw, 24px); padding: 7px 13px;
+  border-radius: 10px; background: var(--pe-card, #fff);
+  font-size: 14.5px; font-weight: 500; letter-spacing: -.01em; color: var(--pe-ink);
+}
+.sp-hero .pe-h1 { font-size: clamp(44px, 5.6vw, 88px); line-height: .94; max-width: 12ch; margin: 0; }
+.sp-hero .pe-lead { margin: clamp(16px, 1.8vw, 24px) 0 0; max-width: 44ch; font-size: clamp(17px, 1.45vw, 21px); line-height: 1.4; color: var(--pe-stone); }
+.sp-hero .pe-acts { justify-content: flex-start; margin-top: clamp(22px, 2.6vw, 36px); }
+.act-o {
+  display: inline-flex; align-items: center; height: 52px; padding: 0 24px; border-radius: 999px;
+  border: 1.5px solid var(--pe-ink); color: var(--pe-ink); text-decoration: none;
+  font-size: 16.5px; font-weight: 500; letter-spacing: -.015em;
+  transition: background .2s, color .2s;
+}
+.act-o:hover { background: var(--pe-ink); color: #fff; }
+/* THE PICTURE'S BOX IS THE PICTURE'S OWN SHAPE. `hero-sales.webp` is cut 4:3 out of the 16:9
+   generation precisely so this box crops nothing: a 16:9 file in a 4:3 box loses a quarter of
+   its width to `object-fit: cover`, which is how the bodeguera's own shelves left the frame. */
+.sph-art { margin: 0; border-radius: clamp(20px, 2.8vw, 40px); overflow: hidden; aspect-ratio: 4 / 3; align-self: center; }
+.sph-art img { display: block; width: 100%; height: 100%; object-fit: cover; }
+@media (min-width: 900px) {
+  .sph { grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr); align-items: stretch; }
+}
+
+/* ── HOW SELLING WORKS: ONE HANDSET AND THE FOUR BEATS BESIDE IT ─────────────────────────────
+   The main page's own shape (`.sr-row`), at this page's weight: the phone in a track of its
+   own, the steps in the wide one. On a phone the handset comes first and the steps stand under
+   it, which is the rule every row on the main page follows. */
+.sflow {
+  display: grid; grid-template-columns: minmax(0, 1fr);
+  gap: clamp(30px, 4vw, 56px); align-items: center; justify-items: center;
+  margin: clamp(34px, 4vw, 56px) 0 0;
+}
+.sflow-p { display: flex; justify-content: center; }
+.sflow-p .ph { --ph-w: var(--ph-w-page); }
+.sflow-s { min-width: 0; width: 100%; max-width: 560px; }
+/* A HEADING INSIDE A SECTION IS SMALLER THAN THE SECTION'S OWN. «What your customer opens» is the
+   second half of «How selling works», so at `.pe-h2` it read as a new section starting, and the
+   band came out with two headings of the same weight and no hierarchy between them. */
+.ssub {
+  font-family: var(--display); font-weight: 400;
+  font-size: clamp(30px, 3.2vw, 46px); line-height: 1.02; letter-spacing: -.042em;
+  margin: clamp(52px, 6vw, 92px) 0 clamp(12px, 1.2vw, 18px); max-width: 16ch;
+}
+.sflow .rm { margin: 0; }
+/* THE SECOND HALF OF THE BAND RUNS THE OTHER WAY: the words on the left, the customer's page on
+   the right, the way the main page's rows alternate. Written as its own column pair rather than
+   with `order`, so the wide track stays wide and the card's track stays a phone's width — the
+   lesson `.sr-flip` records. */
+.sflow-b { margin-top: clamp(54px, 6.4vw, 100px); }
+.sflow-b .spay { justify-self: start; margin-top: 0; }
+.sflow-s .ssub { margin-top: 0; }
+.sflow-s .pe-foot { margin-top: clamp(14px, 1.6vw, 22px); }
+@media (min-width: 900px) {
+  .sflow { grid-template-columns: minmax(280px, 360px) minmax(0, 1fr); justify-items: start; gap: clamp(48px, 6vw, 88px); }
+  .sflow-p { justify-self: start; }
+  .sflow-b { grid-template-columns: minmax(0, 1fr) minmax(300px, 392px); align-items: center; }
+  .sflow-b .sflow-s { max-width: var(--pe-copy); }
+  .sflow-b .spay { justify-self: end; }
+}
+
+/* THE SPINE WITHOUT ITS MONTHS. The roadmap's own list, used again for the beats of a sale, so
+   two pages explain a sequence with one object.
+
+   AND IT STAYS TWO CELLS WIDE HERE, at every width. The roadmap has the whole 1200 column and can
+   set a heading beside its sentence; these steps share their band with a handset, so the third
+   column came out at 330 px and every sentence read as a four-word ladder down the right edge —
+   the same failure `.sr-text` records one section up. Heading, then its sentence under it, in a
+   cell that is as wide as the track. */
+.rm-flat .rm-s { grid-template-areas: 'n h' 'n b'; }
+.rm-flat .rm-b { padding-bottom: clamp(26px, 3vw, 44px); }
+.rm-flat .rm-b p { max-width: 52ch; }
+
+/* ── THE PAGE THE CUSTOMER OPENS ─────────────────────────────────────────────────────────────
+   Peter (SPEC §17e): «In that Yape link, it shows the delivery note in our format… that's where
+   it has the "Pay Now" button, or that's where it has the copy amount, or that's where it has
+   the button that, when clicked, makes them just go to Yape to pay the amount.»
+
+   EVERY PART OF IT IS THE PROTOTYPE'S. The head, the figure, the description, the reference, the
+   two acts, the Yape panel, its number and its two sentences are `pay/link.tsx`, in its own
+   order; the lines between them are the delivery note as the app really sets it — the face, the
+   name, then the quantity and its unit on one line — read off the running prototype's own order
+   panel (`peru/cap/pedido-movil.webp`). It is a STILL, so its controls are spans.
+
+   IT KEEPS A PHONE'S MEASURE. The page opens on the customer's phone and nowhere else, so the
+   card is capped where a phone caps it rather than stretched over the 1200 column — the lesson
+   the export card records one section down. */
+.spay {
+  width: 100%; max-width: 392px; margin: clamp(26px, 3vw, 38px) 0 0;
+  background: var(--pe-card); border: 1px solid var(--pe-line); border-radius: 20px;
+  overflow: hidden;
+}
+.spay-in { padding: clamp(20px, 2.2vw, 26px); display: grid; gap: 18px; }
+.spay-h { display: grid; gap: 5px; }
+.spay-h b {
+  font-family: var(--display); font-weight: 600; font-size: 21px;
+  letter-spacing: -.03em; line-height: 1.2;
+}
+.spay-h span { font-size: 13.5px; line-height: 1.4; color: var(--pe-stone); }
+
+/* THE NOTE'S OWN LINES. A face, the name, then the quantity and its unit riding one line — the
+   app's own row, at this card's scale. The faces are the product paintings the app draws. */
+.spay-l { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--pe-line-2); }
+.spay-l li {
+  display: grid; grid-template-columns: 40px minmax(0, 1fr) auto; align-items: center;
+  gap: 14px; padding: 11px 0; border-bottom: 1px solid var(--pe-line-2);
+}
+.spay-l img { display: block; width: 40px; height: 40px; object-fit: contain; }
+.spay-n { font-size: 15px; line-height: 1.3; letter-spacing: -.01em; min-width: 0; overflow-wrap: anywhere; }
+.spay-q { font-size: 15px; white-space: nowrap; color: var(--pe-stone); font-variant-numeric: tabular-nums; }
+.spay-q b { font-weight: 400; font-size: 18px; color: var(--pe-ink); margin-right: 5px; }
+
+/* THE FIGURE, AS `Figure size="display"` SETS IT: the unit riding the number, tabular, one line. */
+.spay-f { display: grid; gap: 7px; }
+.spay-f .spay-fig {
+  font-family: var(--display); font-weight: 400; font-size: 40px; line-height: 1;
+  letter-spacing: -.045em; font-variant-numeric: tabular-nums; white-space: nowrap;
+}
+.spay-f .spay-fig em { font-style: normal; font-size: .58em; color: var(--pe-stone); margin-right: .22em; }
+.spay-f p { margin: 0; font-size: 15px; line-height: 1.45; }
+.spay-f small { font-size: 13px; color: var(--pe-stone); }
+
+/* THE TWO ACTS, AT THE HEIGHT THE APP GIVES THEM (56 px in `pay/link.tsx`). They are STILLS of
+   a customer's screen, so they are drawn as text in a control's seat and carry no target. */
+.spay-b { display: grid; gap: 10px; }
+.spay-act {
+  display: grid; place-items: center; min-height: 52px; border-radius: 12px;
+  font-size: 16px; font-weight: 500; letter-spacing: -.015em;
+  background: var(--pe-ink); color: #fff;
+}
+.spay-act-2 { background: var(--pe-cloud); color: var(--pe-ink); border: 1px solid var(--pe-line); }
+
+/* THE YAPE PANEL, WHERE THE CUSTOMER PAYS — and Plin stands beside it, because Peter: «the Yape
+   and Plin logos need to be in the right place. It's also Plin, by the way, obviously». The wash
+   is the panel's own tint in `pay/link.tsx` (`yapeWash`), drawn here in the page's own colours.
+   Each mark is the institution's own and names nothing but itself. */
+.spay-y {
+  display: grid; gap: 14px; padding: 18px;
+  border-radius: 16px; background: linear-gradient(168deg, #F4EDFA 0%, #EFF6F8 100%);
+}
+.smarks { display: flex; align-items: center; gap: 10px; }
+.smarks img { display: block; height: 30px; width: auto; }
+.spay-y .spay-num { font-family: var(--display); font-weight: 600; font-size: 19px; letter-spacing: -.026em; margin: 0; }
+.spay-y p { margin: 0; font-size: 13.5px; line-height: 1.45; color: var(--pe-stone); }
+
+.sflow-b .customer-phone { --ph-w: var(--ph-w-page); justify-self: center; }
+.customer-phone { --ph-s: calc(var(--ph-w) / 424.669px); }
+.customer-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 390px;
+  height: 844px;
+  transform: scale(var(--ph-s));
+  transform-origin: top left;
+  background: var(--pe-card);
+  overflow: hidden;
+}
+.customer-status { height: 52px; padding: 17px 30px 0; display: flex; justify-content: space-between; font-size: 14px; font-weight: 600; }
+.customer-screen .spay { width: 390px; max-width: none; margin: 0; border: 0; border-radius: 0; }
+.customer-screen .spay-in { padding: 14px 24px 28px; gap: 15px; }
+.customer-screen .spay-h b { font-size: 22px; }
+.customer-screen .spay-h span { font-size: 13px; }
+.customer-screen .spay-l li { padding: 9px 0; }
+.customer-screen .spay-y { padding: 16px; gap: 10px; }
+.customer-screen .spay-y .spay-b { grid-template-columns: 1fr 1fr; gap: 8px; }
+.customer-screen .spay-y .spay-act { font-size: 14px; }
+.customer-screen .spay-act { min-height: 48px; }
+.customer-screen .spay-f .spay-fig { font-size: 38px; }
+
+/* ── A CARD KEEPS A CARD'S MEASURE ───────────────────────────────────────────────────────────
+   Stretch a two-column row over 1200 px and the name and its figure end up a screen apart, so a
+   single card caps at 640 px and a pair takes that measure each and fills the column together. */
+.sgrid {
+  display: grid; grid-template-columns: 1fr; gap: clamp(16px, 1.8vw, 24px);
+  margin: clamp(34px, 4vw, 52px) 0 0; max-width: 640px;
+}
+.sgrid-2 { max-width: none; }
+@media (min-width: 900px) {
+  .sgrid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(18px, 2.2vw, 30px); align-items: start; }
+}
+
+.scard {
+  background: var(--pe-card); border: 1px solid var(--pe-line); border-radius: 16px;
+  padding: clamp(22px, 2.4vw, 32px);
+}
+.scard h3 {
+  font-family: var(--display); font-weight: 600; font-size: clamp(18px, 1.5vw, 21px);
+  letter-spacing: -.026em; line-height: 1.24; margin: 0;
+}
+.scard-w { margin: 6px 0 0; font-size: 13.5px; line-height: 1.4; color: var(--pe-stone); }
+/* THE CARD'S OWN HEADER: the name on the left, the card's total pinned right in the display
+   face, which is how the app draws a card that carries one. */
+.scard-h { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 16px; }
+.scard-a {
+  font-family: var(--display); font-weight: 400; font-size: clamp(21px, 1.8vw, 25px);
+  letter-spacing: -.035em; line-height: 1; white-space: nowrap; font-variant-numeric: tabular-nums;
+}
+
+/* ONE ROW, THE APP'S OWN: the words on the left, the figure pinned right in tabular numerals,
+   under a hairline. It is `money-overview.tsx`'s `Money in` row, drawn at this page's scale. */
+.srow {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 12px 20px;
+  padding: 13px 0; border-top: 1px solid var(--pe-line-2);
+}
+.srow:first-of-type { margin-top: clamp(14px, 1.4vw, 20px); }
+.srow-n { font-size: 15.5px; line-height: 1.4; color: var(--pe-stone); min-width: 0; }
+.srow-a { font-size: 16px; font-weight: 600; letter-spacing: -.018em; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.srow-t { border-top-color: var(--pe-line); }
+.srow-t .srow-n { color: var(--pe-ink); font-weight: 500; }
+.srow-t .srow-a { font-family: var(--display); font-weight: 400; font-size: clamp(20px, 1.7vw, 24px); letter-spacing: -.034em; }
+
+/* THE ROW'S SECOND LINE — «Due 23 Sep», «Late · 1 day», «Settled 12 Sep» — is the app's own
+   `ParagraphXSmall` under the name, so the row aligns on the name's baseline and the day hangs
+   under it rather than pushing the figure off its edge. */
+.srow-s { display: block; margin-top: 4px; font-size: 13.5px; line-height: 1.4; color: var(--pe-stone); }
+.srow-n:has(.srow-s) { color: var(--pe-ink); font-weight: 500; }
+.srow:has(.srow-s) { align-items: start; }
+.srow:has(.srow-s) .srow-a { padding-top: 1px; }
+
+/* SETTLED ROWS STAND UNDER THEIR OWN WORD, exactly as `SuppliersCard` groups them: the card's
+   summary counts what is still to pay, so a paid row inside that list would be one row the
+   summary never accounted for. */
+.sgroup {
+  margin: clamp(18px, 2vw, 26px) 0 0;
+  font-size: 15px; font-weight: 600; letter-spacing: -.018em;
+}
+
+/* THE EXPORT, AS THE APP DRAWS IT: the period and the counts on top, the two doors under it with
+   what a row of each file IS, and the SUNAT sentence in its own quiet block at the foot. */
+/* AND AT THE MEASURE THE APP DRAWS IT AT. Over the 1200 column each door row broke in half: the
+   sentence's ink ended at x=544 and «Export» began at x=1245, 701 px of empty row between a
+   phrase and a word, which reads as a table with its middle columns missing. In the app this is a
+   `WorkflowDialog` 800 px wide, so the words and the control sit a hand's width apart. */
+.sexp {
+  margin: clamp(34px, 4vw, 52px) 0 0; max-width: 640px;
+  background: var(--pe-card); border: 1px solid var(--pe-line); border-radius: 18px; overflow: hidden;
+}
+.sexp-h { padding: clamp(22px, 2.4vw, 32px) clamp(22px, 2.4vw, 32px) clamp(16px, 1.6vw, 22px); }
+.sexp-t { font-family: var(--display); font-weight: 600; font-size: clamp(18px, 1.5vw, 21px); letter-spacing: -.026em; margin: 0; }
+.sexp-p { margin: 10px 0 0; font-size: 17px; font-weight: 600; letter-spacing: -.02em; }
+.sexp-f { margin: 4px 0 0; font-size: 13.5px; color: var(--pe-stone); }
+.sexp-l { list-style: none; margin: 0; padding: 0 clamp(22px, 2.4vw, 32px); }
+/* ONE SHAPE AT EVERY WIDTH, the export screen's own: the words on the left, the control pinned
+   right. The words are one grid child, so nothing about the row depends on auto-placement. */
+.sexp-l li {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center;
+  gap: 8px 18px; padding: clamp(14px, 1.5vw, 19px) 0; border-top: 1px solid var(--pe-line-2);
+}
+.sexp-d { display: grid; gap: 4px; min-width: 0; }
+.sexp-l b { font-size: 16px; font-weight: 600; letter-spacing: -.02em; }
+.sexp-d span { font-size: 14.5px; line-height: 1.45; color: var(--pe-stone); }
+/* THE DOOR'S WORD IS TEXT. It was drawn as a 77 × 36 bordered pill — the only thing on this
+   page besides the act that looked pressable — on a STILL of a screen, so a thumb that found it
+   pressed into nothing. The word stands in the control's own seat, set the way the app's
+   tertiary button reads: quiet ink, no border, no target. */
+.sexp-go {
+  justify-self: end;
+  font-size: 14.5px; font-weight: 500; letter-spacing: -.015em; color: var(--pe-stone);
+}
+/* THE LAW'S OWN SENTENCE, AT A READING MEASURE. It is 154 characters and it ran as ONE line of
+   about 150 characters at 1440, in a section whose answers cap at 58ch: the one legally freighted
+   sentence on the page was the widest line on it, and a line that long is scanned rather than
+   read. The block keeps the card's width and the tint; the text takes a measure in the family of
+   `.faq-b p`. The characters are law and stand untouched. */
+.sexp-s {
+  margin: 0; padding: clamp(18px, 2vw, 26px) clamp(22px, 2.4vw, 32px);
+  background: var(--pe-cloud); font-size: 14.5px; line-height: 1.55; color: var(--pe-stone);
+}
+/* the measure is on the words, so the tint still runs the width of the card's foot */
+.sexp-s > .sexp-m { display: block; max-width: 58ch; }
+
+/* WHAT IS COMING, SAID WHERE IT IS READ — BESIDE THE HEADING, NEVER INSIDE IT. The tag used to
+   be a span in the `<h2>`, so the heading's own text came out as «The digital boletaComing soon»:
+   welded, with no space, to anything that reads the page as text. It is now the heading's
+   neighbour. AND IT STANDS UNDER THE HEADING, not beside it: beside it was a flex row, and a
+   flex item with `max-width: 17ch` takes its whole 17ch box however short its last line is, so a
+   two-line heading left the tag floating 120 px past the end of it, pointing at nothing. */
+.shead { display: grid; justify-items: start; gap: clamp(11px, 1.2vw, 16px); }
+.shead .pe-h1, .shead .pe-h2, .shead h3 { margin: 0; }
+.stag {
+  display: inline-flex; align-items: center; flex: 0 0 auto;
+  height: 28px; padding: 0 12px; border-radius: 999px;
+  border: 1px solid var(--pe-line); background: var(--pe-card);
+  /* SENTENCE CASE, like every other word on the page. An uppercase badge would be the only
+     capitalised thing here, and a new voice for a two-word fact is a voice too many. */
+  font: 500 14px/1 var(--body); letter-spacing: -.01em; color: var(--pe-stone);
+}
+.ssoon { margin: 0; display: grid; gap: clamp(12px, 1.2vw, 16px); align-content: start; }
+.ssoon .pe-lead { margin: 0; }
+.ssoon h3 {
+  font-family: var(--display); font-weight: 600; font-size: clamp(24px, 2.4vw, 34px);
+  letter-spacing: -.034em; line-height: 1.1;
+}
+/* TWO QUIET BLOCKS, SIDE BY SIDE ON A DESK. Each one is a heading, its status and one sentence:
+   the whole of what is known about it, and nothing standing in for what is not. */
+.ssoons {
+  display: grid; grid-template-columns: 1fr; gap: clamp(34px, 4vw, 56px);
+  margin: clamp(34px, 4vw, 52px) 0 0;
+}
+@media (min-width: 900px) {
+  .ssoons { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(40px, 5vw, 92px); }
+}
+
+/* ═══ WHAT A PHONE IS ASKED TO RENDER ═════════════════════════════════════════════════════
+   A PAGE THIS LONG IS NOT ALL BEING LOOKED AT. At 390 the page is eleven and a half thousand
+   pixels tall, and a phone was laying out, styling and keeping a composited plan for the whole
+   of it on every scroll frame. `content-visibility: auto` lets the browser skip the inside of a
+   section until the reader is near it: the section keeps its place and its height, and the work
+   of drawing what is in it happens when it is about to be seen.
+
+   ONLY THE PLAIN BANDS, AND ONLY ON A PHONE. The rule names the bands that must stay live
+   rather than the ones that may be skipped, so renaming a band cannot quietly switch it off:
+   the rows the handset docks into (`#how-it-works`), the orders composition (`#orders`, whose
+   own rectangle peru.js measures every frame) and any band the nav reads to change its tone.
+   What is left is words, cards and an accordion, and nothing outside them asks where they are.
+   Measured at 390 under a 4× throttle, twice: 31.6 → 30.4 % and 30.0 → 29.7 % of the core over
+   a run down the page, with the worst-tenth frame 22.1 → 21.6 ms and 21.7 → 19.7 ms.
+
+   `auto` on the intrinsic size means the 800 px is only a first guess: once a section has been
+   rendered the browser remembers what it really was, so the page's height settles as the reader
+   goes down it and never settles wrong. */
+@media (max-width: 899px) {
+  .pe-band:not(#how-it-works):not(#orders):not([data-nav="dark"]) {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 800px;
+  }
+}
+
+/* Roadmap details share the page's paper, ink and generous type. */
+.pe-offer-conditions { display: block; margin-top: 8px; font-size: 12px; font-weight: 400; color: var(--pe-stone); }
+.pe-offer-conditions a { color: inherit; text-underline-offset: 3px; }
+.roadmap-context { max-width: 620px; margin: 32px 0 0 auto; color: var(--pe-stone); font-size: 16px; line-height: 1.55; }
+.tl-open { display: inline-flex; align-items: center; gap: clamp(16px, 3vw, 36px); color: inherit; text-decoration: none; }
+.tl-open:focus-visible { outline: 2px solid var(--pe-red); outline-offset: 8px; border-radius: 4px; }
+.tl-plus { display: grid; place-items: center; flex: 0 0 44px; height: 44px; border: 1px solid var(--pe-line); border-radius: 50%; font-family: inherit; font-size: 25px; font-weight: 400; line-height: 1; transition: background .18s, border-color .18s; }
+.tl-open:hover .tl-plus { background: var(--pe-paper); border-color: var(--pe-stone); }
+html.feature-open, html.feature-open body { overflow: hidden; }
+html { scrollbar-gutter: stable; }
+.feature-sheet { box-sizing: border-box; inset: 0 0 0 auto; margin: 0; width: min(600px, 100%); height: 100dvh; max-width: 100%; max-height: 100dvh; padding: 0; border: 0; border-radius: 24px 0 0 24px; background: var(--pe-paper); color: var(--pe-ink); overscroll-behavior: contain; overflow-x: hidden; overflow-y: auto; box-shadow: -12px 0 80px #1a141322; }
+.feature-sheet:not([open]) { display: none; }
+.feature-sheet::backdrop { background: #1a14136b; }
+.sheet-top { position: sticky; top: 0; z-index: 2; display: flex; align-items: center; justify-content: space-between; padding: 20px 32px 12px; background: var(--pe-paper); }
+.sheet-brand { display: inline-flex; align-items: center; gap: 8px; font-size: 19px; font-weight: 600; }
+.sheet-close { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--pe-line); background: transparent; color: inherit; cursor: pointer; }
+.sheet-close svg { width: 22px; height: 22px; }
+.sheet-content { padding: 20px 32px max(32px, env(safe-area-inset-bottom)); }
+.sheet-status { display: inline-flex; align-items: center; gap: 8px; margin: 0 0 12px; font-size: 13px; color: var(--pe-stone); }
+.sheet-status::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--pe-stone); }
+.sheet-content h2 { margin: 0 0 14px; font-size: clamp(32px, 4vw, 44px); font-weight: 400; line-height: 1.07; letter-spacing: -.035em; text-wrap: balance; }
+.sheet-content h2:focus { outline: none; }
+.sheet-content p { line-height: 1.55; }
+.sheet-content > p:not(.sheet-status) { margin: 0 0 20px; font-size: 17px; }
+.sheet-content > .sheet-intro { font-size: 18px !important; line-height: 1.45; }
+.sheet-content > .sheet-note { font-size: 14px !important; color: var(--pe-stone); }
+.sheet-note a { color: inherit; text-underline-offset: 3px; }
+.sheet-content > .sheet-offer { font-size: 15px; line-height: 1.5; }
+.sheet-offer strong { font-weight: 500; }
+.sheet-done { display: flex; align-items: center; justify-content: space-between; gap: 20px; width: 100%; margin-top: 32px; padding: 16px 0; border: 0; border-top: 1px solid var(--pe-line); background: transparent; color: var(--pe-ink); font: inherit; font-size: 16px; text-align: left; cursor: pointer; }
+.sheet-done span { font-size: 22px; }
+.sheet-close:focus-visible, .sheet-done:focus-visible { outline: 2px solid var(--pe-red); outline-offset: 4px; }
+html:not(.feature-sheets-ready) .feature-sheet:target { display: block; position: static; width: auto; height: auto; max-height: none; margin: 24px auto; box-shadow: none; }
+html:not(.feature-sheets-ready) .sheet-close, html:not(.feature-sheets-ready) .sheet-done { display: none; }
+@media (max-width: 700px) {
+  .pnav-links { display: none; }
+  .pnav-in { grid-template-columns: auto 1fr; }
+  .pnav-act { justify-self: end; }
+  .feature-sheet { inset: auto 0 0; width: 100%; height: auto; max-height: 92dvh; border-radius: 24px 24px 0 0; }
+  .sheet-top { padding: 16px 24px 8px; }
+  .sheet-content { padding: 16px 24px max(28px, env(safe-area-inset-bottom)); }
+  .sheet-content h2 { font-size: clamp(32px, 6vw, 38px); }
+  .tl-plus { flex-basis: 36px; height: 36px; font-size: 22px; }
+  .roadmap-context { font-size: 15px; }
+}
+@media (prefers-reduced-motion: reduce) { .tl-plus { transition: none; } }
+
+/* Roadmap examples use the same product face and assets as the phone demonstrations. */
+@font-face {
+  font-family: 'Inter';
+  src: url('/peru/original/wa/fonts/inter.woff2') format('woff2');
+  font-weight: 100 900; font-style: normal; font-display: swap;
+}
+.roadmap-visual {
+  --rv-ink: #1a1413; --rv-muted: #717171; --rv-line: #e8e8e8;
+  margin: 28px 0; color: var(--rv-ink);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px; font-weight: 400; line-height: 1.35;
+}
+.roadmap-visual strong { font-weight: 500; }
+.roadmap-visual .rv-card {
+  padding: 28px; border: 1px solid var(--rv-line); border-radius: 20px; background: #fff;
+  box-shadow: 0 2px 4px #17171703, 0 12px 32px #17171705;
+}
+.roadmap-visual .rv-money {
+  display: inline-flex; align-items: baseline; white-space: nowrap;
+  font-size: 34px; font-weight: 500; line-height: 1; letter-spacing: -.055em;
+  font-variant-numeric: tabular-nums;
+}
+.roadmap-visual .rv-currency { margin-right: .24em; font-size: .48em; font-weight: 400; letter-spacing: -.02em; }
+.roadmap-visual .rv-cents { font-size: .65em; font-weight: 400; letter-spacing: -.035em; }
+.roadmap-visual .rv-hero-amount { font-size: clamp(62px, 12vw, 84px); }
+.roadmap-visual .rv-topline { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.roadmap-visual .rv-topline > img { width: 28px; height: 28px; object-fit: contain; }
+.roadmap-visual .rv-tag { padding: 4px 8px; border: 1px solid var(--rv-line); border-radius: 6px; font-size: 11px; color: var(--rv-muted); }
+
+.rv-sales { display: flex; justify-content: center; padding-block: 4px 8px; margin-bottom: 36px; overflow-x: clip; }
+.rv-sales .rv-phone { --ph-w: 240px; margin-inline: auto; }
+
+/* The collection list is the original sales-page list, sized for this sheet. */
+.rv-tabs .dc { gap: 10px; }
+.rv-tabs .dc-c {
+  grid-template-columns: 32px minmax(0, 1fr) auto 34px; gap: 10px;
+  min-height: 78px; padding: 14px 12px; border-color: var(--rv-line); border-radius: 14px;
+  opacity: 1; transform: none; transition: none;
+}
+.rv-tabs .dc-c::before { width: 32px; height: 32px; background: #f1f1f1; color: var(--rv-ink); font-family: inherit; font-size: 11px; font-weight: 500; letter-spacing: 0; }
+.rv-tabs .dc-n { gap: 4px; font-size: 14px; font-weight: 500; line-height: 1.3; letter-spacing: -.015em; }
+.rv-tabs .dc-w { font-size: 11px; line-height: 1.35; color: var(--rv-muted); }
+.rv-tabs .dc-w1 { display: none; }
+.rv-tabs .dc-w2 { position: static; color: var(--rv-muted); white-space: normal; opacity: 1; transition: none; }
+.rv-tabs .dc-a { font-family: inherit; font-size: 16px; font-weight: 500; letter-spacing: -.035em; color: var(--rv-ink); transition: none; }
+.rv-tabs .dc-ok {
+  display: grid; place-items: center; justify-self: center; width: 24px; height: 24px; margin: 0;
+  background: var(--rv-ink); transform: none; transition: none;
+}
+.rv-tabs .dc-ok::after {
+  content: ''; width: 10px; height: 5px; border-left: 1.7px solid #fff; border-bottom: 1.7px solid #fff;
+  transform: translateY(-1px) rotate(-45deg);
+}
+.rv-tabs .dc-d { width: 34px; height: 34px; }
+.rv-tabs .dc-d svg { width: 34px; height: 34px; }
+.rv-tabs .dc-r0 { stroke: var(--rv-line); }
+.rv-tabs .dc-r1 { stroke: var(--rv-ink); transition: none; }
+.rv-tabs .dc-d b { font-size: 12px; font-weight: 500; }
+.rv-tabs .dc-d i { font-size: 8px; letter-spacing: .01em; color: var(--rv-muted); }
+
+.rv-receipts { padding: 4px 14px 16px; }
+.rv-receipts .rv-paper {
+  position: relative; max-width: 420px; margin: 0 auto; padding: 24px;
+  background: #fff; border: 1px solid var(--rv-line); border-bottom: 0; border-radius: 10px 10px 0 0;
+  box-shadow: 0 3px 6px #17171704, 0 16px 36px #17171708;
+}
+.rv-receipts .rv-paper::after {
+  content: ''; position: absolute; left: -1px; right: -1px; bottom: -7px; height: 8px; background: #fff;
+  clip-path: polygon(0 0,100% 0,100% 100%,97.5% 0,95% 100%,92.5% 0,90% 100%,87.5% 0,85% 100%,82.5% 0,80% 100%,77.5% 0,75% 100%,72.5% 0,70% 100%,67.5% 0,65% 100%,62.5% 0,60% 100%,57.5% 0,55% 100%,52.5% 0,50% 100%,47.5% 0,45% 100%,42.5% 0,40% 100%,37.5% 0,35% 100%,32.5% 0,30% 100%,27.5% 0,25% 100%,22.5% 0,20% 100%,17.5% 0,15% 100%,12.5% 0,10% 100%,7.5% 0,5% 100%,2.5% 0,0 100%);
+}
+.roadmap-visual .rv-document-heading { display: grid; gap: 5px; margin: 24px 0; }
+.roadmap-visual .rv-document-heading strong { font-size: 20px; letter-spacing: -.025em; }
+.roadmap-visual .rv-document-heading > span { font-size: 13px; color: var(--rv-muted); }
+.roadmap-visual .rv-document-customer { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-bottom: 14px; border-bottom: 1px solid var(--rv-line); }
+.roadmap-visual .rv-document-customer > span { font-size: 12px; color: var(--rv-muted); }
+.roadmap-visual .rv-products { margin: 4px 0; }
+.roadmap-visual .rv-product { display: grid; grid-template-columns: 38px minmax(0, 1fr) auto; align-items: center; gap: 12px; padding: 12px 0; }
+.roadmap-visual .rv-product + .rv-product { border-top: 1px solid #f1f1f1; }
+.roadmap-visual .rv-product img { display: block; width: 38px; height: 38px; object-fit: contain; border-radius: 8px; background: #f7f7f7; }
+.roadmap-visual .rv-product > span { min-width: 0; font-size: 13px; letter-spacing: -.01em; }
+.roadmap-visual .rv-quantity { color: var(--rv-muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.roadmap-visual .rv-total { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 20px 0; border-top: 1px solid var(--rv-line); }
+.roadmap-visual .rv-total > span:first-child { color: var(--rv-muted); font-size: 13px; }
+.roadmap-visual .rv-draft-status { display: flex; align-items: center; gap: 8px; padding-top: 16px; border-top: 1px dashed #ddd; color: var(--rv-muted); font-size: 12px; }
+.roadmap-visual .rv-draft-status > span { width: 7px; height: 7px; border: 1px solid currentColor; border-radius: 50%; }
+
+.rv-credit .rv-card { max-width: 448px; margin-inline: auto; }
+.rv-credit .rv-credit-paid { display: grid; justify-items: center; gap: 12px; text-align: center; }
+.rv-credit .rv-credit-paid > .rv-check { width: 60px; height: 60px; margin-bottom: 6px; }
+.rv-credit .rv-credit-paid > span:not(.rv-money) { color: var(--rv-muted); font-size: 13px; }
+.rv-credit .rv-credit-paid > strong { margin-top: 2px; font-size: 15px; letter-spacing: -.02em; }
+.roadmap-visual .rv-check { color: var(--rv-ink); }
+.roadmap-visual .rv-check path { stroke-dasharray: 1; stroke-dashoffset: 0; }
+.rv-credit .rv-credit-terms { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 26px; padding: 20px 0; border-top: 1px solid var(--rv-line); text-align: center; color: var(--rv-muted); font-size: 12px; }
+.rv-credit .rv-credit-terms b { display: block; margin-bottom: 4px; color: var(--rv-ink); font-size: 18px; font-weight: 500; letter-spacing: -.025em; }
+.rv-credit .rv-schedule { display: grid; grid-template-columns: 7px minmax(0, 1fr) auto; align-items: center; gap: 12px; padding: 16px; background: #f6f6f6; border-radius: 13px; }
+.rv-credit .rv-schedule-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--rv-ink); }
+.rv-credit .rv-schedule > div { display: grid; gap: 3px; min-width: 0; }
+.rv-credit .rv-schedule strong { font-size: 13px; }
+.rv-credit .rv-schedule > div > span { color: var(--rv-muted); font-size: 12px; }
+.rv-credit .rv-schedule .rv-money { font-size: 28px; }
+
+@media (max-width: 380px) {
+  .roadmap-visual .rv-card { padding: 22px 18px; }
+  .rv-receipts { padding-inline: 4px; }
+  .rv-receipts .rv-paper { padding: 20px 16px; }
+  .rv-tabs .dc-c { gap: 8px; padding-inline: 10px; }
+  .rv-tabs .dc-n { font-size: 13px; }
+  .rv-tabs .dc-a { font-size: 15px; }
+  .rv-credit .rv-schedule { padding: 14px 12px; gap: 9px; }
+  .rv-credit .rv-schedule .rv-money { font-size: 26px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .feature-sheet[open] .rv-tabs .dc-c { animation: rv-arrive .38s cubic-bezier(.2,.8,.3,1) both; animation-delay: calc(var(--i) * 45ms); }
+  .feature-sheet[open] .rv-tabs .dc-ok::after { animation: rv-check-reveal .32s ease-out both; animation-delay: calc(.32s + var(--i) * .18s); }
+  .feature-sheet[open] .rv-check path { animation: rv-check-draw .42s ease-out .18s both; }
+  .feature-sheet[open] .rv-reveal { animation: rv-arrive .38s ease-out .15s both; }
+}
+@keyframes rv-arrive { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@keyframes rv-check-reveal { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0); } }
+@keyframes rv-check-draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+
+/* Keep the first screen stable while optional behavior and media arrive. */
+html.ph-ready-gate .ph:not(.has-poster) .ph-body { visibility: hidden; opacity: 0; }
+html.ph-ready-gate .ph:not(.has-poster) .ph-note { visibility: hidden; }
+.pnav-in { grid-template-columns: auto 1fr; }
+.pnav-brand span { position: static; width: auto; height: auto; margin: 0; overflow: visible; clip: auto; clip-path: none; white-space: normal; }
+.footer-language { margin-top: 20px; }
+.footer-language .plang-m { top: auto; bottom: calc(100% + 8px); left: 0; right: auto; }
+.footer-language .plang { display: block; width: max-content; }
+.footer-language .plang-mini { display: none; }

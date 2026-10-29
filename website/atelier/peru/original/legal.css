@@ -1,0 +1,180 @@
+/* ═══════════════════════════════════════════════════════════════════════════════════════════
+   peru/legal.css — the three legal pages at the root: /privacy, /terms, /cookies.
+
+   They stand on their own. This file carries the face, the tokens and the whole layout, so a
+   legal page asks the origin for exactly four things — the page, this stylesheet, the type and
+   the mark — and for nothing else. That is what makes «these pages store nothing on your device»
+   a fact a person can check with the network panel open.
+
+   The tokens are peru.css's, copied by value rather than imported, so the landing can be rebuilt
+   without moving the small print underneath it.
+   ═══════════════════════════════════════════════════════════════════════════════════════════ */
+
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url('/peru/original/fonts/hanken-grotesk-latin-400-600.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304,
+                 U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+                 U+FEFF, U+FFFD;
+}
+
+:root {
+  --body: 'Hanken Grotesk', Arial, 'Helvetica Neue', sans-serif;
+  --paper: #FAF7F3;
+  --cloud: #F2ECE5;
+  --line: #DAD2C8;
+  --ink: #1A1413;
+  --stone: #6F665C;
+  --red: #C01B2C;
+  --gut: clamp(22px, 3.2vw, 62px);
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 18px;
+  line-height: 1.62;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap { width: 100%; max-width: 720px; margin: 0 auto; padding: 0 var(--gut); }
+
+/* ── the top bar: the mark, and the two pages ───────────────────────────────────────────── */
+.top {
+  border-bottom: 1px solid var(--line);
+  padding: 18px 0;
+}
+.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+.brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: inherit; }
+.brand img { display: block; width: 34px; height: 34px; }
+.brand b { font-weight: 600; font-size: 19px; letter-spacing: -.01em; }
+.top nav { display: flex; gap: 20px; }
+.top nav a { color: var(--stone); text-decoration: none; font-size: 16px; }
+.top nav a:hover { color: var(--ink); }
+
+/* ── the language control, at the end of the bar where the act stands on the landing ─────── */
+/* These three pages run NO script at all, which is what makes «these pages put nothing on your
+   device» something a reader can check with the network panel open. So the control is a plain
+   <details>: it opens on a click, it closes on a second one, and it needs nothing else. */
+.plang-w { display: contents; }
+.top .wrap > *, .plang-w > * { flex: none; }
+.plang { position: relative; flex: none; }
+.plang-mini {
+  display: none; align-items: center; justify-content: center;
+  min-width: 38px; height: 40px; padding: 0 9px; border-radius: 999px;
+  border: 1px solid var(--line); background: #fff; color: var(--ink);
+  text-decoration: none; font: 600 13px/1 var(--body); letter-spacing: .02em;
+}
+.plang-mini:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.plang-s {
+  display: inline-flex; align-items: center; gap: 5px;
+  height: 44px; padding: 0 11px 0 14px; border-radius: 999px;
+  border: 1px solid var(--line); background: #fff; color: var(--ink);
+  font: 600 14.5px/1 var(--body); cursor: pointer; list-style: none; white-space: nowrap;
+}
+.plang-s::-webkit-details-marker { display: none; }
+.plang-s::marker { content: ''; }
+.plang-s:hover { border-color: var(--stone); }
+.plang-s:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.plang-v { width: 13px; height: 13px; display: block; transition: transform .22s ease; }
+.plang[open] .plang-v { transform: rotate(180deg); }
+.plang-m {
+  position: absolute; top: calc(100% + 9px); right: 0; z-index: 4;
+  min-width: 156px; padding: 6px; border-radius: 16px;
+  background: #fff; border: 1px solid var(--line);
+  box-shadow: 0 18px 44px rgba(26, 20, 19, .16);
+  display: grid; gap: 2px;
+}
+.plang-o {
+  display: flex; align-items: center; min-height: 40px; padding: 0 12px;
+  border-radius: 11px; color: var(--ink); text-decoration: none;
+  font-size: 15px; white-space: nowrap;
+}
+.plang-o:hover, .plang-o:focus-visible { background: var(--cloud); text-decoration: none; }
+.plang-o.is-on { font-weight: 600; background: var(--cloud); }
+@media (max-width: 420px) {
+  .top .wrap { gap: 10px; }
+  .top nav { gap: 14px; }
+  .plang-s { height: 40px; padding: 0 9px 0 12px; font-size: 13.5px; }
+}
+/* below 360 the bar is the mark, two links and the other language's two letters */
+@media (max-width: 359px) {
+  .top .wrap { gap: 8px; }
+  .top nav { gap: 11px; }
+  .top nav a { font-size: 15px; }
+  .plang { display: none; }
+  .plang-mini { display: inline-flex; }
+}
+@media (prefers-reduced-motion: reduce) { .plang-v { transition: none; } }
+
+/* ── the page ───────────────────────────────────────────────────────────────────────────── */
+main { padding: clamp(48px, 7vw, 96px) 0 clamp(64px, 8vw, 120px); }
+
+h1 {
+  margin: 0 0 20px;
+  font-size: clamp(44px, 7vw, 76px);
+  font-weight: 400;
+  letter-spacing: -.045em;
+  line-height: .98;
+}
+
+.lead { margin: 0 0 8px; font-size: clamp(20px, 2.2vw, 23px); line-height: 1.45; color: var(--ink); }
+.stamp { margin: 0 0 clamp(36px, 5vw, 60px); font-size: 15px; color: var(--stone); }
+
+h2 {
+  margin: clamp(40px, 5vw, 64px) 0 12px;
+  font-size: clamp(24px, 2.8vw, 32px);
+  font-weight: 500;
+  letter-spacing: -.025em;
+  line-height: 1.15;
+}
+
+h3 { margin: 28px 0 6px; font-size: 19px; font-weight: 600; letter-spacing: -.01em; }
+
+p { margin: 0 0 16px; }
+ul { margin: 0 0 16px; padding-left: 22px; }
+li { margin: 0 0 8px; }
+
+a { color: var(--red); text-decoration: underline; text-underline-offset: 3px; }
+a:hover { text-decoration-thickness: 2px; }
+
+/* ── the table of services ──────────────────────────────────────────────────────────────── */
+.grid { margin: 20px 0 8px; border-top: 1px solid var(--line); }
+.grid > div {
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  gap: 4px 24px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+}
+.grid b { font-weight: 600; }
+.grid span { color: var(--stone); font-size: 17px; }
+@media (max-width: 560px) {
+  .grid > div { grid-template-columns: 1fr; gap: 2px; }
+}
+
+/* ── the counsel note, visible while this is a draft ────────────────────────────────────── */
+.draft {
+  margin: 0 0 clamp(36px, 5vw, 56px);
+  padding: 14px 18px;
+  background: var(--cloud);
+  border-left: 3px solid var(--red);
+  font-size: 16px;
+  color: var(--stone);
+}
+
+/* ── the foot ───────────────────────────────────────────────────────────────────────────── */
+footer { border-top: 1px solid var(--line); background: var(--cloud); padding: 34px 0 44px; }
+footer p { margin: 0 0 10px; font-size: 15px; color: var(--stone); }
+footer nav { display: flex; flex-wrap: wrap; gap: 18px; margin: 0 0 18px; }
+footer nav a { color: var(--stone); text-decoration: none; font-size: 15px; }
+footer nav a:hover { color: var(--ink); text-decoration: underline; }

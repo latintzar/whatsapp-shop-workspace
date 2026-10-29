@@ -1,0 +1,445 @@
+/* ═══════════════════════════════════════════════════════════════════════════════════════════
+   peru/phone.css — THE HANDSET AND THE DESK FRAME
+   ═══════════════════════════════════════════════════════════════════════════════════════════
+
+   One law governs every phone on this page: the screen is a 390 × 844 document SCALED AS ONE
+   PIECE, exactly like a screenshot. The page's viewport never reflows what is inside a phone.
+   Peter's complaint about the page this replaces was that its phones changed ratio and
+   resolution with the viewport; this file is the answer to that complaint, so read the geometry
+   before changing a number.
+
+   THE HANDSET IS A REAL IPHONE — «Apple iPhone 15 Pro Max Black» by polyman, CC BY 4.0, the same
+   object the reference page uses (`peru/handset/model/`). `peru/handset/` holds it baked to
+   `front.webp` — 1170 × 1500 at 3×, transparent background and a PUNCHED SCREEN HOLE — plus
+   `turn-00…45.webp` for the whole 0° → 90° turn. A desk that can run WebGL swaps the plate for
+   the model itself once the reader starts to scroll, into the SAME box, from the same camera;
+   every other viewport keeps the bakes. Every number below comes from `peru/handset/handset.json`,
+   and each one is written here as a literal so the geometry is right in the FIRST frame, before
+   any fetch: a number that arrives late is a layout shift.
+
+   THE THREE BOXES, and why there are three:
+
+       .ph-body    THE LAYOUT BOX = the handset's own silhouette. `--ph-w` is its width and the
+                   ONE thing a layout ever sets. aspect 0.49081 — chosen so the screen slot below
+                   comes out at exactly 390 : 844.
+       .ph-stage   THE RENDER BOX = what the 3D module and the bake both draw into: aspect 0.78,
+                   with the handset sitting in the middle 58.1197 % of it so a quarter turn never
+                   clips. It hangs off `.ph-body` at fixed negative insets, so the render's
+                   handset lands EXACTLY on the layout box. It is also the container the live
+                   module mounts into, which is why every phone has one.
+       .ph-screen  THE GLASS = 390 × 844, positioned inside the stage at the render's own insets.
+
+   measured off front.webp, alpha ≥ 8, and identical to handset.json:
+       handset in box    left 20.9402 %  top 3.4000 %  width 58.1197 %  height 93.2000 %
+       glass in box      left 23.3125 %  top 4.9511 %  width 53.3750 %  height 90.0971 %
+       glass corner      13 % / 6.02 %  (a 50.7 px circle on the 390-wide document — the corner
+                         the model's own display mesh has, measured off a render of it alone)
+
+   so, expressed against `.ph-body`:
+       stage   left  -20.9402 / 58.1197 = -36.02944 %      width  100 / 58.1197 = 172.05870 %
+               top   -3.4 / 93.2        =  -3.64807 %      HEIGHT COMES FROM ITS OWN WIDTH
+       body    aspect 0.581197 × 1170 / (0.932 × 1500) = 680.0 / 1398.0 = 0.48641
+       scale   the glass is 0.53375 × 1.7205870 = 0.9183633 of `--ph-w`, so
+               --ph-s = --ph-w × 0.9183633 / 390 = --ph-w / 424.669
+
+   THE PLATE IS NEVER STRETCHED AND THE GLASS IS NEVER OFF-RATIO, and neither is a matter of
+   care — both are structural here:
+     · the stage carries `aspect-ratio: 1170 / 1500` and the plate is `width: 100%; height: auto`,
+       so the render's own pixels decide its height and no rounding of the body's box can squash
+       it. (Painted 532.1 × 698.6 where 532.1 × 682.2 was owed, a handset is 2.4 % too tall and
+       its hole no longer sits over the screen — which is exactly what was seen.)
+     · the glass carries `aspect-ratio: 390 / 844` and is anchored on the hole's CENTRE, which
+       `handset.json` puts at exactly 50 % / 50 % of the stage. Its height is therefore its width
+       × 844 / 390 to the last decimal, rather than 89.3526 % of a box whose own height came from
+       somewhere else — a 0.02 % disagreement that still leaves the corners short of the hole.
+
+   THE CSS HANDSET BELOW IS THE FALLBACK AND NOTHING MORE. It paints the rim, the contact shadow
+   and the glass in the same box, so the moment `front.webp` decodes it is covered pixel for
+   pixel and nothing moves. It is also what a reader sees if that one image ever fails.
+   ═══════════════════════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  /* the handset's silhouette ratio. It lives on the root because the journey's DOCK has to
+     reserve the same shape before a phone is ever in it. */
+  --ph-ar: 0.48641;
+}
+
+.ph {
+  --ph-w: 280px;                                    /* the ONE thing a layout sets */
+  --ph-s: calc(var(--ph-w) / 424.669);              /* CSS truth; peru.js refines it */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  margin: 0;
+  width: var(--ph-w);
+  max-width: 100%;
+  position: relative;
+}
+
+/* ── the handset ──────────────────────────────────────────────────────────────────────────── */
+
+/* THE RISE IS A REGISTERED CUSTOM PROPERTY. An unregistered one is a string and a transition on
+   it snaps; registered as a <length> the browser interpolates it. It INHERITS, because the
+   arrival sets it on `.ph` while the transform that reads it is on `.ph-body`. */
+@property --ph-ty { syntax: '<length>'; inherits: true; initial-value: 0px; }
+
+.ph-body {
+  position: relative;
+  width: var(--ph-w);
+  /* AN EXPLICIT HEIGHT, NOT AN ASPECT-RATIO. Body, stage and glass were three `aspect-ratio`
+     boxes nested in each other, and the first paint resolved that chain at two thirds of its
+     size before snapping out — the largest single layout shift on the page. A height computed
+     from the one number a layout sets depends on nothing and resolves in the first pass. */
+  height: calc(var(--ph-w) / 0.48641);
+  /* the device's own corner, measured off the render's own silhouette: a 112.75 px circle on
+     the 680 × 1398 px handset in front.webp. Expressed as a percentage pair of a box with equal
+     px/mm in both axes it IS that circle, which is why the contact shadow under the render hugs
+     the render's silhouette. */
+  border-radius: 16.581% / 8.065%;
+  /* Titanium, for the ~100 ms before front.webp decodes and for the day it 404s. The lightest
+     stop is #c9c2b9, NOT a near-white: on #FAF7F3 paper a near-white rim makes the left edge of
+     the phone disappear, which is exactly what it looked like the first time it was rendered. */
+  background: var(--ph-rim);
+  box-shadow:
+    /* the contact shadow — under the phone, not a halo around it */
+    0 calc(var(--ph-w) * .052) calc(var(--ph-w) * .105) rgba(26, 20, 19, .18),
+    0 calc(var(--ph-w) * .012) calc(var(--ph-w) * .028) rgba(26, 20, 19, .12);
+  transform: translateY(var(--ph-ty, 0px));
+  /* FLAT ON PURPOSE. The glass carries a `matrix3d` — a projective warp the live module solves
+     from the four corners it just projected. Inside a `preserve-3d` ancestor that matrix would
+     be composed with an inherited perspective and the glass would land somewhere else;
+     flattened, the warp is applied to the layer exactly as written. */
+  transform-style: flat;
+}
+
+.ph {
+  --ph-rim: linear-gradient(128deg,
+      #c9c2b9 0%, #a49d93 7%, #6f6960 19%, #494540 33%,
+      #635d55 48%, #948d83 62%, #565149 78%, #35322e 91%, #24221f 100%);
+}
+
+/* ── THE RENDER BOX ───────────────────────────────────────────────────────────────────────
+   Aspect 0.78, hung off the layout box at the insets derived above. Everything the render owns
+   lives in here — the plate, the glass, and (on the travelling phone) the live module's canvas
+   and its shadow — so plate and glass can never drift apart: they are siblings in one box that
+   the bake and the module both drew into. */
+.ph-stage {
+  position: absolute;
+  left: -36.02944%;
+  top: -3.64807%;
+  width: 172.05870%;
+  height: 107.29625%;             /* = (172.0587 / 0.78) ÷ (100 / 0.48641): the 0.78 box, exactly */
+  pointer-events: none;
+}
+
+/* the lit plate. Transparent where the glass is, so the screen shows through the hole rather
+   than being covered by it; inert, so the glass under it takes every event. */
+.ph-plate {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: auto;                   /* sized by width alone: it can never be squashed */
+  display: block;
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* ── the screen ───────────────────────────────────────────────────────────────────────────── */
+
+/* `overflow: hidden` + `border-radius` DOES NOT CLIP THE IFRAME. The iframe carries a transform,
+   which puts it on its own compositing layer, and a composited child ignores an ancestor's
+   rounded overflow — zoomed in on the bottom-left corner at 768 the demo's white sheet painted a
+   SQUARE corner over the bezel. `clip-path` is applied on the compositor, so it clips what
+   `overflow` cannot; the `overflow`/`border-radius` pair stays for the poster and for anything
+   that does not support it. Both radii are the render's own 13 % / 6.02 %, which is both the hole
+   that was actually punched and the corner the model's display mesh has — a radius SMALLER than
+   the hole leaves a notch of paper at each of the four corners. */
+.ph-screen {
+  position: absolute;
+  /* THE GLASS, IN FOUR PLAIN PERCENTAGES OF THE RENDER BOX.
+       left   23.3125   handset.json · front.inset.left
+       width  53.3750   100 − 2 × 23.3125
+       height 90.0970 = 53.3750 × (844/390) × 0.78   — the box is 0.78 wide-to-tall, so this is
+              the width expressed as a fraction of the HEIGHT, which makes the box exactly
+              390 : 844 rather than the 90.0971 the bake measured off an antialiased edge
+       top     4.9515 = (100 − 90.0970) / 2          — the hole's centre is at exactly 50 %
+     It was briefly written as `aspect-ratio` + `translateY(-50%)`, which is the same rectangle
+     and three chained aspect-ratios deep; the first paint resolved the chain differently and
+     the glass arrived at two thirds of its size before snapping out — 0.069 of layout shift at
+     390, all of it here. Four percentages depend on nothing. */
+  left: 23.3125%;
+  top: 4.9515%;
+  width: 53.3750%;
+  height: 90.0970%;
+  overflow: hidden;
+  border-radius: 13% / 6.02%;
+  clip-path: inset(0 round 13% / 6.02%);
+  background: #efeae2;                              /* the WhatsApp wallpaper's own paper */
+  isolation: isolate;
+  z-index: 2;
+  pointer-events: auto;
+}
+
+.ph-poster,
+.ph-frame {
+  position: absolute;
+  inset: 0;
+  display: block;
+  border: 0;
+}
+
+.ph-poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  z-index: 1;
+}
+
+/* A STATIC screen — `data-mode="static"` or a plain <img> child — is the same picture with no
+   machinery behind it, so it keeps the poster's rules and nothing else. */
+.ph-shot {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+.ph-frame {
+  width: 390px;
+  height: 844px;
+  transform-origin: 0 0;
+  transform: scale(var(--ph-s));
+  opacity: 0;
+  z-index: 2;
+  background: transparent;
+  color-scheme: light;
+}
+
+/* THE HAND-OFF IS A CUT. A cross-fade between the poster and the demo means that for a third of
+   a second the phone is showing BOTH — a bank list ghosting through a chat, and the whole
+   handset washed out because two half-opaque layers never add up to one. There is nothing to
+   fade anyway: the demo opens on the very conversation the poster is a photograph of. peru.js
+   waits two frames after `ready`, so the iframe has certainly painted, and then swaps in one
+   step; the poster goes to `visibility: hidden` so it cannot blend with anything ever again. */
+.ph.is-ready .ph-frame { opacity: 1; }
+.ph.is-ready .ph-poster { opacity: 0; visibility: hidden; }
+
+/* ── the island ───────────────────────────────────────────────────────────────────────────
+   It rides the GLASS, so it lives inside the 390 × 844 element and whatever moves the glass —
+   a scale, or the live module's homography — carries it along. 11 / 844 · 125 / 390 · 37 / 844. */
+
+.ph-island {
+  position: absolute;
+  top: 1.3033%;
+  left: 50%;
+  width: 32.0513%;
+  height: 4.3839%;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: #0b0b0c;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, .55);
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* ── THE TURNED FRAME ─────────────────────────────────────────────────────────────────────
+   `frame-turn`  the glass is placed by a homography peru.js writes each frame, in stage
+                 coordinates. The metal under it is a frame of the baked turn sequence, or —
+                 once `ph-live` lands — the model itself, rendered into a canvas in the same box.
+   `ph-live`     the WebGL handset is up and has drawn. The plate steps aside for it, in one
+                 step and with no transition: the canvas and `front.webp` are two renders of one
+                 scene, so at the pose it is holding there is nothing to see happen. A
+                 transition here would be a cross-fade between two identical pictures, which is
+                 400 ms of the page looking like it is loading. */
+.ph.ph-live .ph-plate { visibility: hidden; }
+
+/* `is-baked`    the handset is turned and there is no live model: the pose is drawn on
+                 `.ph-turn`, a canvas peru.js lays in the plate's own box, and the plate steps
+                 aside the same way it does for the live canvas. One step, no transition — the
+                 plate and pose 0 are the same render. */
+.ph-turn {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1170 / 1500;      /* the plate's own box */
+  display: block;
+  pointer-events: none;
+  z-index: 3;
+  visibility: hidden;
+}
+.ph.is-baked .ph-turn { visibility: visible; }
+.ph.is-baked .ph-plate { visibility: hidden; }
+/* WHILE THE HANDSET IS TURNED, THE RENDER IS THE ONLY HANDSET. `.ph-body` carries a titanium
+   gradient and a contact shadow as the ~100 ms stand-in before `front.webp` decodes; they sit in
+   the LAYOUT box, which does not turn, so the moment the plate swapped to a turned pose that
+   stand-in was left behind it as a great pale slab with a diagonal gradient across it — rendered
+   at 1440 and looked at, and it is what «the lighting is completely off» looks like from the
+   outside. The turn poses carry their own body and their own shadow, so the stand-in steps away
+   for exactly as long as one of them is on the plate. */
+.ph.frame-turn .ph-body { background: none; box-shadow: none; }
+
+.ph.frame-turn .ph-screen {
+  left: 0;
+  top: 0;
+  width: 390px;
+  height: 844px;
+  transform: none;                /* the matrix arrives from JS, inline, every frame */
+  transform-origin: 0 0;
+}
+.ph.frame-turn .ph-frame { transform: none; }
+
+/* past ~60° a flat frame of the glass is a lie and a live iframe at a grazing angle is a smear;
+   the handset shows metal there, which is what the render already draws */
+/* THE GLASS GOES DARK, IT NEVER GOES MISSING. Hiding the whole screen left the plate's punched hole
+   open, and at a steep angle the band behind showed straight through the handset (Peter, looking at
+   it: «in some angles the thing on the screen disappears»). The screen keeps its place and its
+   homography and turns into black glass; only what plays on it is hidden. */
+.ph.frame-turn .ph-screen { background: #08080a; }
+.ph.is-edge .ph-screen > * { visibility: hidden; }
+.ph.is-void .ph-screen { visibility: hidden; }
+
+/* ── the caption ──────────────────────────────────────────────────────────────────────────── */
+
+.ph-note {
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--pe-stone, #6f665c);
+  letter-spacing: .005em;
+  text-align: center;
+  margin: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════════════════
+   THE LAPTOP — drawn, the way the handset is rendered: one object, scaled whole.
+
+   Every dimension is a percentage of the figure's OWN WIDTH, so the object is the same drawing
+   at 300 px and at 900 px and there is nothing in it to go soft on a 3× screen. `--lap-w` is
+   the only handle a layout has.
+
+   THE SCREEN'S BOX IS 16 : 10, which is the aspect of the capture that goes in it (1440 × 900
+   of the running prototype). A frame drawn to one shape around a picture of another is the
+   squash the handset's plate had; the screen carries `aspect-ratio` and the picture fills it.
+   ═══════════════════════════════════════════════════════════════════════════════════════════ */
+
+.lap {
+  --lap-w: 100%;
+  display: block;
+  width: var(--lap-w);
+  max-width: 100%;
+  margin: 0;
+  position: relative;
+}
+
+/* the lid: a thin dark bezel, a little deeper under the screen than over it, the way a real one
+   carries its chin */
+.lap-lid {
+  position: relative;
+  padding: 1.5% 1.35% 2.4%;
+  border-radius: 1.5% / 2.4%;
+  background: linear-gradient(168deg, #423e39 0%, #26231f 38%, #1a1816 72%, #232120 100%);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, .09),
+    inset 0 1px 0 rgba(255, 255, 255, .14),
+    0 26px 54px rgba(26, 20, 19, .17),
+    0 5px 14px rgba(26, 20, 19, .10);
+}
+
+/* the camera: one dot in the top bezel, with the faint ring a lens has */
+.lap-cam {
+  position: absolute;
+  top: .58%;
+  left: 50%;
+  width: .52%;
+  aspect-ratio: 1;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: radial-gradient(circle at 38% 32%, #4b5561 0 26%, #16181b 62%, #08090a 100%);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, .13);
+}
+
+.lap-scr {
+  position: relative;
+  aspect-ratio: 16 / 10;          /* the capture's own shape, never a frame's guess */
+  overflow: hidden;
+  border-radius: .45%;
+  background: #fff;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .28);
+}
+.lap-scr img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* The capture is 16 : 10 and this box is 16 : 10, so `cover` is an identity and this line is
+     inert — it is here so that a plate of any OTHER shape loses its outer edge cleanly instead
+     of being cut down the middle of the interface. */
+  object-position: 100% 0;
+}
+
+/* the base: the lip of the deck seen head-on, a shade wider than the lid, with the thumb notch
+   cut out of its front edge */
+.lap-base {
+  position: relative;
+  height: 0;
+  padding-bottom: 2.7%;            /* a MacBook Air's deck is about 0.8 cm of its 30.4 cm width */
+  margin: 0 -1.9%;
+  border-radius: 0 0 1.6% 1.6% / 0 0 100% 100%;
+  background: linear-gradient(#cdc7be 0%, #a49e95 26%, #7b756d 62%, #4e4a45 100%);
+  box-shadow: 0 16px 30px rgba(26, 20, 19, .18), 0 2px 6px rgba(26, 20, 19, .12);
+}
+.lap-base::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 13%;
+  height: 58%;
+  transform: translateX(-50%);
+  border-radius: 0 0 40% 40% / 0 0 100% 100%;
+  background: rgba(26, 20, 19, .22);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════════════════
+   THE ARRIVAL — a rise and nothing else. Armed by peru.js (`.ph-armed`), released one phone at a
+   time (`.is-here`), so nothing moves with the script off.
+
+   IT USED TO TURN A FEW DEGREES, and the turn had to go. The glass is an iframe, which the
+   browser composites on its own layer; rotate the handset in 3D and the plate is rasterised by
+   the page while the glass is transformed by the compositor, and the two round differently —
+   the screen slides a pixel or two out of its hole for the length of the animation, which is
+   precisely the misalignment the founder saw. A `translateY` is applied identically to both, so
+   the render and the demo inside it move as one object. (It is also why a rect measured DURING
+   the old arrival was never the rect: a rotated box reports the bounding box of its projection,
+   which is taller, wider and offset from the thing itself.)
+   ═══════════════════════════════════════════════════════════════════════════════════════════ */
+
+.ph.ph-armed { --ph-ty: 20px; }
+.ph.ph-armed .ph-body {
+  opacity: 0;
+  transition:
+    --ph-ty .9s cubic-bezier(.16, 1, .3, 1),
+    transform .9s cubic-bezier(.16, 1, .3, 1),
+    opacity .55s ease-out;
+}
+.ph.ph-armed.is-here { --ph-ty: 0px; }
+.ph.ph-armed.is-here .ph-body { opacity: 1; }
+
+/* THE TRAVELLING HANDSET is driven frame by frame from the scroll: a transition here would fight
+   it, so it never gets one. The one transform it keeps is `--ph-rot`, the few degrees of roll a
+   phone-width viewport gets in place of the baked quarter turn. It is applied HERE, on the body,
+   because the body carries the plate and the glass together — the render and the demo inside it
+   roll as one object, which is the whole reason the old 3D arrival had to go. */
+.ph-flying .ph-body { transition: none !important; transform: rotate(var(--ph-rot, 0deg)) !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  .ph.ph-armed { --ph-ty: 0px; }
+  .ph.ph-armed .ph-body { opacity: 1; transition: none; }
+}

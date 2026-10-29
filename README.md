@@ -1,15 +1,20 @@
 # Rocoto Peru
 
-Rocoto Peru is a mobile AI-native ERP matching bodegas’ Yape/Plin payments to WhatsApp orders.
+Rocoto Peru is a phone-first workspace for bodega owners who buy from suppliers, sell to neighbours and manage money through WhatsApp. It brings their shop’s balance, purchases and customer payments into one place.
 
-[Website](https://atelierneyra.com/peru) · [Open app](https://preview.atelierneyra.com/?project=shop-workspace) · [Documentation](https://docs.atelierneyra.com/shop-workspace/overview/)
-
-The original product brings WhatsApp conversations, shop records, stock, preparation and collections into a phone-first workflow. Payment requests retain their own order identity while transfers reach the merchant’s selected mobile-wallet destination.
-
+[Website](https://atelierneyra.com/peru) · [Open app](https://preview.atelierneyra.com/apps/peru/bodega-pay-later.html) · [Documentation](https://docs.atelierneyra.com/shop-workspace/overview/)
 
 ![Rocoto Peru shop workspace shown in a phone frame](docs/assets/readme-hero.jpg)
 
 [Phone artwork credit](docs/assets/handset-CREDITS.md)
+
+## Money and purchases
+
+- **See the shop’s money.** Money brings together sample receipts, customer debts and supplier obligations, with a place for the bank balance once an account is connected.
+- **Work from WhatsApp.** Conversations become proposed sales and purchases, with the merchant reviewing their meaning and preparation.
+- **Explore flexible payment.** Transaction history supplies transparent indicators and an interface for purchase, payment and credit exploration. A lender partnership, validated underwriting and funded credit remain future work.
+
+The preview uses an authored sample shop. The source includes the browser workspace, durable collection service, provider integrations and Android app; [capability status](docs/status.md) distinguishes working software from external acceptance.
 
 ## Run
 

@@ -1,5 +1,5 @@
 {
-  "tree_sha256": "014196db8a96c8add79ae9a12b37aa17898d030e3cb2e033f168910f35dc19da",
+  "tree_sha256": "027f0ff6cb5503c0654260ea963984f537d7a3f5507b57f25c082b43a7b63c28",
   "definition": "sorted relative path + NUL + file SHA256 + newline; excludes this manifest and ignored/generated state",
   "files": [
     {
@@ -39,8 +39,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 5419,
-      "sha256": "a5149a1adec6e98f5f2c24f94ca7cc0b3287dfd74d4e7f3bc1d5142d9beafd43"
+      "bytes": 6102,
+      "sha256": "d3d99328cec5d17295bd8df90eb4f2a080f48cd9d16d73b0edd3998b98f9090d"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -10971,6 +10971,11 @@
       "path": "docs/first-result.md",
       "bytes": 2908,
       "sha256": "d01bb9fd35b6b1a32754becaf6b35635f4269125f8ebb524d1f02625d807aaf2"
+    },
+    {
+      "path": "docs/product.md",
+      "bytes": 1053,
+      "sha256": "7a9f0c14c9ad339e11f96be234fe2a89ba1516d6fd9f921a414f853253d45ac9"
     },
     {
       "path": "docs/provenance.md",

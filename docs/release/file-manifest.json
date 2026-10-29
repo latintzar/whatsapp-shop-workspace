@@ -1,5 +1,5 @@
 {
-  "tree_sha256": "7d086f35926b098706046ffa84b7d7602660ccf3d2ce7fbb6ef79a905f03491c",
+  "tree_sha256": "9455029d6dd2e3111b4eb4bed323432a4a839ebb38441958f1295eea208ca6a0",
   "definition": "sorted relative path + NUL + file SHA256 + newline; excludes this manifest and ignored/generated state",
   "files": [
     {
@@ -11464,8 +11464,8 @@
     },
     {
       "path": "website/atelier/peru/es/index.html",
-      "bytes": 54663,
-      "sha256": "b2ef6fd1c84f744a4d426287a131ee12d57e5487db78bbbdcc58338354447084"
+      "bytes": 54915,
+      "sha256": "15aa56b79e2324e2cc0d3b3fd48dd0ce4f6a5eddb80b0216f111f4c088c7c599"
     },
     {
       "path": "website/atelier/peru/github.webp",
@@ -11474,8 +11474,8 @@
     },
     {
       "path": "website/atelier/peru/index.html",
-      "bytes": 53819,
-      "sha256": "bc27db58969beb0e65b64157710344d2cea27a5e61a48ca1a85b3f6aad7c34ce"
+      "bytes": 54071,
+      "sha256": "0a6fea00496ca927b1def7c1c74da906502ca89b28e53236397c920d8e4e9c4f"
     },
     {
       "path": "website/atelier/peru/native-nav/LUCIDE-LICENSE",

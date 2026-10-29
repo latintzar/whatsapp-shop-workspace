@@ -1,5 +1,5 @@
 {
-  "tree_sha256": "027f0ff6cb5503c0654260ea963984f537d7a3f5507b57f25c082b43a7b63c28",
+  "tree_sha256": "d19656adc16ea263c29f04231fad5760cf6f4d9024e65886f331394114ad34c7",
   "definition": "sorted relative path + NUL + file SHA256 + newline; excludes this manifest and ignored/generated state",
   "files": [
     {
@@ -9,8 +9,8 @@
     },
     {
       "path": ".github/workflows/offline.yml",
-      "bytes": 642,
-      "sha256": "db629e0cc6fa05599cab399959907b6edf68b623c5b5654d04e69abeebeb05c4"
+      "bytes": 838,
+      "sha256": "9fea8cffad8e637a6aacedd7d37c3a975f4085a2a49f5dc654261255be433dd5"
     },
     {
       "path": ".gitignore",
@@ -6984,8 +6984,8 @@
     },
     {
       "path": "app/src/prototypes/bodega-pay-later/areas/admin/connections.tsx",
-      "bytes": 8770,
-      "sha256": "a1a7cf26537cfc57d5808c42a3b8ce35171911c6c9b18e8e89eb1673c0bed370"
+      "bytes": 8792,
+      "sha256": "460e2529a79d26f9b22348b4a6f3167b4a12a4e0e8bca03dd1b54583919a0798"
     },
     {
       "path": "app/src/prototypes/bodega-pay-later/areas/admin/data.tsx",
@@ -7209,8 +7209,8 @@
     },
     {
       "path": "app/src/prototypes/bodega-pay-later/money-api.ts",
-      "bytes": 22886,
-      "sha256": "f4ee3655d0bb2b6e4b7799292746eb0a9b8888b00a29817639854d8e2549ba3c"
+      "bytes": 23036,
+      "sha256": "e89be173ef7bbb766b4d19e2c6e2b9c7770f744a5a3db4cbe2a210aea824221f"
     },
     {
       "path": "app/src/prototypes/bodega-pay-later/money-credit.tsx",
@@ -7399,8 +7399,8 @@
     },
     {
       "path": "app/src/prototypes/bodega-pay-later/source/index.ts",
-      "bytes": 19497,
-      "sha256": "4d6495da0e04d24e2fa129d2572c80d70ef9d8bcac3493b35808c03624011485"
+      "bytes": 19598,
+      "sha256": "40dc234e0aa1a15f5876546e2b0cbd70879b405c5890c9999aeb828ceb44bc6e"
     },
     {
       "path": "app/src/prototypes/bodega-pay-later/stage.ts",
@@ -7489,8 +7489,8 @@
     },
     {
       "path": "app/src/prototypes/bodega-pay-later/start/session.ts",
-      "bytes": 16586,
-      "sha256": "7a3d95b1be7817cecbb1ec6f2cffb5420d161c29d5b415c36649e4011700a3f1"
+      "bytes": 16659,
+      "sha256": "d4083de3d74d93ae8b8031e82d60963b25cbb8a78e4fea86e56e306f4cf18972"
     },
     {
       "path": "app/src/prototypes/bodega-pay-later/start/share.ts",
@@ -7859,8 +7859,8 @@
     },
     {
       "path": "app/src/prototypes/cedar/cedar-channel-api.ts",
-      "bytes": 7206,
-      "sha256": "1edc821d9cc1c8e109d3e17d2995db0c51e0d3038571e5c5ccdb9001ee104475"
+      "bytes": 7309,
+      "sha256": "938ffefa4b0f6b2a358e03e763ae68124d8c780e5db672cd3f40a7cc1fb29e5f"
     },
     {
       "path": "app/src/prototypes/cedar/cedar-onboarding.tsx",
@@ -7964,8 +7964,8 @@
     },
     {
       "path": "app/src/prototypes/cedar/connections/api.ts",
-      "bytes": 2244,
-      "sha256": "186921a5a50099987f2f743a0bec4550674aba0bcbba01da4e8641304c1d1b30"
+      "bytes": 2308,
+      "sha256": "d59bb6ed6c3e99269d5f43f15a44060fedf33b40bf4f5f53c77ce68edc39da7b"
     },
     {
       "path": "app/src/prototypes/cedar/connections/app.tsx",
@@ -8389,8 +8389,8 @@
     },
     {
       "path": "app/src/prototypes/cedar/money-api.ts",
-      "bytes": 25495,
-      "sha256": "0932e3bf640a015ab78a1af637ab8584530c215f4aa8b514e71e4627f8780a03"
+      "bytes": 25638,
+      "sha256": "5ab658f02231f3fefa21db3a7bf7f53a2176a2e46cc740b8307a81ad9749e9a6"
     },
     {
       "path": "app/src/prototypes/cedar/money-bank-activity.tsx",
@@ -8404,8 +8404,8 @@
     },
     {
       "path": "app/src/prototypes/cedar/money-bank-capability.ts",
-      "bytes": 10740,
-      "sha256": "a9032f052eb8ef612a209effad93c40dab7afce86701158c7d48f706c3d5f3a9"
+      "bytes": 10748,
+      "sha256": "72a0eb054cfee10c992bde5755793d578950b5eb3348335509a219eb610f3d9b"
     },
     {
       "path": "app/src/prototypes/cedar/money-credit.tsx",
@@ -8439,8 +8439,8 @@
     },
     {
       "path": "app/src/prototypes/cedar/money-overview.tsx",
-      "bytes": 45975,
-      "sha256": "469b77568043d8e9a169155d3083c634e75c934ae939ed1c2c0e26414389bd71"
+      "bytes": 45987,
+      "sha256": "7165c4bd608192a8a555691b4cada5b43f91e4c6b7bf7ae4dd9241aaae207461"
     },
     {
       "path": "app/src/prototypes/cedar/money-projections.ts",
@@ -8824,8 +8824,8 @@
     },
     {
       "path": "app/src/prototypes/cedar/runtime-client.ts",
-      "bytes": 18999,
-      "sha256": "76c3937ea3e516bc058acfcac83edf7ac7c933b1e7617d69d6744cb6622f8c9f"
+      "bytes": 19102,
+      "sha256": "ef1e9b7dd339eb1bce276190965c85a7100d921fb58f5326ffef3f44a4293f58"
     },
     {
       "path": "app/src/prototypes/cedar/sale.ts",
@@ -9249,8 +9249,8 @@
     },
     {
       "path": "app/src/prototypes/cedar/workspace-capabilities.ts",
-      "bytes": 7228,
-      "sha256": "e447736f54a9bfc6941591d3e77e9352ddb34d5e8c870b042bd986b42ee1a789"
+      "bytes": 7350,
+      "sha256": "16654b771415eccebfdeb8071f3c3e7372e2f54ae6817ae2656e99fbd803fbe9"
     },
     {
       "path": "app/src/prototypes/cedar/workspace-reset.ts",
@@ -9359,8 +9359,8 @@
     },
     {
       "path": "app/src/prototypes/copper/runtime/providers/sample_bank.py",
-      "bytes": 11148,
-      "sha256": "578eb555aa797f559e05a3937954a42bd119808d91a3dea4e2fe09938878baf7"
+      "bytes": 11258,
+      "sha256": "087263e60e6c010d3d8dcd4cd226e7bac01f0057f409cca08528a08e5610419c"
     },
     {
       "path": "app/src/prototypes/copper/runtime/sample_bank_v1.json",
@@ -10764,8 +10764,8 @@
     },
     {
       "path": "app/tools/build-constants.mjs",
-      "bytes": 1810,
-      "sha256": "2468cd424b5001b7a53e6de5b068d491b6b8d67980dc41ba97ecdc293900774b"
+      "bytes": 1893,
+      "sha256": "db06e1e293988930cd8749ce01d305e5dd4db061596f50a5a5cd20367fb02f09"
     },
     {
       "path": "app/tools/build-map-tiles.py",
@@ -10874,8 +10874,8 @@
     },
     {
       "path": "app/vite.config.ts",
-      "bytes": 737,
-      "sha256": "b5e49927c62078710681e72046974d3f8c4fdf458ab95bf5b4d1fdc6cb16b38d"
+      "bytes": 808,
+      "sha256": "d79dfd010f8cd37ba326afa8c36553a6ce4b01331c0129cf6a8ad1ac743f04b3"
     },
     {
       "path": "docs/PRODUCT-MAP.md",

@@ -1,5 +1,5 @@
 {
-  "tree_sha256": "da2b9a0da15480fa944ab9fdea4ac08b40aa45bd42c88fd12eff328693a4c5c0",
+  "tree_sha256": "3c80c9eb2776afd560683980ec0a11562881b338a5c52ddbe7c8c697329b7ac8",
   "definition": "sorted relative path + NUL + file SHA256 + newline; excludes this manifest and ignored/generated state",
   "files": [
     {
@@ -249,8 +249,8 @@
     },
     {
       "path": "app/bodega-pay-later.html",
-      "bytes": 1210,
-      "sha256": "39d0b0f03e23a87076c06ad6bd56df44100f51aba14c6ea6596b420d53328a5c"
+      "bytes": 1358,
+      "sha256": "b06d69e674bdaa42c6316a242adc6a6b2164beeb093b36e91da15dbe1bd4f3a3"
     },
     {
       "path": "app/capacitor.config.ts",
@@ -2751,6 +2751,26 @@
       "path": "app/public/map/9/260/192.png",
       "bytes": 126,
       "sha256": "88d7c2f7e249985b46d9d01c04e0e57aaee9675f9db607f555a03182b581e971"
+    },
+    {
+      "path": "app/public/native-nav/LICENSE",
+      "bytes": 1035,
+      "sha256": "f661a22e8dd88dc1b4c165604182cdbbb5011cce21ab581e5e4e2c8af1bfee7c"
+    },
+    {
+      "path": "app/public/native-nav/atelier-inset.css",
+      "bytes": 82,
+      "sha256": "40b86231b9515361092d366c9f49bc737b10339117e09bd563e3bae05de9f79e"
+    },
+    {
+      "path": "app/public/native-nav/atelier-nav.css",
+      "bytes": 2759,
+      "sha256": "b767afa7e70d94a7d6788e1cb9194a82de894aa85c12353fb97d8f3342727151"
+    },
+    {
+      "path": "app/public/native-nav/atelier-nav.js",
+      "bytes": 10421,
+      "sha256": "b2e74e9ebb8e8d6f9e5acbdac9ed47bad8637224b0120f12bf4556c46486d2be"
     },
     {
       "path": "app/public/paintings/abadejo-lomos.webp",
@@ -8313,6 +8333,16 @@
       "sha256": "23a798925dd66a7e85d33739ebc5fe23f845455674e28a02229d07bda307bee3"
     },
     {
+      "path": "app/src/prototypes/cedar/guest-preview.ts",
+      "bytes": 445,
+      "sha256": "5c639ca734d0e437aae8a2c8db194345865b6db43d12e1ecb876952197443d37"
+    },
+    {
+      "path": "app/src/prototypes/cedar/guest-storage.mjs",
+      "bytes": 2730,
+      "sha256": "45b3e7314d77f721b997d4e46bbfb20536183410ed450b19b1ebf3fde3ff20d3"
+    },
+    {
       "path": "app/src/prototypes/cedar/inbox.tsx",
       "bytes": 36915,
       "sha256": "867233cf5b3d37a63c57dc92105c95d9c949eb44f00a9668562172e379f973dd"
@@ -9361,6 +9391,11 @@
       "path": "app/src/prototypes/copper/runtime/providers/sample_bank.py",
       "bytes": 11258,
       "sha256": "087263e60e6c010d3d8dcd4cd226e7bac01f0057f409cca08528a08e5610419c"
+    },
+    {
+      "path": "app/src/prototypes/copper/runtime/sample_bank_bodega_guest.json",
+      "bytes": 1446,
+      "sha256": "a4e8591214fb3847437cac2638922ece1d7ba6e25dbcdaca5021ff45938f023c"
     },
     {
       "path": "app/src/prototypes/copper/runtime/sample_bank_v1.json",
@@ -10773,6 +10808,11 @@
       "sha256": "5fd96baf8a22ee4275fd35d2594a510c3434610df193db2cf3a2741e26603df8"
     },
     {
+      "path": "app/tools/guest-assets.mjs",
+      "bytes": 3253,
+      "sha256": "dae3910baeac53efad2460fd6b4cf70b155f48a9cbc88bb49adcdf8ca31fdb65"
+    },
+    {
       "path": "app/tools/test-bodega-connection-experiment.mjs",
       "bytes": 4439,
       "sha256": "d67c6148c0cb516a7228620f19481b91fe72582a310a29430c597171ff311695"
@@ -10908,6 +10948,11 @@
       "sha256": "8171af18ec6bde9fa099c6e2e7fd35e1392493189a29b954c79bcb1a053e2d18"
     },
     {
+      "path": "docs/assets/readme-hero.jpg",
+      "bytes": 279283,
+      "sha256": "8d7f129cee38b27a3fd29bed134a41079e1bafac5d27f1f13aa9247fa4557582"
+    },
+    {
       "path": "docs/assets/shop-prep-phone.png",
       "bytes": 54439,
       "sha256": "caf7ee8d18552fe8a514ea31cba84f33fc8578e36c7406bc6eb213ccb9388496"
@@ -10981,6 +11026,11 @@
       "path": "docs/first-result.md",
       "bytes": 2908,
       "sha256": "d01bb9fd35b6b1a32754becaf6b35635f4269125f8ebb524d1f02625d807aaf2"
+    },
+    {
+      "path": "docs/guest-preview.md",
+      "bytes": 2281,
+      "sha256": "f1a3be3ad9cc521d1a288816fb31329b1f5e0fdc8ef259ab9053af7bea22a09b"
     },
     {
       "path": "docs/product.md",
@@ -11363,6 +11413,11 @@
       "sha256": "c661912e78042fbfd2e5956427fd2eea5472b9689fa21626bb7e0d6c38e8cd79"
     },
     {
+      "path": "tools/guest_preview.py",
+      "bytes": 9773,
+      "sha256": "06d922e7fef53249219cd7e96ef3029edb1fedd1dbc0dc07e9084ad369eedef5"
+    },
+    {
       "path": "tools/offline/sitecustomize.py",
       "bytes": 1012,
       "sha256": "8758ec33175dd66ad2d952570af8a26279f2b85f893940d9cc64f1a82cc0223a"
@@ -11378,6 +11433,11 @@
       "sha256": "35639edbeb5d4d9f809bc0df7ec188bcf77eb5923f6a1d643790cd6cb5f92c0e"
     },
     {
+      "path": "tools/tests/test_guest_preview.py",
+      "bytes": 2916,
+      "sha256": "50e537da704891401ac327d332a1dd180bc832ab46b1e3b48f304ca010c7b129"
+    },
+    {
       "path": "tools/verify.py",
       "bytes": 2235,
       "sha256": "4b176236266a128120c500092b0d38bf3ea063c77f6e109ace2c672d02e30740"
@@ -11386,6 +11446,1611 @@
       "path": "website/README.md",
       "bytes": 1442,
       "sha256": "27b47a7b5e7448a210f3d1ad1fcea1474742fdc7506126f99015ac9b87ee7eaf"
+    },
+    {
+      "path": "website/atelier/README.md",
+      "bytes": 1539,
+      "sha256": "6cdf91cf7a602d10c3140a57568d598a1b2b31c7387eec487b2fcaf638d307cc"
+    },
+    {
+      "path": "website/atelier/peru/atelier-site.css",
+      "bytes": 263,
+      "sha256": "e9d7df01050dc3185e9aa23f1d442511ed5509829a3909c1521d8fc484e47088"
+    },
+    {
+      "path": "website/atelier/peru/es/index.html",
+      "bytes": 54714,
+      "sha256": "e72c1ceb0ea1188cc776f36f81f804afb8419e4400df6d274f370a9886e793c1"
+    },
+    {
+      "path": "website/atelier/peru/github.webp",
+      "bytes": 1354,
+      "sha256": "38273b3f6a241a75a398e5147dd0b6311b979d19f5dc1f8725cf8795010c4883"
+    },
+    {
+      "path": "website/atelier/peru/index.html",
+      "bytes": 53900,
+      "sha256": "ae96b0d1f774c4ab49df857be96af32f18c15424d140c3f1313ec8f089226d30"
+    },
+    {
+      "path": "website/atelier/peru/native-nav/LUCIDE-LICENSE",
+      "bytes": 3208,
+      "sha256": "b495047bd93a9b06913511076f504daba17d5bbeb3e0650f3bb53a4220329c57"
+    },
+    {
+      "path": "website/atelier/peru/native-nav/atelier-nav.css",
+      "bytes": 2759,
+      "sha256": "b767afa7e70d94a7d6788e1cb9194a82de894aa85c12353fb97d8f3342727151"
+    },
+    {
+      "path": "website/atelier/peru/native-nav/atelier-nav.js",
+      "bytes": 10421,
+      "sha256": "b2e74e9ebb8e8d6f9e5acbdac9ed47bad8637224b0120f12bf4556c46486d2be"
+    },
+    {
+      "path": "website/atelier/peru/original-brand/face-blink-dark.gif",
+      "bytes": 121504,
+      "sha256": "c11fe2e26048b3c2bac1c8f21e2bafeea6a8c52fca3674fe25802addd5be1d32"
+    },
+    {
+      "path": "website/atelier/peru/original-brand/face-blink-light.gif",
+      "bytes": 114524,
+      "sha256": "4608569871c16804b40e207b86399fa1440f011b0994bcfb514971f6ab21bb11"
+    },
+    {
+      "path": "website/atelier/peru/original-brand/face-blink-transparent.gif",
+      "bytes": 115102,
+      "sha256": "71c8f80b41312fabca30fab8254d4e20c647c9b3d5927c2f51eb78fa03e1d2c2"
+    },
+    {
+      "path": "website/atelier/peru/original-brand/face-closed-dark.png",
+      "bytes": 44086,
+      "sha256": "0229600a6f061cdbffe778cb38ff732b9bd224066101f9f07b64450747bace46"
+    },
+    {
+      "path": "website/atelier/peru/original-brand/face-closed.png",
+      "bytes": 36170,
+      "sha256": "689a8fdfb728b5303574fc3ffea67fbac31794e1187e880aaa47ed8073a3e472"
+    },
+    {
+      "path": "website/atelier/peru/original-brand/face-closed.svg",
+      "bytes": 4460,
+      "sha256": "fa9aa65dc5f42db5e7ab14bfcb9ae5aee5a4f9b1ed351253da2c52accb48838c"
+    },
+    {
+      "path": "website/atelier/peru/original-brand/face-open-dark.png",
+      "bytes": 25979,
+      "sha256": "cd04cd27d89e2e6488a91ef4f2f5cecabadbc6661fa2ec440dd06d1d2545a35e"
+    },
+    {
+      "path": "website/atelier/peru/original-brand/face-open.png",
+      "bytes": 35144,
+      "sha256": "720375a0c84fbcc0d2a7a904801ca6ec71f23db675cfcbd123b39d4fca5e30be"
+    },
+    {
+      "path": "website/atelier/peru/original-brand/face-open.svg",
+      "bytes": 4194,
+      "sha256": "5853eac27b281e7cba519cb82ae0e3005bab843cdf48345c49d1171a2f65c5e7"
+    },
+    {
+      "path": "website/atelier/peru/original-brand/favicon-16-closed-dark.png",
+      "bytes": 629,
+      "sha256": "8da86e7cfba0ebbeb4f93e6e8249937fd428776dc6ca819550d56656bd6d4f88"
+    },
+    {
+      "path": "website/atelier/peru/original-brand/favicon-16-closed.png",
+      "bytes": 500,
+      "sha256": "dcadadb7900e3d57c9e15e8f93f77121c88b088cb6bdadeb9aeadbe997252d7b"
+    },
+    {
+      "path": "website/atelier/peru/original-brand/favicon-16-dark.png",
+      "bytes": 655,
+      "sha256": "32b485335989c919d8ccd8d216d990c281ae2ce9dfc2a2190b9325fe0c6ec4ca"
+    },
+    {
+      "path": "website/atelier/peru/original-brand/favicon-16.png",
+      "bytes": 519,
+      "sha256": "42b17d6d53cf08c7bd9e6328c4132f75c678bda4e17953336e79dff83dc153c4"
+    },
+    {
+      "path": "website/atelier/peru/original-brand/favicon-180-closed-dark.png",
+      "bytes": 10824,
+      "sha256": "bfa5c3c4fa0649974ab3540a26393d7b52769fa4794c320358d3860672078bf7"
+    },
+    {
+      "path": "website/atelier/peru/original-brand/favicon-180-closed.png",
+      "bytes": 14783,
+      "sha256": "9d728cc6188d9cc4556a3568605e0f6bc80bf788b6ee9f22bfb0652acefc6bc5"
+    },
+    {
+      "path": "website/atelier/peru/original-brand/favicon-180-dark.png",
+      "bytes": 10895,
+      "sha256": "03a6939fdd7f8f50c9bf2cec39c0fe3167a198d13021643ddf6b5120cabba15b"
+    },
+    {
+      "path": "website/atelier/peru/original-brand/favicon-180.png",
+      "bytes": 15151,
+      "sha256": "13f826be5b4695abb95a785b4155029c13cdd2c207be9b8c0b827ac453e64964"
+    },
+    {
+      "path": "website/atelier/peru/original-brand/favicon-32-closed-dark.png",
+      "bytes": 1241,
+      "sha256": "3dc2dec69337fd366f7fa0ec70845e00946e2091cac67748720fd3005faf6afa"
+    },
+    {
+      "path": "website/atelier/peru/original-brand/favicon-32-closed.png",
+      "bytes": 1013,
+      "sha256": "fb524e05d3a666bc534ef3d8302f5192bee9e98be6b9da500c17f3900fb04024"
+    },
+    {
+      "path": "website/atelier/peru/original-brand/favicon-32-dark.png",
+      "bytes": 1254,
+      "sha256": "136eef1c75b311cae1bf6d6ab78d70798e47cdb3e78b7c5ce70a064ba8f28cbc"
+    },
+    {
+      "path": "website/atelier/peru/original-brand/favicon-32.png",
+      "bytes": 994,
+      "sha256": "e3682e8e391c908baf4a1d8325a810652443e42663ffdccae1010ff0cf4ffb0d"
+    },
+    {
+      "path": "website/atelier/peru/original-brand/favicon-48-closed-dark.png",
+      "bytes": 1839,
+      "sha256": "7f6ea544ef1e2c9d275f0bccf78950f9630649fa836d875668649c2867027165"
+    },
+    {
+      "path": "website/atelier/peru/original-brand/favicon-48-closed.png",
+      "bytes": 1578,
+      "sha256": "10a72ddb4d5e278644d9a99dd017839edc48de15e28cdb20d90245be8f8977a9"
+    },
+    {
+      "path": "website/atelier/peru/original-brand/favicon-48-dark.png",
+      "bytes": 1866,
+      "sha256": "3de4e23f2ff8e5ee865f0f4983355b6b4d15c7df2aceb9aade381200b1a00fab"
+    },
+    {
+      "path": "website/atelier/peru/original-brand/favicon-48.png",
+      "bytes": 1597,
+      "sha256": "d979646246a5d4e0342df7f6e0e6bb235c9f6c4fcf6028e2a645146d8d6dd70d"
+    },
+    {
+      "path": "website/atelier/peru/original-brand/favicon-512-dark.png",
+      "bytes": 25979,
+      "sha256": "e3f30659baf9f35e4777b1942dbca4e08232e4462e65169bf88973afe2dfbdae"
+    },
+    {
+      "path": "website/atelier/peru/original-brand/favicon-512.png",
+      "bytes": 63120,
+      "sha256": "a9d3e28716634aa67026335586f843ed6c27c8ec990e7f885336d9d6cd1a076a"
+    },
+    {
+      "path": "website/atelier/peru/original-brand/favicon-64-dark.png",
+      "bytes": 2510,
+      "sha256": "3a0723ae07ff1176a8ce25d576c28ec7805def156073c975bd569ec572bf5db2"
+    },
+    {
+      "path": "website/atelier/peru/original-brand/favicon-64.png",
+      "bytes": 2037,
+      "sha256": "3064955cd3c106fa077116522e69e7f50b12bac5907511c506bbf286fdcf3b5a"
+    },
+    {
+      "path": "website/atelier/peru/original-brand/leo-L-charcoal.svg",
+      "bytes": 696,
+      "sha256": "839567ee0ba12595d66d475bb8b08a04c57c4ec8e6efc6b8e55d3c407ae22b5d"
+    },
+    {
+      "path": "website/atelier/peru/original-brand/leo-L-cream.svg",
+      "bytes": 696,
+      "sha256": "59099141f18defd30a42ca82bb353ad6ac9cfdf9ee766f93d2354c959ce82c52"
+    },
+    {
+      "path": "website/atelier/peru/original-brand/leo-charcoal.svg",
+      "bytes": 1689,
+      "sha256": "947d7f7e8c8b01ec44dcb52d62d3b6b1704d25214219ce0535ca68e06f164923"
+    },
+    {
+      "path": "website/atelier/peru/original-brand/leo-cream.svg",
+      "bytes": 1689,
+      "sha256": "c52bd8b3236c27af0e657eb15cc4013317a87e9b94e353a85f02e98ea65c8888"
+    },
+    {
+      "path": "website/atelier/peru/original-brand/phone-blink-dark.gif",
+      "bytes": 119571,
+      "sha256": "5a76bd1be41f5be947847f1abeb07919d960903d0d0ea9d98613f69c176b29d4"
+    },
+    {
+      "path": "website/atelier/peru/original-brand/phone-blink-light.gif",
+      "bytes": 104174,
+      "sha256": "bb0fbad40627fbfd9a9d38eb2edc412ddd7d8a21fd64532e19219d0c01ad0e47"
+    },
+    {
+      "path": "website/atelier/peru/original-brand/phone-closed-dark.png",
+      "bytes": 57389,
+      "sha256": "bb76bb6d71e468743c5fe9a6bd9a57e434c90f0903ded6a60cd50202a8a906b9"
+    },
+    {
+      "path": "website/atelier/peru/original-brand/phone-closed.png",
+      "bytes": 46916,
+      "sha256": "557052e81823cf4d302ca0318d65f8a2c6ce1a6dff79c8ba4007d548e08c8dbc"
+    },
+    {
+      "path": "website/atelier/peru/original-brand/phone-open-dark.png",
+      "bytes": 55873,
+      "sha256": "9d6d2966f90b73b44afc0f6a50dc4b8c735dd061f3ec50482223db1bae056e89"
+    },
+    {
+      "path": "website/atelier/peru/original-brand/phone-open.png",
+      "bytes": 45543,
+      "sha256": "1d1a10b5c66be68b47fc06248ff0b8623e58656b786e5430fd7501ce8296e6c3"
+    },
+    {
+      "path": "website/atelier/peru/original-brand/phone-open.svg",
+      "bytes": 5634,
+      "sha256": "47e1ee0925588e403625a1eaf8ca0770e3ae918b61626604df176afd297fdd1b"
+    },
+    {
+      "path": "website/atelier/peru/original-brand/rocoto-logo-wa.png",
+      "bytes": 60808,
+      "sha256": "bc3be6a1e8e48c71042e7e6a0a3dd54c06e78eddb4b2c07b75057b3e0a2e02b9"
+    },
+    {
+      "path": "website/atelier/peru/original/banks/README.md",
+      "bytes": 11622,
+      "sha256": "bd73cd13e6936e9d764bbdd57a8ff1a14b99b214a8849343f1f9bec81a8788f5"
+    },
+    {
+      "path": "website/atelier/peru/original/banks/agrobanco.svg",
+      "bytes": 121347,
+      "sha256": "9e3d6843a490063d3ccd5fe6bef32dab3e897563ae579111cdabb6b76ef48975"
+    },
+    {
+      "path": "website/atelier/peru/original/banks/alfin-banco.svg",
+      "bytes": 11176,
+      "sha256": "0e966d49d0c8a4ad7740cb7239aa200c910c716131ca9a9dddc9722417509700"
+    },
+    {
+      "path": "website/atelier/peru/original/banks/banbif.svg",
+      "bytes": 3289,
+      "sha256": "527df86d5ffdba8ce1bc32aac060f206c31630f9b3ce8107781f3ad190708a37"
+    },
+    {
+      "path": "website/atelier/peru/original/banks/banco-bci.svg",
+      "bytes": 3335,
+      "sha256": "72b254d0230e6a3eb770acb0dd3d1b87e9a802309f412961049e5517278ee7f8"
+    },
+    {
+      "path": "website/atelier/peru/original/banks/banco-de-la-nacion.webp",
+      "bytes": 9938,
+      "sha256": "d6f9b7c1a824848ef4257d922514562edbaa1eaac0d7e8de2ad25e89aae7fd24"
+    },
+    {
+      "path": "website/atelier/peru/original/banks/banco-falabella.svg",
+      "bytes": 10704,
+      "sha256": "45b9c29881cd7f2c669ea755f7887aa4abb67f7cff46bc90f5a795d5697e332c"
+    },
+    {
+      "path": "website/atelier/peru/original/banks/banco-pichincha.svg",
+      "bytes": 5112,
+      "sha256": "6aafa29d25a5b30db96a60e490fdbe514ef6f351482ad21e783f570c37821a63"
+    },
+    {
+      "path": "website/atelier/peru/original/banks/banco-ripley.svg",
+      "bytes": 8794,
+      "sha256": "11c9c7ee7129e882dadc4ff922af6b199887925b53ed55bf46d2df3cf7a64f90"
+    },
+    {
+      "path": "website/atelier/peru/original/banks/banco-santander-peru.svg",
+      "bytes": 4461,
+      "sha256": "3ecfff6429bc48679ac68adebd64b31beaefa96cc9563f14f04d5600c14c1f4c"
+    },
+    {
+      "path": "website/atelier/peru/original/banks/bancom.webp",
+      "bytes": 6704,
+      "sha256": "d723f92685add88d62020889de141f907eb3188bef60b8454ce4c6abf3628979"
+    },
+    {
+      "path": "website/atelier/peru/original/banks/bbva.svg",
+      "bytes": 1761,
+      "sha256": "4396aa6d15db4a2adec442b29175c91cb9437f0952ac4221bd914069b7d61b27"
+    },
+    {
+      "path": "website/atelier/peru/original/banks/bcp.svg",
+      "bytes": 3648,
+      "sha256": "1aa1413d611e6bf16f750d632055ec9d5ac8a3eb819d5d326c298a042267fd4a"
+    },
+    {
+      "path": "website/atelier/peru/original/banks/citibank-peru.webp",
+      "bytes": 6400,
+      "sha256": "7e3f034ccf76d872fcea609749c8afb33645b8985b939a3543a5bfa36c5bdbc8"
+    },
+    {
+      "path": "website/atelier/peru/original/banks/cmac-arequipa.svg",
+      "bytes": 25711,
+      "sha256": "cf247b86c6e9556570ed960509034863cca1604b9a72397698b3f1a8226a1873"
+    },
+    {
+      "path": "website/atelier/peru/original/banks/cmac-cusco.svg",
+      "bytes": 5313,
+      "sha256": "41dc759b58b59de6d94a3de2494c5a616e41b0ff5358bb6544e28fee7c881fcd"
+    },
+    {
+      "path": "website/atelier/peru/original/banks/cmac-del-santa.webp",
+      "bytes": 8334,
+      "sha256": "d3fc68f106a9dae5b18694eea0c3e0bb379b1f961062272b541d48ba65c6e382"
+    },
+    {
+      "path": "website/atelier/peru/original/banks/cmac-huancayo.webp",
+      "bytes": 4210,
+      "sha256": "c0c67d9c39cad349db5ffa07dd8d08b3767baae2a0a5fa409f4b42152e894388"
+    },
+    {
+      "path": "website/atelier/peru/original/banks/cmac-ica.webp",
+      "bytes": 6206,
+      "sha256": "09005281ee1ce2a72a0f59144b29b3b6c5a3087583dc33ea356591fc55a0b7a6"
+    },
+    {
+      "path": "website/atelier/peru/original/banks/cmac-maynas.webp",
+      "bytes": 5310,
+      "sha256": "1083fc7366e1ab76790e2fbf4172553da3dd779fa89c57fc4b687d7210d23f87"
+    },
+    {
+      "path": "website/atelier/peru/original/banks/cmac-paita.webp",
+      "bytes": 10962,
+      "sha256": "8292edc0316a5df2d4620c2012f0d00a61c018b7cf065aa228ec69fc34fb7590"
+    },
+    {
+      "path": "website/atelier/peru/original/banks/cmac-piura.webp",
+      "bytes": 9616,
+      "sha256": "9f25c64062cb8f610540ba1819bef9bfc62338ca1d5a19a254313ec97e618873"
+    },
+    {
+      "path": "website/atelier/peru/original/banks/cmac-tacna.svg",
+      "bytes": 17494,
+      "sha256": "8246ea8e504c5e7d8c183852573ee8a8585b257e3d6ef11ec0df56a09e2e3834"
+    },
+    {
+      "path": "website/atelier/peru/original/banks/cmac-trujillo.webp",
+      "bytes": 7798,
+      "sha256": "70c5857d571592d87104bf772c295c0891f9390cea21bdc85af8e1cdb552b30c"
+    },
+    {
+      "path": "website/atelier/peru/original/banks/compartamos-banco.webp",
+      "bytes": 9694,
+      "sha256": "a4f59e9c6a5963c6307dfb3ef56d1a0b95d08e25729dc0b8471ed77d9d4958d8"
+    },
+    {
+      "path": "website/atelier/peru/original/banks/financiera-confianza.webp",
+      "bytes": 26854,
+      "sha256": "d0f47ba28ce6766a2b769bd5ce51de4f76dbc47a145354561fb1092764e7f27e"
+    },
+    {
+      "path": "website/atelier/peru/original/banks/financiera-proempresa.webp",
+      "bytes": 9368,
+      "sha256": "6742691173e397aab4be58255cfc91ef9b875973d0bcd4cda36c93f3580a2092"
+    },
+    {
+      "path": "website/atelier/peru/original/banks/financiera-qapaq.webp",
+      "bytes": 6740,
+      "sha256": "ca838225c15f31fa3e7e46779b5e0e7db0168ae30cd67ae33bdac7334f74ca42"
+    },
+    {
+      "path": "website/atelier/peru/original/banks/financiera-surgir.svg",
+      "bytes": 7126,
+      "sha256": "f247cdf60aac7b0b27d169d04bd9443a9935ea9058420abb448100f78fc083cf"
+    },
+    {
+      "path": "website/atelier/peru/original/banks/icbc-peru.svg",
+      "bytes": 5914,
+      "sha256": "0c66a697b0727ca78f0d18b78b138dd28c37aef86abe5f98eac3ddb0f1132096"
+    },
+    {
+      "path": "website/atelier/peru/original/banks/interbank.svg",
+      "bytes": 2077,
+      "sha256": "dc40d87f06f1f3201556658f1c49670a6e2b950a13ba6998ba4ec871a18a29b0"
+    },
+    {
+      "path": "website/atelier/peru/original/banks/manifest.json",
+      "bytes": 18147,
+      "sha256": "e8674e8d03ddb7ece426775c2a2abcf6d85e79ddf5fbb7b813e2b0bfd72e7e46"
+    },
+    {
+      "path": "website/atelier/peru/original/banks/mibanco.svg",
+      "bytes": 5842,
+      "sha256": "745432a3dc3f83ca83277ea65a3959c9c79e69edaff114768d7848891aa6cd50"
+    },
+    {
+      "path": "website/atelier/peru/original/banks/plin.webp",
+      "bytes": 7450,
+      "sha256": "e0689fcd54fe92b79634522cb35f46269ee126b7c1d8af80aca4bbb0a6ab560b"
+    },
+    {
+      "path": "website/atelier/peru/original/banks/santander-consumer.webp",
+      "bytes": 8872,
+      "sha256": "916c671c29585fac5bbe181dccb9b678111fd385776cd34eaceeffc952a05f98"
+    },
+    {
+      "path": "website/atelier/peru/original/banks/scotiabank.svg",
+      "bytes": 9548,
+      "sha256": "87377846365e879595a7912be60a6998e56d8eb64e6f2c978a4a6e34e7532d6a"
+    },
+    {
+      "path": "website/atelier/peru/original/banks/src/banbif/banbif.svg",
+      "bytes": 3289,
+      "sha256": "527df86d5ffdba8ce1bc32aac060f206c31630f9b3ce8107781f3ad190708a37"
+    },
+    {
+      "path": "website/atelier/peru/original/banks/src/banco-bci/bci.svg",
+      "bytes": 3335,
+      "sha256": "72b254d0230e6a3eb770acb0dd3d1b87e9a802309f412961049e5517278ee7f8"
+    },
+    {
+      "path": "website/atelier/peru/original/banks/src/banco-falabella/falabella3.svg",
+      "bytes": 10704,
+      "sha256": "45b9c29881cd7f2c669ea755f7887aa4abb67f7cff46bc90f5a795d5697e332c"
+    },
+    {
+      "path": "website/atelier/peru/original/banks/src/banco-santander-peru/santander.svg",
+      "bytes": 4461,
+      "sha256": "3ecfff6429bc48679ac68adebd64b31beaefa96cc9563f14f04d5600c14c1f4c"
+    },
+    {
+      "path": "website/atelier/peru/original/banks/src/bancom/bancom.png",
+      "bytes": 126144,
+      "sha256": "77fa0ed966262ae06778e85a8d040f1246cc23fbe6d22f22622f8b8a835b247b"
+    },
+    {
+      "path": "website/atelier/peru/original/banks/src/citibank-peru/citibank.svg",
+      "bytes": 4747,
+      "sha256": "58d9b6fbb6a9318490bd32204fc8dbb57fca59da9a61d309ae1785278c57318b"
+    },
+    {
+      "path": "website/atelier/peru/original/banks/src/cmac-arequipa/cmac-arequipa-foot.svg",
+      "bytes": 25711,
+      "sha256": "cf247b86c6e9556570ed960509034863cca1604b9a72397698b3f1a8226a1873"
+    },
+    {
+      "path": "website/atelier/peru/original/banks/src/cmac-del-santa/cmac-del-santa.png",
+      "bytes": 4042,
+      "sha256": "5d2985a0eca995ac70a2a0da04bf0898b851189812f5a862ff59d88040502e96"
+    },
+    {
+      "path": "website/atelier/peru/original/banks/src/cmac-huancayo/plin-huancayo.png",
+      "bytes": 1998,
+      "sha256": "1d140c602cf37863c3c8514f6954adab0eede33205d9bc6efdef2c6fbae53aa0"
+    },
+    {
+      "path": "website/atelier/peru/original/banks/src/cmac-ica/cmac-ica.png",
+      "bytes": 6317,
+      "sha256": "3983285b6563359c2ad822aebaac8a7210e2f7f8c0467cdf3f443c920b4b6843"
+    },
+    {
+      "path": "website/atelier/peru/original/banks/src/cmac-ica/plin-ica.png",
+      "bytes": 7519,
+      "sha256": "106662f27bfb6eea4b22710df235d5045554370166a43cb4032e940cb05afc71"
+    },
+    {
+      "path": "website/atelier/peru/original/banks/src/cmac-maynas/cmac-maynas.png",
+      "bytes": 5730,
+      "sha256": "37ecdac77474e1550751836a42cd27c162497385173881b3c63d8c2b03ee6ba1"
+    },
+    {
+      "path": "website/atelier/peru/original/banks/src/cmac-paita/cmac-paita.png",
+      "bytes": 6530,
+      "sha256": "48ccb833e4c1c17108022318f95d29699719f9869178f44fbb5ec53cc63216b3"
+    },
+    {
+      "path": "website/atelier/peru/original/banks/src/cmac-piura/cmac-piura.png",
+      "bytes": 4748,
+      "sha256": "fe24316c7d0d6ef3f789d074feb69af5fb72ec8a1fa5f1ac2abde65444a73af9"
+    },
+    {
+      "path": "website/atelier/peru/original/banks/src/cmac-trujillo/cmac-trujillo.png",
+      "bytes": 4122,
+      "sha256": "3aa0edd37f3f8c9df4cd6f1ba97aa64e141c6e111ee4b578a948a60c0e2357cd"
+    },
+    {
+      "path": "website/atelier/peru/original/banks/src/compartamos-banco/compartamos.png",
+      "bytes": 19995,
+      "sha256": "e0ad53d34f0164558948949d24e119be04e8640575b126174da1637c7b6ddddd"
+    },
+    {
+      "path": "website/atelier/peru/original/banks/src/financiera-confianza/confianza-cab.png",
+      "bytes": 45392,
+      "sha256": "d4df8ffc1fed7ee342c767bdcffe895dedc1c5f0d5d822c884bcebe8cb547003"
+    },
+    {
+      "path": "website/atelier/peru/original/banks/src/financiera-proempresa/proempresa.png",
+      "bytes": 3259,
+      "sha256": "87d590abe58633275135f3ed39741ace4def23a21b3723ce4e32898c96925560"
+    },
+    {
+      "path": "website/atelier/peru/original/banks/src/icbc-peru/icbc.svg",
+      "bytes": 5914,
+      "sha256": "0c66a697b0727ca78f0d18b78b138dd28c37aef86abe5f98eac3ddb0f1132096"
+    },
+    {
+      "path": "website/atelier/peru/original/banks/src/plin/plin-android-icon-192x192.png",
+      "bytes": 10743,
+      "sha256": "c6ccfdcacb715f8d94510e77eb61d2f18f99c0889d4c2d7ebfc112baf4189629"
+    },
+    {
+      "path": "website/atelier/peru/original/banks/src/santander-consumer/santander-consumer-site.png",
+      "bytes": 1665,
+      "sha256": "5d05063a2a9409c05e159d92d66ae1bebced0ac59c34977ec46fbada9a7d3b4d"
+    },
+    {
+      "path": "website/atelier/peru/original/banks/src/yape/yape-app-icon.png",
+      "bytes": 160371,
+      "sha256": "ab79adf8b23c392c2dc188d0d7eef356deaf383150b42bde18ea2b700314cdd7"
+    },
+    {
+      "path": "website/atelier/peru/original/banks/yape.webp",
+      "bytes": 8642,
+      "sha256": "bee1c5c469d480b596a477d6f3d1820059dc855c15e0e53afde7e09df301cd0f"
+    },
+    {
+      "path": "website/atelier/peru/original/cap/art-bodega.webp",
+      "bytes": 38492,
+      "sha256": "a6bcdfeddd0e7848120eedcd782b1ae54a5eb9844540e2d405b69d257968020a"
+    },
+    {
+      "path": "website/atelier/peru/original/cap/art-cierre.webp",
+      "bytes": 30880,
+      "sha256": "b10b6be428fe5eca470587896918f20bc10da1abd0b06632ca8101306b0f9b9d"
+    },
+    {
+      "path": "website/atelier/peru/original/cap/art-mercado.webp",
+      "bytes": 19514,
+      "sha256": "def42ec11c3d09b9ce8c89de5f96ee7fcc5f5005ebf11353d41e542cd3f41c3c"
+    },
+    {
+      "path": "website/atelier/peru/original/cap/art-pesca-cobro.webp",
+      "bytes": 27402,
+      "sha256": "fc81d7f0ebec91f5037a6be0e5b2519859632c5d349006b0856aad1b901d7552"
+    },
+    {
+      "path": "website/atelier/peru/original/cap/art-pesca.webp",
+      "bytes": 18460,
+      "sha256": "147446137cf04c0f2c34d10e6d200f2d97e92ca66ebf582a184b977b7d710e79"
+    },
+    {
+      "path": "website/atelier/peru/original/cap/bank-art-tall.webp",
+      "bytes": 77950,
+      "sha256": "a1bf1f9f9065f0babe1301f633d6e750e3a0fe76cf18a99e45c72fe5ecb0ce6e"
+    },
+    {
+      "path": "website/atelier/peru/original/cap/bank-art-wide.webp",
+      "bytes": 53434,
+      "sha256": "ee5d81e159234319d50b7320550d35f823425a01d951531bacdbc42c3465e780"
+    },
+    {
+      "path": "website/atelier/peru/original/cap/close-art.webp",
+      "bytes": 86888,
+      "sha256": "36cb28333e44c1dd1032e148c27e8e246dc26a603efc7628dbd2e0890fc3fa91"
+    },
+    {
+      "path": "website/atelier/peru/original/cap/pedido-escritorio-sm.webp",
+      "bytes": 42160,
+      "sha256": "fa468c9b4265cceb59013340b9cb22fc60ec0ae61cfd1917a4431b310dbdd52c"
+    },
+    {
+      "path": "website/atelier/peru/original/cap/pedido-escritorio.webp",
+      "bytes": 135052,
+      "sha256": "98f03e59b8b039a1f553c342fd0e20e1f153070ab5914b37e9f06f1b87cdcbb0"
+    },
+    {
+      "path": "website/atelier/peru/original/cap/pedido-movil-sm.webp",
+      "bytes": 24654,
+      "sha256": "8117cdd85b261caa326d91a79280e5443c695d4e25a7e3510223fc56cb101a6e"
+    },
+    {
+      "path": "website/atelier/peru/original/cap/pedido-movil.webp",
+      "bytes": 81318,
+      "sha256": "89bcd86d7040c902cb2d9010475a9b8f24536872017aefb6296fe90b2e74ac3b"
+    },
+    {
+      "path": "website/atelier/peru/original/demo-controls.js",
+      "bytes": 4659,
+      "sha256": "8384a32e72447b425a2fd644823dbb753684417b72f6dbf4586c8f02127ef113"
+    },
+    {
+      "path": "website/atelier/peru/original/demos/av/ancla.webp",
+      "bytes": 6610,
+      "sha256": "151e05abdf44882f7fca431e2e134422a935c4770661e3ca5567e7744c1cbdda"
+    },
+    {
+      "path": "website/atelier/peru/original/demos/av/counter.webp",
+      "bytes": 29818,
+      "sha256": "60966022dd0f3b6ebbb4c85f055fb5b62632c4def8c074a2ff89e001ed08b208"
+    },
+    {
+      "path": "website/atelier/peru/original/demos/av/faces/aceite.webp",
+      "bytes": 782,
+      "sha256": "26865ee140df2d09af4c97a97db8d45dcab70077ca30c73a87080bb849d92dae"
+    },
+    {
+      "path": "website/atelier/peru/original/demos/av/faces/agua.webp",
+      "bytes": 790,
+      "sha256": "4f165f09196c55bf22bbb04c8ffeead5033e605213c99ae9e6e21024d980b070"
+    },
+    {
+      "path": "website/atelier/peru/original/demos/av/faces/arroz.webp",
+      "bytes": 1368,
+      "sha256": "4971983b5c557d7ac997a2b5b12a16c6910dcb6d440a3c373306f19844046035"
+    },
+    {
+      "path": "website/atelier/peru/original/demos/av/faces/atun.webp",
+      "bytes": 2034,
+      "sha256": "c4f265f770b0fd9e5027b1743b2a814b9218d268d4e077a55171692682644e7c"
+    },
+    {
+      "path": "website/atelier/peru/original/demos/av/faces/azucar.webp",
+      "bytes": 510,
+      "sha256": "182c5df2b8fa8910b38579b77884cfb918e94574ba8852762d18b99b84ed51f5"
+    },
+    {
+      "path": "website/atelier/peru/original/demos/av/faces/cerveza.webp",
+      "bytes": 920,
+      "sha256": "a0c242b88ec34f4414605414c787764da2f6375b37062072c7d38976e2db0869"
+    },
+    {
+      "path": "website/atelier/peru/original/demos/av/faces/detergente.webp",
+      "bytes": 1900,
+      "sha256": "7501745ddd7e5cdeddd77935bd68892fe01afb3e0865143dbe266d3749377373"
+    },
+    {
+      "path": "website/atelier/peru/original/demos/av/faces/fideo.webp",
+      "bytes": 790,
+      "sha256": "9a47503671c179f8dd475fc13a37d3eafb82ea317b5febaf5b0d2e7bcae3e686"
+    },
+    {
+      "path": "website/atelier/peru/original/demos/av/faces/gaseosa.webp",
+      "bytes": 996,
+      "sha256": "5339f7d31b9d3bc9045d0ba590aeb2a9bddfbfc8061b36ceaea480ab075aaf97"
+    },
+    {
+      "path": "website/atelier/peru/original/demos/av/faces/huevo.webp",
+      "bytes": 1192,
+      "sha256": "7566981b49625b21830983ca9d7787ea80c93e2102cf3c254f9e4ebbadd41cc3"
+    },
+    {
+      "path": "website/atelier/peru/original/demos/av/faces/leche.webp",
+      "bytes": 718,
+      "sha256": "833c67749a0380c7727928773a94b47be678e9bc1edfbc7f2ed1f5f4c99b042d"
+    },
+    {
+      "path": "website/atelier/peru/original/demos/av/faces/lentejas.webp",
+      "bytes": 1512,
+      "sha256": "09cf681668da44012ca3d04aebf7ca2f957baacd591502679b4e2fb1fddd1816"
+    },
+    {
+      "path": "website/atelier/peru/original/demos/av/faces/pan.webp",
+      "bytes": 1804,
+      "sha256": "45d965d82ad2b64d6f07ea734ca010df98e9219f4e6d2a55a473b2b2f7755d97"
+    },
+    {
+      "path": "website/atelier/peru/original/demos/av/faces/queso.webp",
+      "bytes": 890,
+      "sha256": "bc2edf3f591f417cec4cb37ebbce0867cbfc84dae8922c654f73de3550a8ce8f"
+    },
+    {
+      "path": "website/atelier/peru/original/demos/av/faces/yogur.webp",
+      "bytes": 982,
+      "sha256": "2b91773f14b3e9fc509bf170f199f63c2b93915e83b2c351d7d793b8129f540c"
+    },
+    {
+      "path": "website/atelier/peru/original/demos/av/invoice-counter-es.webp",
+      "bytes": 105950,
+      "sha256": "c1f9c037c77ee3e020edcd6b2b21b00fc22946e58a103fc5e2305afdbbea39bf"
+    },
+    {
+      "path": "website/atelier/peru/original/demos/av/invoice-counter.webp",
+      "bytes": 104380,
+      "sha256": "22359aaa105383905dd5cbebae5f30871b8407f5dde9e6fb24609735eb57707e"
+    },
+    {
+      "path": "website/atelier/peru/original/demos/av/lock-wall.webp",
+      "bytes": 11414,
+      "sha256": "83e64371c27581995ebae976a7e4a73d8ffc09d265e705531c9f54d839a19345"
+    },
+    {
+      "path": "website/atelier/peru/original/demos/av/muelle.webp",
+      "bytes": 4434,
+      "sha256": "6565387117c3592bf988a95451fedaac52b02434ce2c55d8dd00abc007543b94"
+    },
+    {
+      "path": "website/atelier/peru/original/demos/cobro.html",
+      "bytes": 9192,
+      "sha256": "80248347959244c159723280c0449eab9a18f9a474964b52cc58427b461a3a4f"
+    },
+    {
+      "path": "website/atelier/peru/original/demos/compras.html",
+      "bytes": 12419,
+      "sha256": "5cb4c985ddebb568faa44e97765b36f059f881d116ab096dd82270eaf8502dc0"
+    },
+    {
+      "path": "website/atelier/peru/original/demos/entrega.html",
+      "bytes": 5444,
+      "sha256": "c0a2f6877c7c5d1eab33220452c37360dd9bac031add224daa4739f0d279b614"
+    },
+    {
+      "path": "website/atelier/peru/original/demos/pages.js",
+      "bytes": 18654,
+      "sha256": "73dadfacba0735599f70578971216bb4b15a1bf953f870847a06e3d7a881b4f7"
+    },
+    {
+      "path": "website/atelier/peru/original/demos/posters/cobro-520.webp",
+      "bytes": 19976,
+      "sha256": "b40397335f223eefe75b17428791cda59e93d8fcb14ea60155ff76772d97a805"
+    },
+    {
+      "path": "website/atelier/peru/original/demos/posters/cobro-es-520.webp",
+      "bytes": 20826,
+      "sha256": "099c1dff4e0cf2a145f7e7359091793c4d069cf2c3274feaf8efe7d43eb92c83"
+    },
+    {
+      "path": "website/atelier/peru/original/demos/posters/cobro-es.webp",
+      "bytes": 34886,
+      "sha256": "4f1da129a9bb6e50156503b8a277ea4e421acb7fc856c9cbd9b8ee8dffafc912"
+    },
+    {
+      "path": "website/atelier/peru/original/demos/posters/cobro.webp",
+      "bytes": 33120,
+      "sha256": "e0219ed53ff1c5fd9fa9e404ab17bb91d2a30ef1476d7fda9484c9084a2a2325"
+    },
+    {
+      "path": "website/atelier/peru/original/demos/posters/compras-520.webp",
+      "bytes": 62912,
+      "sha256": "1fcc3cca83c2310d3c93f7aab65ff2644d7c15e6eff26b6d321e9195f73282f4"
+    },
+    {
+      "path": "website/atelier/peru/original/demos/posters/compras-es-520.webp",
+      "bytes": 63730,
+      "sha256": "f105a6145131011816f697aabf72d903f40770ca91e04ea90e71d6c164f9f6a2"
+    },
+    {
+      "path": "website/atelier/peru/original/demos/posters/compras-es.webp",
+      "bytes": 92832,
+      "sha256": "4095468543ad9566cae8f0dc1489e5692b0ceb2ca1ab0aa5e56b265a9dc0b1e5"
+    },
+    {
+      "path": "website/atelier/peru/original/demos/posters/compras.webp",
+      "bytes": 90414,
+      "sha256": "3557b6fc46af5ddba2da47f5777d11d7bd1381fdaf0e9c702cb5acb87cee972d"
+    },
+    {
+      "path": "website/atelier/peru/original/demos/posters/entrega-520.webp",
+      "bytes": 28876,
+      "sha256": "b0bb5a0fd263b5f10d6a24ddd0122c5c7b0db37f04f1decf0227b0525173a601"
+    },
+    {
+      "path": "website/atelier/peru/original/demos/posters/entrega-es-520.webp",
+      "bytes": 30194,
+      "sha256": "61bbe7521a4fe50ac1a927d1f15e8da4681b06718ea27d9e72baa2ea57b41c82"
+    },
+    {
+      "path": "website/atelier/peru/original/demos/posters/entrega-es.webp",
+      "bytes": 43562,
+      "sha256": "ab4446e358a19bd7eaa10110edc01a50ad0fe0fd44cd1b0dd59b27f38f40c6cc"
+    },
+    {
+      "path": "website/atelier/peru/original/demos/posters/entrega.webp",
+      "bytes": 41702,
+      "sha256": "1d512290a365de4a1ed9df356c365394b90014fd8e811569e4791b61525148d9"
+    },
+    {
+      "path": "website/atelier/peru/original/demos/posters/tienda-es.webp",
+      "bytes": 30216,
+      "sha256": "5887069f84b9f7674ff737f135a8e5e615625a10af0a3b765585012e4d449e25"
+    },
+    {
+      "path": "website/atelier/peru/original/demos/posters/tienda.webp",
+      "bytes": 28272,
+      "sha256": "7ad2e2a166220028fb4fbf0f34cd13942fbfab8e509a6f13563bd852864d1839"
+    },
+    {
+      "path": "website/atelier/peru/original/demos/tienda.html",
+      "bytes": 12019,
+      "sha256": "b6131bdb17cd48ae9a5c3194cb051531fb58ab62ae179da40fab6bc6d816e092"
+    },
+    {
+      "path": "website/atelier/peru/original/fonts/OFL.txt",
+      "bytes": 4746,
+      "sha256": "bfd04cbb10410517978c009843128520167fd17328aef9da1f88f336c1e71eac"
+    },
+    {
+      "path": "website/atelier/peru/original/fonts/README.md",
+      "bytes": 1289,
+      "sha256": "2decca557dec18547d9e4f820cf91d110250ecd35fa01b13dfed69eda1b5a79a"
+    },
+    {
+      "path": "website/atelier/peru/original/fonts/hanken-grotesk-latin-400-600.woff2",
+      "bytes": 34704,
+      "sha256": "e9201eddf1d41d0b62253295d869ce3cf65768f7102b797f02c7f8c876b4a9d5"
+    },
+    {
+      "path": "website/atelier/peru/original/fonts/hanken-grotesk-latinext-400-600.woff2",
+      "bytes": 19588,
+      "sha256": "768af2923e0ab1549f1dfba0a5c8ea749c4c01f01d8e77ffaf7fcd12f57a0a24"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/bake.html",
+      "bytes": 2074,
+      "sha256": "a5b961c422b9239464bc7f12ba5bab5d3735e3df187620ffaaebc6b73fc7eb6f"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/bake.py",
+      "bytes": 13815,
+      "sha256": "87fb85a0ff975e56f2f0257ddaf47cc2d84b823b081b504d17fa49a1c5f82288"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/demo.html",
+      "bytes": 7829,
+      "sha256": "9dae2afdeede5cfb399faede16caab8b819c9ddfdc788f6fd5eb8fa7ac282aeb"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/front.webp",
+      "bytes": 12234,
+      "sha256": "a467c13afdbd17a24a2fdd2f7637b5319d48343376d1c90697f56075353b315f"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/handset.js",
+      "bytes": 58381,
+      "sha256": "9dada4a93e711bd9f1b48d53bf34cfb2d7a29f6d4511f4cc7dd2106abeb717ad"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/handset.json",
+      "bytes": 26506,
+      "sha256": "b19a642cc90cac271a575e20d62e3b2e41b59730d968cb5bcc7a50f1bcde6861"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/live.js",
+      "bytes": 6970,
+      "sha256": "792b3b25c75fb4211fa878dcad5d2f7566c3a18d1eeafdaa2660a38c8e1d40b3"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/model.js",
+      "bytes": 14850,
+      "sha256": "a53c82d38b78dc6e4680edb3b6a2db58fdd7e5763c22ea8a2ab84f3df6e17a42"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/model/CREDITS.md",
+      "bytes": 816,
+      "sha256": "54820f373cf639dcc99f5f28a992418fd305b80b2ec491ab5a5fe9e7c9d24dd1"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/model/iphone-15-pro-max.glb",
+      "bytes": 887328,
+      "sha256": "a628339ba9960424b1e6285d31423be0dedf02a71b02e4e61f706a2e4bb8770e"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/shadow.webp",
+      "bytes": 5756,
+      "sha256": "51e8d2b938452ae0601b50bb828cbbf6ee3fb703b00591629f0aec9bdbc78eab"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/studio-rig.js",
+      "bytes": 11895,
+      "sha256": "9c948c8f7dabe946e94205b44bbaf9c2e80853670cfafacb57abe5767da1a9cc"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-00.webp",
+      "bytes": 7798,
+      "sha256": "6e4ca4d3dd1e0574cb70da6d1b1f9463b7bf092cae11dde317a0aaa445d1caff"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-01.webp",
+      "bytes": 8176,
+      "sha256": "f7be4433d0a7a8680ac75c8c01d4be1aac423cfed478f57d5809032ece4d9d0f"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-02.webp",
+      "bytes": 8580,
+      "sha256": "8567ad4fc468166df8d5e47512487f67cbe5816ff3b2b1c218cb1a0c7f64f7dc"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-03.webp",
+      "bytes": 8888,
+      "sha256": "b99d203af873b19215a67d6411804b13794e1a9d3a5df5cd711815ab7853bfa8"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-04.webp",
+      "bytes": 9168,
+      "sha256": "a2eb2f889cede8608ade7dba20402632da65bc48b9ece66e480ea235290a751c"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-05.webp",
+      "bytes": 9466,
+      "sha256": "c489351312030dd220f72f2e7f01d6fdecef21d32fd5bba64cb9afb6beba9769"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-06.webp",
+      "bytes": 9546,
+      "sha256": "e66a5605c40e979321dcc51e1b89515b619970ebe9f6731fa1b4b6a4cda231bc"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-07.webp",
+      "bytes": 9988,
+      "sha256": "2c9c692600fbd70f36080d42710d5db323bd40f12cc587845df0bdf99f56c25c"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-08.webp",
+      "bytes": 10192,
+      "sha256": "e301f6a212bb14ef6f182ccc6c9d6d111e325676f1224fa51b51244cd0df904b"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-09.webp",
+      "bytes": 10324,
+      "sha256": "3610958b1a0ab320eb6ba5b696ae88bbf9b6a58d8659262dc995d092bf25cca4"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-10.webp",
+      "bytes": 10390,
+      "sha256": "c15b0057881bc1241b29c18280ae503c5afa344ec1e7c962736068136679a671"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-11.webp",
+      "bytes": 10654,
+      "sha256": "e325a44089146645a4f53da92c3e9563eabd6b20145ef5fff120067abc290d16"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-12.webp",
+      "bytes": 10714,
+      "sha256": "a229428f09826238177e932f9cfe61e723cc6a034ab57e59e26fa674af30b345"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-13.webp",
+      "bytes": 10950,
+      "sha256": "a89bb8afbe7a93081317292a0286a3ce3e14c7f59428cb46c7847a3e462613f1"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-14.webp",
+      "bytes": 11014,
+      "sha256": "3caa6b94da4b69910293b82563da9a80f2c06bf0e4e0413166aaee4c7e02cf03"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-15.webp",
+      "bytes": 11230,
+      "sha256": "411634488e30b290f52247d113dd70b06e3e8c056ba25be9090ca454cdcb5eee"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-16.webp",
+      "bytes": 11646,
+      "sha256": "95ba8cb354a29b79d0be9263a926ab92d14098bfaf09690cac061e8d75702da1"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-17.webp",
+      "bytes": 11756,
+      "sha256": "1d142f9914cc66c10234588d272f3724ce4e2351e95e178f9eb69a859f5ccc04"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-18.webp",
+      "bytes": 12088,
+      "sha256": "40a7eedb5274c04ac77cbaeb573f6da2ed174d3d1f9170201501fee0ce30a4f3"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-19.webp",
+      "bytes": 12252,
+      "sha256": "9e086946038b79141b2724936e3655af24c83b10d4ba80f009fb39f6676a862f"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-20.webp",
+      "bytes": 12080,
+      "sha256": "6b6b363bb0c3515339be5c576145d8ac02f9baf35b0e9885d4daa5dd23b2f787"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-21.webp",
+      "bytes": 12084,
+      "sha256": "a235431d3ee9389564ba1ceeca524d35ab2e8b879057b4be873a3bee4a9c1c5e"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-22.webp",
+      "bytes": 11736,
+      "sha256": "4a04a4ae4dfa6609cf7e21a53097b581df1ecadb0b18b2f10d874cf687978c71"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-23.webp",
+      "bytes": 11678,
+      "sha256": "ccf5ac8a34043e10bbfdc7087218eea6f01e4837d7072b8cc2a5de082b38de92"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-24.webp",
+      "bytes": 11896,
+      "sha256": "2c64d1195e75c9fd93c8e58950a629e5bb6f5def43122d43e2714dcc274f80bc"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-25.webp",
+      "bytes": 11730,
+      "sha256": "579b56affd6432bd842c4cb5a2910df0d777b780de4547f02b73b52da5ad8da9"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-26.webp",
+      "bytes": 11600,
+      "sha256": "15281b6801d684e704d220fd15b165963be06597acba7bf70ad0352df042ab7d"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-27.webp",
+      "bytes": 11652,
+      "sha256": "2b14e68955c08a04b174bae91acea4df7d0ca621a6e203a902acdac18dda048e"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-28.webp",
+      "bytes": 11892,
+      "sha256": "b0053694e18456ccf5a4336d6046e3e4512ea0162b9d1cf22e3d801fe90eeb25"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-29.webp",
+      "bytes": 11840,
+      "sha256": "b1ca2f2d48b31ae8e1f937d3812aaaa9c094f51b19c8420793bfc4ad1bcab2f1"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-30.webp",
+      "bytes": 12312,
+      "sha256": "df7dd044612e0d5ff949b679cdcd9e19f524882b2305d4dc231e02e6383db48e"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-31.webp",
+      "bytes": 12486,
+      "sha256": "19cfbf4d7cb3cc4bbbede66786024d4828044ffea557b58abf45c77678719e5c"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-32.webp",
+      "bytes": 12206,
+      "sha256": "1c0b4225532ae8e920d8098b91362d3a21e7741fbecc304b54220ced55bd8486"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-33.webp",
+      "bytes": 11782,
+      "sha256": "164fe14e2e3e45ce8ff280e8f88c23d0f0b089caad5b236d3be7339264707f93"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-34.webp",
+      "bytes": 11862,
+      "sha256": "dfff9254269f337dbb4113dd4aab997ee529be575daa661819d98cba5fffea54"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-35.webp",
+      "bytes": 11948,
+      "sha256": "7f7e518ce107807a0cda887e819b07e88f3bb8b12cc7142f95ed5bc1810a6077"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-36.webp",
+      "bytes": 12658,
+      "sha256": "283f9ef9256828b05b0c22685335c150f9d30358aa3edc56826e216e8365fb85"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-37.webp",
+      "bytes": 12790,
+      "sha256": "288d228689ea0fca7f8fd4c39fabe25a5117e6b7816e6d6b2565cb17155c9dae"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-38.webp",
+      "bytes": 12826,
+      "sha256": "abb55a39a40bd1271439af28c313903c3f2f4477a2ed77227655c858c0ca119c"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-39.webp",
+      "bytes": 12622,
+      "sha256": "e3d7c336d9d42827de55e6e3ec5c006520a2da100903f53011c180e2ce622457"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-40.webp",
+      "bytes": 12688,
+      "sha256": "f67f200a638d296b70b577e4c048ea1f021bbd4b4896a6e556ee5899f86f910b"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-41.webp",
+      "bytes": 12834,
+      "sha256": "10a05f3edeea59bab886c26be455c62c3b687549d5ae81fa72df5e711b45a5b8"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-42.webp",
+      "bytes": 12930,
+      "sha256": "f47220120238c0883ce49881edb15ec155cd9eae1cabcdfcc5822d16d9f757cf"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-43.webp",
+      "bytes": 12788,
+      "sha256": "afe90f94026155b9399db80bc582a8b5d869a370aa974cb5e833c49b06d47b6e"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-44.webp",
+      "bytes": 12856,
+      "sha256": "f00f4a9faaad4397c2de2021afc96d5e2079cb96c282aca317ca336ca13daaa1"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-45.webp",
+      "bytes": 12870,
+      "sha256": "c01a109c21d4b3fcb04066645b0f6ae320a50997b3231e145454d8fd735c2d61"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-46.webp",
+      "bytes": 13120,
+      "sha256": "a23bdc15997d60f49954036ba59407911249e5c299ac4580d0e5c90f3b831db4"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-47.webp",
+      "bytes": 12484,
+      "sha256": "ce8ac8bc8b3a17983c666a1916bf760235e0f98e05fa3781ea10ea58c292762d"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-48.webp",
+      "bytes": 12588,
+      "sha256": "e628f0af739f31b4e155f99b11962ff8398744f9fd1672f06ecbf07634183017"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-49.webp",
+      "bytes": 12820,
+      "sha256": "45fe763c448d3b8d1e827d341848635389891c62d95990a93ecc058292109769"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-50.webp",
+      "bytes": 12272,
+      "sha256": "b2a791e1a5f9b63b1c62b72f4c8824c7bc48026a63e172bb0776aa86fb1e218d"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-51.webp",
+      "bytes": 12456,
+      "sha256": "a3db3629658dd880694ebf8ae15bedcf4b59f9e1556ea5b8abf16561de9e35ee"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-52.webp",
+      "bytes": 12528,
+      "sha256": "4595e906061aba3aef8425ff3e01c094e458e388ebe855d6c0c5f7831de5df18"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-53.webp",
+      "bytes": 12116,
+      "sha256": "fbd968d9071d18e28136b1a599d034e10869af6837a6a3ce404f8c6c4d384241"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-54.webp",
+      "bytes": 12376,
+      "sha256": "a144bb2567ac7906be177504889686091aa3fb4df16b8483b95bc4938d25957e"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-55.webp",
+      "bytes": 11738,
+      "sha256": "1518e55b465f5cf4c7b8f42233a487b00a0713e016757817c2dad0b152de3784"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-56.webp",
+      "bytes": 12440,
+      "sha256": "e755136d4cecf3ffb2129e6643e7b77fb24d32ac925399ea8b71b48c908b457f"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-57.webp",
+      "bytes": 12620,
+      "sha256": "7be5042685d8e2369a18ae189b854aef25941b1c83aaa62ca8697a14f6c1b9b7"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-58.webp",
+      "bytes": 12492,
+      "sha256": "391e27b1161920dd8e60c1f4b490d126f1124c382eec819a6d31234658e7ebf0"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-59.webp",
+      "bytes": 11824,
+      "sha256": "aece686f4db83f3ca9fe83a151eca5df53e36d6909eaf604a35fa2d322c0a6b7"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-60.webp",
+      "bytes": 12070,
+      "sha256": "557437a1f7facd361a779a9ee088eee1fba6bf6361ee03e4281b0b198d01ef7c"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-61.webp",
+      "bytes": 12100,
+      "sha256": "267af3dfac5352583c681a4052a1dbc31d9081e07e1cdcbf09be243242bd40c5"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-62.webp",
+      "bytes": 11706,
+      "sha256": "bbc0f515363ddc702905d397633522e4b4f1524c630983f993153e476a1e5763"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-63.webp",
+      "bytes": 11886,
+      "sha256": "7c386d06c83224866320e53ff9bb1e760aa44395e110af3151d9be1495d8dda7"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-64.webp",
+      "bytes": 11736,
+      "sha256": "574f57e9c6c1ff98ab90ff66fadcb6ebd8790d7bce8754061f2d17c90e471ed0"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-65.webp",
+      "bytes": 11350,
+      "sha256": "33d083c06d5e6a5f47161ef94061ee0a6c4b2b07a71b7ad0a3c1d0dc89b0f1b2"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-66.webp",
+      "bytes": 11564,
+      "sha256": "fe47d567b477b97d4d25cc2c1b1a3a2a0c035b144bb9cb281d49add732426ebd"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-67.webp",
+      "bytes": 11064,
+      "sha256": "8511d227b627c3dd967bbc448ab49ce8bd4f24ad99f7211e737668a48297628f"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-68.webp",
+      "bytes": 10860,
+      "sha256": "6bcea0d0e7a29889ebab8e48ec9253b9498d05267ba02cf546924241595fd5d9"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-69.webp",
+      "bytes": 10802,
+      "sha256": "332e2a4926196b538c5742121a5a039953932637e529752a1791ce678a9d8fe3"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-70.webp",
+      "bytes": 10820,
+      "sha256": "05fcbfb82a635319d5d5aa49ceb09949219faf65d8650fce72379a5843b6975d"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-71.webp",
+      "bytes": 10336,
+      "sha256": "a609ab65005f28b4107c9f2fbe48c90bb9a1d7ce2d8355fc45727f4226aaeee0"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-72.webp",
+      "bytes": 10206,
+      "sha256": "44c3104e95a8b7390cf870d1b205d89d0e9d452ceabf9484d050362080b62948"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-73.webp",
+      "bytes": 9916,
+      "sha256": "2b323a06ef24da43b796a25e2125eb2ca7bcfc744789f7a962bbf4128a304efd"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-74.webp",
+      "bytes": 9764,
+      "sha256": "3621ca372f589279d386862b62cc99130cdc774d3e9f61f090cad6f23c31896b"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-75.webp",
+      "bytes": 9552,
+      "sha256": "95f970748a2589278fad3ee390c3b6fd65ecd8c554251cab72b1afccaaad21c8"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-76.webp",
+      "bytes": 9418,
+      "sha256": "d517e12816d49f167abec387952c46ed66c841ae6c7852fb39715ccc3860583c"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-77.webp",
+      "bytes": 9044,
+      "sha256": "b6c5ae14b457a85c03b7b55d83b73510fad2eaad4b31da2567000008e01dc1f1"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-78.webp",
+      "bytes": 8814,
+      "sha256": "501c65d76339e5a9dc91f2ee2e10e967c93e8ee70e95f75a6e31c760ecbaf85b"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-79.webp",
+      "bytes": 8572,
+      "sha256": "576a17393dd812aa49eac31487051c3fff7e31e6bade9ef200dee8f2a738798a"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-80.webp",
+      "bytes": 8386,
+      "sha256": "1fecebd8573670822d692956888361d9d135fa1a51015cbeb0ce69bbce62e137"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-81.webp",
+      "bytes": 8208,
+      "sha256": "706944fa958a9c400fc2f64592abd514b24da9023296ecaadeabfd6cada5baae"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-82.webp",
+      "bytes": 7948,
+      "sha256": "171cd48763404b22749dbbc0ca53a281897a0f2e1b6fb5b396f805c0a8fc51ad"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-83.webp",
+      "bytes": 7578,
+      "sha256": "328a3d7d615b1ea06ab7fd9616bfcb0e7b70302473e7d78818a26876965e555a"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-84.webp",
+      "bytes": 7232,
+      "sha256": "ff590633117b619cc9efda43b403291b962f1328ea6b301c17bcad109f645244"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-85.webp",
+      "bytes": 7344,
+      "sha256": "675c9d453566d510ab31b1c3a80cd5765adb075971813c3cc24b85d6f094a9e0"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-86.webp",
+      "bytes": 7050,
+      "sha256": "203e6fd6b2a7c71871a1c8d43c5ea3f346d1ff8f506ed03df1f990830c48e417"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-87.webp",
+      "bytes": 7094,
+      "sha256": "a64f478b101afd577f4a1d428d5adb9d835b2db76dfc70df4a57c4fc74611f38"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-88.webp",
+      "bytes": 6530,
+      "sha256": "e21eb2c305e4db02230c09f03a0a388ea812212f301b3062e584fe054681c615"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-89.webp",
+      "bytes": 6074,
+      "sha256": "b857d49cfeed6055e9fb3a6a2ef200b16ff46f9f581d00d8739002bbc28787b4"
+    },
+    {
+      "path": "website/atelier/peru/original/handset/turn-90.webp",
+      "bytes": 5576,
+      "sha256": "326bbe0922528f88682ead686b4aacf532a33f6c405ecefbe1ccea14a6b47e7c"
+    },
+    {
+      "path": "website/atelier/peru/original/i18n/README.md",
+      "bytes": 8304,
+      "sha256": "c8d27a739be0de9954cbe3480effb8863b7e71c72ad9f5e1dd9aff5e2aa90e45"
+    },
+    {
+      "path": "website/atelier/peru/original/i18n/en/legal.json",
+      "bytes": 15760,
+      "sha256": "598baf3b4fb8a6185256f2d520a978ccffee0c8e0263e0c7f158fca2e2b3e6e0"
+    },
+    {
+      "path": "website/atelier/peru/original/i18n/en/main.json",
+      "bytes": 25980,
+      "sha256": "d562802083d66528df8124b2d1356e56363ca26067bc0aeba5252cbdb5c58778"
+    },
+    {
+      "path": "website/atelier/peru/original/i18n/en/selling.json",
+      "bytes": 18060,
+      "sha256": "30a80a013c1b973074f350b743107ce37a7b1e1559327d09f1fd9d9bcdaf2039"
+    },
+    {
+      "path": "website/atelier/peru/original/i18n/es/legal.json",
+      "bytes": 16774,
+      "sha256": "34b064dfa05d0bee28f4619da65fd88e20ee3a778da36b23cb27ca94ece011ef"
+    },
+    {
+      "path": "website/atelier/peru/original/i18n/es/main.json",
+      "bytes": 23461,
+      "sha256": "1129e5abdc969078921456b0fd20925f88c1662b6328f32fbacb18c3f7f5b875"
+    },
+    {
+      "path": "website/atelier/peru/original/i18n/es/selling.json",
+      "bytes": 15287,
+      "sha256": "b3575a6b1424347b7d6fe86fb08df52eede9437a31a306dc0eaf8c5c931a0c01"
+    },
+    {
+      "path": "website/atelier/peru/original/img/README.md",
+      "bytes": 35998,
+      "sha256": "0988f997bb3ecdce718e294a3373d6b5474ee27c655d9c5bf4ee36224f7c3388"
+    },
+    {
+      "path": "website/atelier/peru/original/img/bodega-qr-sm.webp",
+      "bytes": 32266,
+      "sha256": "409ed17e2fac5a5ee430ea8fc3952c1bf4cb7ae46739fc1e8c3d4c38c05f6a58"
+    },
+    {
+      "path": "website/atelier/peru/original/img/bodega-qr.webp",
+      "bytes": 56152,
+      "sha256": "340745ef1a2efc245cf400887e133df04a26ea9313fdc81d9efe65b8aa0ba412"
+    },
+    {
+      "path": "website/atelier/peru/original/img/faces/azucar.webp",
+      "bytes": 910,
+      "sha256": "a3e721b201163ba51abfe8d42f8e670bca0ce71708f693edd179c4ace5738dbf"
+    },
+    {
+      "path": "website/atelier/peru/original/img/faces/leche.webp",
+      "bytes": 1044,
+      "sha256": "cec00d4834e260802769c3551bf47e7c8faf096e84d4da9d9487c91418a4e785"
+    },
+    {
+      "path": "website/atelier/peru/original/img/faces/refresco.webp",
+      "bytes": 1470,
+      "sha256": "3176792d711dcb1f23e35e8927ffd3f31503c4185f4805978eda9c1550d4c3f4"
+    },
+    {
+      "path": "website/atelier/peru/original/img/from-above-sm.webp",
+      "bytes": 77852,
+      "sha256": "6759e36623c8352dcd9db35cde9ce4fb17588b2389950f7a84d92fa0299059ca"
+    },
+    {
+      "path": "website/atelier/peru/original/img/from-above.webp",
+      "bytes": 232560,
+      "sha256": "0e607d53e9196e66c82f2c9e4712242717ee653a32ac7d7918f8c74ab1d22d97"
+    },
+    {
+      "path": "website/atelier/peru/original/img/hero-sales-sm.webp",
+      "bytes": 32952,
+      "sha256": "d9d1088b4874d3d2eee4c726fad0f02b26fedbb9243ac9135f56142e490faa52"
+    },
+    {
+      "path": "website/atelier/peru/original/img/hero-sales.webp",
+      "bytes": 82882,
+      "sha256": "3410cc32f4f3111d5f303da406a7978595f0c4b4eaaadd68afbd50e90d61b079"
+    },
+    {
+      "path": "website/atelier/peru/original/img/scan-qr-sm.webp",
+      "bytes": 99458,
+      "sha256": "55234ce314d15ee6fa4aeb8d333354d32397a308a752aa01fe078e6c4efe4b76"
+    },
+    {
+      "path": "website/atelier/peru/original/img/scan-qr.webp",
+      "bytes": 475142,
+      "sha256": "464e880a519b47881b05553d935d11001ae2b05aee0213ae18bc83cc0ae84490"
+    },
+    {
+      "path": "website/atelier/peru/original/img/src/cand-bodega-card-a.webp",
+      "bytes": 39952,
+      "sha256": "fd8fda23d66e4e5f19a86beca5871e711501485056ccbf414dabc02203195306"
+    },
+    {
+      "path": "website/atelier/peru/original/img/src/cand-bodega-card-b.webp",
+      "bytes": 1093140,
+      "sha256": "a06af35e29f751f68729218c216b090a98650dec39ad011936eaa7a67df1b9c5"
+    },
+    {
+      "path": "website/atelier/peru/original/img/src/cand-bodega-qr-b.webp",
+      "bytes": 65364,
+      "sha256": "0bb374e47af054c381908b88a51111e37f190354e223a7104f429322ae246980"
+    },
+    {
+      "path": "website/atelier/peru/original/img/supplier-van-sm.webp",
+      "bytes": 59802,
+      "sha256": "be6ebcf8815e90a4cbe5b652f61be0ea4dcd1afd7a6f82769de0e1a3f9b3a304"
+    },
+    {
+      "path": "website/atelier/peru/original/img/supplier-van.webp",
+      "bytes": 310594,
+      "sha256": "1d6400f0ab6b3d85ffa9da199898296fcaed5fcc7cf858d82d407d16e73c1fbd"
+    },
+    {
+      "path": "website/atelier/peru/original/img/voice-and-photo-sm.webp",
+      "bytes": 94248,
+      "sha256": "17879b0978c49350b0a8769080a35b16ceb7b65d83264869ee000a7ad4e3a863"
+    },
+    {
+      "path": "website/atelier/peru/original/img/voice-and-photo.webp",
+      "bytes": 230962,
+      "sha256": "f97c41c1d7679da6aa5e33841c417dc6166759d51bb769653ac2d99a6bd6fb35"
+    },
+    {
+      "path": "website/atelier/peru/original/img/who-bodega.webp",
+      "bytes": 48644,
+      "sha256": "431635b8925ba73ebdac2f2a7efd44c1d7a80cde905233a702b88fa6fdf784c5"
+    },
+    {
+      "path": "website/atelier/peru/original/img/who-retail.webp",
+      "bytes": 34526,
+      "sha256": "0716615f98dda7a2920df95012b951541b694ea85630fc6541a462417a54110d"
+    },
+    {
+      "path": "website/atelier/peru/original/img/who-wholesale.webp",
+      "bytes": 31496,
+      "sha256": "0d5cd989b7f32f2bf8980fb7de875dc11211ae9a40283bd70b9e4586bda4025a"
+    },
+    {
+      "path": "website/atelier/peru/original/journey.css",
+      "bytes": 1421,
+      "sha256": "1bc6b76c42ea7bc97351f6c5f21ba3c22f88be790aa0548dad9303226a2a778e"
+    },
+    {
+      "path": "website/atelier/peru/original/legal.css",
+      "bytes": 8234,
+      "sha256": "89914b544294b85c03eb8921597c1ef953d0db99a8cb0b93986c43358e9eb9ea"
+    },
+    {
+      "path": "website/atelier/peru/original/og-peru-es.jpg",
+      "bytes": 86054,
+      "sha256": "e73b905221dad84a7fea239bed90744afe1058f1d51bebbbb2381eb4bbefd7e7"
+    },
+    {
+      "path": "website/atelier/peru/original/og-peru.jpg",
+      "bytes": 79429,
+      "sha256": "6b2c66a4f56d0c0b61ac38acaf7915cfb0c1d504f29e286b53ec2d8f7d66fb11"
+    },
+    {
+      "path": "website/atelier/peru/original/peru.css",
+      "bytes": 114434,
+      "sha256": "2f4494f63b7f36c295c4669b87ffaeeaadd8c0307806b649a8a494dbd5b1bede"
+    },
+    {
+      "path": "website/atelier/peru/original/peru.js",
+      "bytes": 63036,
+      "sha256": "78a81598ca26d6469969c02f0f4fbe0071ef6e8022d7f4c6ce2cce1e661997d0"
+    },
+    {
+      "path": "website/atelier/peru/original/phone.css",
+      "bytes": 23245,
+      "sha256": "af06396b9d0884fd3d78902884776b9d3517c09707fcd958cdadfe1318705ba5"
+    },
+    {
+      "path": "website/atelier/peru/original/vendor/three/LICENCES.md",
+      "bytes": 1101,
+      "sha256": "563a3e2966d69c552cfd6ddefe30891e56a8eadd36622bbfbffb1b56c592d12d"
+    },
+    {
+      "path": "website/atelier/peru/original/vendor/three/LICENSE",
+      "bytes": 1081,
+      "sha256": "4c40a1ef62450b857c3b2aaf294936304cd552d965fbcd9d32d4c5bcf4ba4454"
+    },
+    {
+      "path": "website/atelier/peru/original/vendor/three/RoomEnvironment.js",
+      "bytes": 3623,
+      "sha256": "ffe2f19b0813d389df12f91fd01158064edc80ed01354233abafe4933e0e0220"
+    },
+    {
+      "path": "website/atelier/peru/original/vendor/three/draco/draco_decoder.wasm",
+      "bytes": 192420,
+      "sha256": "a680d927bed9cb864ddbd63521868891af2bfbe755092761b4837487618df8ac"
+    },
+    {
+      "path": "website/atelier/peru/original/vendor/three/draco/draco_wasm_wrapper.js",
+      "bytes": 58456,
+      "sha256": "8bb2952d2ba7d67e1414f8df819410cb0434a666be53f671fff75f68843d76f6"
+    },
+    {
+      "path": "website/atelier/peru/original/vendor/three/entry.js",
+      "bytes": 1770,
+      "sha256": "de23e2b854dacd24dccbf5078b6f9f0a5cc3ebcdfecdabd431a9d32cecc155fd"
+    },
+    {
+      "path": "website/atelier/peru/original/vendor/three/loaders.module.js",
+      "bytes": 53671,
+      "sha256": "b0b8dc04e78a49e7c6dc1efddeb2c49b2108a8046fcca7619721ead533ba8b7f"
+    },
+    {
+      "path": "website/atelier/peru/original/vendor/three/three.slim.module.js",
+      "bytes": 518793,
+      "sha256": "182a862cff9146f1df4ea4917699627520e96e697bc3fa868e266fa2a523a0e9"
+    },
+    {
+      "path": "website/atelier/peru/original/wa/fonts/inter-OFL.txt",
+      "bytes": 4477,
+      "sha256": "3b0a5fca3d17942cde889069889dedbbbd075e9b599968c82a95f4d944e9b345"
+    },
+    {
+      "path": "website/atelier/peru/original/wa/fonts/inter.woff2",
+      "bytes": 26020,
+      "sha256": "67d06a7b038f2e4c112e8235b62df4032e218f874f3c5d948c21dcf9e8a621a7"
+    },
+    {
+      "path": "website/atelier/peru/original/wa/vendor/LICENSE.md",
+      "bytes": 1100,
+      "sha256": "1bf0dc3f7727723e5a032ed12164a47cf92c05204cb1a3485f123c24e2833ed1"
+    },
+    {
+      "path": "website/atelier/peru/original/wa/vendor/README.md",
+      "bytes": 1022,
+      "sha256": "681457c93ba9620e568f5b0a012724cad4295403c0fb6ed192bb2406a584635b"
+    },
+    {
+      "path": "website/atelier/peru/original/wa/vendor/gen-springs.mjs",
+      "bytes": 1952,
+      "sha256": "a1d85110f4c19950c97e81e0f6fccb3e899c878d37e31cec048de76decf57eac"
+    },
+    {
+      "path": "website/atelier/peru/original/wa/vendor/motion.js",
+      "bytes": 146962,
+      "sha256": "8bed75fa00fd8c6d10c8ed137266a642dd96f28a8a3b02e6fce0c5c75e6e9c33"
+    },
+    {
+      "path": "website/atelier/peru/original/wa/wa.css",
+      "bytes": 78054,
+      "sha256": "be5a2930fe9c093e27c79e6accc01c1ab9fb1e08ef39e8817359f549486e0b6f"
+    },
+    {
+      "path": "website/atelier/peru/original/wa/wa.js",
+      "bytes": 104825,
+      "sha256": "7253bae43a3b5aabaf18256ebbd29f50e59745fc4ec5b6df21659623cf593426"
+    },
+    {
+      "path": "website/atelier/peru/original/wa/wallpaper.webp",
+      "bytes": 35362,
+      "sha256": "1c5143a38ac7378bf4fb0a43627ef7ba85f961f249bdf349d284658ecb001dd8"
     },
     {
       "path": "website/brand/face-blink-dark.gif",

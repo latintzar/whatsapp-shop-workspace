@@ -1,6 +1,8 @@
 # Rocoto Peru
 
-Rocoto Peru is a workspace for shop orders, customers, products and payments connected to WhatsApp. Review a conversation, turn it into a shop record, and create a collection page while the seller keeps their own receiving account.
+Rocoto Peru is a mobile AI-native ERP matching bodegas’ Yape/Plin payments to WhatsApp orders.
+
+The original product brings WhatsApp conversations, shop records, stock, preparation and collections into a phone-first workflow. Payment requests retain their own order identity while transfers reach the merchant’s selected mobile-wallet destination.
 
 [Website](https://atelierneyra.com/peru) · [Documentation](https://docs.atelierneyra.com/shop-workspace/overview/)
 

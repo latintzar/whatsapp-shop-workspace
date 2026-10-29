@@ -1,5 +1,5 @@
 {
-  "tree_sha256": "e2dd3bddea3248dec6c2397e67ab202584144fa02a3709aa4e3dda347da98ea8",
+  "tree_sha256": "1267c53bb31e97f14fabbba411cdcbafbf3caca2d0f283520df60fb1a1338f6c",
   "definition": "sorted relative path + NUL + file SHA256 + newline; excludes this manifest and ignored/generated state",
   "files": [
     {
@@ -39,8 +39,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 5274,
-      "sha256": "5a218f11db7a0906e528ffd78c3ed2889f0ca7bd025bffa2dd0f5b0bb1381dbb"
+      "bytes": 5356,
+      "sha256": "3ec422745f729fa2e5b0881ac27792278e970ca72065c093094823c358da9b92"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",

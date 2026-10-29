@@ -6,7 +6,9 @@ The original product brings WhatsApp conversations, shop records, stock, prepara
 
 [Website](https://atelierneyra.com/peru) · [Documentation](https://docs.atelierneyra.com/shop-workspace/overview/)
 
-<img src="docs/assets/shop-prep-phone.png" alt="The original shop interface, with twelve synthetic sales grouped by delivery location" width="390">
+![Rocoto Peru shop workspace shown in a phone frame](docs/assets/readme-hero.jpg)
+
+[Phone artwork credit](docs/assets/handset-CREDITS.md)
 
 ## Run
 

@@ -6,7 +6,7 @@ Rocoto Peru is a phone-first workspace for bodega owners who buy from suppliers,
 
 [Website](https://atelierneyra.com/peru) · [Open app](https://preview.atelierneyra.com/apps/peru/bodega-pay-later.html) · [Documentation](https://docs.atelierneyra.com/shop-workspace/overview/)
 
-![Rocoto Peru](https://atelierneyra.com/assets/product-motion-v3/shop-workspace.jpg)
+![Rocoto Peru](https://atelierneyra.com/assets/product-motion-v4/shop-workspace.jpg)
 
 [Phone artwork credit](docs/assets/handset-CREDITS.md)
 

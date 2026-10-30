@@ -1,10 +1,12 @@
 # Rocoto Peru
 
+Mobile AI-native ERP matching bodegas’ Yape/Plin payments to WhatsApp orders
+
 Rocoto Peru is a phone-first workspace for bodega owners who buy from suppliers, sell to neighbours and manage money through WhatsApp. It brings their shop’s balance, purchases and customer payments into one place.
 
 [Website](https://atelierneyra.com/peru) · [Open app](https://preview.atelierneyra.com/apps/peru/bodega-pay-later.html) · [Documentation](https://docs.atelierneyra.com/shop-workspace/overview/)
 
-![Rocoto Peru Money and supplier purchases on the phone](docs/assets/readme-hero-v2.jpg)
+![Rocoto Peru](https://atelierneyra.com/assets/product-shots-20261030/shop-workspace.jpg)
 
 [Phone artwork credit](docs/assets/handset-CREDITS.md)
 

@@ -27,7 +27,7 @@
     "@vitejs/plugin-react": "^6.1.0",
     "rolldown": "1.2.7",
     "typescript": "^7.0.2",
-    "vite": "^8.2.2"
+    "vite": "8.2.4"
   },
   "dependencies": {
     "@capacitor/android": "8.5.2",
@@ -68,6 +68,12 @@
     "react-vis": {
       "react": "$react",
       "react-dom": "$react-dom"
+    },
+    "dompurify": "3.4.17",
+    "uuid": "11.1.1",
+    "@capacitor/cli": {
+      "glob": "14.0.2",
+      "minimatch": "11.0.1"
     }
   }
 }

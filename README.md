@@ -2,21 +2,36 @@
 
 Mobile AI-native ERP matching bodegas’ Yape/Plin payments to WhatsApp orders
 
-Rocoto Peru is a phone-first workspace for bodega owners who buy from suppliers, sell to neighbours and manage money through WhatsApp. It brings their shop’s balance, purchases and customer payments into one place.
+Rocoto Peru is a mobile AI-native ERP matching bodegas’ Yape/Plin payments to WhatsApp orders. It brings sales, collections and supplier purchases together, with a working-capital design based on the shop’s trading history.
 
-[Website](https://atelierneyra.com/peru) · [Open app](https://preview.atelierneyra.com/apps/peru/bodega-pay-later.html) · [Documentation](https://docs.atelierneyra.com/shop-workspace/overview/)
+[Website](https://atelierneyra.com/peru) · [Open demo](https://preview.atelierneyra.com/apps/peru/bodega-pay-later.html) · [Product tour](docs/product-tour.md) · [Documentation](https://docs.atelierneyra.com/shop-workspace/overview/)
 
-![Rocoto Peru](https://atelierneyra.com/assets/product-motion-v5/shop-workspace-0f44723d1911.jpg)
+[![Rocoto Peru Money with receipts, fiado and supplier obligations beside mobile Prep orders](https://atelierneyra.com/assets/product-motion-v5/shop-workspace-0f44723d1911.jpg)](https://preview.atelierneyra.com/apps/peru/bodega-pay-later.html)
 
 [Phone artwork credit](docs/assets/handset-CREDITS.md)
 
-## Money and purchases
+## A sale becomes a traceable payment
 
-- **See the shop’s money.** Money brings together sample receipts, customer debts and supplier obligations, with a place for the bank balance once an account is connected.
-- **Work from WhatsApp.** Conversations become proposed sales and purchases, with the merchant reviewing their meaning and preparation.
-- **Explore flexible payment.** Transaction history supplies transparent indicators and an interface for purchase, payment and credit exploration. A lender partnership, validated underwriting and funded credit remain future work.
+1. **Review the order.** Prep groups today’s sales by delivery block; the source chat explains the customer’s request.
+2. **Make a payment page.** Give the trade a customer, description and exact amount. Its durable buyer page identifies what the payment is for and where the seller receives it.
+3. **Follow the receipt.** The collection ledger keeps partial payments, source evidence and the remaining balance attached to the same request.
+4. **Review Money and the next purchase.** See customer fiado, supplier obligations and trading indicators; explore supplier payment terms with their amount and due date together.
 
-The preview uses an authored sample shop. The source includes the browser workspace, durable collection service, provider integrations and Android app; [capability status](docs/status.md) distinguishes working software from external acceptance.
+## Product areas
+
+| Area | What it does |
+| --- | --- |
+| Prep | Put today’s orders and preparation first. |
+| Chats | Show customer/supplier context and the evidence behind proposed trades. |
+| Products and customers | Keep the shop’s goods and trading relationships together. |
+| Money | Bring collections, bank state, customer fiado and supplier purchases into one place. |
+| Payment pages | Preserve a described request through partial receipts and remaining balances. |
+| Record and pay later | Show transparent trading indicators and the purchase/credit exploration. |
+| Android onboarding | Verify the phone, complete the shop profile and connect official WhatsApp history. |
+
+The hosted shop uses authored trades and an unconnected bank state. The source includes the browser, encrypted collections service, account adapters and Android app. Live payment matching and lender-backed stock credit have their own configuration and acceptance steps.
+
+[Product tour](docs/product-tour.md) follows the whole trade and maps the interface, payment ledger and credit exploration to source. [Capability status](docs/status.md) records their proof levels.
 
 ## Run
 
@@ -30,46 +45,16 @@ make doctor
 make dev
 ```
 
-Open [the local shop](http://127.0.0.1:18240/#/prep). You will see twelve sample sales grouped by delivery block. Open **Money**, **Products**, **Customers** and **Chats** to explore the same synthetic shop. The UI labels its source **Sample chats**. Development state persists in the ignored, private `.local/synthetic/` directory.
+Open [the local shop](http://127.0.0.1:18240/#/prep). Its **Sample chats** source provides twelve sales grouped by delivery block. [First result](docs/first-result.md) follows a reviewed trade, persistent payment page and sample partial receipt.
 
-The command runs the actual browser app, prototype API on `127.0.0.1:18241`, and durable collection service on `127.0.0.1:18242`. Provider credentials are isolated from the default launch. Use **Ctrl-C** to stop all three processes.
+Connect your own WhatsApp, payment and optional fiscal accounts through [own-account setup](docs/providers.md). The [installation skill](.agents/skills/install-shop-workspace/SKILL.md) gives your coding agent the same path.
 
-[First result](docs/first-result.md) walks through a reviewed trade and a persistent payment request. [Own-account setup](docs/providers.md) explains each connection and approval. [Agent installation instructions](.agents/skills/install-shop-workspace/SKILL.md) give a coding agent the same path.
+## Guides
 
-## The platform design
+[Product tour](docs/product-tour.md) · [Architecture](docs/architecture.md) · [UX decisions](docs/design.md) · [Platform design and modules](docs/implementation.md) · [Capability status](docs/status.md) · [Android setup](docs/android.md) · [Detailed specifications](docs/reference.md)
 
-The shop already has relationships and work in WhatsApp. Official Business-app coexistence connects that context while the merchant continues using their familiar app. Eligible, explicitly consented history can supply up to 180 days of one-to-one conversation context. Imported words become proposals with provenance; the merchant confirms their commercial meaning.
+## Licence
 
-The acquisition flow makes progressively larger commitments: referral → signed inbound WhatsApp message → durable waitlist → phone verification → native profile → same-phone Meta connection → business pass. A Google Group can supply a separately commissioned Play tester audience.
-
-Collection pages put a durable record around a sale while Yape/Plin transfers go to the seller's selected destination. Unique payable cents help distinguish equal-value debts; every historical quote remains reserved so a late transfer keeps its original identity.
-
-Read [the workflow and approvals](docs/workflow.md), [UX decisions](docs/design.md), and [architecture](docs/architecture.md). The [original specifications](docs/reference.md) retain the detailed rationale and implementation contracts.
-
-## What you can reuse
-
-| Module | Implemented scope | Evidence and activation |
-| --- | --- | --- |
-| Browser shop | Prep, Products, Customers, Money, source conversations, documents and exports | Authored synthetic shop, existing model tests, real browser build |
-| WhatsApp connection | Embedded Signup, exact WABA/phone verification, encrypted account stores, signed history/contact projection and recovery | Synthetic protocol tests; historical owned test-account receipt recorded 2,214 messages / 112 threads |
-| Trade read | Roles, order/purchase/fiado evidence, reasons and merchant review | Deterministic reader; economic evidence ranking selected for this release |
-| Collections | Persistent requests, capability buyer pages, partial receipts, exact-account matching and quote allocation | Local API/browser tests; Prometeo/real wallet commissioning separate |
-| Onboarding API | Signed intake, deduplicated/referral state, OTP, same-phone PKCE handoff, tester enrollment leases | Injected-transport tests; operator supplies approved Meta/Google/Play configuration |
-| Android | Locally bundled Capacitor UI, encrypted native session storage, Auth Tab fallback, OTP SDK, return links, haptics and notifications | Web bundle builds; signed builds and physical devices have separate acceptance |
-| Extensions | Fiscal adapters, transparent trade indicators, financing exploration and supervised assistance case tooling | [Proof tiers](docs/status.md) distinguish working software, provider/device acceptance and product proposals |
-
-The original [Peru marketing templates](website/README.md) are retained separately, including English/Spanish source, handset animation and artwork attribution.
-
-## Develop
-
-```sh
-make build                 # browser bundle in app/dist
-make test                  # offline model, API, history and collection checks
-make android               # bundled Android UI in app/dist-android
-```
-
-For native compilation, [Android setup](docs/android.md) names the JDK/SDK and your own signing/callback requirements. [Engineering reference](docs/architecture.md#code-map) points to actual modules and tests.
-
-Source comes from one coherent product revision, `e4801f58454c3a7fa639d0570b71f3434d2dc759`, including Android `0.6.1` / code `9`. The sibling AI-native ERP release uses a different historical branch. [Provenance](docs/provenance.md) records their relationship, export changes and asset boundaries.
+Original code uses [MIT](LICENSE); dependencies and assets retain their [own notices](THIRD_PARTY_NOTICES.md). [Source provenance](docs/provenance.md) records the original revision, export changes and asset boundaries.
 
 [made by atelier neyra](https://atelierneyra.com)

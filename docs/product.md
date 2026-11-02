@@ -1,6 +1,8 @@
 # A shop’s money, purchases and relationships
 
-Rocoto Peru is a phone-first workspace for bodega owners who coordinate sales and supplies through WhatsApp. The Money view brings sample receipts, customer debts and supplier obligations together, with a place for a connected bank balance; purchases and credit exploration show how transaction history might support more flexible ways to pay suppliers.
+Rocoto Peru is a mobile AI-native ERP matching bodegas’ Yape/Plin payments to WhatsApp orders. It brings sales, collections and supplier purchases together, with a working-capital design based on the shop’s trading history.
+
+[Product tour](product-tour.md) follows an order through payment, Money and supplier purchase exploration, with links to the actual modules.
 
 The merchant reviews the commercial meaning of conversations. Prep groups sales for delivery, while Money shows the recorded money book, proposed debts and transparent trading indicators. Collection pages preserve a sale’s identity as buyers pay the merchant’s selected wallet.
 
